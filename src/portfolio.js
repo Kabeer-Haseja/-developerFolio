@@ -126,7 +126,7 @@ const educationInfo = {
     },
     {
       schoolName: "Higher Secondary School",
-      logo: require("./assets/images/stanfordLogo.png"),
+      // logo: require("./assets/images/stanfordLogo.png"),
       subHeader: "Intermediate",
       duration: "September 2013 - April 2016",
       desc: "Through hands-on assignments and projects, I developed a solid understanding of fundamental concepts in computer science and gained experience in applying them to real-world problems.",
