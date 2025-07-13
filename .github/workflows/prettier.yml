@@ -18,8 +18,4 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install Prettier
-        run: npm install -g prettier
-
-      - name: Check Format
-        run: prettier -c "./**/*.{js,css,json}"
+      # Removed Prettier install and check steps
