@@ -48,42 +48,51 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "What I Do",
-  subTitle: "Transforming ideas into beautiful, intuitive, and high-performing Web and Mobile Applications 🌟 Let's build something amazing together! 💻📱",
+  subTitle:
+    "Transforming ideas into beautiful, intuitive, and high-performing Web and Mobile Applications 🌟 Let's build something amazing together! 💻📱",
   skills: [
-    emoji("⚡ Crafting highly responsive and interactive user interfaces for Web and Mobile apps using React.js and React Native"),
-    emoji("⚡ Building Progressive Web Apps (PWAs) and Single Page Applications (SPAs) with modern JavaScript frameworks"),
-    emoji("⚡ Seamless integration of third-party services like Firebase, Redux, Axios, Push Notifications, and Maps APIs"),
-    emoji("⚡ Implementing real-time chat functionality with Sendbird for seamless user communication")
+    emoji(
+      "⚡ Crafting highly responsive and interactive user interfaces for Web and Mobile apps using React.js and React Native"
+    ),
+    emoji(
+      "⚡ Building Progressive Web Apps (PWAs) and Single Page Applications (SPAs) with modern JavaScript frameworks"
+    ),
+    emoji(
+      "⚡ Seamless integration of third-party services like Firebase, Redux, Axios, Push Notifications, and Maps APIs"
+    ),
+    emoji(
+      "⚡ Implementing real-time chat functionality with Sendbird for seamless user communication"
+    )
   ],
 
   /* Make Sure to include correct Font Awesome Classname to view your icon
 https://fontawesome.com/icons?d=gallery */
-  
-   softwareSkills : [
-     {
-       skillName: "React Native",
-       fontAwesomeClassname: "fab fa-react"
-     },
-     {
-       skillName: "JavaScript",
-       fontAwesomeClassname: "fab fa-js"
-     },
-     {
-       skillName: "React.js",
-       fontAwesomeClassname: "fab fa-react"
-     },
-     {
-       skillName: "Node.js",
-       fontAwesomeClassname: "fab fa-node-js"
-     },
-     {
-       skillName: "Redux",
-       fontAwesomeClassname: "fas fa-bolt"
-     },
-     {
-       skillName: "RTK Query",
-       fontAwesomeClassname: "fas fa-bolt" // Fallback icon
-     },
+
+  softwareSkills: [
+    {
+      skillName: "React Native",
+      fontAwesomeClassname: "fab fa-react"
+    },
+    {
+      skillName: "JavaScript",
+      fontAwesomeClassname: "fab fa-js"
+    },
+    {
+      skillName: "React.js",
+      fontAwesomeClassname: "fab fa-react"
+    },
+    {
+      skillName: "Node.js",
+      fontAwesomeClassname: "fab fa-node-js"
+    },
+    {
+      skillName: "Redux",
+      fontAwesomeClassname: "fas fa-bolt"
+    },
+    {
+      skillName: "RTK Query",
+      fontAwesomeClassname: "fas fa-bolt" // Fallback icon
+    },
     {
       skillName: "CSS3",
       fontAwesomeClassname: "fab fa-css3-alt"
@@ -92,10 +101,10 @@ https://fontawesome.com/icons?d=gallery */
       skillName: "Firebase",
       fontAwesomeClassname: "fas fa-fire"
     },
-     {
-       skillName: "MySQL",
-       fontAwesomeClassname: "fas fa-database"
-     },
+    {
+      skillName: "MySQL",
+      fontAwesomeClassname: "fas fa-database"
+    }
   ],
   display: true // Set false to hide this section, defaults to true
 };
@@ -122,8 +131,10 @@ const educationInfo = {
       subHeader: "Intermediate",
       duration: "September 2013 - April 2016",
       desc: "Through hands-on assignments and projects, I developed a solid understanding of fundamental concepts in computer science and gained experience in applying them to real-world problems.",
-      descBullets: ["Developed an appreciation for the importance of security in software systems and learned about techniques for securing web applications and networks",
-      'Collaborated with peers on group projects, honing my teamwork and communication skills while working on software solutions to real-world problems']
+      descBullets: [
+        "Developed an appreciation for the importance of security in software systems and learned about techniques for securing web applications and networks",
+        "Collaborated with peers on group projects, honing my teamwork and communication skills while working on software solutions to real-world problems"
+      ]
     }
   ]
 };
@@ -191,9 +202,9 @@ const workExperiences = {
       desc: "As a freelancer , I provided software development services to clients from around the world. I worked on a variety of projects, including web development and mobile app development",
       descBullets: [
         "Built mobile apps for iOS and Android using frameworks such as React Native",
-        'Worked independently and managed time effectively to ensure that project deliverables were completed on time and to a high standard'
+        "Worked independently and managed time effectively to ensure that project deliverables were completed on time and to a high standard"
       ]
-    },
+    }
   ]
 };
 
@@ -210,7 +221,7 @@ const openSource = {
 const bigProjects = {
   title: "Big Projects",
   subtitle: "SOME Products AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
-   projects : [
+  projects: [
     {
       image: require("./assets/images/dubizzlecars.png"),
       projectName: "Dubizzle (CRM, Auction, Inspection)",
