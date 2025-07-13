@@ -21,19 +21,19 @@ const illustration = {
 
 const greeting = {
   username: "Kabeer Haseja",
-  title: "Hi all, I'm Kabeer",
+  title: "Hi there, I'm Kabeer 👋",
   subTitle: emoji(
-    "A passionate Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / React Native and expertise in Developing Cross-Platform Mobile Apps using React Native Framework some other cool libraries and frameworks."
+    "I'm a dedicated React Native Mobile App Developer 🚀 with 5+ years of experience building fast, reliable, and scalable cross-platform applications for iOS and Android. I specialize in creating seamless mobile experiences using React Native, TypeScript, Redux, RTK Query, Firebase, and native integrations like biometrics, maps, push notifications, and Single Sign-On. \n\nFrom performance optimizations to pixel-perfect UI, I focus on writing clean, reusable code and delivering high-quality apps used across industries like real estate, e-commerce, and CRM. I'm passionate about solving complex problems and continuously improving app architecture, user experience, and developer efficiency."
   ),
   resumeLink:
-    "https://drive.google.com/drive/folders/1eZ70lh4aQ8sfYto2T4n9LJRujYxJX6Ux?usp=sharing", // Set to empty to hide the button
-  displayGreeting: true // Set false to hide this section, defaults to true
+    "https://drive.google.com/drive/folders/1eZ70lh4aQ8sfYto2T4n9LJRujYxJX6Ux?usp=sharing", // Leave empty to hide
+  displayGreeting: true
 };
 
 // Social Media Links
 
 const socialMediaLinks = {
-  github: "https://github.com/kabeerhaseja",
+  github: "https://github.com/Kabeer-Haseja",
   linkedin: "https://www.linkedin.com/in/kabeer-haseja",
   gmail: "haseja45@gmail.com",
   // facebook: "https://www.facebook.com/saad.pasta7",
@@ -47,63 +47,56 @@ const socialMediaLinks = {
 // Skills Section
 
 const skillsSection = {
-  title: "What I do",
-  subTitle: "Transforming Your Vision into Stunning and Intuitive Web and Mobile Applications 🌟 Let's Build Together!  💻📱",
+  title: "What I Do",
+  subTitle: "Transforming ideas into beautiful, intuitive, and high-performing Web and Mobile Applications 🌟 Let's build something amazing together! 💻📱",
   skills: [
-    emoji(
-      "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
-    ),
-    emoji("⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks"),
-    emoji(
-      "⚡ Integration of third party services such as Firebase/ Redux / Axios /push Notifications / maps"
-    )
+    emoji("⚡ Crafting highly responsive and interactive user interfaces for Web and Mobile apps using React.js and React Native"),
+    emoji("⚡ Building Progressive Web Apps (PWAs) and Single Page Applications (SPAs) with modern JavaScript frameworks"),
+    emoji("⚡ Seamless integration of third-party services like Firebase, Redux, Axios, Push Notifications, and Maps APIs"),
+    emoji("⚡ Implementing real-time chat functionality with Sendbird for seamless user communication")
   ],
 
   /* Make Sure to include correct Font Awesome Classname to view your icon
 https://fontawesome.com/icons?d=gallery */
-
-  softwareSkills: [
+  
+   softwareSkills : [
+     {
+       skillName: "React Native",
+       fontAwesomeClassname: "fab fa-react"
+     },
+     {
+       skillName: "JavaScript",
+       fontAwesomeClassname: "fab fa-js"
+     },
+     {
+       skillName: "React.js",
+       fontAwesomeClassname: "fab fa-react"
+     },
+     {
+       skillName: "Node.js",
+       fontAwesomeClassname: "fab fa-node-js"
+     },
+     {
+       skillName: "Redux",
+       fontAwesomeClassname: "fas fa-bolt"
+     },
+     {
+       skillName: "RTK Query",
+       fontAwesomeClassname: "fas fa-bolt" // Fallback icon
+     },
     {
-      skillName: "html-5",
-      fontAwesomeClassname: "fab fa-html5"
-    },
-    {
-      skillName: "css3",
+      skillName: "CSS3",
       fontAwesomeClassname: "fab fa-css3-alt"
     },
     {
-      skillName: "sass",
-      fontAwesomeClassname: "fab fa-sass"
-    },
-    {
-      skillName: "JavaScript",
-      fontAwesomeClassname: "fab fa-js"
-    },
-    {
-      skillName: "reactjs",
-      fontAwesomeClassname: "fab fa-react"
-    },
-    {
-      skillName: "React Native",
-      fontAwesomeClassname: "fab fa-react"
-    },
-    {
-      skillName: "Redux",
-      fontAwesomeClassname: "fab fa-redux"
-    },
-    {
-      skillName: "npm",
-      fontAwesomeClassname: "fab fa-npm"
-    },
-    {
-      skillName: "sql-database",
-      fontAwesomeClassname: "fas fa-database"
-    },
-    {
-      skillName: "firebase",
+      skillName: "Firebase",
       fontAwesomeClassname: "fas fa-fire"
     },
-   ],
+     {
+       skillName: "MySQL",
+       fontAwesomeClassname: "fas fa-database"
+     },
+  ],
   display: true // Set false to hide this section, defaults to true
 };
 
@@ -142,15 +135,15 @@ const techStack = {
   experience: [
     {
       Stack: "Frontend/Design", //Insert stack or technology you have experience in
-      progressPercentage: "90%" //Insert relative proficiency in percentage
+      progressPercentage: "98%" //Insert relative proficiency in percentage
     },
     {
       Stack: "Backend",
-      progressPercentage: "60%"
+      progressPercentage: "70%"
     },
     {
       Stack: "Programming",
-      progressPercentage: "80%"
+      progressPercentage: "95%"
     }
   ],
   displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
@@ -162,20 +155,38 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
-      role: "Software Engineer",
-      company: "EMPG LABS",
-      companylogo: require("./assets/images/empgg.png"),
-      date: "Jan 2022 – Present",
-      desc: " As a software engineer at EMPG LABS, I work on developing and maintaining software solutions that support the company's mission of transforming the real estate industry in emerging markets.",
+      role: "Senior Software Engineer",
+      company: "Barmajja",
+      companylogo: require("./assets/images/appIcon.png"), // Make sure you add this logo to your assets
+      date: "Dec 2024 – Present",
+      location: "United Arab Emirates — Remote",
+      desc: "At Barmajja, I lead the development of location-aware mobile applications, enhancing user engagement and driving business growth through innovative solutions.",
       descBullets: [
-        "Design and develop software solutions using technologies such as Reactjs and ReactNative",
-          'Continuously improve processes and tools to increase efficiency and productivity, and promote a culture of learning and innovation'
+        "Developed a React Native loyalty app with QR-based offer redemption, resulting in a 25% increase in user-driven sales in Q1.",
+        "Integrated GPS and Google Maps APIs to deliver location-based discounts and real-time visibility of nearby offers.",
+        "Implemented Firebase push notifications to boost engagement, leading to a 25% uplift in user interaction via timely deal alerts and updates.",
+        "Collaborated with cross-functional teams to align app features with marketing strategies and business objectives, improving customer retention."
+      ]
+    },
+    {
+      role: "Senior Software Engineer",
+      company: "Dubizzle (EMPG LABS)",
+      companylogo: require("./assets/images/dubizzle.png"),
+      date: "Jan 2022 – Present",
+      location: "Lahore, Punjab — Remote",
+      desc: "As a Senior Software Engineer at EMPG LABS, I work on high-impact mobile applications that support the digital transformation of real estate platforms in emerging markets such as Pakistan, UAE, and Egypt.",
+      descBullets: [
+        "Refactored legacy React Native codebases to modern standards using TypeScript, React Native CLI, and functional components—resulting in a 35% improvement in performance across Android and iOS.",
+        "Integrated 3rd-party services such as OneSignal, Google Maps, Crashlytics, and Firebase for advanced features like real-time push notifications and location-based services.",
+        "Deployed a geofencing solution using GPS and Maps APIs to trigger personalized discounts and offers within a 0.5-mile radius, increasing redemption rates by 15%.",
+        "Upgraded the React Native framework from version 0.64.2 to 0.75 to ensure stability and compatibility with the latest ecosystem.",
+        "Contributed to cross-functional initiatives that enhanced app stability, reduced crashes, and improved deployment cycles in production."
       ]
     },
     {
       role: "Freelancer",
       company: "Fiver",
-      companylogo: require("./assets/images/fiver.png"),
+      companylogo: require("./assets/images/upworkk.png"),
       date: "May 2018 – May 2020",
       desc: "As a freelancer , I provided software development services to clients from around the world. I worked on a variety of projects, including web development and mobile app development",
       descBullets: [
@@ -199,29 +210,36 @@ const openSource = {
 const bigProjects = {
   title: "Big Projects",
   subtitle: "SOME Products AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
-  projects: [
+   projects : [
     {
-      image: require("./assets/images/dubizzle-cars-logo-24012022.png"),
-      projectName: "Dubizzle Cars",
-      projectDesc: "The outcome of a project focused on automating the inspection auction and CRM processes in the automotive industry would depend on the specific goals and objectives set for the project.",
+      image: require("./assets/images/dubizzlecars.png"),
+      projectName: "Dubizzle (CRM, Auction, Inspection)",
+      projectDesc:
+        "Scaled Dubizzle’s online marketplace to support 100K+ monthly ads. Built a full-featured vehicle auction platform that boosted engagement by 30% and tripled listings. Launched a car inspection service, completing 500+ inspections/month and reducing post-sale disputes by 40%.",
       footerLink: [
         {
           name: "Visit Website",
           url: "https://dubai.dubizzle.com/motors/"
         }
-        //  you can add extra buttons here.
       ]
     },
     {
       image: require("./assets/images/img.png"),
-      projectName: "Jarvis",
-      projectDesc: "Jarvis CRM\" is likely a reference to a Customer Relationship Management (CRM) software solution with the name \"Jarvis\". CRM is a technology used by businesses to manage interactions with customers and clients, as well as organizing and automating sales, marketing, and customer service processes",
+      projectName: "Jarvis (Real Estate CRM)",
+      projectDesc:
+        "Led CRM integration for Jarvis, improving task management efficiency by 40% and boosting sales team productivity. Supported 100K+ active users across Pakistan, UAE, Saudi Arabia, and Egypt for platforms like zameen.com, bayut.com, and olx.com."
     },
     {
-      image: require("./assets/images/salesCompanion.png"),
-      projectName: "Sales Companion",
-      projectDesc: "Sales Companion  is likely a reference to a sales tool or solution developed for the real estate platform \"Bayut\". The purpose of the Sales Companion would be to assist sales teams in their efforts to sell properties listed on Bayut.",
-    
+      image: require("./assets/images/olx.png"), // Replace with actual OLX logo if available
+      projectName: "OLX (E-commerce App)",
+      projectDesc:
+        "Integrated payment gateways and logistics via REST APIs, resulting in a 30% increase in customer satisfaction. Enhanced mobile app performance and UX by integrating React Native, streamlining transactions across iOS and Android."
+    },
+    {
+      image: require("./assets/images/appIcon.png"),
+      projectName: "Connect (Loyalty App)",
+      projectDesc:
+        "Built a location-aware loyalty app offering personalized deals from 100+ partnered retailers. Increased user engagement by 35% through location-based promos and boosted repeat transactions by 25% with a points-based reward system."
     }
   ],
   display: true // Set false to hide this section, defaults to true
