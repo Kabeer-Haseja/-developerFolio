@@ -25,6 +25,9 @@ jobs:
         run: |
           npm install
           npm run build
+      - name: Clean temp deployment folder (if exists)
+        run: |
+          rm -rf github-pages-deploy-action-temp-deployment-folder
 
       - name: Clean previous deploy folder 🧹
         run: rm -rf github-pages-deploy-action-temp-deployment-folder
