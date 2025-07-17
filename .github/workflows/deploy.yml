@@ -26,6 +26,9 @@ jobs:
           npm install
           npm run build
 
+      - name: Clean previous deploy folder 🧹
+        run: rm -rf github-pages-deploy-action-temp-deployment-folder
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
