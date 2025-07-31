@@ -16,52 +16,57 @@ export default function Greeting() {
     return null;
   }
   return (
-    <Fade bottom duration={1000} distance="40px">
-      <div className="greet-main" id="greeting">
-        <div className="greeting-main">
-          <div className="greeting-text-div">
-            <div>
-              <h1
-                className={isDark ? "dark-mode greeting-text" : "greeting-text"}
-              >
-                {" "}
-                {greeting.title}{" "}
-                <span className="wave-emoji">{emoji("👋")}</span>
+    <div className="hero-wrapper">
+      <Fade bottom duration={1000} distance="40px">
+        <div className="hero-content">
+          <div className="hero-text-section">
+            <div className="hero-text-content">
+              <div className="hero-badge">
+                <span>👋 Available for opportunities</span>
+              </div>
+              
+              <h1 className="hero-title">
+                {greeting.title}
               </h1>
-              <p
-                className={
-                  isDark
-                    ? "dark-mode greeting-text-p"
-                    : "greeting-text-p subTitle"
-                }
-              >
+              
+              <p className="hero-subtitle">
                 {greeting.subTitle}
               </p>
-              <SocialMedia />
-              <div className="button-greeting-div">
-                <Button text="Contact me" href="#contact" />
+              
+              <div className="hero-actions">
+                <Button text="Get in touch" href="#contact" style="primary" />
                 {greeting.resumeLink && (
                   <Button
-                    text="See my resume"
+                    text="View Resume"
                     newTab={true}
                     href={greeting.resumeLink}
+                    style="secondary"
                   />
                 )}
               </div>
+              
+              <div className="hero-social">
+                <SocialMedia />
+              </div>
             </div>
           </div>
-          <div className="greeting-image-div">
+          
+          <div className="hero-visual-section">
             {illustration.animated ? (
-              <DisplayLottie animationData={landingPerson} />
+              <div className="hero-animation">
+                <DisplayLottie animationData={landingPerson} />
+              </div>
             ) : (
-              <img
-                alt="man sitting on table"
-                src={require("../../assets/images/manOnTable.svg")}
-              ></img>
+              <div className="hero-image">
+                <img
+                  alt="Developer illustration"
+                  src={require("../../assets/images/manOnTable.svg")}
+                />
+              </div>
             )}
           </div>
         </div>
-      </div>
-    </Fade>
+      </Fade>
+    </div>
   );
 }

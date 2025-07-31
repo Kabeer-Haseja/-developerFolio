@@ -1,22 +1,54 @@
-import React from "react";
+import React, {useContext} from "react";
 import "./Footer.scss";
 import {Fade} from "react-reveal";
+import StyleContext from "../../contexts/StyleContext";
+import SocialMedia from "../socialMedia/SocialMedia";
 
 export default function Footer() {
-  // const {isDark} = useContext(StyleContext);
+  const {isDark} = useContext(StyleContext);
+  
   return (
-    <Fade bottom duration={1000} distance="5px">
-      <div className="footer-div">
-        {/*  <p className={isDark ? "dark-mode footer-text" : "footer-text"}>*/}
-        {/*    /!*{emoji("Made with ❤️ by DeveloperFolio Team")}*!/*/}
-        {/*  </p>*/}
-        {/*  <p className={isDark ? "dark-mode footer-text" : "footer-text"}>*/}
-        {/*    Theme by{" "}*/}
-        {/*    /!*<a href="https://github.com/saadpasta/developerFolio">*!/*/}
-        {/*    /!*  /!*developerFolio*!/*!/*/}
-        {/*    /!*</a>*!/*/}
-        {/*  </p>*/}
-      </div>
+    <Fade bottom duration={1000} distance="20px">
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="footer-section">
+            <div className="footer-logo">
+              <span className="grey-color">&lt;</span>
+              <span className="logo-name">Kabeer Haseja</span>
+              <span className="grey-color">/&gt;</span>
+            </div>
+            <p className="footer-description">
+              React Native Mobile App Developer with 5+ years of experience building fast, reliable, and scalable cross-platform applications.
+            </p>
+          </div>
+          
+          <div className="footer-section">
+            <h3>Quick Links</h3>
+            <ul className="footer-links">
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          
+          <div className="footer-section">
+            <h3>Connect</h3>
+            <div className="footer-social">
+              <SocialMedia />
+            </div>
+          </div>
+        </div>
+        
+        <div className="footer-bottom">
+          <p className="footer-copyright">
+            © 2024 Kabeer Haseja. All rights reserved.
+          </p>
+          <p className="footer-made-with">
+            Made with ❤️ using React
+          </p>
+        </div>
+      </footer>
     </Fade>
   );
 }

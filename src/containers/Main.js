@@ -52,56 +52,95 @@ const Main = () => {
           <div className="portfolio-main">
             <Header />
             
-            <section className="portfolio-section" id="greeting">
-              <Greeting />
+            {/* Hero Section */}
+            <section className="hero-section" id="greeting">
+              <div className="hero-container">
+                <Greeting />
+              </div>
             </section>
             
-            <section className="portfolio-section" id="skills">
-              <Skills />
+            {/* About & Skills Section */}
+            <section className="about-section" id="skills">
+              <div className="section-container">
+                <Skills />
+              </div>
             </section>
             
-            <section className="portfolio-section" id="skill-progress">
-              <StackProgress />
+            {/* Skills Progress Section */}
+            <section className="skills-progress-section" id="skill-progress">
+              <div className="section-container">
+                <StackProgress />
+              </div>
             </section>
             
-            <section className="portfolio-section" id="education">
-              <Education />
+            {/* Education Section */}
+            <section className="education-section" id="education">
+              <div className="section-container">
+                <Education />
+              </div>
             </section>
             
-            <section className="portfolio-section" id="experience">
-              <WorkExperience />
+            {/* Experience Section */}
+            <section className="experience-section" id="experience">
+              <div className="section-container">
+                <WorkExperience />
+              </div>
             </section>
             
-            <section className="portfolio-section" id="projects">
-              <Projects />
+            {/* Projects Section */}
+            <section className="projects-section" id="projects">
+              <div className="section-container">
+                <Projects />
+              </div>
             </section>
             
-            <section className="portfolio-section" id="startup-projects">
-              <StartupProject />
+            {/* Startup Projects Section */}
+            <section className="startup-projects-section" id="startup-projects">
+              <div className="section-container">
+                <StartupProject />
+              </div>
             </section>
             
-            <section className="portfolio-section" id="achievements">
-              <Achievement />
+            {/* Achievements Section */}
+            <section className="achievements-section" id="achievements">
+              <div className="section-container">
+                <Achievement />
+              </div>
             </section>
             
-            <section className="portfolio-section" id="blogs">
-              <Blogs />
+            {/* Blogs Section */}
+            <section className="blogs-section" id="blogs">
+              <div className="section-container">
+                <Blogs />
+              </div>
             </section>
             
-            <section className="portfolio-section" id="talks">
-              <Talks />
+            {/* Talks Section */}
+            <section className="talks-section" id="talks">
+              <div className="section-container">
+                <Talks />
+              </div>
             </section>
             
-            <section className="portfolio-section" id="twitter">
-              <Twitter />
+            {/* Twitter Section */}
+            <section className="twitter-section" id="twitter">
+              <div className="section-container">
+                <Twitter />
+              </div>
             </section>
             
-            <section className="portfolio-section" id="podcast">
-              <Podcast />
+            {/* Podcast Section */}
+            <section className="podcast-section" id="podcast">
+              <div className="section-container">
+                <Podcast />
+              </div>
             </section>
             
-            <section className="portfolio-section" id="profile">
-              <Profile />
+            {/* Profile Section */}
+            <section className="profile-section" id="profile">
+              <div className="section-container">
+                <Profile />
+              </div>
             </section>
             
             <Footer />
