@@ -1,64 +1,388 @@
 @import "../../_globalColor";
 
+.skills-container {
+  position: relative;
+  padding: 80px 0;
+  background: $lightBackground1;
+  overflow: hidden;
+  
+  &.dark-mode {
+    background: $darkBackground;
+  }
+}
+
 .skills-main-div {
   display: flex;
-  width: 100%;
-  overflow: hidden;
+  align-items: center;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.skills-image-div {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  
+  > div, > img {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 20px 40px rgba(85, 25, 139, 0.2));
+    transition: all $transitionSlow $easeInOut;
+    
+    &:hover {
+      transform: scale(1.05) rotate(2deg);
+      filter: drop-shadow(0 25px 50px rgba(85, 25, 139, 0.3));
+    }
+  }
+  
+  .dark-mode & {
+    > div, > img {
+      filter: drop-shadow(0 20px 40px rgba(140, 67, 206, 0.3));
+      
+      &:hover {
+        filter: drop-shadow(0 25px 50px rgba(140, 67, 206, 0.4));
+      }
+    }
+  }
+}
+
+.floating-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: -1;
+  
+  .shape {
+    position: absolute;
+    border-radius: 50%;
+    background: $primaryGradient;
+    opacity: 0.1;
+    
+    &.shape-1 {
+      width: 60px;
+      height: 60px;
+      top: 10%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+    
+    &.shape-2 {
+      width: 40px;
+      height: 40px;
+      top: 70%;
+      right: 15%;
+      animation-delay: -2s;
+    }
+    
+    &.shape-3 {
+      width: 80px;
+      height: 80px;
+      bottom: 20%;
+      left: 5%;
+      animation-delay: -4s;
+    }
+  }
+}
+
+.skills-content-div {
+  flex: 1;
+  position: relative;
 }
 
 .skills-text-div {
-  margin-left: 50px;
-}
-
-.skills-main-div > * {
-  flex: 1;
-  margin-bottom: 30px;
-}
-
-.skills-image-div > img {
-  max-width: 100%;
-  height: auto;
-}
-
-.skills-heading {
-  font-size: 56px;
-  font-weight: 400;
-}
-.subTitle {
-  color: $subTitle;
-}
-
-/* Media Query */
-@media (max-width: 1380px) {
-  .skills-heading {
-    font-size: 40px;
+  h1.skills-heading {
+    font-size: clamp(36px, 6vw, 56px);
+    font-weight: 700;
+    color: $titleColor;
+    margin-bottom: 20px;
+    background: $primaryGradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+    
+    @supports not (-webkit-background-clip: text) {
+      color: $titleColor;
+      background: none;
+      -webkit-text-fill-color: initial;
+    }
+    
+    &.dark-mode {
+      background: linear-gradient(135deg, $textColorDark 0%, $primaryLight 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      
+      @supports not (-webkit-background-clip: text) {
+        color: $textColorDark;
+        background: none;
+        -webkit-text-fill-color: initial;
+      }
+    }
+  }
+  
+  .skills-text-subtitle {
+    font-size: clamp(18px, 3vw, 22px);
+    line-height: 1.6;
+    color: $subTitle;
+    margin-bottom: 40px;
+    max-width: 500px;
+    
+    &.dark-mode {
+      color: $textColorDarkSecondary;
+    }
   }
 }
-@media (max-width: 768px) {
-  .skills-heading {
-    font-size: 30px;
-    text-align: center;
+
+.software-skills-wrapper {
+  margin-bottom: 40px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(85, 25, 139, 0.1);
+  box-shadow: 0 10px 30px rgba(85, 25, 139, 0.1);
+  transition: all $transitionNormal $easeInOut;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(85, 25, 139, 0.15);
   }
-  .greeting-text-p {
+  
+  .dark-mode & {
+    background: rgba(33, 38, 45, 0.8);
+    border-color: rgba(140, 67, 206, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    
+    &:hover {
+      box-shadow: 0 20px 40px rgba(140, 67, 206, 0.2);
+    }
+  }
+}
+
+.skills-list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(85, 25, 139, 0.1);
+  transition: all $transitionNormal $easeInOut;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInRight 0.6s $easeOut forwards;
+  
+  &:hover {
+    transform: translateX(10px);
+    background: rgba(85, 25, 139, 0.05);
+    border-color: rgba(85, 25, 139, 0.2);
+    box-shadow: 0 5px 20px rgba(85, 25, 139, 0.1);
+  }
+  
+  &.dark-mode {
+    background: rgba(33, 38, 45, 0.6);
+    border-color: rgba(140, 67, 206, 0.2);
+    
+    &:hover {
+      background: rgba(140, 67, 206, 0.1);
+      border-color: rgba(140, 67, 206, 0.3);
+      box-shadow: 0 5px 20px rgba(140, 67, 206, 0.2);
+    }
+  }
+  
+  .skill-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: $primaryGradient;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: white;
+    flex-shrink: 0;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  .skill-text {
     font-size: 16px;
-    line-height: normal;
+    line-height: 1.5;
+    color: $textColor;
+    margin: 0;
+    font-weight: 500;
+    
+    .dark-mode & {
+      color: $textColorDark;
+    }
   }
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Parallax background elements
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+  
+  .bg-element {
+    position: absolute;
+    border-radius: 50%;
+    background: $heroGradient;
+    filter: blur(100px);
+    
+    &.bg-element-1 {
+      width: 300px;
+      height: 300px;
+      top: -150px;
+      right: -150px;
+      animation: float 8s ease-in-out infinite;
+    }
+    
+    &.bg-element-2 {
+      width: 200px;
+      height: 200px;
+      bottom: -100px;
+      left: -100px;
+      animation: float 10s ease-in-out infinite reverse;
+    }
+  }
+}
+
+/* Enhanced responsive design */
+@media (max-width: 1200px) {
+  .skills-main-div {
+    gap: 60px;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 968px) {
+  .skills-main-div {
+    gap: 40px;
+  }
+  
+  .skills-container {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 768px) {
   .skills-main-div {
     flex-direction: column;
-  }
-  .skills-text-div {
-    margin-left: 0px;
-    margin: 20px;
-  }
-  .skills-text {
-    font-size: 16px;
-  }
-  .skills-text-subtitle {
-    font-size: 16px;
+    gap: 40px;
     text-align: center;
   }
+  
   .skills-image-div {
-    /* display: none; */
     order: 2;
+    min-height: 300px;
+  }
+  
+  .skills-text-div {
+    .skills-text-subtitle {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  }
+  
+  .software-skills-wrapper {
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .skills-container {
+    padding: 40px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-main-div {
+    padding: 0 10px;
+    gap: 30px;
+  }
+  
+  .skills-image-div {
+    min-height: 250px;
+  }
+  
+  .software-skills-wrapper {
+    padding: 15px;
+  }
+  
+  .skill-item {
+    padding: 15px;
+    gap: 12px;
+    
+    .skill-icon {
+      width: 35px;
+      height: 35px;
+      font-size: 16px;
+    }
+    
+    .skill-text {
+      font-size: 14px;
+    }
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .skills-image-div > div,
+  .skills-image-div > img,
+  .software-skills-wrapper,
+  .skill-item,
+  .skill-icon,
+  .floating-element,
+  .bg-element {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .skill-item {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .software-skills-wrapper,
+  .skill-item {
+    border: 2px solid;
+    background: white;
+  }
+  
+  .dark-mode .software-skills-wrapper,
+  .dark-mode .skill-item {
+    background: black;
+    border-color: white;
   }
 }

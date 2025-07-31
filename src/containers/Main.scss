@@ -1,7 +1,232 @@
 @import "../_globalColor";
 
-.dark-mode {
-  background-color: $darkBackground;
-  color: white;
-  transition: "0.1s";
+.main-container {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: all $transitionNormal $easeInOut;
+  
+  // Smooth color transition for theme switching
+  &.dark-mode {
+    background: $darkBackground;
+    color: $textColorDark;
+    
+    .portfolio-content {
+      background: $darkBackground;
+    }
+  }
+}
+
+.portfolio-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s $easeOut;
+  background: $lightBackground1;
+  
+  &.loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+
+.section-wrapper {
+  position: relative;
+  padding: 40px 0;
+  
+  // Add subtle separators between sections
+  &:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, $primary, transparent);
+    transform: translateX(-50%);
+    opacity: 0.3;
+  }
+  
+  // Dark mode separator
+  .dark-mode &:not(:last-child)::after {
+    background: linear-gradient(90deg, transparent, $primaryLight, transparent);
+  }
+  
+  // Responsive section padding
+  @media (max-width: 768px) {
+    padding: 30px 0;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 20px 0;
+  }
+}
+
+// Enhanced section animations
+.section-wrapper.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s $easeOut;
+  
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Staggered animation for section children
+.section-wrapper .stagger-child {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s $easeOut;
+  
+  &.animate-fadeInUp {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Parallax background elements
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: -1;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    right: -10%;
+    bottom: -10%;
+    background: $heroGradient;
+    animation: float 8s ease-in-out infinite;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.3;
+  }
+}
+
+// Mouse parallax elements
+.mouse-parallax {
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
+
+// Floating elements
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+  
+  &:nth-child(2n) {
+    animation-delay: -2s;
+    animation-duration: 8s;
+  }
+  
+  &:nth-child(3n) {
+    animation-delay: -4s;
+    animation-duration: 10s;
+  }
+}
+
+// Performance optimizations
+.section-wrapper,
+.portfolio-content {
+  will-change: transform, opacity;
+}
+
+// Smooth scroll behavior
+html {
+  scroll-behavior: smooth;
+}
+
+// Custom loading states
+.loading-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(85, 25, 139, 0.2);
+    border-top: 3px solid $primary;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// Enhanced float animation
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(5px) rotate(-1deg);
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .main-container,
+  .portfolio-content,
+  .section-wrapper,
+  .stagger-child,
+  .floating-element,
+  .parallax-bg::before {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .section-wrapper.fade-in-section {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  .mouse-parallax {
+    transition: none !important;
+  }
+}
+
+// High contrast mode
+@media (prefers-contrast: high) {
+  .section-wrapper:not(:last-child)::after {
+    background: currentColor;
+    opacity: 1;
+    height: 2px;
+  }
+}
+
+// Print styles
+@media print {
+  .main-container {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .section-wrapper {
+    page-break-inside: avoid;
+    padding: 20px 0;
+  }
+  
+  .parallax-bg,
+  .floating-element {
+    display: none !important;
+  }
 }
