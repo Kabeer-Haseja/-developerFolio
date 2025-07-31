@@ -1,166 +1,364 @@
 @import "../_globalColor";
 
-.main-container {
-  width: 100%;
+// Main portfolio container with IT company styling
+.portfolio-main {
   min-height: 100vh;
-  overflow-x: hidden;
-  transition: all $transitionNormal $easeInOut;
+  background: $lightBackground1;
+  transition: all 0.3s ease;
+  position: relative;
   
-  // Smooth color transition for theme switching
-  &.dark-mode {
+  // Add subtle tech-inspired background pattern
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 25% 25%, rgba(0, 119, 182, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(0, 180, 216, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+.dark-mode {
+  background-color: $darkBackground;
+  color: $textColorDark;
+  transition: all 0.3s ease;
+  
+  .portfolio-main {
     background: $darkBackground;
-    color: $textColorDark;
     
-    .portfolio-content {
-      background: $darkBackground;
+    &::before {
+      background: 
+        radial-gradient(circle at 25% 25%, rgba(144, 224, 239, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(0, 180, 216, 0.05) 0%, transparent 50%);
     }
   }
 }
 
-.portfolio-content {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s $easeOut;
-  background: $lightBackground1;
-  
-  &.loaded {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.main-content {
+// Enhanced section styling for IT company presentation
+.portfolio-section {
   position: relative;
-  z-index: 1;
-}
-
-.section-wrapper {
-  position: relative;
-  padding: 40px 0;
+  padding: 100px 0;
   
-  // Add subtle separators between sections
-  &:not(:last-child)::after {
+  // Professional separator with tech aesthetic
+  &:not(:last-of-type)::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 50%;
-    width: 60px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, $primary, transparent);
     transform: translateX(-50%);
-    opacity: 0.3;
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(0, 119, 182, 0.3), 
+      rgba(0, 180, 216, 0.5), 
+      rgba(0, 119, 182, 0.3), 
+      transparent
+    );
   }
   
   // Dark mode separator
-  .dark-mode &:not(:last-child)::after {
-    background: linear-gradient(90deg, transparent, $primaryLight, transparent);
+  .dark-mode &:not(:last-of-type)::after {
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(144, 224, 239, 0.4), 
+      rgba(0, 180, 216, 0.6), 
+      rgba(144, 224, 239, 0.4), 
+      transparent
+    );
+  }
+  
+  // Enhanced alternating section backgrounds
+  &:nth-child(even) {
+    background: linear-gradient(135deg, 
+      rgba(202, 240, 248, 0.03) 0%, 
+      rgba(144, 224, 239, 0.02) 100%
+    );
+    
+    .dark-mode & {
+      background: linear-gradient(135deg, 
+        rgba(0, 180, 216, 0.02) 0%, 
+        rgba(144, 224, 239, 0.01) 100%
+      );
+    }
+  }
+  
+  // Special styling for hero section
+  &#greeting {
+    background: linear-gradient(135deg, 
+      $veryPaleBlue 0%, 
+      rgba(255, 255, 255, 0.8) 100%
+    );
+    border-bottom: 3px solid rgba(0, 119, 182, 0.1);
+    
+    .dark-mode & {
+      background: $darkGradient;
+      border-bottom-color: rgba(144, 224, 239, 0.2);
+    }
   }
   
   // Responsive section padding
   @media (max-width: 768px) {
-    padding: 30px 0;
+    padding: 80px 0;
   }
   
   @media (max-width: 480px) {
-    padding: 20px 0;
+    padding: 60px 0;
   }
 }
 
-// Enhanced section animations
-.section-wrapper.fade-in-section {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s $easeOut;
+// Main content wrapper for consistent max-width
+.section-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
   
-  &.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+  @media (max-width: 1200px) {
+    max-width: 1200px;
+    padding: 0 30px;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 0 15px;
   }
 }
 
-// Staggered animation for section children
-.section-wrapper .stagger-child {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s $easeOut;
+// Enhanced typography for IT company sections
+.section-heading {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 24px;
+  color: $titleColor;
+  position: relative;
+  letter-spacing: -0.02em;
   
-  &.animate-fadeInUp {
-    opacity: 1;
-    transform: translateY(0);
+  .dark-mode & {
+    color: $textColorDark;
+  }
+  
+  // Modern IT-style underline with gradient
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: $primaryGradient;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0, 119, 182, 0.3);
+  }
+  
+  // Add subtle glow effect on hover
+  &:hover::after {
+    box-shadow: 0 4px 16px rgba(0, 119, 182, 0.5);
+    width: 140px;
+    transition: all 0.3s ease;
   }
 }
 
-// Parallax background elements
-.parallax-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  z-index: -1;
+.section-subtitle {
+  font-size: clamp(18px, 3vw, 24px);
+  text-align: center;
+  color: $subTitle;
+  margin-bottom: 80px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+  font-weight: 400;
   
+  .dark-mode & {
+    color: $textColorDarkSecondary;
+  }
+  
+  @media (max-width: 768px) {
+    margin-bottom: 60px;
+  }
+}
+
+// Enhanced card styling for IT company
+.portfolio-card {
+  background: $lightBackgroundCard;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 
+    0 4px 25px rgba(3, 4, 94, 0.08),
+    0 0 0 1px rgba(0, 119, 182, 0.05);
+  border: 1px solid $cardBorder;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  
+  // Add subtle gradient overlay
   &::before {
     content: '';
     position: absolute;
-    top: -10%;
-    left: -10%;
-    right: -10%;
-    bottom: -10%;
-    background: $heroGradient;
-    animation: float 8s ease-in-out infinite;
-    border-radius: 50%;
-    filter: blur(100px);
-    opacity: 0.3;
-  }
-}
-
-// Mouse parallax elements
-.mouse-parallax {
-  transition: transform 0.1s ease-out;
-  will-change: transform;
-}
-
-// Floating elements
-.floating-element {
-  animation: float 6s ease-in-out infinite;
-  
-  &:nth-child(2n) {
-    animation-delay: -2s;
-    animation-duration: 8s;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $cardGradient;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
   }
   
-  &:nth-child(3n) {
-    animation-delay: -4s;
-    animation-duration: 10s;
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+      0 12px 40px rgba(0, 119, 182, 0.15),
+      0 0 0 1px rgba(0, 180, 216, 0.1);
+    border-color: rgba(0, 119, 182, 0.2);
+    
+    &::before {
+      opacity: 1;
+    }
+  }
+  
+  .dark-mode & {
+    background: $darkBackgroundCard;
+    border-color: $cardBorderDark;
+    box-shadow: 
+      0 4px 25px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(144, 224, 239, 0.1);
+    
+    &:hover {
+      box-shadow: 
+        0 12px 40px rgba(0, 180, 216, 0.2),
+        0 0 0 1px rgba(144, 224, 239, 0.2);
+      border-color: rgba(144, 224, 239, 0.3);
+    }
   }
 }
 
-// Performance optimizations
-.section-wrapper,
-.portfolio-content {
-  will-change: transform, opacity;
+// Professional grid layouts
+.portfolio-grid {
+  display: grid;
+  gap: 40px;
+  
+  &.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+  
+  &.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+  
+  &.grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  @media (max-width: 768px) {
+    gap: 30px;
+    grid-template-columns: 1fr;
+  }
 }
 
-// Smooth scroll behavior
-html {
-  scroll-behavior: smooth;
+// Enhanced button groups for IT company
+.button-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
 }
 
-// Custom loading states
-.loading-state {
+// Professional animations
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// IT-themed scroll animations
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Stagger animation delays for professional effect
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+
+// Professional loading state
+.loading-spinner {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px;
+  padding: 60px;
   
   .spinner {
-    width: 40px;
-    height: 40px;
-    border: 3px solid rgba(85, 25, 139, 0.2);
-    border-top: 3px solid $primary;
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(0, 119, 182, 0.2);
+    border-top: 4px solid $primary;
     border-radius: 50%;
-    animation: spin 1s linear infinite;
+    animation: spin 1.2s linear infinite;
   }
 }
 
@@ -169,64 +367,90 @@ html {
   100% { transform: rotate(360deg); }
 }
 
-// Enhanced float animation
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
+// Tech-inspired floating elements
+.tech-decoration {
+  position: absolute;
+  opacity: 0.1;
+  pointer-events: none;
+  
+  &.circle {
+    border-radius: 50%;
+    background: $primaryGradient;
+    animation: float 8s ease-in-out infinite;
   }
-  33% {
-    transform: translateY(-10px) rotate(1deg);
-  }
-  66% {
-    transform: translateY(5px) rotate(-1deg);
+  
+  &.square {
+    background: $secondaryGradient;
+    transform: rotate(45deg);
+    animation: float 6s ease-in-out infinite reverse;
   }
 }
 
-// Reduced motion support
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+// Accessibility improvements
 @media (prefers-reduced-motion: reduce) {
-  .main-container,
-  .portfolio-content,
-  .section-wrapper,
-  .stagger-child,
-  .floating-element,
-  .parallax-bg::before {
-    animation: none !important;
-    transition: none !important;
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
   
-  .section-wrapper.fade-in-section {
+  .animate-on-scroll {
     opacity: 1 !important;
     transform: none !important;
   }
   
-  .mouse-parallax {
-    transition: none !important;
+  .tech-decoration {
+    animation: none !important;
   }
 }
 
-// High contrast mode
+// High contrast mode support
 @media (prefers-contrast: high) {
-  .section-wrapper:not(:last-child)::after {
-    background: currentColor;
-    opacity: 1;
-    height: 2px;
+  .portfolio-card {
+    border: 3px solid $primary;
+  }
+  
+  .section-heading::after {
+    background: $primary;
+    box-shadow: none;
+  }
+  
+  .portfolio-section:not(:last-of-type)::after {
+    background: $primary;
+    height: 3px;
   }
 }
 
-// Print styles
+// Print styles for professional documents
 @media print {
-  .main-container {
+  .portfolio-main {
     background: white !important;
-    color: black !important;
+    
+    &::before {
+      display: none;
+    }
   }
   
-  .section-wrapper {
+  .portfolio-section {
     page-break-inside: avoid;
-    padding: 20px 0;
+    padding: 30px 0;
+    background: white !important;
+    
+    &::after {
+      display: none;
+    }
   }
   
-  .parallax-bg,
-  .floating-element {
-    display: none !important;
+  .tech-decoration {
+    display: none;
   }
 }

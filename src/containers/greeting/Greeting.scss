@@ -8,34 +8,22 @@
 }
 
 .greet-main {
-  width: 90%;
-  max-width: 1200px;
-  padding: 60px 20px;
-  margin: 0px auto;
-  margin-top: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
   position: relative;
-  overflow: hidden;
-  
-  // Add subtle background gradient
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: $heroGradient;
-    z-index: -1;
-    border-radius: 20px;
-  }
 }
 
 .greeting-main {
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 100px;
+  min-height: 85vh;
   position: relative;
-  z-index: 1;
+  
+  @media (max-width: 768px) {
+    min-height: 70vh;
+  }
 }
 
 .subTitle {
@@ -44,46 +32,56 @@
 
 .greeting-main > * {
   flex: 1;
-  margin-bottom: 30px;
 }
 
 .greeting-text-div {
-  animation: fadeInLeft 0.8s $easeOut;
-  
-  h1, p {
-    opacity: 0;
-    animation: fadeInUp 0.6s $easeOut forwards;
-  }
-  
-  h1 { animation-delay: 0.2s; }
-  p { animation-delay: 0.4s; }
+  animation: slideInFromLeft 1s ease-out;
+  z-index: 2;
+  position: relative;
 }
 
 .button-greeting-div {
   display: flex;
-  gap: 20px;
-  margin-top: 30px;
-  opacity: 0;
-  animation: fadeInUp 0.6s $easeOut 0.6s forwards;
+  gap: 25px;
+  margin-top: 50px;
   
-  // Responsive button layout
   @media (max-width: 480px) {
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
+    align-items: center;
   }
 }
 
 .greeting-text {
-  font-size: clamp(40px, 8vw, 70px);
-  line-height: 1.1;
+  font-size: clamp(52px, 8vw, 84px);
+  line-height: 1.05;
   color: $titleColor !important;
-  font-weight: 700;
-  margin-bottom: 20px;
-  background: $primaryGradient;
+  font-weight: 900;
+  margin-bottom: 30px;
+  letter-spacing: -0.03em;
+  position: relative;
+  
+  // Professional IT company gradient effect
+  background: linear-gradient(135deg, $ultraDarkBlue 0%, $midBlue 50%, $skyBlue 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  position: relative;
+  
+  // Add subtle text shadow for depth
+  text-shadow: 0 2px 4px rgba(3, 4, 94, 0.1);
+  
+  // Animated underline effect
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: $primaryGradient;
+    border-radius: 2px;
+    animation: expandLine 1.5s ease-out 0.5s forwards;
+  }
   
   // Fallback for browsers that don't support background-clip
   @supports not (-webkit-background-clip: text) {
@@ -94,10 +92,11 @@
 }
 
 .dark-mode .greeting-text {
-  background: linear-gradient(135deg, $textColorDark 0%, $primaryLight 100%);
+  background: linear-gradient(135deg, $veryPaleBlue 0%, $lightBlue 50%, $skyBlue 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: 0 2px 8px rgba(144, 224, 239, 0.3);
   
   @supports not (-webkit-background-clip: text) {
     color: $textColorDark !important;
@@ -107,13 +106,14 @@
 }
 
 .greeting-text-p {
-  font-size: clamp(18px, 4vw, 24px);
-  line-height: 1.6;
+  font-size: clamp(20px, 4vw, 26px);
+  line-height: 1.7;
   color: $textColor;
   font-weight: 400;
-  margin-bottom: 30px;
-  max-width: 600px;
-  text-align: justify;
+  margin-bottom: 40px;
+  max-width: 650px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.8s forwards;
   
   .dark-mode & {
     color: $textColorDarkSecondary;
@@ -124,69 +124,99 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeInRight 0.8s $easeOut;
+  animation: slideInFromRight 1s ease-out;
+  position: relative;
+  z-index: 1;
   
-  > img {
+  > img, > div {
     max-width: 100%;
     height: auto;
-    filter: drop-shadow(0 10px 30px rgba(85, 25, 139, 0.2));
-    transition: transform $transitionSlow $easeInOut;
+    transition: all 0.5s ease;
+    filter: drop-shadow(0 20px 60px rgba(0, 119, 182, 0.2));
     
     &:hover {
-      transform: scale(1.05) rotate(2deg);
+      transform: scale(1.08) rotate(1deg);
+      filter: drop-shadow(0 25px 80px rgba(0, 119, 182, 0.3));
     }
   }
   
-  // Lottie animation container
-  > div {
-    width: 100%;
-    max-width: 500px;
-    filter: drop-shadow(0 10px 30px rgba(85, 25, 139, 0.2));
-    transition: transform $transitionSlow $easeInOut;
-    
-    &:hover {
-      transform: translateY(-10px);
+  .dark-mode & {
+    > img, > div {
+      filter: drop-shadow(0 20px 60px rgba(0, 180, 216, 0.3));
+      
+      &:hover {
+        filter: drop-shadow(0 25px 80px rgba(144, 224, 239, 0.4));
+      }
     }
+  }
+  
+  // Tech-inspired floating elements
+  &::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, rgba(0, 119, 182, 0.1), rgba(0, 180, 216, 0.08));
+    border-radius: 20px;
+    animation: float 8s ease-in-out infinite;
+    z-index: -1;
+    transform: rotate(45deg);
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(144, 224, 239, 0.1), rgba(0, 119, 182, 0.08));
+    border-radius: 50%;
+    animation: float 10s ease-in-out infinite reverse;
+    z-index: -1;
   }
 }
 
 .wave-emoji {
-  animation: wave 1.8s ease-in-out infinite;
+  animation: wave 2.5s ease-in-out infinite;
   display: inline-block;
   transform-origin: 70% 70%;
   font-size: 1em;
-  margin-left: 10px;
+  margin-left: 15px;
   
   &:hover {
-    animation-duration: 0.5s;
+    animation-duration: 0.6s;
   }
 }
 
+// Professional keyframe animations
 @keyframes wave {
   0%, 100% {
     transform: rotate(0deg);
   }
   10% {
-    transform: rotate(-10deg);
+    transform: rotate(-12deg);
   }
   20% {
-    transform: rotate(12deg);
+    transform: rotate(14deg);
   }
   30% {
-    transform: rotate(-10deg);
+    transform: rotate(-12deg);
   }
   40% {
-    transform: rotate(9deg);
+    transform: rotate(10deg);
   }
   50% {
     transform: rotate(0deg);
   }
 }
 
-@keyframes fadeInLeft {
+@keyframes slideInFromLeft {
   from {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateX(-80px);
   }
   to {
     opacity: 1;
@@ -194,10 +224,10 @@
   }
 }
 
-@keyframes fadeInRight {
+@keyframes slideInFromRight {
   from {
     opacity: 0;
-    transform: translateX(50px);
+    transform: translateX(80px);
   }
   to {
     opacity: 1;
@@ -208,7 +238,7 @@
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
@@ -216,28 +246,82 @@
   }
 }
 
-/* Enhanced responsive design */
-@media (max-width: 1380px) {
-  .greeting-text {
-    font-size: clamp(35px, 7vw, 60px);
+@keyframes expandLine {
+  from {
+    width: 0;
   }
-  
-  .greeting-text-p {
-    font-size: clamp(16px, 3.5vw, 22px);
+  to {
+    width: 200px;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(45deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(45deg);
+  }
+}
+
+// Add tech-inspired background elements
+.greet-main::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0, 180, 216, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse 4s ease-in-out infinite;
+  z-index: -1;
+}
+
+.greet-main::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(0, 119, 182, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse 6s ease-in-out infinite reverse;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+/* Enhanced responsive design for IT company */
+@media (max-width: 1400px) {
+  .greeting-main {
+    gap: 80px;
   }
   
   .greet-main {
-    padding: 40px 20px;
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .greeting-main {
+    gap: 60px;
   }
 }
 
 @media (max-width: 968px) {
   .greeting-main {
-    gap: 40px;
-  }
-  
-  .greet-main {
-    padding: 30px 15px;
+    gap: 50px;
   }
 }
 
@@ -246,53 +330,67 @@
     display: block;
     text-align: center;
     gap: 0;
+    min-height: auto;
+    padding: 60px 0;
   }
   
   .greeting-text {
-    font-size: clamp(28px, 8vw, 45px);
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    
+    &::after {
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+    }
   }
   
   .greeting-text-p {
-    font-size: clamp(16px, 4vw, 20px);
-    line-height: 1.5;
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .greeting-image-div {
-    height: 300px;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    margin: 50px 0 40px;
+    
+    &::before,
+    &::after {
+      display: none;
+    }
   }
   
   .button-greeting-div {
     justify-content: center;
-    margin-top: 25px;
+    margin-top: 40px;
   }
   
   .greet-main {
-    margin-top: 1rem;
-    padding: 20px 15px;
+    padding: 0 20px;
     
-    &::before {
-      border-radius: 15px;
+    &::before,
+    &::after {
+      display: none;
     }
   }
 }
 
 @media (max-width: 480px) {
-  .greeting-text {
-    font-size: clamp(24px, 7vw, 36px);
-  }
-  
-  .greeting-text-p {
-    font-size: clamp(14px, 4vw, 18px);
+  .greeting-main {
+    padding: 40px 0;
   }
   
   .greeting-image-div {
-    height: 250px;
+    margin: 40px 0 30px;
+  }
+  
+  .greet-main {
+    padding: 0 15px;
+  }
+  
+  .greeting-text::after {
+    width: 100px;
   }
 }
 
@@ -303,29 +401,8 @@
   
   .greet-main {
     width: 95%;
-    padding: 15px 10px;
+    padding: 0 10px;
   }
-}
-
-/* Dark mode enhancements */
-.dark-mode {
-  .greet-main::before {
-    background: linear-gradient(135deg, rgba(140, 67, 206, 0.05) 0%, rgba(85, 25, 139, 0.05) 100%);
-  }
-  
-  .greeting-image-div > img {
-    filter: drop-shadow(0 10px 30px rgba(140, 67, 206, 0.3));
-  }
-  
-  .greeting-image-div > div {
-    filter: drop-shadow(0 10px 30px rgba(140, 67, 206, 0.3));
-  }
-}
-
-/* Performance optimizations */
-.greeting-text-div,
-.greeting-image-div {
-  will-change: transform, opacity;
 }
 
 /* Accessibility improvements */
@@ -333,17 +410,29 @@
   .greeting-text-div,
   .greeting-image-div,
   .greeting-text-p,
-  .button-greeting-div {
+  .wave-emoji,
+  .greeting-image-div::before,
+  .greeting-image-div::after,
+  .greet-main::before,
+  .greet-main::after {
     animation: none !important;
-    opacity: 1 !important;
   }
   
-  .wave-emoji {
-    animation: none !important;
-  }
-  
+  .greeting-text,
   .greeting-image-div > img,
   .greeting-image-div > div {
     transition: none !important;
+    
+    &:hover {
+      transform: none !important;
+      background: none !important;
+      -webkit-text-fill-color: initial !important;
+    }
+  }
+  
+  .greeting-text::after,
+  .greeting-text-p {
+    opacity: 1 !important;
+    animation: none !important;
   }
 }

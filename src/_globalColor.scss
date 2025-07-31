@@ -1,134 +1,140 @@
-/* Change colors in this file to style to your needs on a global level. 
-Certain colors are used for different and multiply types of elements. 
-For greater control over colors visit each components .scss file. */
+/* Professional Blue Monochrome Color Scheme for IT Company Portfolio */
 
-// Enhanced color palette with gradients
-$primary: #55198b;
-$primaryLight: #8c43ce;
-$primaryDark: #3a0d5e;
-$secondary: #09d3ac;
-$secondaryLight: #4de5c9;
-$secondaryDark: #068a6e;
+// Primary Blue Palette
+$ultraDarkBlue: #03045E;
+$midBlue: #0077B6;
+$skyBlue: #00B4D8;
+$lightBlue: #90E0EF;
+$veryPaleBlue: #CAF0F8;
 
-// Accent colors
-$accent: #ff6b6b;
-$accentLight: #ff8e8e;
-$warning: #feca57;
-$success: #48cae4;
-$info: #74b9ff;
+// Main color variables
+$primary: $midBlue;
+$primaryLight: $skyBlue;
+$primaryDark: $ultraDarkBlue;
+$secondary: $lightBlue;
+$secondaryLight: $veryPaleBlue;
+$secondaryDark: $skyBlue;
 
-// Button colors with enhanced gradients
-$buttonColor: linear-gradient(135deg, #55198b 0%, #8c43ce 100%);
-$buttonHover: linear-gradient(135deg, #8c43ce 0%, #55198b 100%);
-$buttonShadow: rgba(85, 25, 139, 0.3);
-$topButtonHover: #000;
+// Accent colors for highlights
+$accent: $skyBlue;
+$accentLight: $lightBlue;
+$warning: #FFB700;
+$success: $skyBlue;
+$info: $lightBlue;
+
+// Button colors
+$buttonColor: $midBlue;
+$buttonHover: $skyBlue;
+$buttonShadow: rgba(0, 119, 182, 0.3);
+$topButtonHover: $ultraDarkBlue;
 
 // Text colors light theme
-$titleColor: #1a1a1a;
-$textColor: #2c2c2c;
-$subTitle: #6c757d;
-$cardSubtitle: #555555;
+$titleColor: $ultraDarkBlue;
+$textColor: #1a1a1a;
+$subTitle: #4a5568;
+$cardSubtitle: $ultraDarkBlue;
 $talkCardSubTitle: #7f8287;
-$blogCardTitleColor: #262626;
-$linkColor: #55198b;
-$linkHover: #8c43ce;
+$blogCardTitleColor: $ultraDarkBlue;
+$linkColor: $midBlue;
+$linkHover: $skyBlue;
 
 // Text color dark theme
 $textColorDark: #ffffff;
-$textColorDarkSecondary: #b3b3b3;
+$textColorDarkSecondary: $veryPaleBlue;
 $titleColorDark: #f8f9fa;
 
 // Toggle switch colors
-$toggleCheck: #2196f3;
-$toggleSwitchSliderBG: #ccc;
+$toggleCheck: $skyBlue;
+$toggleSwitchSliderBG: #e2e8f0;
 
 // GitHub repository specific colors
-$githubRepoCardLanguageColorBG: #0066ff;
+$githubRepoCardLanguageColorBG: $midBlue;
 $githubRepoCardColor: rgb(88, 96, 105);
 $githubRepoCardRepoCardStatsColor: rgb(106, 115, 125);
-$githubRepoCardRepoNameColor: rgb(36, 41, 46);
-$githubProfileCardLocationTS: #ffebcd;
-$githubProfileCardBorder: #6c63ff;
+$githubRepoCardRepoNameColor: $ultraDarkBlue;
+$githubProfileCardLocationTS: $veryPaleBlue;
+$githubProfileCardBorder: $skyBlue;
 
 // Enhanced background colors
 $lightBackground1: #ffffff;
-$lightBackground2: #fafbfc;
-$lightBackground3: #f8f9fa;
+$lightBackground2: $veryPaleBlue;
+$lightBackground3: #f7fafc;
 $lightBackgroundCard: #ffffff;
 $blogCardContainerColor: #586069;
 
 // Dark background colors
-$darkBackground: #0d1117;
-$darkBackgroundSecondary: #161b22;
-$darkBackgroundCard: #21262d;
-$darkBackgroundAccent: #30363d;
+$darkBackground: $ultraDarkBlue;
+$darkBackgroundSecondary: #041b42;
+$darkBackgroundCard: #0a2351;
+$darkBackgroundAccent: #1a365d;
 
 // Enhanced box shadows
-$lightBoxShadowDark: rgba(0, 0, 0, 0.15);
-$lightBoxShadow: rgba(0, 0, 0, 0.08);
-$lightBoxShadowLarge: rgba(0, 0, 0, 0.12);
-$lightBoxShadowHover: rgba(85, 25, 139, 0.15);
+$lightBoxShadowDark: rgba(3, 4, 94, 0.15);
+$lightBoxShadow: rgba(3, 4, 94, 0.08);
+$lightBoxShadowLarge: rgba(3, 4, 94, 0.12);
+$lightBoxShadowHover: rgba(0, 119, 182, 0.15);
 
 // Dark theme box shadows
-$darkBoxShadow: rgba(255, 255, 255, 0.1);
-$darkBoxShadow2: rgba(255, 255, 255, 0.05);
-$darkBoxShadowHover: rgba(140, 67, 206, 0.2);
+$darkBoxShadow: rgba(144, 224, 239, 0.1);
+$darkBoxShadow2: rgba(144, 224, 239, 0.05);
+$darkBoxShadowHover: rgba(0, 180, 216, 0.2);
 
 // Enhanced gradients
-$primaryGradient: linear-gradient(135deg, #55198b 0%, #8c43ce 100%);
-$secondaryGradient: linear-gradient(135deg, #09d3ac 0%, #4de5c9 100%);
-$heroGradient: linear-gradient(135deg, rgba(85, 25, 139, 0.05) 0%, rgba(140, 67, 206, 0.05) 100%);
-$cardGradient: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+$primaryGradient: linear-gradient(135deg, $midBlue 0%, $skyBlue 100%);
+$secondaryGradient: linear-gradient(135deg, $lightBlue 0%, $veryPaleBlue 100%);
+$heroGradient: linear-gradient(135deg, rgba(0, 119, 182, 0.05) 0%, rgba(0, 180, 216, 0.05) 100%);
+$cardGradient: linear-gradient(145deg, rgba(202, 240, 248, 0.1) 0%, rgba(144, 224, 239, 0.05) 100%);
+$darkGradient: linear-gradient(135deg, $ultraDarkBlue 0%, $darkBackgroundSecondary 100%);
 
 // Experience card gradients
 $experienceCardBlurredDivLG: linear-gradient(
   135deg,
-  rgba(85, 25, 139, 0.4),
-  rgba(140, 67, 206, 0.2)
+  rgba(0, 119, 182, 0.4),
+  rgba(0, 180, 216, 0.2)
 );
 $experienceCardBannerLG: linear-gradient(
   135deg,
-  rgba(85, 25, 139, 0.8),
-  rgba(140, 67, 206, 0.6)
+  rgba(3, 4, 94, 0.8),
+  rgba(0, 119, 182, 0.6)
 );
 
 // Borders with enhanced colors
-$progressBarBackground: #e9ecef;
-$lightBorder1: rgba(211, 211, 211, 0.4);
-$lightBorder2: rgba(85, 25, 139, 0.1);
-$educationCardBorder: #a9a7f9;
-$cardBorder: rgba(0, 0, 0, 0.05);
-$cardBorderDark: rgba(255, 255, 255, 0.1);
+$progressBarBackground: #e2e8f0;
+$lightBorder1: rgba(0, 119, 182, 0.15);
+$lightBorder2: rgba(0, 180, 216, 0.1);
+$educationCardBorder: $skyBlue;
+$cardBorder: rgba(3, 4, 94, 0.08);
+$cardBorderDark: rgba(144, 224, 239, 0.15);
 
 // Enhanced hover effects
-$achievementCertificateCardHoverDark: rgba(255, 255, 255, 0.1);
+$achievementCertificateCardHoverDark: rgba(144, 224, 239, 0.1);
 $blogCardHoverSmallColor: rgba(255, 255, 255, 0.9);
-$headerHoverBG: #f8f9fa;
-$headerHoverBGDark: rgba(255, 255, 255, 0.05);
-$contactDetailHoverTS: #b5b5b5;
-$cardHover: rgba(85, 25, 139, 0.05);
-$cardHoverDark: rgba(140, 67, 206, 0.1);
+$headerHoverBG: $veryPaleBlue;
+$headerHoverBGDark: rgba(144, 224, 239, 0.05);
+$contactDetailHoverTS: $midBlue;
+$cardHover: rgba(0, 119, 182, 0.05);
+$cardHoverDark: rgba(0, 180, 216, 0.1);
 
 // Misc backgrounds
-$progressBarSpanBG: linear-gradient(90deg, #55198b 0%, #8c43ce 100%);
-$iconBackground: #333;
-$appHeaderBG: #282c34;
+$progressBarSpanBG: linear-gradient(90deg, $midBlue 0%, $skyBlue 100%);
+$iconBackground: $ultraDarkBlue;
+$appHeaderBG: $ultraDarkBlue;
 
 // Misc colors
-$skillsColor: #55198b;
-$appLink: #09d3ac;
+$skillsColor: $midBlue;
+$appLink: $skyBlue;
 
-// Social media icons with enhanced colors
-$faceBook: #1877f2;
-$linkedin: #0077b5;
-$github: #24292f;
-$gitlab: #fc6d26;
-$google: #ea4335;
-$twitter: #1da1f2;
-$medium: #000000;
-$stackoverflow: #f58025;
-$instagram: #e4405f;
-$kaggle: #20beff;
+// Social media icons with blue theme
+$faceBook: $midBlue;
+$linkedin: $midBlue;
+$github: $ultraDarkBlue;
+$gitlab: $skyBlue;
+$google: $midBlue;
+$twitter: $skyBlue;
+$medium: $ultraDarkBlue;
+$stackoverflow: $midBlue;
+$instagram: $skyBlue;
+$kaggle: $lightBlue;
 
 // Animation timing functions
 $easeInOut: cubic-bezier(0.4, 0, 0.2, 1);
@@ -140,3 +146,11 @@ $bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 $transitionFast: 0.15s;
 $transitionNormal: 0.3s;
 $transitionSlow: 0.5s;
+
+// IT Company specific colors
+$techAccent: $skyBlue;
+$dataVisualization: $lightBlue;
+$codeHighlight: $veryPaleBlue;
+$successIndicator: $lightBlue;
+$errorIndicator: #FF6B6B;
+$warningIndicator: #FFB700;
