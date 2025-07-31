@@ -1,15 +1,15 @@
 @import "../../_globalColor";
 
 .main-button {
-  background: $buttonColor;
+  background: $primaryGradient;
   border: none;
   color: $textColorDark;
   font-weight: 600;
   width: max-content;
-  padding: 16px 32px;
+  padding: 18px 36px;
   margin-right: 20px;
   text-transform: uppercase;
-  border-radius: 8px;
+  border-radius: 12px;
   text-align: center;
   text-decoration: none;
   display: inline-flex;
@@ -17,27 +17,142 @@
   justify-content: center;
   margin-top: 10px;
   font-size: 0.9rem;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
   cursor: pointer;
   position: relative;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(85, 25, 139, 0.2);
-  min-width: 160px;
+  transition: all 0.4s ease;
+  box-shadow: 
+    0 6px 20px rgba(0, 119, 182, 0.3),
+    0 0 0 1px rgba(0, 180, 216, 0.1);
+  min-width: 180px;
+  overflow: hidden;
+  
+  // Professional shimmer effect
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+  }
+  
+  // Subtle glow effect
+  &::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: $primaryGradient;
+    border-radius: 14px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
   
   &:hover {
-    background: $buttonHover;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(85, 25, 139, 0.3);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 
+      0 12px 30px rgba(0, 119, 182, 0.4),
+      0 0 0 1px rgba(0, 180, 216, 0.2);
+    
+    &::before {
+      left: 100%;
+    }
+    
+    &::after {
+      opacity: 0.5;
+    }
   }
   
   &:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 10px rgba(85, 25, 139, 0.2);
+    transform: translateY(-2px) scale(0.98);
+    box-shadow: 
+      0 8px 20px rgba(0, 119, 182, 0.3),
+      0 0 0 1px rgba(0, 180, 216, 0.15);
   }
   
   &:focus {
     outline: none;
-    box-shadow: 0 4px 15px rgba(85, 25, 139, 0.2), 0 0 0 3px rgba(85, 25, 139, 0.1);
+    box-shadow: 
+      0 6px 20px rgba(0, 119, 182, 0.3),
+      0 0 0 3px rgba(0, 180, 216, 0.3);
+  }
+  
+  // Secondary button variant for IT company
+  &.secondary {
+    background: transparent;
+    color: $primary;
+    border: 2px solid $primary;
+    box-shadow: 
+      0 4px 15px rgba(0, 119, 182, 0.15),
+      inset 0 0 0 1px rgba(0, 180, 216, 0.1);
+    
+    &::before {
+      background: linear-gradient(90deg, transparent, rgba(0, 119, 182, 0.1), transparent);
+    }
+    
+    &:hover {
+      background: $primary;
+      color: $textColorDark;
+      box-shadow: 
+        0 12px 30px rgba(0, 119, 182, 0.3),
+        0 0 0 1px rgba(0, 180, 216, 0.2);
+    }
+  }
+  
+  // Outline button for subtle actions
+  &.outline {
+    background: rgba(0, 119, 182, 0.05);
+    color: $primary;
+    border: 1px solid rgba(0, 119, 182, 0.3);
+    box-shadow: none;
+    
+    &:hover {
+      background: rgba(0, 119, 182, 0.1);
+      border-color: $primary;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 119, 182, 0.2);
+    }
+  }
+  
+  // Tech-inspired icon buttons
+  &.icon-button {
+    padding: 18px;
+    min-width: auto;
+    border-radius: 50%;
+    
+    .icon {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// Dark mode adjustments
+.dark-mode .main-button {
+  &.secondary {
+    color: $skyBlue;
+    border-color: $skyBlue;
+    
+    &:hover {
+      background: $skyBlue;
+      color: $ultraDarkBlue;
+    }
+  }
+  
+  &.outline {
+    background: rgba(144, 224, 239, 0.05);
+    color: $lightBlue;
+    border-color: rgba(144, 224, 239, 0.3);
+    
+    &:hover {
+      background: rgba(144, 224, 239, 0.1);
+      border-color: $lightBlue;
+    }
   }
 }
 
@@ -45,8 +160,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  margin-top: 30px;
+  gap: 20px;
+  margin-top: 40px;
   flex-wrap: wrap;
   
   > .main-button {
@@ -55,27 +170,103 @@
   }
 }
 
+// Button group with professional spacing
+.button-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  
+  .main-button {
+    margin-right: 0;
+    margin-top: 0;
+  }
+  
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    
+    .main-button {
+      width: 100%;
+      max-width: 280px;
+    }
+  }
+}
+
+// Enhanced loading state
+.main-button.loading {
+  cursor: not-allowed;
+  opacity: 0.7;
+  pointer-events: none;
+  
+  &::before {
+    animation: shimmer 2s infinite;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+// Professional pulse animation for CTA buttons
+.main-button.pulse {
+  animation: buttonPulse 3s ease-in-out infinite;
+}
+
+@keyframes buttonPulse {
+  0%, 100% {
+    box-shadow: 
+      0 6px 20px rgba(0, 119, 182, 0.3),
+      0 0 0 0 rgba(0, 180, 216, 0.4);
+  }
+  50% {
+    box-shadow: 
+      0 6px 20px rgba(0, 119, 182, 0.3),
+      0 0 0 15px rgba(0, 180, 216, 0);
+  }
+}
+
 /* Enhanced responsive design */
 @media (max-width: 768px) {
   .main-button {
     font-size: 0.85rem;
-    padding: 14px 28px;
+    padding: 16px 32px;
     margin-right: 15px;
-    min-width: 140px;
+    min-width: 160px;
+    letter-spacing: 0.8px;
+    
+    &.icon-button {
+      padding: 16px;
+    }
   }
 }
 
 @media (max-width: 480px) {
   .main-button {
     font-size: 0.8rem;
-    padding: 12px 24px;
+    padding: 14px 28px;
     margin-right: 10px;
-    min-width: 120px;
-    letter-spacing: 0.3px;
+    min-width: 140px;
+    letter-spacing: 0.5px;
+    
+    &.icon-button {
+      padding: 14px;
+    }
   }
   
   .project-button {
     flex-direction: column;
+    gap: 15px;
     
     .main-button {
       width: 100%;
@@ -87,7 +278,80 @@
 @media (max-width: 320px) {
   .main-button {
     font-size: 0.75rem;
-    padding: 10px 20px;
-    min-width: 100px;
+    padding: 12px 24px;
+    min-width: 120px;
+    
+    &.icon-button {
+      padding: 12px;
+    }
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .main-button {
+    border: 3px solid $primary;
+    font-weight: 700;
+    
+    &.secondary {
+      border-width: 3px;
+    }
+    
+    &.outline {
+      border-width: 2px;
+    }
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .main-button {
+    transition: none !important;
+    
+    &::before,
+    &::after {
+      transition: none !important;
+      animation: none !important;
+    }
+    
+    &:hover {
+      transform: none !important;
+    }
+    
+    &.loading::before,
+    &.pulse {
+      animation: none !important;
+    }
+  }
+}
+
+// Special button variants for IT company needs
+.cta-button {
+  @extend .main-button;
+  background: linear-gradient(135deg, $skyBlue 0%, $midBlue 100%);
+  font-size: 1rem;
+  padding: 20px 40px;
+  min-width: 200px;
+  box-shadow: 
+    0 8px 25px rgba(0, 180, 216, 0.4),
+    0 0 0 1px rgba(0, 119, 182, 0.2);
+  
+  &:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 
+      0 15px 40px rgba(0, 180, 216, 0.5),
+      0 0 0 1px rgba(0, 119, 182, 0.3);
+  }
+}
+
+.tech-button {
+  @extend .main-button;
+  background: linear-gradient(135deg, $ultraDarkBlue 0%, $midBlue 100%);
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  font-weight: 500;
+  
+  &::before {
+    background: linear-gradient(90deg, transparent, rgba(144, 224, 239, 0.2), transparent);
   }
 }

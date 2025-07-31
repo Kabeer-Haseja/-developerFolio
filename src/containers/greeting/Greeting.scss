@@ -8,20 +8,21 @@
 }
 
 .greet-main {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 40px;
   position: relative;
 }
 
 .greeting-main {
   display: flex;
   align-items: center;
-  gap: 80px;
-  min-height: 70vh;
+  gap: 100px;
+  min-height: 85vh;
+  position: relative;
   
   @media (max-width: 768px) {
-    min-height: 60vh;
+    min-height: 70vh;
   }
 }
 
@@ -34,59 +35,85 @@
 }
 
 .greeting-text-div {
-  animation: fadeInLeft 0.8s ease-out;
+  animation: slideInFromLeft 1s ease-out;
+  z-index: 2;
+  position: relative;
 }
 
 .button-greeting-div {
   display: flex;
-  gap: 20px;
-  margin-top: 40px;
+  gap: 25px;
+  margin-top: 50px;
   
   @media (max-width: 480px) {
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
     align-items: center;
   }
 }
 
 .greeting-text {
-  font-size: clamp(48px, 8vw, 72px);
-  line-height: 1.1;
+  font-size: clamp(52px, 8vw, 84px);
+  line-height: 1.05;
   color: $titleColor !important;
-  font-weight: 800;
-  margin-bottom: 24px;
-  letter-spacing: -0.02em;
+  font-weight: 900;
+  margin-bottom: 30px;
+  letter-spacing: -0.03em;
+  position: relative;
   
-  // Add subtle gradient on hover
-  transition: all 0.3s ease;
+  // Professional IT company gradient effect
+  background: linear-gradient(135deg, $ultraDarkBlue 0%, $midBlue 50%, $skyBlue 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   
-  &:hover {
-    background: linear-gradient(135deg, $primary 0%, $primaryLight 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    transform: translateY(-2px);
+  // Add subtle text shadow for depth
+  text-shadow: 0 2px 4px rgba(3, 4, 94, 0.1);
+  
+  // Animated underline effect
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: $primaryGradient;
+    border-radius: 2px;
+    animation: expandLine 1.5s ease-out 0.5s forwards;
+  }
+  
+  // Fallback for browsers that don't support background-clip
+  @supports not (-webkit-background-clip: text) {
+    color: $titleColor !important;
+    background: none;
+    -webkit-text-fill-color: initial;
   }
 }
 
 .dark-mode .greeting-text {
-  color: $textColorDark !important;
+  background: linear-gradient(135deg, $veryPaleBlue 0%, $lightBlue 50%, $skyBlue 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 8px rgba(144, 224, 239, 0.3);
   
-  &:hover {
-    background: linear-gradient(135deg, $primaryLight 0%, $textColorDark 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  @supports not (-webkit-background-clip: text) {
+    color: $textColorDark !important;
+    background: none;
+    -webkit-text-fill-color: initial;
   }
 }
 
 .greeting-text-p {
-  font-size: clamp(18px, 4vw, 22px);
+  font-size: clamp(20px, 4vw, 26px);
   line-height: 1.7;
   color: $textColor;
   font-weight: 400;
-  margin-bottom: 30px;
-  max-width: 580px;
+  margin-bottom: 40px;
+  max-width: 650px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.8s forwards;
   
   .dark-mode & {
     color: $textColorDarkSecondary;
@@ -97,97 +124,99 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeInRight 0.8s ease-out;
+  animation: slideInFromRight 1s ease-out;
   position: relative;
+  z-index: 1;
   
   > img, > div {
     max-width: 100%;
     height: auto;
-    transition: all 0.4s ease;
-    filter: drop-shadow(0 10px 40px rgba(85, 25, 139, 0.15));
+    transition: all 0.5s ease;
+    filter: drop-shadow(0 20px 60px rgba(0, 119, 182, 0.2));
     
     &:hover {
-      transform: scale(1.05);
-      filter: drop-shadow(0 15px 50px rgba(85, 25, 139, 0.2));
+      transform: scale(1.08) rotate(1deg);
+      filter: drop-shadow(0 25px 80px rgba(0, 119, 182, 0.3));
     }
   }
   
   .dark-mode & {
     > img, > div {
-      filter: drop-shadow(0 10px 40px rgba(140, 67, 206, 0.2));
+      filter: drop-shadow(0 20px 60px rgba(0, 180, 216, 0.3));
       
       &:hover {
-        filter: drop-shadow(0 15px 50px rgba(140, 67, 206, 0.3));
+        filter: drop-shadow(0 25px 80px rgba(144, 224, 239, 0.4));
       }
     }
   }
   
-  // Floating decoration elements
+  // Tech-inspired floating elements
   &::before {
     content: '';
     position: absolute;
-    top: -20px;
-    right: -20px;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, rgba(85, 25, 139, 0.1), rgba(140, 67, 206, 0.1));
-    border-radius: 50%;
-    animation: float 6s ease-in-out infinite;
+    top: -40px;
+    right: -40px;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, rgba(0, 119, 182, 0.1), rgba(0, 180, 216, 0.08));
+    border-radius: 20px;
+    animation: float 8s ease-in-out infinite;
     z-index: -1;
+    transform: rotate(45deg);
   }
   
   &::after {
     content: '';
     position: absolute;
-    bottom: -30px;
-    left: -30px;
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, rgba(140, 67, 206, 0.1), rgba(85, 25, 139, 0.1));
+    bottom: -50px;
+    left: -50px;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(144, 224, 239, 0.1), rgba(0, 119, 182, 0.08));
     border-radius: 50%;
-    animation: float 8s ease-in-out infinite reverse;
+    animation: float 10s ease-in-out infinite reverse;
     z-index: -1;
   }
 }
 
 .wave-emoji {
-  animation: wave 2s ease-in-out infinite;
+  animation: wave 2.5s ease-in-out infinite;
   display: inline-block;
   transform-origin: 70% 70%;
   font-size: 1em;
-  margin-left: 10px;
+  margin-left: 15px;
   
   &:hover {
-    animation-duration: 0.5s;
+    animation-duration: 0.6s;
   }
 }
 
-// Enhanced keyframe animations
+// Professional keyframe animations
 @keyframes wave {
   0%, 100% {
     transform: rotate(0deg);
   }
   10% {
-    transform: rotate(-10deg);
+    transform: rotate(-12deg);
   }
   20% {
-    transform: rotate(12deg);
+    transform: rotate(14deg);
   }
   30% {
-    transform: rotate(-10deg);
+    transform: rotate(-12deg);
   }
   40% {
-    transform: rotate(9deg);
+    transform: rotate(10deg);
   }
   50% {
     transform: rotate(0deg);
   }
 }
 
-@keyframes fadeInLeft {
+@keyframes slideInFromLeft {
   from {
     opacity: 0;
-    transform: translateX(-40px);
+    transform: translateX(-80px);
   }
   to {
     opacity: 1;
@@ -195,40 +224,104 @@
   }
 }
 
-@keyframes fadeInRight {
+@keyframes slideInFromRight {
   from {
     opacity: 0;
-    transform: translateX(40px);
+    transform: translateX(80px);
   }
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes expandLine {
+  from {
+    width: 0;
+  }
+  to {
+    width: 200px;
   }
 }
 
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translateY(0px) rotate(45deg);
   }
   50% {
-    transform: translateY(-15px);
+    transform: translateY(-25px) rotate(45deg);
   }
 }
 
-/* Enhanced responsive design */
-@media (max-width: 1380px) {
+// Add tech-inspired background elements
+.greet-main::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0, 180, 216, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse 4s ease-in-out infinite;
+  z-index: -1;
+}
+
+.greet-main::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(0, 119, 182, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse 6s ease-in-out infinite reverse;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+/* Enhanced responsive design for IT company */
+@media (max-width: 1400px) {
   .greeting-main {
-    gap: 60px;
+    gap: 80px;
   }
   
   .greet-main {
-    padding: 0 15px;
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .greeting-main {
+    gap: 60px;
   }
 }
 
 @media (max-width: 968px) {
   .greeting-main {
-    gap: 40px;
+    gap: 50px;
   }
 }
 
@@ -238,23 +331,29 @@
     text-align: center;
     gap: 0;
     min-height: auto;
-    padding: 40px 0;
+    padding: 60px 0;
   }
   
   .greeting-text {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    
+    &::after {
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+    }
   }
   
   .greeting-text-p {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     margin-left: auto;
     margin-right: auto;
   }
   
   .greeting-image-div {
-    margin: 40px 0 30px;
+    margin: 50px 0 40px;
     
     &::before,
     &::after {
@@ -264,17 +363,34 @@
   
   .button-greeting-div {
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 40px;
+  }
+  
+  .greet-main {
+    padding: 0 20px;
+    
+    &::before,
+    &::after {
+      display: none;
+    }
   }
 }
 
 @media (max-width: 480px) {
   .greeting-main {
-    padding: 20px 0;
+    padding: 40px 0;
   }
   
   .greeting-image-div {
-    margin: 30px 0 20px;
+    margin: 40px 0 30px;
+  }
+  
+  .greet-main {
+    padding: 0 15px;
+  }
+  
+  .greeting-text::after {
+    width: 100px;
   }
 }
 
@@ -293,9 +409,12 @@
 @media (prefers-reduced-motion: reduce) {
   .greeting-text-div,
   .greeting-image-div,
+  .greeting-text-p,
   .wave-emoji,
   .greeting-image-div::before,
-  .greeting-image-div::after {
+  .greeting-image-div::after,
+  .greet-main::before,
+  .greet-main::after {
     animation: none !important;
   }
   
@@ -309,5 +428,11 @@
       background: none !important;
       -webkit-text-fill-color: initial !important;
     }
+  }
+  
+  .greeting-text::after,
+  .greeting-text-p {
+    opacity: 1 !important;
+    animation: none !important;
   }
 }
