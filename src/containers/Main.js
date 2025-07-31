@@ -44,29 +44,69 @@ const Main = () => {
   };
 
   return (
-    <div className={isDark ? "dark-mode" : null}>
+    <div className={isDark ? "dark-mode" : ""}>
       <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
         {isShowingSplashAnimation && splashScreen.enabled ? (
           <SplashScreen />
         ) : (
-          <>
+          <div className="portfolio-main">
             <Header />
-            <Greeting />
-            <Skills />
-            <StackProgress />
-            <Education />
-            <WorkExperience />
-            <Projects />
-            <StartupProject />
-            <Achievement />
-            <Blogs />
-            <Talks />
-            <Twitter />
-            <Podcast />
-            <Profile />
+            
+            <section className="portfolio-section" id="greeting">
+              <Greeting />
+            </section>
+            
+            <section className="portfolio-section" id="skills">
+              <Skills />
+            </section>
+            
+            <section className="portfolio-section" id="skill-progress">
+              <StackProgress />
+            </section>
+            
+            <section className="portfolio-section" id="education">
+              <Education />
+            </section>
+            
+            <section className="portfolio-section" id="experience">
+              <WorkExperience />
+            </section>
+            
+            <section className="portfolio-section" id="projects">
+              <Projects />
+            </section>
+            
+            <section className="portfolio-section" id="startup-projects">
+              <StartupProject />
+            </section>
+            
+            <section className="portfolio-section" id="achievements">
+              <Achievement />
+            </section>
+            
+            <section className="portfolio-section" id="blogs">
+              <Blogs />
+            </section>
+            
+            <section className="portfolio-section" id="talks">
+              <Talks />
+            </section>
+            
+            <section className="portfolio-section" id="twitter">
+              <Twitter />
+            </section>
+            
+            <section className="portfolio-section" id="podcast">
+              <Podcast />
+            </section>
+            
+            <section className="portfolio-section" id="profile">
+              <Profile />
+            </section>
+            
             <Footer />
             <ScrollToTopButton />
-          </>
+          </div>
         )}
       </StyleProvider>
     </div>

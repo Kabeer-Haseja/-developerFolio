@@ -1,7 +1,269 @@
 @import "../_globalColor";
 
+// Main portfolio container
+.portfolio-main {
+  min-height: 100vh;
+  background: $lightBackground1;
+  transition: all 0.3s ease;
+}
+
 .dark-mode {
   background-color: $darkBackground;
   color: $textColorDark;
   transition: all 0.3s ease;
+  
+  .portfolio-main {
+    background: $darkBackground;
+  }
+}
+
+// Enhanced section styling for better flow
+.portfolio-section {
+  position: relative;
+  padding: 80px 0;
+  
+  // Elegant separator between sections
+  &:not(:last-of-type)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(85, 25, 139, 0.3), transparent);
+  }
+  
+  // Dark mode separator
+  .dark-mode &:not(:last-of-type)::after {
+    background: linear-gradient(90deg, transparent, rgba(140, 67, 206, 0.4), transparent);
+  }
+  
+  // Alternating section backgrounds for better visual separation
+  &:nth-child(even) {
+    background: rgba(85, 25, 139, 0.02);
+    
+    .dark-mode & {
+      background: rgba(140, 67, 206, 0.03);
+    }
+  }
+  
+  // Responsive section padding
+  @media (max-width: 768px) {
+    padding: 60px 0;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 40px 0;
+  }
+}
+
+// Main content wrapper for consistent max-width
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  
+  @media (max-width: 768px) {
+    padding: 0 15px;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 0 10px;
+  }
+}
+
+// Enhanced typography for section headings
+.section-heading {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+  color: $titleColor;
+  position: relative;
+  
+  .dark-mode & {
+    color: $textColorDark;
+  }
+  
+  // Elegant underline for headings
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, $primary, $primaryLight);
+    border-radius: 2px;
+  }
+}
+
+.section-subtitle {
+  font-size: clamp(16px, 3vw, 20px);
+  text-align: center;
+  color: $subTitle;
+  margin-bottom: 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  
+  .dark-mode & {
+    color: $textColorDarkSecondary;
+  }
+  
+  @media (max-width: 768px) {
+    margin-bottom: 40px;
+  }
+}
+
+// Enhanced card styling for consistent look
+.portfolio-card {
+  background: $lightBackgroundCard;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(85, 25, 139, 0.1);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(85, 25, 139, 0.15);
+    border-color: rgba(85, 25, 139, 0.2);
+  }
+  
+  .dark-mode & {
+    background: $darkBackgroundCard;
+    border-color: rgba(140, 67, 206, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    
+    &:hover {
+      box-shadow: 0 8px 30px rgba(140, 67, 206, 0.2);
+      border-color: rgba(140, 67, 206, 0.3);
+    }
+  }
+}
+
+// Grid layouts for consistent spacing
+.portfolio-grid {
+  display: grid;
+  gap: 30px;
+  
+  &.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  &.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  @media (max-width: 768px) {
+    gap: 20px;
+    grid-template-columns: 1fr;
+  }
+}
+
+// Improved button groups
+.button-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+// Enhanced animations for better flow
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// Scroll animation classes
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+  
+  &.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Stagger animation delays
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+
+// Loading state improvements
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(85, 25, 139, 0.2);
+    border-top: 3px solid $primary;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// Accessibility improvements
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .animate-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .portfolio-card {
+    border: 2px solid;
+  }
+  
+  .section-heading::after {
+    background: currentColor;
+  }
 }

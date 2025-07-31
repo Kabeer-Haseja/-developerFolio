@@ -3,12 +3,12 @@
 .skills-main-div {
   display: flex;
   width: 100%;
-  overflow: hidden;
   align-items: center;
-  gap: 60px;
+  gap: 80px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 0 20px;
+  min-height: 80vh;
 }
 
 .skills-text-div {
@@ -17,22 +17,61 @@
 
 .skills-main-div > * {
   flex: 1;
-  margin-bottom: 30px;
 }
 
 .skills-image-div {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   
   > img, > div {
     max-width: 100%;
     height: auto;
-    transition: transform 0.3s ease;
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 15px 40px rgba(85, 25, 139, 0.15));
     
     &:hover {
-      transform: scale(1.02);
+      transform: scale(1.05);
+      filter: drop-shadow(0 20px 50px rgba(85, 25, 139, 0.2));
     }
+  }
+  
+  .dark-mode & {
+    > img, > div {
+      filter: drop-shadow(0 15px 40px rgba(140, 67, 206, 0.2));
+      
+      &:hover {
+        filter: drop-shadow(0 20px 50px rgba(140, 67, 206, 0.3));
+      }
+    }
+  }
+  
+  // Floating decoration elements
+  &::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(85, 25, 139, 0.08), rgba(140, 67, 206, 0.08));
+    border-radius: 50%;
+    animation: float 8s ease-in-out infinite;
+    z-index: -1;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, rgba(140, 67, 206, 0.08), rgba(85, 25, 139, 0.08));
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite reverse;
+    z-index: -1;
   }
 }
 
@@ -40,44 +79,110 @@
   font-size: clamp(36px, 6vw, 56px);
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   color: $titleColor;
+  position: relative;
   
   &.dark-mode {
     color: $textColorDark;
+  }
+  
+  // Add elegant underline
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, $primary, $primaryLight);
+    border-radius: 2px;
   }
 }
 
 .skills-text-subtitle {
   font-size: clamp(18px, 3vw, 22px);
   line-height: 1.6;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   color: $subTitle;
+  max-width: 500px;
   
   &.dark-mode {
     color: $textColorDarkSecondary;
   }
 }
 
+// Enhanced software skills wrapper
+.software-skills-main-div {
+  margin: 40px 0;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(85, 25, 139, 0.1);
+  box-shadow: 0 8px 32px rgba(85, 25, 139, 0.1);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(85, 25, 139, 0.15);
+    border-color: rgba(85, 25, 139, 0.2);
+  }
+  
+  .dark-mode & {
+    background: rgba(33, 38, 45, 0.6);
+    border-color: rgba(140, 67, 206, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    
+    &:hover {
+      box-shadow: 0 12px 40px rgba(140, 67, 206, 0.2);
+      border-color: rgba(140, 67, 206, 0.3);
+    }
+  }
+}
+
 .skills-list {
-  margin-top: 30px;
+  margin-top: 40px;
   
   .skills-text {
     font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    padding: 12px 0;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    padding: 16px 0 16px 24px;
     border-left: 3px solid $primary;
-    padding-left: 20px;
     transition: all 0.3s ease;
+    position: relative;
+    background: rgba(85, 25, 139, 0.02);
+    border-radius: 0 8px 8px 0;
+    
+    &::before {
+      content: '→';
+      position: absolute;
+      left: 8px;
+      color: $primary;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
     
     &:hover {
       border-left-color: $primaryLight;
-      padding-left: 25px;
+      padding-left: 28px;
+      background: rgba(85, 25, 139, 0.05);
+      transform: translateX(4px);
+      
+      &::before {
+        color: $primaryLight;
+        transform: translateX(2px);
+      }
     }
     
     &.dark-mode {
       color: $textColorDark;
+      background: rgba(140, 67, 206, 0.05);
+      
+      &:hover {
+        background: rgba(140, 67, 206, 0.08);
+      }
     }
   }
 }
@@ -86,17 +191,27 @@
   color: $subTitle;
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
 /* Enhanced responsive design */
 @media (max-width: 1200px) {
   .skills-main-div {
-    gap: 40px;
-    padding: 30px 15px;
+    gap: 60px;
+    padding: 0 15px;
   }
 }
 
 @media (max-width: 968px) {
   .skills-main-div {
-    gap: 30px;
+    gap: 40px;
+    min-height: 70vh;
   }
 }
 
@@ -104,29 +219,55 @@
   .skills-main-div {
     flex-direction: column;
     text-align: center;
-    gap: 30px;
+    gap: 40px;
+    min-height: auto;
+    padding: 40px 15px;
   }
   
   .skills-image-div {
     order: 2;
+    
+    &::before,
+    &::after {
+      display: none;
+    }
   }
   
   .skills-text-div {
     order: 1;
   }
   
+  .skills-heading {
+    text-align: center;
+    
+    &::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  
   .skills-text-subtitle {
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .software-skills-main-div {
+    margin: 30px 0;
+    padding: 25px;
   }
   
   .skills-list {
+    margin-top: 30px;
+    
     .skills-text {
       text-align: left;
       border-left: 2px solid $primary;
-      padding-left: 15px;
+      padding-left: 20px;
+      background: rgba(85, 25, 139, 0.03);
       
       &:hover {
-        padding-left: 18px;
+        padding-left: 24px;
       }
     }
   }
@@ -135,17 +276,28 @@
 @media (max-width: 480px) {
   .skills-main-div {
     padding: 20px 10px;
-    gap: 25px;
+    gap: 30px;
+  }
+  
+  .software-skills-main-div {
+    padding: 20px;
+    margin: 25px 0;
   }
   
   .skills-list {
+    margin-top: 25px;
+    
     .skills-text {
       font-size: 14px;
-      padding: 10px 0;
-      padding-left: 12px;
+      padding: 12px 0 12px 16px;
+      margin-bottom: 15px;
+      
+      &::before {
+        left: 6px;
+      }
       
       &:hover {
-        padding-left: 15px;
+        padding-left: 20px;
       }
     }
   }
@@ -161,7 +313,11 @@
 @media (prefers-reduced-motion: reduce) {
   .skills-image-div > img,
   .skills-image-div > div,
-  .skills-list .skills-text {
+  .skills-list .skills-text,
+  .software-skills-main-div,
+  .skills-image-div::before,
+  .skills-image-div::after {
+    animation: none !important;
     transition: none !important;
     
     &:hover {
