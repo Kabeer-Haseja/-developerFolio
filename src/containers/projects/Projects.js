@@ -1,6 +1,5 @@
 import React, {useState, useEffect, useContext, Suspense, lazy} from "react";
 import "./Project.scss";
-import Button from "../../components/button/Button";
 import {openSource, socialMediaLinks} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 import Loading from "../../containers/loading/Loading";
@@ -68,12 +67,22 @@ export default function Projects() {
         <div className="repo-cards-div-main">
           <div className="fallback-content">
             <p>GitHub projects will be displayed here when available.</p>
-            <Button
-              text={"View GitHub Profile"}
-              className="project-button"
+            <a 
               href={socialMediaLinks.github}
-              newTab={true}
-            />
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ 
+                background: '#003459', 
+                color: 'white', 
+                padding: '10px 20px', 
+                textDecoration: 'none',
+                borderRadius: '5px',
+                display: 'inline-block',
+                marginTop: '10px'
+              }}
+            >
+              View GitHub Profile
+            </a>
           </div>
         </div>
       </div>
@@ -98,12 +107,22 @@ export default function Projects() {
             );
           })}
         </div>
-        <Button
-          text={"More Projects"}
-          className="project-button"
+        <a 
           href={socialMediaLinks.github}
-          newTab={true}
-        />
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ 
+            background: '#003459', 
+            color: 'white', 
+            padding: '10px 20px', 
+            textDecoration: 'none',
+            borderRadius: '5px',
+            display: 'inline-block',
+            marginTop: '20px'
+          }}
+        >
+          More Projects
+        </a>
       </div>
     </Suspense>
   );

@@ -79,6 +79,10 @@ const Main = () => {
               {/* About & Skills Section */}
               <section className="about-section" id="skills">
                 <div className="section-container">
+                  <div style={{ background: 'green', color: 'white', padding: '20px', margin: '10px' }}>
+                    <h2>Skills Section Test</h2>
+                    <p>If you see this, the Skills section is working!</p>
+                  </div>
                   <Skills />
                 </div>
               </section>
@@ -86,6 +90,10 @@ const Main = () => {
               {/* Skills Progress Section */}
               <section className="skills-progress-section" id="skill-progress">
                 <div className="section-container">
+                  <div style={{ background: 'blue', color: 'white', padding: '20px', margin: '10px' }}>
+                    <h2>Skills Progress Section Test</h2>
+                    <p>If you see this, the Skills Progress section is working!</p>
+                  </div>
                   <StackProgress />
                 </div>
               </section>
@@ -93,6 +101,10 @@ const Main = () => {
               {/* Education Section */}
               <section className="education-section" id="education">
                 <div className="section-container">
+                  <div style={{ background: 'orange', color: 'white', padding: '20px', margin: '10px' }}>
+                    <h2>Education Section Test</h2>
+                    <p>If you see this, the Education section is working!</p>
+                  </div>
                   <Education />
                 </div>
               </section>
@@ -100,6 +112,10 @@ const Main = () => {
               {/* Experience Section */}
               <section className="experience-section" id="experience">
                 <div className="section-container">
+                  <div style={{ background: 'purple', color: 'white', padding: '20px', margin: '10px' }}>
+                    <h2>Experience Section Test</h2>
+                    <p>If you see this, the Experience section is working!</p>
+                  </div>
                   <WorkExperience />
                 </div>
               </section>
@@ -107,6 +123,10 @@ const Main = () => {
               {/* Projects Section */}
               <section className="projects-section" id="projects">
                 <div className="section-container">
+                  <div style={{ background: 'brown', color: 'white', padding: '20px', margin: '10px' }}>
+                    <h2>Projects Section Test</h2>
+                    <p>If you see this, the Projects section is working!</p>
+                  </div>
                   <Projects />
                 </div>
               </section>
@@ -114,6 +134,10 @@ const Main = () => {
               {/* Startup Projects Section */}
               <section className="startup-projects-section" id="startup-projects">
                 <div className="section-container">
+                  <div style={{ background: 'pink', color: 'white', padding: '20px', margin: '10px' }}>
+                    <h2>Startup Projects Section Test</h2>
+                    <p>If you see this, the Startup Projects section is working!</p>
+                  </div>
                   <StartupProject />
                 </div>
               </section>
@@ -121,6 +145,10 @@ const Main = () => {
               {/* Achievements Section */}
               <section className="achievements-section" id="achievements">
                 <div className="section-container">
+                  <div style={{ background: 'teal', color: 'white', padding: '20px', margin: '10px' }}>
+                    <h2>Achievements Section Test</h2>
+                    <p>If you see this, the Achievements section is working!</p>
+                  </div>
                   <Achievement />
                 </div>
               </section>
@@ -128,6 +156,10 @@ const Main = () => {
               {/* Blogs Section */}
               <section className="blogs-section" id="blogs">
                 <div className="section-container">
+                  <div style={{ background: 'navy', color: 'white', padding: '20px', margin: '10px' }}>
+                    <h2>Blogs Section Test</h2>
+                    <p>If you see this, the Blogs section is working!</p>
+                  </div>
                   <Blogs />
                 </div>
               </section>
@@ -135,6 +167,10 @@ const Main = () => {
               {/* Talks Section */}
               <section className="talks-section" id="talks">
                 <div className="section-container">
+                  <div style={{ background: 'maroon', color: 'white', padding: '20px', margin: '10px' }}>
+                    <h2>Talks Section Test</h2>
+                    <p>If you see this, the Talks section is working!</p>
+                  </div>
                   <Talks />
                 </div>
               </section>
@@ -142,6 +178,10 @@ const Main = () => {
               {/* Twitter Section */}
               <section className="twitter-section" id="twitter">
                 <div className="section-container">
+                  <div style={{ background: 'olive', color: 'white', padding: '20px', margin: '10px' }}>
+                    <h2>Twitter Section Test</h2>
+                    <p>If you see this, the Twitter section is working!</p>
+                  </div>
                   <Twitter />
                 </div>
               </section>
@@ -149,6 +189,10 @@ const Main = () => {
               {/* Podcast Section */}
               <section className="podcast-section" id="podcast">
                 <div className="section-container">
+                  <div style={{ background: 'coral', color: 'white', padding: '20px', margin: '10px' }}>
+                    <h2>Podcast Section Test</h2>
+                    <p>If you see this, the Podcast section is working!</p>
+                  </div>
                   <Podcast />
                 </div>
               </section>
@@ -156,6 +200,10 @@ const Main = () => {
               {/* Profile Section */}
               <section className="profile-section" id="profile">
                 <div className="section-container">
+                  <div style={{ background: 'indigo', color: 'white', padding: '20px', margin: '10px' }}>
+                    <h2>Profile Section Test</h2>
+                    <p>If you see this, the Profile section is working!</p>
+                  </div>
                   <Profile />
                 </div>
               </section>
