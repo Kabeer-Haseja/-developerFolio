@@ -1,18 +1,15 @@
-import React, {useContext} from "react";
+import React from "react";
 import "./Greeting.scss";
-import landingPerson from "../../assets/lottie/landingPerson";
-import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
 
-import {illustration, greeting} from "../../portfolio";
-import StyleContext from "../../contexts/StyleContext";
+import {greeting} from "../../portfolio";
 
 export default function Greeting() {
-  const {isDark} = useContext(StyleContext);
   if (!greeting.displayGreeting) {
     return null;
   }
+  
   return (
     <div className="hero-wrapper">
       <div className="hero-content">
@@ -49,18 +46,12 @@ export default function Greeting() {
         </div>
         
         <div className="hero-visual-section">
-          {illustration.animated ? (
-            <div className="hero-animation">
-              <DisplayLottie animationData={landingPerson} />
-            </div>
-          ) : (
-            <div className="hero-image">
-              <img
-                alt="Developer illustration"
-                src={require("../../assets/images/manOnTable.svg")}
-              />
-            </div>
-          )}
+          <div className="hero-image">
+            <img
+              alt="Developer illustration"
+              src={require("../../assets/images/manOnTable.svg")}
+            />
+          </div>
         </div>
       </div>
     </div>
