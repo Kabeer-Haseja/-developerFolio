@@ -55,6 +55,20 @@ const Main = () => {
             <div className="portfolio-main">
               <Header />
               
+              {/* Test Section */}
+              <div style={{ 
+                background: 'red', 
+                color: 'white', 
+                padding: '50px', 
+                margin: '20px',
+                fontSize: '24px',
+                textAlign: 'center'
+              }}>
+                <h1>TEST - If you see this, React is working!</h1>
+                <p>This is a test to see if React is rendering content.</p>
+                <p>Dark mode: {isDark ? 'Yes' : 'No'}</p>
+              </div>
+              
               {/* Hero Section */}
               <section className="hero-section" id="greeting">
                 <div className="hero-container">
