@@ -36,6 +36,8 @@ const Main = () => {
       return () => {
         clearTimeout(splashTimer);
       };
+    } else {
+      setIsShowingSplashAnimation(false);
     }
   }, []);
 
@@ -43,113 +45,124 @@ const Main = () => {
     setIsDark(!isDark);
   };
 
-  return (
-    <div className={isDark ? "dark-mode" : ""}>
-      <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
-        {isShowingSplashAnimation && splashScreen.enabled ? (
-          <SplashScreen />
-        ) : (
-          <div className="portfolio-main">
-            <Header />
-            
-            {/* Hero Section */}
-            <section className="hero-section" id="greeting">
-              <div className="hero-container">
-                <Greeting />
-              </div>
-            </section>
-            
-            {/* About & Skills Section */}
-            <section className="about-section" id="skills">
-              <div className="section-container">
-                <Skills />
-              </div>
-            </section>
-            
-            {/* Skills Progress Section */}
-            <section className="skills-progress-section" id="skill-progress">
-              <div className="section-container">
-                <StackProgress />
-              </div>
-            </section>
-            
-            {/* Education Section */}
-            <section className="education-section" id="education">
-              <div className="section-container">
-                <Education />
-              </div>
-            </section>
-            
-            {/* Experience Section */}
-            <section className="experience-section" id="experience">
-              <div className="section-container">
-                <WorkExperience />
-              </div>
-            </section>
-            
-            {/* Projects Section */}
-            <section className="projects-section" id="projects">
-              <div className="section-container">
-                <Projects />
-              </div>
-            </section>
-            
-            {/* Startup Projects Section */}
-            <section className="startup-projects-section" id="startup-projects">
-              <div className="section-container">
-                <StartupProject />
-              </div>
-            </section>
-            
-            {/* Achievements Section */}
-            <section className="achievements-section" id="achievements">
-              <div className="section-container">
-                <Achievement />
-              </div>
-            </section>
-            
-            {/* Blogs Section */}
-            <section className="blogs-section" id="blogs">
-              <div className="section-container">
-                <Blogs />
-              </div>
-            </section>
-            
-            {/* Talks Section */}
-            <section className="talks-section" id="talks">
-              <div className="section-container">
-                <Talks />
-              </div>
-            </section>
-            
-            {/* Twitter Section */}
-            <section className="twitter-section" id="twitter">
-              <div className="section-container">
-                <Twitter />
-              </div>
-            </section>
-            
-            {/* Podcast Section */}
-            <section className="podcast-section" id="podcast">
-              <div className="section-container">
-                <Podcast />
-              </div>
-            </section>
-            
-            {/* Profile Section */}
-            <section className="profile-section" id="profile">
-              <div className="section-container">
-                <Profile />
-              </div>
-            </section>
-            
-            <Footer />
-            <ScrollToTopButton />
-          </div>
-        )}
-      </StyleProvider>
-    </div>
-  );
+  try {
+    return (
+      <div className={isDark ? "dark-mode" : ""}>
+        <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
+          {isShowingSplashAnimation && splashScreen.enabled ? (
+            <SplashScreen />
+          ) : (
+            <div className="portfolio-main">
+              <Header />
+              
+              {/* Hero Section */}
+              <section className="hero-section" id="greeting">
+                <div className="hero-container">
+                  <Greeting />
+                </div>
+              </section>
+              
+              {/* About & Skills Section */}
+              <section className="about-section" id="skills">
+                <div className="section-container">
+                  <Skills />
+                </div>
+              </section>
+              
+              {/* Skills Progress Section */}
+              <section className="skills-progress-section" id="skill-progress">
+                <div className="section-container">
+                  <StackProgress />
+                </div>
+              </section>
+              
+              {/* Education Section */}
+              <section className="education-section" id="education">
+                <div className="section-container">
+                  <Education />
+                </div>
+              </section>
+              
+              {/* Experience Section */}
+              <section className="experience-section" id="experience">
+                <div className="section-container">
+                  <WorkExperience />
+                </div>
+              </section>
+              
+              {/* Projects Section */}
+              <section className="projects-section" id="projects">
+                <div className="section-container">
+                  <Projects />
+                </div>
+              </section>
+              
+              {/* Startup Projects Section */}
+              <section className="startup-projects-section" id="startup-projects">
+                <div className="section-container">
+                  <StartupProject />
+                </div>
+              </section>
+              
+              {/* Achievements Section */}
+              <section className="achievements-section" id="achievements">
+                <div className="section-container">
+                  <Achievement />
+                </div>
+              </section>
+              
+              {/* Blogs Section */}
+              <section className="blogs-section" id="blogs">
+                <div className="section-container">
+                  <Blogs />
+                </div>
+              </section>
+              
+              {/* Talks Section */}
+              <section className="talks-section" id="talks">
+                <div className="section-container">
+                  <Talks />
+                </div>
+              </section>
+              
+              {/* Twitter Section */}
+              <section className="twitter-section" id="twitter">
+                <div className="section-container">
+                  <Twitter />
+                </div>
+              </section>
+              
+              {/* Podcast Section */}
+              <section className="podcast-section" id="podcast">
+                <div className="section-container">
+                  <Podcast />
+                </div>
+              </section>
+              
+              {/* Profile Section */}
+              <section className="profile-section" id="profile">
+                <div className="section-container">
+                  <Profile />
+                </div>
+              </section>
+              
+              <Footer />
+              <ScrollToTopButton />
+            </div>
+          )}
+        </StyleProvider>
+      </div>
+    );
+  } catch (error) {
+    console.error("Error in Main component:", error);
+    return (
+      <div style={{ padding: '20px', color: '#003459' }}>
+        <h1>Portfolio</h1>
+        <p>Loading...</p>
+        <p>Error: {error.message}</p>
+      </div>
+    );
+  }
 };
 
 export default Main;
