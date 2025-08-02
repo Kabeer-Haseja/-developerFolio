@@ -1,7 +1,19 @@
 import React from "react";
 
 export const OfficeWorkerSVG = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="500" height="400" viewBox="0 0 500 400">
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="100%" 
+    height="100%" 
+    viewBox="0 0 500 400"
+    style={{ 
+      display: 'block', 
+      width: '100%', 
+      height: 'auto',
+      maxWidth: '500px',
+      margin: '0 auto'
+    }}
+  >
     <rect width="500" height="400" fill="#f8f9fa"/>
     <rect x="50" y="250" width="400" height="20" fill="#8B4513"/>
     <rect x="50" y="270" width="400" height="10" fill="#654321"/>
@@ -29,7 +41,19 @@ export const OfficeWorkerSVG = () => (
 );
 
 export const DeveloperWorkingSVG = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="500" height="400" viewBox="0 0 500 400">
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="100%" 
+    height="100%" 
+    viewBox="0 0 500 400"
+    style={{ 
+      display: 'block', 
+      width: '100%', 
+      height: 'auto',
+      maxWidth: '500px',
+      margin: '0 auto'
+    }}
+  >
     <rect width="500" height="400" fill="#f8f9fa"/>
     <rect x="150" y="200" width="200" height="120" rx="8" fill="#2c3e50"/>
     <rect x="160" y="210" width="180" height="100" rx="4" fill="#ecf0f1"/>
