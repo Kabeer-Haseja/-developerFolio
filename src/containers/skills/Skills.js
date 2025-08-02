@@ -16,8 +16,8 @@ export default function Skills() {
       <div className="skills-main-div">
         <div className="skills-image-div">
           <img
-            alt="Man Working"
-            src={require("../../assets/images/developerActivity.svg")}
+            alt="Skills and technologies illustration"
+            src={require("../../assets/images/skillsIllustration.svg")}
           />
         </div>
         <div className="skills-text-div">
