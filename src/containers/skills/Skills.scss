@@ -81,17 +81,8 @@
   position: relative;
   letter-spacing: -0.03em;
   
-  // Professional IT gradient text effect
-  background: linear-gradient(135deg, $veryDarkGray 0%, $deepBlue 70%, #004d7a 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  
-  &.dark-mode {
-    background: linear-gradient(135deg, #f8f9fa 0%, $lightGray 70%, $deepBlue 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .dark-mode & {
+    color: $white;
   }
 }
 
@@ -121,6 +112,7 @@
     border: 1px solid rgba(0, 52, 89, 0.1);
     box-shadow: 0 2px 8px rgba(0, 52, 89, 0.08);
     transition: all 0.3s ease;
+    color: $textColor;
     
     &:hover {
       transform: translateY(-2px);
@@ -129,6 +121,7 @@
     }
     
     .dark-mode & {
+      color: $textColorDark;
       background: linear-gradient(135deg, rgba(45, 45, 45, 0.8) 0%, rgba(64, 64, 64, 0.6) 100%);
       border-color: rgba(255, 255, 255, 0.1);
       box-shadow: 0 2px 8px rgba(255, 255, 255, 0.08);

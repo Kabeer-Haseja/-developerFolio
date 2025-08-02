@@ -2,15 +2,22 @@ import React from "react";
 import "./Skills.scss";
 import { DeveloperWorkingSVG } from "../../components/InlineSVG/InlineSVG";
 
-export default function SoftwareSkill() {
+function Skills() {
+  console.log("Skills component is rendering");
+  
   return (
-    <div className="skills-main-div">
+    <div className="skills-main-div" style={{ 
+      border: '2px solid red', 
+      padding: '20px', 
+      background: '#f0f0f0',
+      minHeight: '400px'
+    }}>
       <div className="skills-image-div">
         <DeveloperWorkingSVG />
       </div>
-      <div className="skills-text-div">
-        <h1 className="skills-heading">What I do</h1>
-        <p className="skills-subtitle">
+      <div className="skills-text-div" style={{ border: '2px solid blue' }}>
+        <h1 className="skills-heading" style={{ color: 'black' }}>What I do</h1>
+        <p className="skills-subtitle" style={{ color: 'black' }}>
           CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK
         </p>
         <ul>
@@ -23,3 +30,5 @@ export default function SoftwareSkill() {
     </div>
   );
 }
+
+export default Skills;
