@@ -20,7 +20,6 @@
   align-items: center;
   background: linear-gradient(135deg, rgba(0, 52, 89, 0.02) 0%, rgba(248, 249, 250, 0.8) 100%);
   position: relative;
-  // overflow: hidden; // Removed to see if this was hiding content
 
   &::before {
     content: '';
@@ -39,23 +38,23 @@
 }
 
 .hero-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 3rem;
   position: relative;
   z-index: 2;
 }
 
 // Section Containers
 .section-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 3rem;
 }
 
 // About Section
 .about-section {
-  padding: 6rem 0;
+  padding: 5rem 0;
   background: $white;
   
   .dark-mode & {
@@ -65,7 +64,7 @@
 
 // Skills Progress Section
 .skills-progress-section {
-  padding: 6rem 0;
+  padding: 5rem 0;
   background: $lightBackground2;
   
   .dark-mode & {
@@ -75,7 +74,7 @@
 
 // Education Section
 .education-section {
-  padding: 6rem 0;
+  padding: 5rem 0;
   background: $white;
   
   .dark-mode & {
@@ -85,7 +84,7 @@
 
 // Experience Section
 .experience-section {
-  padding: 6rem 0;
+  padding: 5rem 0;
   background: $lightBackground2;
   
   .dark-mode & {
@@ -95,7 +94,7 @@
 
 // Projects Section
 .projects-section {
-  padding: 6rem 0;
+  padding: 5rem 0;
   background: $white;
   
   .dark-mode & {
@@ -105,7 +104,7 @@
 
 // Startup Projects Section
 .startup-projects-section {
-  padding: 6rem 0;
+  padding: 5rem 0;
   background: $lightBackground2;
   
   .dark-mode & {
@@ -115,7 +114,7 @@
 
 // Achievements Section
 .achievements-section {
-  padding: 6rem 0;
+  padding: 5rem 0;
   background: $white;
   
   .dark-mode & {
@@ -125,7 +124,7 @@
 
 // Blogs Section
 .blogs-section {
-  padding: 6rem 0;
+  padding: 5rem 0;
   background: $lightBackground2;
   
   .dark-mode & {
@@ -135,7 +134,7 @@
 
 // Talks Section
 .talks-section {
-  padding: 6rem 0;
+  padding: 5rem 0;
   background: $white;
   
   .dark-mode & {
@@ -145,7 +144,7 @@
 
 // Twitter Section
 .twitter-section {
-  padding: 6rem 0;
+  padding: 5rem 0;
   background: $lightBackground2;
   
   .dark-mode & {
@@ -155,7 +154,7 @@
 
 // Podcast Section
 .podcast-section {
-  padding: 6rem 0;
+  padding: 5rem 0;
   background: $white;
   
   .dark-mode & {
@@ -165,7 +164,7 @@
 
 // Profile Section
 .profile-section {
-  padding: 6rem 0;
+  padding: 5rem 0;
   background: $lightBackground2;
   
   .dark-mode & {
@@ -174,10 +173,27 @@
 }
 
 // Responsive Design
+@media (max-width: 1200px) {
+  .hero-container,
+  .section-container {
+    max-width: 1000px;
+    padding: 0 2.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-container,
+  .section-container {
+    max-width: 900px;
+    padding: 0 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-container,
   .section-container {
-    padding: 0 1rem;
+    max-width: 100%;
+    padding: 0 1.5rem;
   }
   
   .hero-section {
@@ -203,7 +219,7 @@
 @media (max-width: 480px) {
   .hero-container,
   .section-container {
-    padding: 0 0.75rem;
+    padding: 0 1rem;
   }
   
   .about-section,
