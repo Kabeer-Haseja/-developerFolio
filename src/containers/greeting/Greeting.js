@@ -14,9 +14,6 @@ export default function Greeting() {
       <div className="hero-content">
         <div className="hero-text-section">
           <div className="hero-text-content">
-            <div className="hero-badge">
-              Welcome to my portfolio
-            </div>
             <h1 className="hero-title">
               {greeting.title}
             </h1>
