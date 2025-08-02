@@ -112,8 +112,8 @@
   }
 }
 
-// Achievements Section
-.achievements-section {
+// Achievement Section
+.achievement-section {
   padding: 5rem 0;
   background: $white;
   
@@ -172,12 +172,30 @@
   }
 }
 
+// Contact Section
+.contact-section {
+  padding: 5rem 0;
+  background: $white;
+  
+  .dark-mode & {
+    background: $darkBackgroundSecondary;
+  }
+}
+
 // Responsive Design
+@media (max-width: 1400px) {
+  .hero-container,
+  .section-container {
+    max-width: 1200px;
+    padding: 0 2.5rem;
+  }
+}
+
 @media (max-width: 1200px) {
   .hero-container,
   .section-container {
     max-width: 1000px;
-    padding: 0 2.5rem;
+    padding: 0 2rem;
   }
 }
 
@@ -185,7 +203,7 @@
   .hero-container,
   .section-container {
     max-width: 900px;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
   }
 }
 
@@ -193,49 +211,112 @@
   .hero-container,
   .section-container {
     max-width: 100%;
-    padding: 0 1.5rem;
+    padding: 0 1rem;
   }
   
   .hero-section {
     min-height: 80vh;
-  }
-  
-  .about-section,
-  .skills-progress-section,
-  .education-section,
-  .experience-section,
-  .projects-section,
-  .startup-projects-section,
-  .achievements-section,
-  .blogs-section,
-  .talks-section,
-  .twitter-section,
-  .podcast-section,
-  .profile-section {
-    padding: 4rem 0;
   }
 }
 
 @media (max-width: 480px) {
   .hero-container,
   .section-container {
-    padding: 0 1rem;
+    padding: 0 0.75rem;
   }
+}
+
+// Animation for sections
+.hero-section,
+.about-section,
+.skills-progress-section,
+.education-section,
+.experience-section,
+.projects-section,
+.startup-projects-section,
+.achievement-section,
+.blogs-section,
+.talks-section,
+.twitter-section,
+.podcast-section,
+.profile-section,
+.contact-section {
+  animation: fadeIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+// Enhanced typography
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
   
-  .about-section,
-  .skills-progress-section,
-  .education-section,
-  .experience-section,
-  .projects-section,
-  .startup-projects-section,
-  .achievements-section,
-  .blogs-section,
-  .talks-section,
-  .twitter-section,
-  .podcast-section,
-  .profile-section {
-    padding: 3rem 0;
+  .dark-mode & {
+    color: $white;
   }
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 600;
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  
+  .dark-mode & {
+    color: $textColorDark;
+  }
+}
+
+// Enhanced spacing
+.section-padding {
+  padding: 6rem 0;
+}
+
+.section-padding-sm {
+  padding: 4rem 0;
+}
+
+.section-padding-lg {
+  padding: 8rem 0;
+}
+
+// Enhanced container widths
+.container-wide {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.container-medium {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.container-narrow {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 // Smooth scrolling

@@ -66,7 +66,7 @@ const Main = () => {
               background: 'linear-gradient(135deg, rgba(0, 52, 89, 0.02) 0%, rgba(248, 249, 250, 0.8) 100%)',
               padding: '0 2rem'
             }}>
-              <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+              <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%' }}>
                 <Greeting />
               </div>
             </section>
