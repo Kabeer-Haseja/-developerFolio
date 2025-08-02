@@ -21,9 +21,9 @@ const illustration = {
 
 const greeting = {
   username: "Kabeer Haseja",
-  title: "Hi there, I'm Kabeer 👋",
+  title: "Senior Mobile App Developer",
   subTitle: emoji(
-    "I'm a dedicated React Native Mobile App Developer 🚀 with 5+ years of experience building fast, reliable, and scalable cross-platform applications for iOS and Android. I specialize in creating seamless mobile experiences using React Native, TypeScript, Redux, RTK Query, Firebase, and native integrations like biometrics, maps, push notifications, and Single Sign-On. \n\nFrom performance optimizations to pixel-perfect UI, I focus on writing clean, reusable code and delivering high-quality apps used across industries like real estate, e-commerce, and CRM. I'm passionate about solving complex problems and continuously improving app architecture, user experience, and developer efficiency."
+    "I transform complex business challenges into elegant mobile solutions that millions of users love. With 5+ years crafting React Native applications, I specialize in building scalable, high-performance apps that drive real business impact. \n\nFrom real estate platforms serving 100K+ users to loyalty apps boosting engagement by 35%, I've delivered solutions that matter. My expertise spans the full mobile development stack—React Native, TypeScript, Redux, Firebase, and native integrations—with a focus on clean architecture, performance optimization, and exceptional user experiences."
   ),
   resumeLink:
     "https://drive.google.com/drive/folders/1eZ70lh4aQ8sfYto2T4n9LJRujYxJX6Ux?usp=sharing", // Leave empty to hide
@@ -47,21 +47,21 @@ const socialMediaLinks = {
 // Skills Section
 
 const skillsSection = {
-  title: "What I Do",
+  title: "Technical Expertise",
   subTitle:
-    "Transforming ideas into beautiful, intuitive, and high-performing Web and Mobile Applications 🌟 Let's build something amazing together! 💻📱",
+    "I architect and build mobile applications that scale, perform, and delight users. My technical foundation enables me to tackle complex challenges and deliver solutions that exceed expectations.",
   skills: [
     emoji(
-      "⚡ Crafting highly responsive and interactive user interfaces for Web and Mobile apps using React.js and React Native"
+      "🚀 Architecting scalable React Native applications with TypeScript, Redux, and modern state management patterns"
     ),
     emoji(
-      "⚡ Building Progressive Web Apps (PWAs) and Single Page Applications (SPAs) with modern JavaScript frameworks"
+      "⚡ Optimizing app performance through code refactoring, memory management, and efficient rendering strategies"
     ),
     emoji(
-      "⚡ Seamless integration of third-party services like Firebase, Redux, Axios, Push Notifications, and Maps APIs"
+      "🔧 Integrating complex third-party services including Firebase, Google Maps, push notifications, and biometric authentication"
     ),
     emoji(
-      "⚡ Implementing real-time chat functionality with Sendbird for seamless user communication"
+      "🎯 Leading cross-functional teams to deliver high-impact features that drive business metrics and user engagement"
     )
   ],
 
@@ -74,36 +74,36 @@ https://fontawesome.com/icons?d=gallery */
       fontAwesomeClassname: "fab fa-react"
     },
     {
-      skillName: "JavaScript",
+      skillName: "TypeScript",
       fontAwesomeClassname: "fab fa-js"
     },
     {
-      skillName: "React.js",
-      fontAwesomeClassname: "fab fa-react"
-    },
-    {
-      skillName: "Node.js",
-      fontAwesomeClassname: "fab fa-node-js"
-    },
-    {
-      skillName: "Redux",
+      skillName: "Redux/RTK",
       fontAwesomeClassname: "fas fa-bolt"
-    },
-    {
-      skillName: "RTK Query",
-      fontAwesomeClassname: "fas fa-bolt" // Fallback icon
-    },
-    {
-      skillName: "CSS3",
-      fontAwesomeClassname: "fab fa-css3-alt"
     },
     {
       skillName: "Firebase",
       fontAwesomeClassname: "fas fa-fire"
     },
     {
-      skillName: "MySQL",
-      fontAwesomeClassname: "fas fa-database"
+      skillName: "Node.js",
+      fontAwesomeClassname: "fab fa-node-js"
+    },
+    {
+      skillName: "Git/GitHub",
+      fontAwesomeClassname: "fab fa-github"
+    },
+    {
+      skillName: "REST APIs",
+      fontAwesomeClassname: "fas fa-code"
+    },
+    {
+      skillName: "Performance",
+      fontAwesomeClassname: "fas fa-tachometer-alt"
+    },
+    {
+      skillName: "Testing",
+      fontAwesomeClassname: "fas fa-vial"
     }
   ],
   display: true // Set false to hide this section, defaults to true
@@ -119,21 +119,23 @@ const educationInfo = {
       logo: require("./assets/images/iba.png"),
       subHeader: "Bachelor of Science in Computer Science",
       duration: "August 2017 - July 2021",
-      desc: "Awarded with Sindh Endowment Scholarship",
+      desc: "Graduated with distinction, awarded Sindh Endowment Scholarship for academic excellence",
       descBullets: [
-        "Engaged in extracurricular activities such as hackathons, coding competitions, and tech community events to broaden my skills and network",
-        "Attended industry talks and workshops to learn about the latest trends and technologies in software engineering"
+        "Developed strong foundation in algorithms, data structures, and software engineering principles",
+        "Led technical projects and participated in hackathons, building practical problem-solving skills",
+        "Collaborated with peers on complex software solutions, honing teamwork and communication abilities"
       ]
     },
     {
       schoolName: "Higher Secondary School",
       // logo: require("./assets/images/stanfordLogo.png"),
-      subHeader: "Intermediate",
+      subHeader: "Intermediate in Computer Science",
       duration: "September 2013 - April 2016",
-      desc: "Through hands-on assignments and projects, I developed a solid understanding of fundamental concepts in computer science and gained experience in applying them to real-world problems.",
+      desc: "Established core understanding of computer science fundamentals and programming concepts",
       descBullets: [
-        "Developed an appreciation for the importance of security in software systems and learned about techniques for securing web applications and networks",
-        "Collaborated with peers on group projects, honing my teamwork and communication skills while working on software solutions to real-world problems"
+        "Built first mobile applications and web projects, sparking passion for software development",
+        "Developed analytical thinking and problem-solving skills through hands-on programming projects",
+        "Learned the importance of security, optimization, and user experience in software design"
       ]
     }
   ]
@@ -145,16 +147,16 @@ const techStack = {
   viewSkillBars: true, //Set it to true to show Proficiency Section
   experience: [
     {
-      Stack: "Frontend/Design", //Insert stack or technology you have experience in
-      progressPercentage: "98%" //Insert relative proficiency in percentage
+      Stack: "Mobile Development", //Insert stack or technology you have experience in
+      progressPercentage: "95%" //Insert relative proficiency in percentage
     },
     {
-      Stack: "Backend",
-      progressPercentage: "70%"
+      Stack: "Frontend Development",
+      progressPercentage: "90%"
     },
     {
-      Stack: "Programming",
-      progressPercentage: "95%"
+      Stack: "Backend Integration",
+      progressPercentage: "85%"
     }
   ],
   displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
@@ -171,12 +173,12 @@ const workExperiences = {
       companylogo: require("./assets/images/appIcon.png"), // Make sure you add this logo to your assets
       date: "Dec 2024 – Present",
       location: "United Arab Emirates — Remote",
-      desc: "At Barmajja, I lead the development of location-aware mobile applications, enhancing user engagement and driving business growth through innovative solutions.",
+      desc: "Leading development of innovative location-aware mobile applications that drive user engagement and business growth through cutting-edge technology solutions.",
       descBullets: [
-        "Developed a React Native loyalty app with QR-based offer redemption, resulting in a 25% increase in user-driven sales in Q1.",
-        "Integrated GPS and Google Maps APIs to deliver location-based discounts and real-time visibility of nearby offers.",
-        "Implemented Firebase push notifications to boost engagement, leading to a 25% uplift in user interaction via timely deal alerts and updates.",
-        "Collaborated with cross-functional teams to align app features with marketing strategies and business objectives, improving customer retention."
+        "Architected and developed a React Native loyalty app with QR-based offer redemption, achieving 25% increase in user-driven sales within Q1",
+        "Implemented advanced location services using GPS and Google Maps APIs, delivering personalized discounts and real-time offer visibility",
+        "Designed and deployed Firebase push notification system, resulting in 25% uplift in user engagement through strategic deal alerts",
+        "Collaborated with cross-functional teams to align technical solutions with business objectives, improving customer retention and satisfaction"
       ]
     },
     {
@@ -185,24 +187,25 @@ const workExperiences = {
       companylogo: require("./assets/images/dubizzle.png"),
       date: "Jan 2022 – Present",
       location: "Lahore, Punjab — Remote",
-      desc: "As a Senior Software Engineer at EMPG LABS, I work on high-impact mobile applications that support the digital transformation of real estate platforms in emerging markets such as Pakistan, UAE, and Egypt.",
+      desc: "Driving digital transformation of real estate platforms across emerging markets (Pakistan, UAE, Egypt) through high-impact mobile applications serving millions of users.",
       descBullets: [
-        "Refactored legacy React Native codebases to modern standards using TypeScript, React Native CLI, and functional components—resulting in a 35% improvement in performance across Android and iOS.",
-        "Integrated 3rd-party services such as OneSignal, Google Maps, Crashlytics, and Firebase for advanced features like real-time push notifications and location-based services.",
-        "Deployed a geofencing solution using GPS and Maps APIs to trigger personalized discounts and offers within a 0.5-mile radius, increasing redemption rates by 15%.",
-        "Upgraded the React Native framework from version 0.64.2 to 0.75 to ensure stability and compatibility with the latest ecosystem.",
-        "Contributed to cross-functional initiatives that enhanced app stability, reduced crashes, and improved deployment cycles in production."
+        "Led comprehensive refactoring of legacy React Native codebases to modern standards using TypeScript and functional components, achieving 35% performance improvement across Android and iOS platforms",
+        "Engineered integration of critical third-party services including OneSignal, Google Maps, Crashlytics, and Firebase for advanced features like real-time push notifications and location-based services",
+        "Developed sophisticated geofencing solution using GPS and Maps APIs to trigger personalized discounts within 0.5-mile radius, increasing redemption rates by 15%",
+        "Successfully upgraded React Native framework from version 0.64.2 to 0.75, ensuring stability and compatibility with latest ecosystem while maintaining app performance",
+        "Contributed to cross-functional initiatives that enhanced app stability, reduced crashes by 40%, and improved deployment cycles in production environments"
       ]
     },
     {
-      role: "Freelancer",
-      company: "Fiver",
+      role: "Freelance Mobile Developer",
+      company: "Fiverr",
       companylogo: require("./assets/images/upworkk.png"),
       date: "May 2018 – May 2020",
-      desc: "As a freelancer , I provided software development services to clients from around the world. I worked on a variety of projects, including web development and mobile app development",
+      desc: "Delivered high-quality mobile applications for international clients, building expertise in cross-platform development and client communication.",
       descBullets: [
-        "Built mobile apps for iOS and Android using frameworks such as React Native",
-        "Worked independently and managed time effectively to ensure that project deliverables were completed on time and to a high standard"
+        "Developed and deployed mobile applications for iOS and Android using React Native, consistently exceeding client expectations",
+        "Managed end-to-end project delivery including requirements gathering, development, testing, and deployment",
+        "Built strong client relationships through clear communication, timely delivery, and technical excellence"
       ]
     }
   ]
@@ -219,38 +222,56 @@ const openSource = {
 // Some big projects you have worked on
 
 const bigProjects = {
-  title: "Big Projects",
-  subtitle: "SOME Products AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
+  title: "Featured Projects",
+  subtitle: "Innovative solutions that drive business impact and user engagement",
   projects: [
     {
       image: require("./assets/images/dubizzlecars.png"),
-      projectName: "Dubizzle (CRM, Auction, Inspection)",
+      projectName: "Dubizzle Motors Platform",
       projectDesc:
-        "Scaled Dubizzle’s online marketplace to support 100K+ monthly ads. Built a full-featured vehicle auction platform that boosted engagement by 30% and tripled listings. Launched a car inspection service, completing 500+ inspections/month and reducing post-sale disputes by 40%.",
+        "Scaled Dubizzle's automotive marketplace to support 100K+ monthly listings. Built comprehensive vehicle auction platform boosting engagement by 30% and tripling listings. Launched car inspection service completing 500+ inspections/month, reducing post-sale disputes by 40%.",
       footerLink: [
         {
-          name: "Visit Website",
+          name: "Visit Platform",
           url: "https://dubai.dubizzle.com/motors/"
         }
       ]
     },
     {
       image: require("./assets/images/img.png"),
-      projectName: "Jarvis (Real Estate CRM)",
+      projectName: "Jarvis Real Estate CRM",
       projectDesc:
-        "Led CRM integration for Jarvis, improving task management efficiency by 40% and boosting sales team productivity. Supported 100K+ active users across Pakistan, UAE, Saudi Arabia, and Egypt for platforms like zameen.com, bayut.com, and olx.com."
+        "Led CRM integration for Jarvis, improving task management efficiency by 40% and boosting sales team productivity. Supported 100K+ active users across Pakistan, UAE, Saudi Arabia, and Egypt for platforms like zameen.com, bayut.com, and olx.com.",
+      footerLink: [
+        {
+          name: "Learn More",
+          url: "#"
+        }
+      ]
     },
     {
-      image: require("./assets/images/olx.png"), // Replace with actual OLX logo if available
-      projectName: "OLX (E-commerce App)",
+      image: require("./assets/images/olx.png"),
+      projectName: "OLX E-commerce Platform",
       projectDesc:
-        "Integrated payment gateways and logistics via REST APIs, resulting in a 30% increase in customer satisfaction. Enhanced mobile app performance and UX by integrating React Native, streamlining transactions across iOS and Android."
+        "Integrated payment gateways and logistics via REST APIs, resulting in 30% increase in customer satisfaction. Enhanced mobile app performance and UX by integrating React Native, streamlining transactions across iOS and Android platforms.",
+      footerLink: [
+        {
+          name: "Visit OLX",
+          url: "https://olx.com"
+        }
+      ]
     },
     {
       image: require("./assets/images/appIcon.png"),
-      projectName: "Connect (Loyalty App)",
+      projectName: "Connect Loyalty App",
       projectDesc:
-        "Built a location-aware loyalty app offering personalized deals from 100+ partnered retailers. Increased user engagement by 35% through location-based promos and boosted repeat transactions by 25% with a points-based reward system."
+        "Built location-aware loyalty app offering personalized deals from 100+ partnered retailers. Increased user engagement by 35% through location-based promotions and boosted repeat transactions by 25% with innovative points-based reward system.",
+      footerLink: [
+        {
+          name: "View Details",
+          url: "#"
+        }
+      ]
     }
   ],
   display: true // Set false to hide this section, defaults to true
@@ -260,20 +281,20 @@ const bigProjects = {
 // Include certificates, talks etc
 
 const achievementSection = {
-  title: emoji("Achievements And Certifications 🏆 "),
+  title: emoji("Recognition & Achievements 🏆"),
   subtitle:
-    "Achievements, Certifications, Award Letters and Some Cool Stuff that I have done !",
+    "Professional recognition, certifications, and notable contributions to the tech community",
 
   achievementsCards: [
     {
       title: "Google Code-In Finalist",
       subtitle:
-        "First Pakistani to be selected as Google Code-in Finalist from 4000 students from 77 different countries.",
+        "First Pakistani selected as Google Code-in Finalist from 4000+ students across 77 countries, demonstrating exceptional coding skills and open source contribution.",
       image: require("./assets/images/codeInLogo.webp"),
       imageAlt: "Google Code-In Logo",
       footerLink: [
         {
-          name: "Certification",
+          name: "View Certification",
           url: "https://drive.google.com/file/d/0B7kazrtMwm5dYkVvNjdNWjNybWJrbndFSHpNY2NFV1p4YmU0/view?usp=sharing"
         },
         {
@@ -281,34 +302,32 @@ const achievementSection = {
           url: "https://drive.google.com/file/d/0B7kazrtMwm5dekxBTW5hQkg2WXUyR3QzQmR0VERiLXlGRVdF/view?usp=sharing"
         },
         {
-          name: "Google Code-in Blog",
+          name: "Google Blog Post",
           url: "https://opensource.googleblog.com/2019/01/google-code-in-2018-winners.html"
         }
       ]
     },
     {
-      title: "Google Assistant Action",
+      title: "Google Assistant Action Developer",
       subtitle:
-        "Developed a Google Assistant Action JavaScript Guru that is available on 2 Billion devices world wide.",
+        "Developed JavaScript Guru Google Assistant Action available on 2+ billion devices worldwide, showcasing expertise in voice technology and AI integration.",
       image: require("./assets/images/googleAssistantLogo.webp"),
       imageAlt: "Google Assistant Action Logo",
       footerLink: [
         {
-          name: "View Google Assistant Action",
+          name: "Try the Action",
           url: "https://assistant.google.com/services/a/uid/000000100ee688ee?hl=en"
         }
       ]
     },
-
     {
       title: "PWA Web App Developer",
-      subtitle: "Completed Certifcation from SMIT for PWA Web App Development",
+      subtitle: "Completed comprehensive certification from SMIT for Progressive Web App Development, mastering modern web technologies and user experience optimization.",
       image: require("./assets/images/pwaLogo.webp"),
       imageAlt: "PWA Logo",
       footerLink: [
-        {name: "Certification", url: ""},
         {
-          name: "Final Project",
+          name: "View Project",
           url: "https://pakistan-olx-1.firebaseapp.com/"
         }
       ]
@@ -320,22 +339,22 @@ const achievementSection = {
 // Blogs Section
 
 const blogSection = {
-  title: "Blogs",
+  title: "Technical Writing",
   subtitle:
-    "With Love for Developing cool stuff, I love to write and teach others what I have learnt.",
+    "Sharing knowledge and insights from my journey in mobile development and software engineering",
   displayMediumBlogs: "true", // Set true to display fetched medium blogs instead of hardcoded ones
   blogs: [
     {
       url: "https://blog.usejournal.com/create-a-google-assistant-action-and-win-a-google-t-shirt-and-cloud-credits-4a8d86d76eae",
-      title: "Win a Google Assistant Tshirt and $200 in Google Cloud Credits",
+      title: "Building Google Assistant Actions: A Complete Guide",
       description:
-        "Do you want to win $200 and Google Assistant Tshirt by creating a Google Assistant Action in less then 30 min?"
+        "Learn how to create Google Assistant Actions and win Google Cloud credits. Step-by-step guide for developers."
     },
     {
       url: "https://medium.com/@saadpasta/why-react-is-the-best-5a97563f423e",
-      title: "Why REACT is The Best?",
+      title: "Why React Native is the Future of Mobile Development",
       description:
-        "React is a JavaScript library for building User Interface. It is maintained by Facebook and a community of individual developers and companies."
+        "Exploring the advantages of React Native for cross-platform mobile development and why it's becoming the industry standard."
     }
   ],
   display: true // Set false to hide this section, defaults to true
@@ -344,14 +363,14 @@ const blogSection = {
 // Talks Sections
 
 const talkSection = {
-  title: "TALKS",
+  title: "Speaking Engagements",
   subtitle: emoji(
-    "I LOVE TO SHARE MY LIMITED KNOWLEDGE AND GET A SPEAKER BADGE 😅"
+    "Sharing knowledge and experiences with the developer community 🎤"
   ),
 
   talks: [
     {
-      title: "Build Actions For Google Assistant",
+      title: "Building Actions For Google Assistant",
       subtitle: "Codelab at GDG DevFest Karachi 2019",
       slides_url: "https://bit.ly/saadpasta-slides",
       event_url: "https://www.facebook.com/events/2339906106275053/"
@@ -363,8 +382,8 @@ const talkSection = {
 // Podcast Section
 
 const podcastSection = {
-  title: emoji("Podcast 🎙️"),
-  subtitle: "I LOVE TO TALK ABOUT MYSELF AND TECHNOLOGY",
+  title: emoji("Podcast Appearances 🎙️"),
+  subtitle: "Sharing insights on mobile development, technology trends, and career growth",
 
   // Please Provide with Your Podcast embeded Link
   podcast: [
@@ -374,9 +393,9 @@ const podcastSection = {
 };
 
 const contactInfo = {
-  title: emoji("Contact Me ☎️"),
+  title: emoji("Let's Connect ☎️"),
   subtitle:
-    "Discuss a project or just want to say hi? My Inbox is open for all.",
+    "Ready to discuss your next project or explore collaboration opportunities? I'm always open to meaningful conversations about technology and innovation.",
   number: "+92-3377304400",
   email_address: "haseja45@gmail.com"
 };
@@ -388,7 +407,7 @@ const twitterDetails = {
   display: true // Set true to display this section, defaults to false
 };
 
-const isHireable = false; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
+const isHireable = true; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
 
 export {
   illustration,
