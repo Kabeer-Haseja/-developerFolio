@@ -3,29 +3,58 @@ import "./Skills.scss";
 import { DeveloperWorkingSVG } from "../../components/InlineSVG/InlineSVG";
 
 function Skills() {
-  console.log("Skills component is rendering");
-  
   return (
-    <div className="skills-main-div" style={{ 
-      border: '2px solid red', 
-      padding: '20px', 
-      background: '#f0f0f0',
-      minHeight: '400px'
-    }}>
+    <div className="skills-main-div">
       <div className="skills-image-div">
         <DeveloperWorkingSVG />
       </div>
-      <div className="skills-text-div" style={{ border: '2px solid blue' }}>
-        <h1 className="skills-heading" style={{ color: 'black' }}>What I do</h1>
-        <p className="skills-subtitle" style={{ color: 'black' }}>
+      <div className="skills-text-div">
+        <h1 className="skills-heading">What I do</h1>
+        <p className="skills-subtitle">
           CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK
         </p>
-        <ul>
-          <li>⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications</li>
-          <li>⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks</li>
-          <li>⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean</li>
-          <li>⚡ Experience of working with Computer Vision and NLP projects</li>
-        </ul>
+        
+        <div className="skills-categories">
+          <div className="skills-category">
+            <h3>Frontend Development</h3>
+            <ul>
+              <li>⚡ React.js, Vue.js, Angular</li>
+              <li>⚡ HTML5, CSS3, JavaScript (ES6+)</li>
+              <li>⚡ TypeScript, Redux, Vuex</li>
+              <li>⚡ Responsive Design, PWA</li>
+            </ul>
+          </div>
+          
+          <div className="skills-category">
+            <h3>Backend Development</h3>
+            <ul>
+              <li>⚡ Node.js, Express.js, Django</li>
+              <li>⚡ Python, Java, C#</li>
+              <li>⚡ RESTful APIs, GraphQL</li>
+              <li>⚡ Microservices Architecture</li>
+            </ul>
+          </div>
+          
+          <div className="skills-category">
+            <h3>Database & Cloud</h3>
+            <ul>
+              <li>⚡ MongoDB, PostgreSQL, MySQL</li>
+              <li>⚡ AWS, Azure, Google Cloud</li>
+              <li>⚡ Docker, Kubernetes</li>
+              <li>⚡ CI/CD, DevOps</li>
+            </ul>
+          </div>
+          
+          <div className="skills-category">
+            <h3>Tools & Technologies</h3>
+            <ul>
+              <li>⚡ Git, GitHub, GitLab</li>
+              <li>⚡ VS Code, IntelliJ, WebStorm</li>
+              <li>⚡ Jira, Trello, Slack</li>
+              <li>⚡ Testing (Jest, Cypress)</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );

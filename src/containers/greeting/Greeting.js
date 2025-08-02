@@ -3,7 +3,6 @@ import "./Greeting.scss";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
 import {greeting} from "../../portfolio";
-import { OfficeWorkerSVG } from "../../components/InlineSVG/InlineSVG";
 
 export default function Greeting() {
   if (!greeting.displayGreeting) {
@@ -36,9 +35,6 @@ export default function Greeting() {
               />
             )}
           </div>
-        </div>
-        <div className="greeting-image-div">
-          <OfficeWorkerSVG />
         </div>
       </div>
     </div>

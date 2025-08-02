@@ -74,9 +74,7 @@ const Main = () => {
             {/* About & Skills Section */}
             <section style={{ 
               padding: '6rem 0',
-              background: isDark ? '#1a1a1a' : '#ffffff',
-              border: '3px solid green',
-              minHeight: '400px'
+              background: isDark ? '#1a1a1a' : '#ffffff'
             }}>
               <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
                 <Skills />
