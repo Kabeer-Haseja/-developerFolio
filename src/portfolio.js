@@ -21,9 +21,9 @@ const illustration = {
 
 const greeting = {
   username: "Kabeer Haseja",
-  title: "Senior Mobile App Developer",
+  title: "Hi there, I'm Kabeer 👋",
   subTitle: emoji(
-    "I transform complex business challenges into elegant mobile solutions that millions of users love. With 5+ years crafting React Native applications, I specialize in building scalable, high-performance apps that drive real business impact. \n\nFrom real estate platforms serving 100K+ users to loyalty apps boosting engagement by 35%, I've delivered solutions that matter. My expertise spans the full mobile development stack—React Native, TypeScript, Redux, Firebase, and native integrations—with a focus on clean architecture, performance optimization, and exceptional user experiences."
+    "I'm a passionate React Native Mobile App Developer 🚀 with 5+ years of experience crafting beautiful, scalable, and high-performance cross-platform applications. I specialize in creating seamless mobile experiences using React Native, TypeScript, Redux, Firebase, and native integrations. \n\nFrom real estate platforms serving 100K+ users to loyalty apps boosting engagement by 35%, I've delivered solutions that make a difference. I focus on writing clean, maintainable code and building applications that users love to use."
   ),
   resumeLink:
     "https://drive.google.com/drive/folders/1eZ70lh4aQ8sfYto2T4n9LJRujYxJX6Ux?usp=sharing", // Leave empty to hide
@@ -47,21 +47,21 @@ const socialMediaLinks = {
 // Skills Section
 
 const skillsSection = {
-  title: "Technical Expertise",
+  title: "What I Do",
   subTitle:
-    "I architect and build mobile applications that scale, perform, and delight users. My technical foundation enables me to tackle complex challenges and deliver solutions that exceed expectations.",
+    "Transforming ideas into beautiful, intuitive, and high-performing mobile applications 🌟 Let's build something amazing together! 💻📱",
   skills: [
     emoji(
-      "🚀 Architecting scalable React Native applications with TypeScript, Redux, and modern state management patterns"
+      "⚡ Crafting highly responsive and interactive user interfaces for mobile apps using React Native and TypeScript"
+    ),
+    emoji(
+      "⚡ Building scalable mobile applications with modern state management using Redux and RTK Query"
+    ),
+    emoji(
+      "⚡ Seamless integration of third-party services like Firebase, Google Maps, Push Notifications, and REST APIs"
     ),
     emoji(
       "⚡ Optimizing app performance through code refactoring, memory management, and efficient rendering strategies"
-    ),
-    emoji(
-      "🔧 Integrating complex third-party services including Firebase, Google Maps, push notifications, and biometric authentication"
-    ),
-    emoji(
-      "🎯 Leading cross-functional teams to deliver high-impact features that drive business metrics and user engagement"
     )
   ],
 
@@ -281,7 +281,7 @@ const bigProjects = {
 // Include certificates, talks etc
 
 const achievementSection = {
-  title: emoji("Recognition & Achievements 🏆"),
+  title: emoji("Achievements And Certifications 🏆"),
   subtitle:
     "Professional recognition, certifications, and notable contributions to the tech community",
 
@@ -339,7 +339,7 @@ const achievementSection = {
 // Blogs Section
 
 const blogSection = {
-  title: "Technical Writing",
+  title: "Blogs",
   subtitle:
     "Sharing knowledge and insights from my journey in mobile development and software engineering",
   displayMediumBlogs: "true", // Set true to display fetched medium blogs instead of hardcoded ones
@@ -363,14 +363,14 @@ const blogSection = {
 // Talks Sections
 
 const talkSection = {
-  title: "Speaking Engagements",
+  title: "TALKS",
   subtitle: emoji(
-    "Sharing knowledge and experiences with the developer community 🎤"
+    "I LOVE TO SHARE MY LIMITED KNOWLEDGE AND GET A SPEAKER BADGE 😅"
   ),
 
   talks: [
     {
-      title: "Building Actions For Google Assistant",
+      title: "Build Actions For Google Assistant",
       subtitle: "Codelab at GDG DevFest Karachi 2019",
       slides_url: "https://bit.ly/saadpasta-slides",
       event_url: "https://www.facebook.com/events/2339906106275053/"
@@ -382,8 +382,8 @@ const talkSection = {
 // Podcast Section
 
 const podcastSection = {
-  title: emoji("Podcast Appearances 🎙️"),
-  subtitle: "Sharing insights on mobile development, technology trends, and career growth",
+  title: emoji("Podcast 🎙️"),
+  subtitle: "I LOVE TO TALK ABOUT MYSELF AND TECHNOLOGY",
 
   // Please Provide with Your Podcast embeded Link
   podcast: [
@@ -393,9 +393,9 @@ const podcastSection = {
 };
 
 const contactInfo = {
-  title: emoji("Let's Connect ☎️"),
+  title: emoji("Contact Me ☎️"),
   subtitle:
-    "Ready to discuss your next project or explore collaboration opportunities? I'm always open to meaningful conversations about technology and innovation.",
+    "Discuss a project or just want to say hi? My Inbox is open for all.",
   number: "+92-3377304400",
   email_address: "haseja45@gmail.com"
 };
