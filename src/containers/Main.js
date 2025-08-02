@@ -50,7 +50,7 @@ const Main = () => {
       color: isDark ? '#ffffff' : '#000000',
       minHeight: '100vh',
       fontFamily: 'Inter, sans-serif',
-      paddingTop: '60px' // Reduced padding to account for fixed header
+      paddingTop: '50px' // Reduced padding to account for smaller header
     }}>
       <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
         {isShowingSplashAnimation && splashScreen.enabled ? (
@@ -61,7 +61,7 @@ const Main = () => {
             
             {/* Hero Section */}
             <section style={{ 
-              minHeight: 'calc(100vh - 60px)',
+              minHeight: 'calc(100vh - 50px)',
               display: 'flex',
               alignItems: 'center',
               background: 'linear-gradient(135deg, rgba(0, 52, 89, 0.02) 0%, rgba(248, 249, 250, 0.8) 100%)',

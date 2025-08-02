@@ -2,20 +2,20 @@
 
 .main-button {
   display: inline-block;
-  padding: 1rem 2rem;
-  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 6px;
   transition: all 0.3s ease;
   cursor: pointer;
   border: 2px solid transparent;
   text-align: center;
-  min-width: 140px;
+  min-width: 120px;
   
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 52, 89, 0.3);
+    box-shadow: 0 6px 20px rgba(0, 52, 89, 0.25);
   }
   
   &:focus {
@@ -26,16 +26,16 @@
 
 .button {
   display: inline-block;
-  padding: 1rem 2rem;
-  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 6px;
   transition: all 0.3s ease;
   cursor: pointer;
   border: 2px solid transparent;
   text-align: center;
-  min-width: 140px;
+  min-width: 120px;
   
   &.primary {
     background: $deepBlue;
@@ -46,7 +46,7 @@
       background: #004d7a;
       border-color: #004d7a;
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0, 52, 89, 0.3);
+      box-shadow: 0 6px 20px rgba(0, 52, 89, 0.25);
     }
     
     &:focus {
@@ -64,7 +64,7 @@
       background: $deepBlue;
       color: $white;
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0, 52, 89, 0.3);
+      box-shadow: 0 6px 20px rgba(0, 52, 89, 0.25);
     }
     
     &:focus {
@@ -95,7 +95,7 @@
     &:hover {
       background: rgba(0, 52, 89, 0.1);
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0, 52, 89, 0.2);
+      box-shadow: 0 6px 20px rgba(0, 52, 89, 0.2);
     }
     
     .dark-mode & {
@@ -113,18 +113,18 @@
 @media (max-width: 768px) {
   .button,
   .main-button {
-    padding: 0.875rem 1.5rem;
-    font-size: 0.875rem;
-    min-width: 120px;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.8rem;
+    min-width: 100px;
   }
 }
 
 @media (max-width: 480px) {
   .button,
   .main-button {
-    padding: 0.75rem 1.25rem;
-    font-size: 0.8rem;
-    min-width: 100px;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    min-width: 90px;
   }
 }
 
