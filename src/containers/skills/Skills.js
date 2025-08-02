@@ -7,7 +7,7 @@ export default function SoftwareSkill() {
       <div className="skills-image-div">
         <img
           alt="Developer working illustration"
-          src={require("../../assets/images/developerWorking.svg")}
+          src={require("../../assets/images/programmerAtWork.svg")}
         />
       </div>
       <div className="skills-text-div">
