@@ -50,7 +50,7 @@ const Main = () => {
       color: isDark ? '#ffffff' : '#000000',
       minHeight: '100vh',
       fontFamily: 'Inter, sans-serif',
-      paddingTop: '80px' // Add padding to account for fixed header
+      paddingTop: '60px' // Reduced padding to account for fixed header
     }}>
       <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
         {isShowingSplashAnimation && splashScreen.enabled ? (
@@ -61,7 +61,7 @@ const Main = () => {
             
             {/* Hero Section */}
             <section style={{ 
-              minHeight: 'calc(100vh - 80px)',
+              minHeight: 'calc(100vh - 60px)',
               display: 'flex',
               alignItems: 'center',
               background: 'linear-gradient(135deg, rgba(0, 52, 89, 0.02) 0%, rgba(248, 249, 250, 0.8) 100%)',
@@ -74,7 +74,7 @@ const Main = () => {
             
             {/* About & Skills Section */}
             <section style={{ 
-              padding: '6rem 0',
+              padding: '4rem 0',
               background: isDark ? '#1a1a1a' : '#ffffff'
             }}>
               <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
@@ -84,7 +84,7 @@ const Main = () => {
             
             {/* Skills Progress Section */}
             <section style={{ 
-              padding: '6rem 0',
+              padding: '4rem 0',
               background: isDark ? '#2a2a2a' : '#f8f9fa'
             }}>
               <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
@@ -94,7 +94,7 @@ const Main = () => {
             
             {/* Education Section */}
             <section style={{ 
-              padding: '6rem 0',
+              padding: '4rem 0',
               background: isDark ? '#1a1a1a' : '#ffffff'
             }}>
               <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
@@ -104,7 +104,7 @@ const Main = () => {
             
             {/* Experience Section */}
             <section style={{ 
-              padding: '6rem 0',
+              padding: '4rem 0',
               background: isDark ? '#2a2a2a' : '#f8f9fa'
             }}>
               <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
@@ -114,7 +114,7 @@ const Main = () => {
             
             {/* Projects Section */}
             <section style={{ 
-              padding: '6rem 0',
+              padding: '4rem 0',
               background: isDark ? '#1a1a1a' : '#ffffff'
             }}>
               <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
@@ -124,7 +124,7 @@ const Main = () => {
             
             {/* Startup Projects Section */}
             <section style={{ 
-              padding: '6rem 0',
+              padding: '4rem 0',
               background: isDark ? '#2a2a2a' : '#f8f9fa'
             }}>
               <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
@@ -134,7 +134,7 @@ const Main = () => {
             
             {/* Achievements Section */}
             <section style={{ 
-              padding: '6rem 0',
+              padding: '4rem 0',
               background: isDark ? '#1a1a1a' : '#ffffff'
             }}>
               <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
@@ -144,7 +144,7 @@ const Main = () => {
             
             {/* Blogs Section */}
             <section style={{ 
-              padding: '6rem 0',
+              padding: '4rem 0',
               background: isDark ? '#2a2a2a' : '#f8f9fa'
             }}>
               <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
@@ -154,7 +154,7 @@ const Main = () => {
             
             {/* Talks Section */}
             <section style={{ 
-              padding: '6rem 0',
+              padding: '4rem 0',
               background: isDark ? '#1a1a1a' : '#ffffff'
             }}>
               <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
@@ -164,7 +164,7 @@ const Main = () => {
             
             {/* Twitter Section */}
             <section style={{ 
-              padding: '6rem 0',
+              padding: '4rem 0',
               background: isDark ? '#2a2a2a' : '#f8f9fa'
             }}>
               <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
@@ -174,7 +174,7 @@ const Main = () => {
             
             {/* Podcast Section */}
             <section style={{ 
-              padding: '6rem 0',
+              padding: '4rem 0',
               background: isDark ? '#1a1a1a' : '#ffffff'
             }}>
               <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
@@ -184,7 +184,7 @@ const Main = () => {
             
             {/* Profile Section */}
             <section style={{ 
-              padding: '6rem 0',
+              padding: '4rem 0',
               background: isDark ? '#2a2a2a' : '#f8f9fa'
             }}>
               <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
