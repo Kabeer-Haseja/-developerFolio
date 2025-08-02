@@ -36,12 +36,6 @@ export default function Greeting() {
             )}
           </div>
         </div>
-        <div className="greeting-image-div">
-          <img
-            alt="Developer working on laptop"
-            src={require("../../assets/images/officeWorker.svg")}
-          />
-        </div>
       </div>
     </div>
   );
