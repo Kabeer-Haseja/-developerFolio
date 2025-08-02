@@ -17,7 +17,13 @@ export default function Skills() {
         <div className="skills-image-div">
           <img
             alt="Man Working"
-            src={require("../../assets/images/developerActivity.svg")}
+            src={require("../../assets/images/manOnTable.svg")}
+            style={{ maxWidth: '100%', height: 'auto' }}
+            onError={(e) => {
+              console.error('Failed to load skills image:', e.target.src);
+              e.target.style.display = 'none';
+            }}
+            onLoad={() => console.log('Skills image loaded successfully')}
           />
         </div>
         <div className="skills-text-div">
