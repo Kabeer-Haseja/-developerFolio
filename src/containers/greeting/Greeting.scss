@@ -186,18 +186,13 @@
   font-weight: 900;
   line-height: 1.05;
   margin-bottom: 2.5rem;
-  color: $veryDarkGray;
+  color: #000400;
   letter-spacing: -0.04em;
-  background: linear-gradient(135deg, $veryDarkGray 0%, $deepBlue 50%, #004d7a 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   
   .dark-mode & {
-    background: linear-gradient(135deg, #f8f9fa 0%, $lightGray 50%, $deepBlue 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
   }
 }
 
