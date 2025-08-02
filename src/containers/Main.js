@@ -19,7 +19,6 @@ import SplashScreen from "./splashScreen/SplashScreen";
 import {splashScreen} from "../portfolio";
 import {StyleProvider} from "../contexts/StyleContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
-import "./Main.scss";
 
 const Main = () => {
   const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
@@ -36,6 +35,8 @@ const Main = () => {
       return () => {
         clearTimeout(splashTimer);
       };
+    } else {
+      setIsShowingSplashAnimation(false);
     }
   }, []);
 
@@ -44,64 +45,150 @@ const Main = () => {
   };
 
   return (
-    <div className={isDark ? "dark-mode" : ""}>
+    <div style={{ 
+      background: isDark ? '#1a1a1a' : '#ffffff',
+      color: isDark ? '#ffffff' : '#000000',
+      minHeight: '100vh',
+      fontFamily: 'Inter, sans-serif'
+    }}>
       <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
         {isShowingSplashAnimation && splashScreen.enabled ? (
           <SplashScreen />
         ) : (
-          <div className="portfolio-main">
+          <div style={{ padding: '0' }}>
             <Header />
             
-            <section className="portfolio-section" id="greeting">
-              <Greeting />
+            {/* Hero Section */}
+            <section style={{ 
+              minHeight: '100vh',
+              display: 'flex',
+              alignItems: 'center',
+              background: 'linear-gradient(135deg, rgba(0, 52, 89, 0.02) 0%, rgba(248, 249, 250, 0.8) 100%)',
+              padding: '0 2rem'
+            }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+                <Greeting />
+              </div>
             </section>
             
-            <section className="portfolio-section" id="skills">
-              <Skills />
+            {/* About & Skills Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#1a1a1a' : '#ffffff'
+            }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <Skills />
+              </div>
             </section>
             
-            <section className="portfolio-section" id="skill-progress">
-              <StackProgress />
+            {/* Skills Progress Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#2a2a2a' : '#f8f9fa'
+            }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <StackProgress />
+              </div>
             </section>
             
-            <section className="portfolio-section" id="education">
-              <Education />
+            {/* Education Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#1a1a1a' : '#ffffff'
+            }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <Education />
+              </div>
             </section>
             
-            <section className="portfolio-section" id="experience">
-              <WorkExperience />
+            {/* Experience Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#2a2a2a' : '#f8f9fa'
+            }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <WorkExperience />
+              </div>
             </section>
             
-            <section className="portfolio-section" id="projects">
-              <Projects />
+            {/* Projects Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#1a1a1a' : '#ffffff'
+            }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <Projects />
+              </div>
             </section>
             
-            <section className="portfolio-section" id="startup-projects">
-              <StartupProject />
+            {/* Startup Projects Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#2a2a2a' : '#f8f9fa'
+            }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <StartupProject />
+              </div>
             </section>
             
-            <section className="portfolio-section" id="achievements">
-              <Achievement />
+            {/* Achievements Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#1a1a1a' : '#ffffff'
+            }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <Achievement />
+              </div>
             </section>
             
-            <section className="portfolio-section" id="blogs">
-              <Blogs />
+            {/* Blogs Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#2a2a2a' : '#f8f9fa'
+            }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <Blogs />
+              </div>
             </section>
             
-            <section className="portfolio-section" id="talks">
-              <Talks />
+            {/* Talks Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#1a1a1a' : '#ffffff'
+            }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <Talks />
+              </div>
             </section>
             
-            <section className="portfolio-section" id="twitter">
-              <Twitter />
+            {/* Twitter Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#2a2a2a' : '#f8f9fa'
+            }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <Twitter />
+              </div>
             </section>
             
-            <section className="portfolio-section" id="podcast">
-              <Podcast />
+            {/* Podcast Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#1a1a1a' : '#ffffff'
+            }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <Podcast />
+              </div>
             </section>
             
-            <section className="portfolio-section" id="profile">
-              <Profile />
+            {/* Profile Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#2a2a2a' : '#f8f9fa'
+            }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <Profile />
+              </div>
             </section>
             
             <Footer />

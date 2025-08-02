@@ -1,7 +1,14 @@
+@import "../../_globalColor.scss";
+
 .project-title {
   font-size: 52px;
   font-weight: 400;
   line-height: normal;
+  color: $veryDarkGray;
+  
+  .dark-mode & {
+    color: $white;
+  }
 }
 
 .startup-project-text img {
@@ -13,6 +20,30 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 1rem 1rem;
+}
+
+.fallback-content {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 52, 89, 0.1);
+  backdrop-filter: blur(10px);
+  
+  .dark-mode & {
+    background: rgba(45, 45, 45, 0.8);
+    border-color: rgba(170, 170, 170, 0.1);
+  }
+  
+  p {
+    font-size: 1.1rem;
+    color: $mediumGray;
+    margin-bottom: 2rem;
+    
+    .dark-mode & {
+      color: $lightGray;
+    }
+  }
 }
 
 /* Media Query */

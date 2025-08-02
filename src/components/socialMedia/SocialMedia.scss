@@ -1,90 +1,176 @@
-@import "../../_globalColor";
+@import "../../_globalColor.scss";
 
 .social-media-div {
-  font-size: 2em;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .icon-button {
-  margin-bottom: 10px;
-}
-
-.icon-button i {
-  color: $textColorDark;
-  border-radius: 2.6rem;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 1.3rem;
-  height: 2.6rem;
-  line-height: 2.6rem;
-  margin: 0 5px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
   position: relative;
-  text-align: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 2.6rem;
-  margin-bottom: 10px;
-  transition: 0.2s ease-in;
+  overflow: hidden;
+  
+  // Default styling
+  background: rgba(0, 52, 89, 0.1);
+  color: $deepBlue;
+  border-color: rgba(0, 52, 89, 0.2);
+  
+  .dark-mode & {
+    background: rgba(255, 255, 255, 0.1);
+    color: $white;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  i {
+    font-size: 1.2rem;
+    z-index: 2;
+    position: relative;
+  }
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 52, 89, 0.3);
+    
+    .dark-mode & {
+      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+    }
+  }
+  
+  &:focus {
+    outline: 2px solid $deepBlue;
+    outline-offset: 2px;
+    
+    .dark-mode & {
+      outline-color: $white;
+    }
+  }
+  
+  // Platform-specific colors
+  &.github {
+    &:hover {
+      background: $deepBlue;
+      color: $white;
+      border-color: $deepBlue;
+    }
+  }
+  
+  &.linkedin {
+    &:hover {
+      background: #0077b5;
+      color: $white;
+      border-color: #0077b5;
+    }
+  }
+  
+  &.google {
+    &:hover {
+      background: #ea4335;
+      color: $white;
+      border-color: #ea4335;
+    }
+  }
+  
+  &.gitlab {
+    &:hover {
+      background: #fc6d26;
+      color: $white;
+      border-color: #fc6d26;
+    }
+  }
+  
+  &.facebook {
+    &:hover {
+      background: #1877f2;
+      color: $white;
+      border-color: #1877f2;
+    }
+  }
+  
+  &.instagram {
+    &:hover {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: $white;
+      border-color: #dc2743;
+    }
+  }
+  
+  &.twitter {
+    &:hover {
+      background: #1da1f2;
+      color: $white;
+      border-color: #1da1f2;
+    }
+  }
+  
+  &.medium {
+    &:hover {
+      background: #00ab6c;
+      color: $white;
+      border-color: #00ab6c;
+    }
+  }
+  
+  &.stack-overflow {
+    &:hover {
+      background: #f48024;
+      color: $white;
+      border-color: #f48024;
+    }
+  }
+  
+  &.kaggle {
+    &:hover {
+      background: #20beff;
+      color: $white;
+      border-color: #20beff;
+    }
+  }
 }
 
-.facebook i {
-  background-color: $faceBook;
-}
-
-.linkedin i {
-  background-color: $linkedin;
-}
-
-.github i {
-  background-color: $github;
-}
-
-.gitlab i {
-  background-color: $gitlab;
-}
-
-.google i {
-  background-color: $google;
-}
-
-.twitter i {
-  background-color: $twitter;
-}
-
-.medium i {
-  background-color: $medium;
-}
-
-.stack-overflow i {
-  background-color: $stackoverflow;
-}
-
-.kaggle i {
-  background-color: $kaggle;
-}
-
-.instagram i {
-  background-color: $instagram;
-}
-
-/* Hover Transition */
-.twitter i:hover,
-.google i:hover,
-.gitlab i:hover,
-.github i:hover,
-.linkedin i:hover,
-.facebook i:hover,
-.instagram i:hover,
-.stack-overflow i:hover,
-.kaggle i:hover,
-.medium i:hover {
-  background-color: $textColor;
-}
-
-/* Media Query */
+// Responsive design
 @media (max-width: 768px) {
   .social-media-div {
-    text-align: center;
+    justify-content: center;
+  }
+  
+  .icon-button {
+    width: 40px;
+    height: 40px;
+    
+    i {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .icon-button {
+    width: 35px;
+    height: 35px;
+    
+    i {
+      font-size: 1rem;
+    }
+  }
+}
+
+// Accessibility
+@media (prefers-reduced-motion: reduce) {
+  .icon-button {
+    transition: none;
+    
+    &:hover {
+      transform: none;
+    }
   }
 }

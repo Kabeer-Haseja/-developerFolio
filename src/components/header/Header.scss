@@ -1,536 +1,292 @@
-@import "../../_globalColor";
+@import "../../_globalColor.scss";
 
-/*React-headroom*/
-.headroom-wrapper {
-  max-height: 100px;
-  position: relative;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
-}
-
-.headroom {
-  transition: all $transitionNormal $easeInOut !important;
-}
-
-.headroom--pinned {
-  transform: translateY(0%);
-}
-
-.headroom--unpinned {
-  transform: translateY(-100%);
-}
-
-/* Enhanced header with professional IT styling */
-.dark-menu {
-  background: rgba(3, 4, 94, 0.95) !important;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(144, 224, 239, 0.2);
-  color: $textColorDark;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.dark-menu li a {
-  color: $textColorDark !important;
-  position: relative;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 52, 89, 0.1);
+  transition: all 0.3s ease;
   
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, $lightBlue, $skyBlue);
-    transition: all $transitionNormal $easeInOut;
-    transform: translateX(-50%);
+  .dark-mode & {
+    background: rgba(0, 4, 0, 0.95);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
   }
-  
-  &:hover::after {
-    width: 85%;
-  }
-}
-
-.dark-menu li a:hover {
-  background-color: rgba(144, 224, 239, 0.1) !important;
-  color: $lightBlue !important;
-  transform: translateY(-2px);
 }
 
 .header {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 119, 182, 0.1);
-  max-width: 100%;
-  padding: 18px 30px;
-  margin: 0px auto;
-  position: relative;
-  transition: all $transitionNormal $easeInOut;
-  box-shadow: 0 2px 15px rgba(0, 119, 182, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
   
-  // Professional IT company accent line
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: $primaryGradient;
-  }
-  
-  // Subtle tech pattern overlay
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-      linear-gradient(90deg, 
-        transparent 0%, 
-        rgba(0, 119, 182, 0.02) 50%, 
-        transparent 100%);
-    pointer-events: none;
-  }
-}
-
-.header ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  overflow: hidden;
-}
-
-.grey-color {
-  color: $subTitle;
-  transition: color $transitionNormal $easeInOut;
-}
-
-.header li a {
-  display: block;
-  padding: 15px 24px;
-  color: $textColor;
-  text-decoration: none;
-  position: relative;
-  font-weight: 600;
-  transition: all $transitionNormal $easeInOut;
-  border-radius: 10px;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 8px;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: $primaryGradient;
-    transition: all $transitionNormal $easeInOut;
-    transform: translateX(-50%);
-    border-radius: 1px;
-  }
-  
-  &:hover::after {
-    width: 70%;
-  }
-}
-
-.header li a:hover,
-.header .menu-btn:hover {
-  background: rgba(0, 119, 182, 0.08);
-  color: $primary;
-  transform: translateY(-2px);
-}
-
-.header .logo {
-  display: block;
-  flex: none;
-  float: left;
-  font-size: 1.6em;
-  text-decoration: none;
-  margin-top: 12px;
-  line-height: normal;
-  transition: all $transitionNormal $easeInOut;
-  font-weight: 800;
-  
-  &:hover {
-    transform: scale(1.05);
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: $deepBlue;
+    transition: all 0.3s ease;
     
-    .grey-color {
-      color: $primary;
+    .dark-mode & {
+      color: $white;
+    }
+    
+    &:hover {
+      color: #004d7a;
+      transform: scale(1.05);
+      
+      .dark-mode & {
+        color: $lightGray;
+      }
     }
     
     .logo-name {
-      background: $primaryGradient;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: $deepBlue;
+      font-weight: 800;
+      
+      .dark-mode & {
+        color: $white;
+      }
+    }
+    
+    .grey-color {
+      color: $mediumGray;
+      
+      .dark-mode & {
+        color: $lightGray;
+      }
     }
   }
-}
-
-.header .logo-name {
-  font-family: "Agustina Regular";
-  font-weight: bold;
-  font-variant-ligatures: no-common-ligatures;
-  -webkit-font-variant-ligatures: no-common-ligatures;
-  padding: 0 12px;
-  transition: all $transitionNormal $easeInOut;
-  position: relative;
-  color: $titleColor;
-}
-
-/* Enhanced mobile menu with professional styling */
-.header .menu {
-  clear: both;
-  max-height: 0;
-  transition: all $transitionNormal $easeInOut;
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(25px);
-  border-radius: 16px;
-  margin-top: 15px;
-  overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0, 119, 182, 0.15);
-  border: 1px solid rgba(0, 119, 182, 0.1);
-}
-
-.dark-menu .header .menu {
-  background: rgba(3, 4, 94, 0.98);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-  border-color: rgba(144, 224, 239, 0.2);
-}
-
-/* Enhanced menu icon with tech styling */
-.header .menu-icon {
-  cursor: pointer;
-  display: inline-block;
-  float: right;
-  padding: 32px 24px;
-  position: relative;
-  user-select: none;
-  transition: all $transitionNormal $easeInOut;
   
-  &:hover {
-    transform: scale(1.1);
-  }
-}
-
-.header .menu-icon .navicon {
-  background: $iconBackground;
-  display: block;
-  height: 3px;
-  position: relative;
-  transition: all $transitionNormal $easeInOut;
-  width: 20px;
-  border-radius: 2px;
-}
-
-.header .menu-icon .navicon-dark {
-  background: $textColorDark;
-}
-
-.header .menu-icon .navicon:before,
-.header .menu-icon .navicon:after {
-  background: $iconBackground;
-  content: "";
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all $transitionNormal $easeInOut;
-  width: 100%;
-  border-radius: 2px;
-}
-
-.header .menu-icon .navicon-dark:before,
-.header .menu-icon .navicon-dark:after {
-  background: $textColorDark !important;
-  content: "";
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all $transitionNormal $easeInOut;
-  width: 100%;
-  border-radius: 2px;
-}
-
-.header .menu-icon .navicon:before {
-  top: 6px;
-}
-
-.header .menu-icon .navicon:after {
-  top: -6px;
-}
-
-/* Enhanced menu button interactions */
-.header .menu-btn {
-  display: none;
-}
-
-.header .menu-btn:checked ~ .menu {
-  max-height: 600px;
-  padding: 20px 0;
-}
-
-.header .menu-btn:checked ~ .menu-icon {
-  transform: scale(1.1) rotate(180deg);
-}
-
-.header .menu-btn:checked ~ .menu-icon .navicon {
-  background: transparent !important;
-}
-
-.header .menu-btn:checked ~ .menu-icon .navicon:before {
-  transform: rotate(-45deg);
-  top: 0;
-}
-
-.header .menu-btn:checked ~ .menu-icon .navicon:after {
-  transform: rotate(45deg);
-  top: 0;
-}
-
-/* Professional staggered menu item animation */
-.header .menu li {
-  opacity: 0;
-  transform: translateY(-15px);
-  animation: slideInDown 0.4s $easeOut forwards;
-}
-
-.header .menu-btn:checked ~ .menu li:nth-child(1) { animation-delay: 0.1s; }
-.header .menu-btn:checked ~ .menu li:nth-child(2) { animation-delay: 0.15s; }
-.header .menu-btn:checked ~ .menu li:nth-child(3) { animation-delay: 0.2s; }
-.header .menu-btn:checked ~ .menu li:nth-child(4) { animation-delay: 0.25s; }
-.header .menu-btn:checked ~ .menu li:nth-child(5) { animation-delay: 0.3s; }
-.header .menu-btn:checked ~ .menu li:nth-child(6) { animation-delay: 0.35s; }
-.header .menu-btn:checked ~ .menu li:nth-child(7) { animation-delay: 0.4s; }
-
-@keyframes slideInDown {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Desktop responsive design with professional spacing */
-@media (min-width: 48em) {
-  .header li {
-    float: left;
-  }
-  
-  .header {
+  .menu {
     display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
     align-items: center;
-    justify-content: space-between;
-    padding: 20px 40px;
+    
+    li {
+      margin: 0;
+      
+      a {
+        color: $mediumGray;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        padding: 0.5rem 0;
+        position: relative;
+        
+        .dark-mode & {
+          color: $lightGray;
+        }
+        
+        &:hover {
+          color: $deepBlue;
+          
+          .dark-mode & {
+            color: $white;
+          }
+          
+          &::after {
+            width: 100%;
+          }
+        }
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: $deepBlue;
+          transition: width 0.3s ease;
+          
+          .dark-mode & {
+            background: $white;
+          }
+        }
+      }
+    }
   }
   
-  .header .menu {
-    max-height: none;
-    background: none;
-    backdrop-filter: none;
-    box-shadow: none;
-    border-radius: 0;
-    margin-top: 0;
-    border: none;
-  }
-  
-  .header .menu li {
-    opacity: 1;
-    transform: none;
-    animation: none;
-  }
-  
-  .header .menu-icon {
+  .menu-btn {
     display: none;
   }
   
-  .header ul {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  .menu-icon {
+    display: none;
   }
 }
 
-@media (max-width: 960px) and (min-width: 768px) {
-  .header {
-    font-size: 14px;
-    padding: 16px 25px;
-  }
-  
-  .header li a {
-    padding: 12px 18px;
-  }
-}
-
-/* Enhanced mobile responsiveness */
+// Mobile menu
 @media (max-width: 768px) {
   .header {
-    padding: 15px 20px;
-  }
-  
-  .header .logo {
-    font-size: 1.4em;
-    margin-top: 10px;
-  }
-  
-  .header .menu-icon {
-    padding: 25px 20px;
-  }
-  
-  .header li a {
-    padding: 15px 25px;
-    margin: 8px 20px;
-    border-radius: 12px;
-    font-weight: 500;
+    padding: 1rem;
+    
+    .menu {
+      position: fixed;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      flex-direction: column;
+      gap: 0;
+      padding: 2rem 0;
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      border-top: 1px solid rgba(0, 52, 89, 0.1);
+      
+      .dark-mode & {
+        background: rgba(0, 4, 0, 0.98);
+        border-top-color: rgba(255, 255, 255, 0.1);
+      }
+      
+      &.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      li {
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(0, 52, 89, 0.1);
+        
+        .dark-mode & {
+          border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        &:last-child {
+          border-bottom: none;
+        }
+        
+        a {
+          display: block;
+          padding: 0.5rem 2rem;
+          font-size: 1rem;
+          
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+    
+    .menu-btn {
+      display: none;
+      
+      &:checked ~ .menu {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    
+    .menu-icon {
+      display: block;
+      cursor: pointer;
+      padding: 0.5rem;
+      
+      .navicon {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background: $deepBlue;
+        position: relative;
+        transition: all 0.3s ease;
+        
+        .dark-mode & {
+          background: $white;
+        }
+        
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          width: 25px;
+          height: 2px;
+          background: $deepBlue;
+          transition: all 0.3s ease;
+          
+          .dark-mode & {
+            background: $white;
+          }
+        }
+        
+        &::before {
+          top: -8px;
+        }
+        
+        &::after {
+          bottom: -8px;
+        }
+      }
+      
+      .menu-btn:checked ~ & .navicon {
+        background: transparent;
+        
+        &::before {
+          transform: rotate(45deg);
+          top: 0;
+        }
+        
+        &::after {
+          transform: rotate(-45deg);
+          bottom: 0;
+        }
+      }
+    }
   }
 }
 
 @media (max-width: 480px) {
   .header {
-    padding: 12px 15px;
-  }
-  
-  .header .logo {
-    font-size: 1.3em;
-  }
-  
-  .header .logo-name {
-    padding: 0 8px;
-  }
-  
-  .header li a {
-    padding: 12px 20px;
-    margin: 6px 15px;
-  }
-}
-
-/* Dark mode specific enhancements */
-.dark-mode .header {
-  background: rgba(3, 4, 94, 0.95);
-  border-bottom-color: rgba(144, 224, 239, 0.2);
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-  
-  &::before {
-    background: linear-gradient(90deg, $lightBlue, $skyBlue);
-  }
-  
-  &::after {
-    background: 
-      linear-gradient(90deg, 
-        transparent 0%, 
-        rgba(144, 224, 239, 0.05) 50%, 
-        transparent 100%);
+    padding: 0.75rem;
+    
+    .logo {
+      font-size: 1.25rem;
+    }
+    
+    .menu {
+      padding: 1.5rem 0;
+      
+      li a {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+    }
   }
 }
 
-.dark-mode .header li a:hover {
-  background: rgba(144, 224, 239, 0.1);
-  color: $lightBlue;
-}
-
-.dark-mode .grey-color:hover {
-  color: $lightBlue;
-}
-
-.dark-mode .header .logo-name {
-  color: $textColorDark;
-}
-
-/* Tech company branding enhancements */
-.header .logo {
-  position: relative;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: $primaryGradient;
-    opacity: 0;
-    transition: opacity $transitionNormal $easeInOut;
-  }
-  
-  &:hover::after {
-    opacity: 1;
-  }
-}
-
-/* Professional navigation indicators */
-.header li a.active {
-  background: rgba(0, 119, 182, 0.1);
-  color: $primary;
-  
-  &::after {
-    width: 70%;
-  }
+// Scroll effect
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 20px rgba(0, 52, 89, 0.1);
   
   .dark-mode & {
-    background: rgba(144, 224, 239, 0.15);
-    color: $lightBlue;
+    background: rgba(0, 4, 0, 0.98);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
   }
 }
 
-/* Accessibility improvements */
-@media (prefers-reduced-motion: reduce) {
-  .header,
-  .header li a,
-  .header .logo,
-  .header .menu-icon,
-  .header .navicon,
-  .header .navicon:before,
-  .header .navicon:after,
-  .header .logo::after {
-    transition: none !important;
-    animation: none !important;
-  }
-  
-  .header .menu li {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-  
-  .header li a:hover,
-  .header .logo:hover {
-    transform: none !important;
-  }
-}
-
-/* Focus management for better accessibility */
-.header a:focus,
-.header .menu-icon:focus {
-  outline: 3px solid $skyBlue;
+// Focus styles for accessibility
+.header a:focus {
+  outline: 2px solid $deepBlue;
   outline-offset: 2px;
-  border-radius: 6px;
-}
-
-/* High contrast mode */
-@media (prefers-contrast: high) {
-  .header {
-    background: white;
-    border-bottom: 3px solid $primary;
-    
-    &::before {
-      background: $primary;
-      height: 4px;
-    }
-  }
   
-  .dark-menu {
-    background: $ultraDarkBlue !important;
-    border-bottom: 3px solid $lightBlue;
-  }
-  
-  .header li a {
-    border: 1px solid transparent;
-    
-    &:hover,
-    &.active {
-      border-color: $primary;
-      background: $veryPaleBlue;
-    }
+  .dark-mode & {
+    outline-color: $white;
   }
 }

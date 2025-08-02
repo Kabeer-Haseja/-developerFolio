@@ -2,10 +2,11 @@ import React from "react";
 import "./SocialMedia.scss";
 import {socialMediaLinks} from "../../portfolio";
 
-export default function socialMedia() {
+export default function SocialMedia() {
   if (!socialMediaLinks.display) {
     return null;
   }
+  
   return (
     <div className="social-media-div">
       {socialMediaLinks.github ? (

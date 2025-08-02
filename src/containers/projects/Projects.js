@@ -1,21 +1,22 @@
 import React, {useState, useEffect, useContext, Suspense, lazy} from "react";
 import "./Project.scss";
-import Button from "../../components/button/Button";
 import {openSource, socialMediaLinks} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 import Loading from "../../containers/loading/Loading";
+
 export default function Projects() {
   const GithubRepoCard = lazy(() =>
     import("../../components/githubRepoCard/GithubRepoCard")
   );
-  const FailedLoading = () => null;
   const renderLoader = () => <Loading />;
   const [repo, setrepo] = useState([]);
-  // todo: remove useContex because is not supported
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
   const {isDark} = useContext(StyleContext);
 
   useEffect(() => {
     const getRepoData = () => {
+      setIsLoading(true);
       fetch("/profile.json")
         .then(result => {
           if (result.ok) {
@@ -25,12 +26,14 @@ export default function Projects() {
         })
         .then(response => {
           setrepoFunction(response.data.user.pinnedItems.edges);
+          setIsLoading(false);
         })
         .catch(function (error) {
           console.error(
-            `${error} (because of this error, nothing is shown in place of Projects section. Also check if Projects section has been configured)`
+            `${error} (GitHub data not available, showing fallback content)`
           );
-          setrepoFunction("Error");
+          setHasError(true);
+          setIsLoading(false);
         });
     };
     getRepoData();
@@ -39,36 +42,88 @@ export default function Projects() {
   function setrepoFunction(array) {
     setrepo(array);
   }
-  if (
-    !(typeof repo === "string" || repo instanceof String) &&
-    openSource.display
-  ) {
-    return (
-      <Suspense fallback={renderLoader()}>
-        <div className="main" id="opensource">
-          <h1 className="project-title">Open Source Projects</h1>
-          <div className="repo-cards-div-main">
-            {repo.map((v, i) => {
-              if (!v) {
-                console.error(
-                  `Github Object for repository number : ${i} is undefined`
-                );
-              }
-              return (
-                <GithubRepoCard repo={v} key={v.node.id} isDark={isDark} />
-              );
-            })}
-          </div>
-          <Button
-            text={"More Projects"}
-            className="project-button"
-            href={socialMediaLinks.github}
-            newTab={true}
-          />
-        </div>
-      </Suspense>
-    );
-  } else {
-    return <FailedLoading />;
+
+  if (!openSource.display) {
+    return null;
   }
+
+  // Show loading state
+  if (isLoading) {
+    return (
+      <div className="main" id="opensource">
+        <h1 className="project-title">Open Source Projects</h1>
+        <div className="repo-cards-div-main">
+          <Loading />
+        </div>
+      </div>
+    );
+  }
+
+  // Show error state with fallback content
+  if (hasError || (typeof repo === "string" || repo instanceof String)) {
+    return (
+      <div className="main" id="opensource">
+        <h1 className="project-title">Open Source Projects</h1>
+        <div className="repo-cards-div-main">
+          <div className="fallback-content">
+            <p>GitHub projects will be displayed here when available.</p>
+            <a 
+              href={socialMediaLinks.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ 
+                background: '#003459', 
+                color: 'white', 
+                padding: '10px 20px', 
+                textDecoration: 'none',
+                borderRadius: '5px',
+                display: 'inline-block',
+                marginTop: '10px'
+              }}
+            >
+              View GitHub Profile
+            </a>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Show GitHub projects
+  return (
+    <Suspense fallback={renderLoader()}>
+      <div className="main" id="opensource">
+        <h1 className="project-title">Open Source Projects</h1>
+        <div className="repo-cards-div-main">
+          {repo.map((v, i) => {
+            if (!v) {
+              console.error(
+                `Github Object for repository number : ${i} is undefined`
+              );
+              return null;
+            }
+            return (
+              <GithubRepoCard repo={v} key={v.node.id} isDark={isDark} />
+            );
+          })}
+        </div>
+        <a 
+          href={socialMediaLinks.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ 
+            background: '#003459', 
+            color: 'white', 
+            padding: '10px 20px', 
+            textDecoration: 'none',
+            borderRadius: '5px',
+            display: 'inline-block',
+            marginTop: '20px'
+          }}
+        >
+          More Projects
+        </a>
+      </div>
+    </Suspense>
+  );
 }

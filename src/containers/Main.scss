@@ -1,207 +1,27 @@
-@import "../_globalColor";
+@import "../_globalColor.scss";
 
-// Main portfolio container with IT company styling
 .portfolio-main {
-  min-height: 100vh;
   background: $lightBackground1;
-  transition: all 0.3s ease;
-  position: relative;
-  
-  // Add subtle tech-inspired background pattern
-  &::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-      radial-gradient(circle at 25% 25%, rgba(0, 119, 182, 0.03) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, rgba(0, 180, 216, 0.03) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: -1;
-  }
-}
+  color: $textColor;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.6;
+  transition: all $transitionNormal $easeInOut;
 
-.dark-mode {
-  background-color: $darkBackground;
-  color: $textColorDark;
-  transition: all 0.3s ease;
-  
-  .portfolio-main {
+  &.dark-mode {
     background: $darkBackground;
-    
-    &::before {
-      background: 
-        radial-gradient(circle at 25% 25%, rgba(144, 224, 239, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(0, 180, 216, 0.05) 0%, transparent 50%);
-    }
-  }
-}
-
-// Enhanced section styling for IT company presentation
-.portfolio-section {
-  position: relative;
-  padding: 100px 0;
-  
-  // Professional separator with tech aesthetic
-  &:not(:last-of-type)::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 200px;
-    height: 2px;
-    background: linear-gradient(90deg, 
-      transparent, 
-      rgba(0, 119, 182, 0.3), 
-      rgba(0, 180, 216, 0.5), 
-      rgba(0, 119, 182, 0.3), 
-      transparent
-    );
-  }
-  
-  // Dark mode separator
-  .dark-mode &:not(:last-of-type)::after {
-    background: linear-gradient(90deg, 
-      transparent, 
-      rgba(144, 224, 239, 0.4), 
-      rgba(0, 180, 216, 0.6), 
-      rgba(144, 224, 239, 0.4), 
-      transparent
-    );
-  }
-  
-  // Enhanced alternating section backgrounds
-  &:nth-child(even) {
-    background: linear-gradient(135deg, 
-      rgba(202, 240, 248, 0.03) 0%, 
-      rgba(144, 224, 239, 0.02) 100%
-    );
-    
-    .dark-mode & {
-      background: linear-gradient(135deg, 
-        rgba(0, 180, 216, 0.02) 0%, 
-        rgba(144, 224, 239, 0.01) 100%
-      );
-    }
-  }
-  
-  // Special styling for hero section
-  &#greeting {
-    background: linear-gradient(135deg, 
-      $veryPaleBlue 0%, 
-      rgba(255, 255, 255, 0.8) 100%
-    );
-    border-bottom: 3px solid rgba(0, 119, 182, 0.1);
-    
-    .dark-mode & {
-      background: $darkGradient;
-      border-bottom-color: rgba(144, 224, 239, 0.2);
-    }
-  }
-  
-  // Responsive section padding
-  @media (max-width: 768px) {
-    padding: 80px 0;
-  }
-  
-  @media (max-width: 480px) {
-    padding: 60px 0;
-  }
-}
-
-// Main content wrapper for consistent max-width
-.section-content {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
-  
-  @media (max-width: 1200px) {
-    max-width: 1200px;
-    padding: 0 30px;
-  }
-  
-  @media (max-width: 768px) {
-    padding: 0 20px;
-  }
-  
-  @media (max-width: 480px) {
-    padding: 0 15px;
-  }
-}
-
-// Enhanced typography for IT company sections
-.section-heading {
-  font-size: clamp(36px, 5vw, 56px);
-  font-weight: 800;
-  text-align: center;
-  margin-bottom: 24px;
-  color: $titleColor;
-  position: relative;
-  letter-spacing: -0.02em;
-  
-  .dark-mode & {
     color: $textColorDark;
   }
-  
-  // Modern IT-style underline with gradient
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: 4px;
-    background: $primaryGradient;
-    border-radius: 2px;
-    box-shadow: 0 2px 8px rgba(0, 119, 182, 0.3);
-  }
-  
-  // Add subtle glow effect on hover
-  &:hover::after {
-    box-shadow: 0 4px 16px rgba(0, 119, 182, 0.5);
-    width: 140px;
-    transition: all 0.3s ease;
-  }
 }
 
-.section-subtitle {
-  font-size: clamp(18px, 3vw, 24px);
-  text-align: center;
-  color: $subTitle;
-  margin-bottom: 80px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.7;
-  font-weight: 400;
-  
-  .dark-mode & {
-    color: $textColorDarkSecondary;
-  }
-  
-  @media (max-width: 768px) {
-    margin-bottom: 60px;
-  }
-}
-
-// Enhanced card styling for IT company
-.portfolio-card {
-  background: $lightBackgroundCard;
-  border-radius: 16px;
-  padding: 40px;
-  box-shadow: 
-    0 4px 25px rgba(3, 4, 94, 0.08),
-    0 0 0 1px rgba(0, 119, 182, 0.05);
-  border: 1px solid $cardBorder;
-  transition: all 0.4s ease;
+// Hero Section
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(0, 52, 89, 0.02) 0%, rgba(248, 249, 250, 0.8) 100%);
   position: relative;
-  overflow: hidden;
-  
-  // Add subtle gradient overlay
+  // overflow: hidden; // Removed to see if this was hiding content
+
   &::before {
     content: '';
     position: absolute;
@@ -209,248 +29,257 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: $cardGradient;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23003459' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
   }
+
+  .dark-mode & {
+    background: linear-gradient(135deg, rgba(0, 4, 0, 0.1) 0%, rgba(26, 26, 26, 0.9) 100%);
+  }
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+// Section Containers
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+// About Section
+.about-section {
+  padding: 6rem 0;
+  background: $white;
   
-  &:hover {
-    transform: translateY(-8px);
-    box-shadow: 
-      0 12px 40px rgba(0, 119, 182, 0.15),
-      0 0 0 1px rgba(0, 180, 216, 0.1);
-    border-color: rgba(0, 119, 182, 0.2);
-    
-    &::before {
-      opacity: 1;
-    }
+  .dark-mode & {
+    background: $darkBackgroundSecondary;
   }
+}
+
+// Skills Progress Section
+.skills-progress-section {
+  padding: 6rem 0;
+  background: $lightBackground2;
   
   .dark-mode & {
     background: $darkBackgroundCard;
-    border-color: $cardBorderDark;
-    box-shadow: 
-      0 4px 25px rgba(0, 0, 0, 0.3),
-      0 0 0 1px rgba(144, 224, 239, 0.1);
+  }
+}
+
+// Education Section
+.education-section {
+  padding: 6rem 0;
+  background: $white;
+  
+  .dark-mode & {
+    background: $darkBackgroundSecondary;
+  }
+}
+
+// Experience Section
+.experience-section {
+  padding: 6rem 0;
+  background: $lightBackground2;
+  
+  .dark-mode & {
+    background: $darkBackgroundCard;
+  }
+}
+
+// Projects Section
+.projects-section {
+  padding: 6rem 0;
+  background: $white;
+  
+  .dark-mode & {
+    background: $darkBackgroundSecondary;
+  }
+}
+
+// Startup Projects Section
+.startup-projects-section {
+  padding: 6rem 0;
+  background: $lightBackground2;
+  
+  .dark-mode & {
+    background: $darkBackgroundCard;
+  }
+}
+
+// Achievements Section
+.achievements-section {
+  padding: 6rem 0;
+  background: $white;
+  
+  .dark-mode & {
+    background: $darkBackgroundSecondary;
+  }
+}
+
+// Blogs Section
+.blogs-section {
+  padding: 6rem 0;
+  background: $lightBackground2;
+  
+  .dark-mode & {
+    background: $darkBackgroundCard;
+  }
+}
+
+// Talks Section
+.talks-section {
+  padding: 6rem 0;
+  background: $white;
+  
+  .dark-mode & {
+    background: $darkBackgroundSecondary;
+  }
+}
+
+// Twitter Section
+.twitter-section {
+  padding: 6rem 0;
+  background: $lightBackground2;
+  
+  .dark-mode & {
+    background: $darkBackgroundCard;
+  }
+}
+
+// Podcast Section
+.podcast-section {
+  padding: 6rem 0;
+  background: $white;
+  
+  .dark-mode & {
+    background: $darkBackgroundSecondary;
+  }
+}
+
+// Profile Section
+.profile-section {
+  padding: 6rem 0;
+  background: $lightBackground2;
+  
+  .dark-mode & {
+    background: $darkBackgroundCard;
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .hero-container,
+  .section-container {
+    padding: 0 1rem;
+  }
+  
+  .hero-section {
+    min-height: 80vh;
+  }
+  
+  .about-section,
+  .skills-progress-section,
+  .education-section,
+  .experience-section,
+  .projects-section,
+  .startup-projects-section,
+  .achievements-section,
+  .blogs-section,
+  .talks-section,
+  .twitter-section,
+  .podcast-section,
+  .profile-section {
+    padding: 4rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-container,
+  .section-container {
+    padding: 0 0.75rem;
+  }
+  
+  .about-section,
+  .skills-progress-section,
+  .education-section,
+  .experience-section,
+  .projects-section,
+  .startup-projects-section,
+  .achievements-section,
+  .blogs-section,
+  .talks-section,
+  .twitter-section,
+  .podcast-section,
+  .profile-section {
+    padding: 3rem 0;
+  }
+}
+
+// Smooth scrolling
+html {
+  scroll-behavior: smooth;
+}
+
+// Section transitions
+.portfolio-main section {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s $easeOut;
+  
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Custom scrollbar
+.portfolio-main {
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: $lightBackground2;
+    
+    .dark-mode & {
+      background: $darkBackgroundCard;
+    }
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: $deepBlue;
+    border-radius: 4px;
     
     &:hover {
-      box-shadow: 
-        0 12px 40px rgba(0, 180, 216, 0.2),
-        0 0 0 1px rgba(144, 224, 239, 0.2);
-      border-color: rgba(144, 224, 239, 0.3);
+      background: #004d7a;
     }
   }
 }
 
-// Professional grid layouts
-.portfolio-grid {
-  display: grid;
-  gap: 40px;
-  
-  &.grid-2 {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  }
-  
-  &.grid-3 {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  }
-  
-  &.grid-4 {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
-  
-  @media (max-width: 768px) {
-    gap: 30px;
-    grid-template-columns: 1fr;
+// Focus styles for accessibility
+.portfolio-main {
+  *:focus {
+    outline: 2px solid $deepBlue;
+    outline-offset: 2px;
   }
 }
 
-// Enhanced button groups for IT company
-.button-group {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 50px;
-  
-  @media (max-width: 480px) {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-}
-
-// Professional animations
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInScale {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes slideInFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInFromRight {
-  from {
-    opacity: 0;
-    transform: translateX(60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-// IT-themed scroll animations
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  
-  &.animate {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-// Stagger animation delays for professional effect
-.stagger-1 { transition-delay: 0.1s; }
-.stagger-2 { transition-delay: 0.2s; }
-.stagger-3 { transition-delay: 0.3s; }
-.stagger-4 { transition-delay: 0.4s; }
-.stagger-5 { transition-delay: 0.5s; }
-
-// Professional loading state
-.loading-spinner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 60px;
-  
-  .spinner {
-    width: 50px;
-    height: 50px;
-    border: 4px solid rgba(0, 119, 182, 0.2);
-    border-top: 4px solid $primary;
-    border-radius: 50%;
-    animation: spin 1.2s linear infinite;
-  }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-// Tech-inspired floating elements
-.tech-decoration {
-  position: absolute;
-  opacity: 0.1;
-  pointer-events: none;
-  
-  &.circle {
-    border-radius: 50%;
-    background: $primaryGradient;
-    animation: float 8s ease-in-out infinite;
-  }
-  
-  &.square {
-    background: $secondaryGradient;
-    transform: rotate(45deg);
-    animation: float 6s ease-in-out infinite reverse;
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-// Accessibility improvements
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  
-  .animate-on-scroll {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-  
-  .tech-decoration {
-    animation: none !important;
-  }
-}
-
-// High contrast mode support
-@media (prefers-contrast: high) {
-  .portfolio-card {
-    border: 3px solid $primary;
-  }
-  
-  .section-heading::after {
-    background: $primary;
-    box-shadow: none;
-  }
-  
-  .portfolio-section:not(:last-of-type)::after {
-    background: $primary;
-    height: 3px;
-  }
-}
-
-// Print styles for professional documents
+// Print styles
 @media print {
   .portfolio-main {
     background: white !important;
+    color: black !important;
     
-    &::before {
-      display: none;
+    section {
+      break-inside: avoid;
+      page-break-inside: avoid;
     }
-  }
-  
-  .portfolio-section {
-    page-break-inside: avoid;
-    padding: 30px 0;
-    background: white !important;
-    
-    &::after {
-      display: none;
-    }
-  }
-  
-  .tech-decoration {
-    display: none;
   }
 }
