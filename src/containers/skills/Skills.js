@@ -1,14 +1,12 @@
 import React from "react";
 import "./Skills.scss";
+import { DeveloperWorkingSVG } from "../../components/InlineSVG/InlineSVG";
 
 export default function SoftwareSkill() {
   return (
     <div className="skills-main-div">
       <div className="skills-image-div">
-        <img
-          alt="Developer working illustration"
-          src={require("../../assets/images/programmerAtWork.svg")}
-        />
+        <DeveloperWorkingSVG />
       </div>
       <div className="skills-text-div">
         <h1 className="skills-heading">What I do</h1>

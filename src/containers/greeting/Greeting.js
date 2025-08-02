@@ -3,6 +3,7 @@ import "./Greeting.scss";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
 import {greeting} from "../../portfolio";
+import { OfficeWorkerSVG } from "../../components/InlineSVG/InlineSVG";
 
 export default function Greeting() {
   if (!greeting.displayGreeting) {
@@ -37,10 +38,7 @@ export default function Greeting() {
           </div>
         </div>
         <div className="greeting-image-div">
-          <img
-            alt="Developer working on laptop"
-            src={require("../../assets/images/officeWorker.svg")}
-          />
+          <OfficeWorkerSVG />
         </div>
       </div>
     </div>
