@@ -160,17 +160,17 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 2rem 0;
 }
 
 .greeting-main {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  text-align: center;
-  max-width: 1200px;
+  text-align: left;
+  max-width: 1400px;
   width: 100%;
   margin: 0 auto;
   padding: 0 4rem;
@@ -182,12 +182,12 @@
 }
 
 .greeting-text {
-  font-size: clamp(4rem, 8vw, 6rem);
-  font-weight: 900;
-  line-height: 1.05;
-  margin-bottom: 2.5rem;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 2rem;
   color: #000400;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   
   .dark-mode & {
@@ -197,14 +197,12 @@
 }
 
 .greeting-text-p {
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
   line-height: 1.6;
   color: $mediumGray;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   font-weight: 400;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 100%;
   
   .dark-mode & {
     color: $lightGray;
@@ -213,10 +211,10 @@
 
 .button-greeting-div {
   display: flex;
-  gap: 2rem;
-  margin-bottom: 4rem;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .greeting-image-div {
@@ -251,7 +249,7 @@
 
 @media (max-width: 1400px) {
   .greeting-main {
-    max-width: 1100px;
+    max-width: 1200px;
     padding: 0 3rem;
   }
 }
@@ -289,22 +287,22 @@
   
   .hero-title,
   .greeting-text {
-    font-size: clamp(3rem, 10vw, 4.5rem);
+    font-size: clamp(2.25rem, 8vw, 3rem);
   }
   
   .hero-subtitle,
   .greeting-text-p {
-    font-size: clamp(1.25rem, 4vw, 1.75rem);
+    font-size: clamp(1rem, 3.5vw, 1.25rem);
   }
   
   .hero-actions,
   .button-greeting-div {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 1rem;
     
     .button {
-      width: 100%;
+      width: auto;
       max-width: 300px;
     }
   }
@@ -324,12 +322,12 @@
   
   .hero-title,
   .greeting-text {
-    font-size: clamp(2.5rem, 12vw, 3.5rem);
+    font-size: clamp(2rem, 10vw, 2.5rem);
   }
   
   .hero-subtitle,
   .greeting-text-p {
-    font-size: clamp(1.125rem, 5vw, 1.5rem);
+    font-size: clamp(0.9375rem, 4vw, 1.125rem);
   }
   
   .hero-actions,
