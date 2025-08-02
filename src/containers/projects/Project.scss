@@ -1,44 +1,78 @@
 @import "../../_globalColor.scss";
 
 .project-title {
-  font-size: 52px;
-  font-weight: 400;
-  line-height: normal;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
   color: $veryDarkGray;
+  margin-bottom: 3rem;
+  text-align: center;
+  letter-spacing: -0.02em;
+  
+  // Gradient text effect
+  background: linear-gradient(135deg, $veryDarkGray 0%, $deepBlue 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   
   .dark-mode & {
-    color: $white;
+    background: linear-gradient(135deg, $white 0%, $lightGray 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
 
 .startup-project-text img {
   max-width: 100%;
   height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 52, 89, 0.15);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(0, 52, 89, 0.25);
+  }
 }
 
 .repo-cards-div-main {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 1rem 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
 }
 
 .fallback-content {
   text-align: center;
-  padding: 3rem 1rem;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 16px;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.8) 100%);
+  border-radius: 20px;
   border: 1px solid rgba(0, 52, 89, 0.1);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 52, 89, 0.1);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 52, 89, 0.15);
+  }
   
   .dark-mode & {
-    background: rgba(45, 45, 45, 0.8);
-    border-color: rgba(170, 170, 170, 0.1);
+    background: linear-gradient(135deg, rgba(45, 45, 45, 0.9) 0%, rgba(64, 64, 64, 0.8) 100%);
+    border-color: rgba(170, 170, 170, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    
+    &:hover {
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
   }
   
   p {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     color: $mediumGray;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
     
     .dark-mode & {
       color: $lightGray;
@@ -46,18 +80,98 @@
   }
 }
 
-/* Media Query */
-@media (max-width: 1380px) {
-  .project-title {
-    font-size: 40px;
+// Enhanced project cards styling
+.project-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.9) 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 52, 89, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 52, 89, 0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0, 52, 89, 0.15);
+    border-color: rgba(0, 52, 89, 0.2);
+  }
+  
+  .dark-mode & {
+    background: linear-gradient(135deg, rgba(45, 45, 45, 0.95) 0%, rgba(64, 64, 64, 0.9) 100%);
+    border-color: rgba(170, 170, 170, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    
+    &:hover {
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+      border-color: rgba(170, 170, 170, 0.25);
+    }
   }
 }
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .repo-cards-div-main {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .repo-cards-div-main {
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .repo-cards-div-main {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1rem;
+  }
+  
+  .fallback-content {
+    padding: 3rem 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .project-title {
-    font-size: 30px;
-    text-align: center;
+    font-size: clamp(2rem, 6vw, 2.75rem);
+    margin-bottom: 2.5rem;
   }
+  
   .repo-cards-div-main {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .fallback-content {
+    padding: 2.5rem 1rem;
+    
+    p {
+      font-size: 1.125rem;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .project-title {
+    font-size: clamp(1.75rem, 8vw, 2.25rem);
+    margin-bottom: 2rem;
+  }
+  
+  .repo-cards-div-main {
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .fallback-content {
+    padding: 2rem 1rem;
+    
+    p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
   }
 }

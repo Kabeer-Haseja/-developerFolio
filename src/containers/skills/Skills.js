@@ -1,58 +1,26 @@
-import React, {useContext} from "react";
+import React from "react";
 import "./Skills.scss";
-import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
-import {skillsSection} from "../../portfolio";
-import StyleContext from "../../contexts/StyleContext";
 
-export default function Skills() {
-  const {isDark} = useContext(StyleContext);
-  
-  if (!skillsSection.display) {
-    return null;
-  }
-  
+export default function SoftwareSkill() {
   return (
-    <div className={isDark ? "dark-mode main" : "main"} id="skills">
-      <div className="skills-main-div">
-        <div className="skills-image-div">
-          <img
-            alt="Man Working"
-            src={require("../../assets/images/developerActivity.svg")}
-          />
-        </div>
-        <div className="skills-text-div">
-          <h1
-            className={isDark ? "dark-mode skills-heading" : "skills-heading"}
-          >
-            {skillsSection.title}
-          </h1>
-          <p
-            className={
-              isDark
-                ? "dark-mode subTitle skills-text-subtitle"
-                : "subTitle skills-text-subtitle"
-            }
-          >
-            {skillsSection.subTitle}
-          </p>
-          <SoftwareSkill />
-          <div className="skills-list">
-            {skillsSection.skills.map((skills, i) => {
-              return (
-                <p
-                  key={i}
-                  className={
-                    isDark
-                      ? "dark-mode subTitle skills-text"
-                      : "subTitle skills-text"
-                  }
-                >
-                  {skills}
-                </p>
-              );
-            })}
-          </div>
-        </div>
+    <div className="skills-main-div">
+      <div className="skills-image-div">
+        <img
+          alt="Developer working illustration"
+          src={require("../../assets/images/programmerAtWork.svg")}
+        />
+      </div>
+      <div className="skills-text-div">
+        <h1 className="skills-heading">What I do</h1>
+        <p className="skills-subtitle">
+          CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK
+        </p>
+        <ul>
+          <li>⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications</li>
+          <li>⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks</li>
+          <li>⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean</li>
+          <li>⚡ Experience of working with Computer Vision and NLP projects</li>
+        </ul>
       </div>
     </div>
   );

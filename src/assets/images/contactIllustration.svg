@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="400" viewBox="0 0 500 400">
+  <defs>
+    <linearGradient id="contactGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#003459;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#004d7a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="contactGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6c63ff;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#6c63ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="500" height="400" fill="#f8f9fa" opacity="0.3"/>
+  
+  <!-- Main contact elements -->
+  <g transform="translate(250, 200)">
+    <!-- Email envelope -->
+    <rect x="-60" y="-40" width="120" height="80" rx="8" fill="url(#contactGrad1)" opacity="0.9"/>
+    <rect x="-55" y="-35" width="110" height="70" rx="4" fill="#ecf0f1"/>
+    <path d="M-55,-35 L0,-15 L55,-35" fill="none" stroke="#003459" stroke-width="2"/>
+    <path d="M-55,-35 L-55,35 L55,35 L55,-35" fill="none" stroke="#003459" stroke-width="2"/>
+    
+    <!-- Email content -->
+    <rect x="-45" y="-25" width="90" height="5" rx="2" fill="#003459" opacity="0.7"/>
+    <rect x="-45" y="-15" width="70" height="5" rx="2" fill="#003459" opacity="0.5"/>
+    <rect x="-45" y="-5" width="80" height="5" rx="2" fill="#003459" opacity="0.6"/>
+    <rect x="-45" y="5" width="60" height="5" rx="2" fill="#003459" opacity="0.4"/>
+    <rect x="-45" y="15" width="75" height="5" rx="2" fill="#003459" opacity="0.5"/>
+    
+    <!-- Phone icon -->
+    <rect x="80" y="-50" width="40" height="70" rx="8" fill="url(#contactGrad2)" opacity="0.9"/>
+    <rect x="85" y="-45" width="30" height="60" rx="4" fill="#ecf0f1"/>
+    <circle cx="100" cy="-25" r="3" fill="#003459"/>
+    <rect x="95" y="-15" width="10" height="15" rx="2" fill="#003459"/>
+    <rect x="95" y="5" width="10" height="15" rx="2" fill="#003459"/>
+    <rect x="95" y="25" width="10" height="15" rx="2" fill="#003459"/>
+    
+    <!-- Social media icons -->
+    <circle cx="-120" cy="-80" r="20" fill="#1877f2"/>
+    <text x="-120" y="-75" font-family="Arial" font-size="16" fill="#fff" text-anchor="middle">f</text>
+    
+    <circle cx="-80" cy="-80" r="20" fill="#1da1f2"/>
+    <text x="-80" y="-75" font-family="Arial" font-size="16" fill="#fff" text-anchor="middle">t</text>
+    
+    <circle cx="-40" cy="-80" r="20" fill="#0077b5"/>
+    <text x="-40" y="-75" font-family="Arial" font-size="16" fill="#fff" text-anchor="middle">in</text>
+    
+    <circle cx="0" cy="-80" r="20" fill="#333"/>
+    <text x="0" y="-75" font-family="Arial" font-size="16" fill="#fff" text-anchor="middle">g</text>
+    
+    <circle cx="40" cy="-80" r="20" fill="#e4405f"/>
+    <text x="40" y="-75" font-family="Arial" font-size="16" fill="#fff" text-anchor="middle">ig</text>
+    
+    <!-- Message bubbles -->
+    <rect x="-140" y="60" width="80" height="40" rx="20" fill="#e3f2fd"/>
+    <rect x="-130" y="70" width="60" height="20" rx="10" fill="#bbdefb"/>
+    <polygon points="-140,80 -150,75 -150,85" fill="#e3f2fd"/>
+    
+    <rect x="60" y="60" width="80" height="40" rx="20" fill="#f3e5f5"/>
+    <rect x="70" y="70" width="60" height="20" rx="10" fill="#e1bee7"/>
+    <polygon points="140,80 150,75 150,85" fill="#f3e5f5"/>
+    
+    <!-- Connection lines -->
+    <line x1="-100" y1="-60" x2="-60" y2="-40" stroke="#003459" stroke-width="1" opacity="0.3"/>
+    <line x1="-100" y1="-60" x2="100" y2="-50" stroke="#003459" stroke-width="1" opacity="0.3"/>
+    <line x1="-100" y1="-60" x2="-120" y2="-80" stroke="#003459" stroke-width="1" opacity="0.3"/>
+    <line x1="-100" y1="-60" x2="-80" y2="-80" stroke="#003459" stroke-width="1" opacity="0.3"/>
+    <line x1="-100" y1="-60" x2="-40" y2="-80" stroke="#003459" stroke-width="1" opacity="0.3"/>
+    <line x1="-100" y1="-60" x2="0" y2="-80" stroke="#003459" stroke-width="1" opacity="0.3"/>
+    <line x1="-100" y1="-60" x2="40" y2="-80" stroke="#003459" stroke-width="1" opacity="0.3"/>
+    
+    <!-- Floating elements -->
+    <circle cx="-180" cy="-120" r="8" fill="url(#contactGrad1)" opacity="0.6"/>
+    <circle cx="180" cy="-100" r="6" fill="url(#contactGrad2)" opacity="0.6"/>
+    <circle cx="-160" cy="120" r="10" fill="url(#contactGrad1)" opacity="0.4"/>
+    <circle cx="160" cy="140" r="7" fill="url(#contactGrad2)" opacity="0.4"/>
+    
+    <!-- Decorative dots -->
+    <circle cx="-200" cy="50" r="2" fill="#003459" opacity="0.3"/>
+    <circle cx="200" cy="30" r="2" fill="#003459" opacity="0.3"/>
+    <circle cx="-180" cy="180" r="2" fill="#003459" opacity="0.3"/>
+    <circle cx="180" cy="200" r="2" fill="#003459" opacity="0.3"/>
+  </g>
+  
+  <!-- Contact labels -->
+  <text x="50" y="50" font-family="Arial" font-size="12" fill="#003459" opacity="0.7">Email</text>
+  <text x="150" y="50" font-family="Arial" font-size="12" fill="#003459" opacity="0.7">Phone</text>
+  <text x="50" y="150" font-family="Arial" font-size="12" fill="#003459" opacity="0.7">Social</text>
+  <text x="150" y="150" font-family="Arial" font-size="12" fill="#003459" opacity="0.7">Messages</text>
+</svg>
