@@ -1,5 +1,21 @@
 import React, {useEffect, useState} from "react";
 import Header from "../components/header/Header";
+import Greeting from "./greeting/Greeting";
+import Skills from "./skills/Skills";
+import StackProgress from "./skillProgress/skillProgress";
+import WorkExperience from "./workExperience/WorkExperience";
+import Projects from "./projects/Projects";
+import StartupProject from "./StartupProjects/StartupProject";
+import Achievement from "./achievement/Achievement";
+import Blogs from "./blogs/Blogs";
+import Footer from "../components/footer/Footer";
+import Talks from "./talks/Talks";
+import Podcast from "./podcast/Podcast";
+import Education from "./education/Education";
+import ScrollToTopButton from "./topbutton/Top";
+import Twitter from "./twitter-embed/twitter";
+import Profile from "./profile/Profile";
+import SplashScreen from "./splashScreen/SplashScreen";
 import {splashScreen} from "../portfolio";
 import {StyleProvider} from "../contexts/StyleContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
@@ -37,64 +53,146 @@ const Main = () => {
     }}>
       <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
         {isShowingSplashAnimation && splashScreen.enabled ? (
-          <div>Loading...</div>
+          <SplashScreen />
         ) : (
-          <div style={{ padding: '20px' }}>
+          <div style={{ padding: '0' }}>
             <Header />
             
-            {/* Test Section 1 */}
-            <div style={{ 
-              background: 'red', 
-              color: 'white', 
-              padding: '50px', 
-              margin: '20px',
-              fontSize: '24px',
-              textAlign: 'center',
-              border: '3px solid black'
+            {/* Hero Section */}
+            <section style={{ 
+              minHeight: '100vh',
+              display: 'flex',
+              alignItems: 'center',
+              background: 'linear-gradient(135deg, rgba(0, 52, 89, 0.02) 0%, rgba(248, 249, 250, 0.8) 100%)',
+              padding: '0 2rem'
             }}>
-              <h1>TEST 1 - React is working!</h1>
-              <p>This is a test to see if React is rendering content.</p>
-              <p>Dark mode: {isDark ? 'Yes' : 'No'}</p>
-            </div>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+                <Greeting />
+              </div>
+            </section>
             
-            {/* Test Section 2 */}
-            <div style={{ 
-              background: 'blue', 
-              color: 'white', 
-              padding: '50px', 
-              margin: '20px',
-              fontSize: '24px',
-              textAlign: 'center',
-              border: '3px solid black'
+            {/* About & Skills Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#1a1a1a' : '#ffffff'
             }}>
-              <h1>TEST 2 - Content is visible!</h1>
-              <p>If you see this blue box, content is rendering.</p>
-            </div>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <Skills />
+              </div>
+            </section>
             
-            {/* Test Section 3 */}
-            <div style={{ 
-              background: 'green', 
-              color: 'white', 
-              padding: '50px', 
-              margin: '20px',
-              fontSize: '24px',
-              textAlign: 'center',
-              border: '3px solid black'
+            {/* Skills Progress Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#2a2a2a' : '#f8f9fa'
             }}>
-              <h1>TEST 3 - All sections working!</h1>
-              <p>If you see this green box, everything is working.</p>
-            </div>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <StackProgress />
+              </div>
+            </section>
             
-            {/* Footer */}
-            <div style={{ 
-              background: 'purple', 
-              color: 'white', 
-              padding: '20px', 
-              margin: '20px',
-              textAlign: 'center'
+            {/* Education Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#1a1a1a' : '#ffffff'
             }}>
-              <p>Footer - If you see this, the page is complete!</p>
-            </div>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <Education />
+              </div>
+            </section>
+            
+            {/* Experience Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#2a2a2a' : '#f8f9fa'
+            }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <WorkExperience />
+              </div>
+            </section>
+            
+            {/* Projects Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#1a1a1a' : '#ffffff'
+            }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <Projects />
+              </div>
+            </section>
+            
+            {/* Startup Projects Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#2a2a2a' : '#f8f9fa'
+            }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <StartupProject />
+              </div>
+            </section>
+            
+            {/* Achievements Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#1a1a1a' : '#ffffff'
+            }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <Achievement />
+              </div>
+            </section>
+            
+            {/* Blogs Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#2a2a2a' : '#f8f9fa'
+            }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <Blogs />
+              </div>
+            </section>
+            
+            {/* Talks Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#1a1a1a' : '#ffffff'
+            }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <Talks />
+              </div>
+            </section>
+            
+            {/* Twitter Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#2a2a2a' : '#f8f9fa'
+            }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <Twitter />
+              </div>
+            </section>
+            
+            {/* Podcast Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#1a1a1a' : '#ffffff'
+            }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <Podcast />
+              </div>
+            </section>
+            
+            {/* Profile Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#2a2a2a' : '#f8f9fa'
+            }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <Profile />
+              </div>
+            </section>
+            
+            <Footer />
+            <ScrollToTopButton />
           </div>
         )}
       </StyleProvider>
