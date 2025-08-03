@@ -59,7 +59,14 @@ export default function Contact() {
               <img
                 alt="Contact illustration"
                 src={require("../../assets/images/contactMailDark.svg")}
-              ></img>
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  height: 'auto',
+                  maxWidth: '500px',
+                  margin: '0 auto'
+                }}
+              />
             )}
           </div>
         </div>
