@@ -9,7 +9,6 @@ import {
   skillsSection,
   openSource,
   blogSection,
-  talkSection,
   achievementSection
 } from "../../portfolio";
 
@@ -20,7 +19,6 @@ function Header() {
   const viewSkills = skillsSection.display;
   const viewAchievement = achievementSection.display;
   const viewBlog = blogSection.display;
-  const viewTalks = talkSection.display;
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -111,19 +109,6 @@ function Header() {
                 }}
               >
                 Blogs
-              </a>
-            </li>
-          )}
-          {viewTalks && (
-            <li>
-              <a 
-                href="#talks" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('talks');
-                }}
-              >
-                Talks
               </a>
             </li>
           )}

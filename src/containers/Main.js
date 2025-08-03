@@ -10,8 +10,6 @@ import StartupProject from "./StartupProjects/StartupProject";
 import Achievement from "./achievement/Achievement";
 import Blogs from "./blogs/Blogs";
 import Footer from "../components/footer/Footer";
-import Talks from "./talks/Talks";
-import Podcast from "./podcast/Podcast";
 import Education from "./education/Education";
 import ScrollToTopButton from "./topbutton/Top";
 import Twitter from "./twitter-embed/twitter";
@@ -162,33 +160,13 @@ const Main = () => {
               </div>
             </section>
             
-            {/* Talks Section */}
-            <section style={{ 
-              padding: '6rem 0',
-              background: isDark ? '#2a2a2a' : '#f8f9fa'
-            }}>
-              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-                <Talks />
-              </div>
-            </section>
-            
             {/* Twitter Section */}
             <section style={{ 
               padding: '6rem 0',
-              background: isDark ? '#1a1a1a' : '#ffffff'
-            }}>
-              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-                <Twitter />
-              </div>
-            </section>
-            
-            {/* Podcast Section */}
-            <section style={{ 
-              padding: '6rem 0',
               background: isDark ? '#2a2a2a' : '#f8f9fa'
             }}>
               <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-                <Podcast />
+                <Twitter />
               </div>
             </section>
             
