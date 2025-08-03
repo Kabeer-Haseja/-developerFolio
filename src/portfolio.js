@@ -173,10 +173,10 @@ const workExperiences = {
       location: "United Arab Emirates — Remote",
       desc: "At Barmajja, I lead the development of location-aware mobile applications, enhancing user engagement and driving business growth through innovative solutions.",
       descBullets: [
-        "Developed a React Native loyalty app with QR-based offer redemption, resulting in a 25% increase in user-driven sales in Q1.",
-        "Integrated GPS and Google Maps APIs to deliver location-based discounts and real-time visibility of nearby offers.",
-        "Implemented Firebase push notifications to boost engagement, leading to a 25% uplift in user interaction via timely deal alerts and updates.",
-        "Collaborated with cross-functional teams to align app features with marketing strategies and business objectives, improving customer retention."
+        "Spearheaded development of a React Native loyalty app with QR-based redemptions, driving a 25% increase in in-store sales within the first quarter.",
+        "Implemented Google Maps & GPS services for real-time, location-aware promotions, boosting engagement by 30%.",
+        "Integrated Firebase Cloud Messaging for segmented push notifications, resulting in a 25% uplift in daily active users.",
+        "Partnered with product and marketing teams to align roadmap with KPIs, improving customer retention."
       ]
     },
     {
@@ -187,11 +187,10 @@ const workExperiences = {
       location: "Lahore, Punjab — Remote",
       desc: "As a Senior Software Engineer at EMPG LABS, I work on high-impact mobile applications that support the digital transformation of real estate platforms in emerging markets such as Pakistan, UAE, and Egypt.",
       descBullets: [
-        "Refactored legacy React Native codebases to modern standards using TypeScript, React Native CLI, and functional components—resulting in a 35% improvement in performance across Android and iOS.",
-        "Integrated 3rd-party services such as OneSignal, Google Maps, Crashlytics, and Firebase for advanced features like real-time push notifications and location-based services.",
-        "Deployed a geofencing solution using GPS and Maps APIs to trigger personalized discounts and offers within a 0.5-mile radius, increasing redemption rates by 15%.",
-        "Upgraded the React Native framework from version 0.64.2 to 0.75 to ensure stability and compatibility with the latest ecosystem.",
-        "Contributed to cross-functional initiatives that enhanced app stability, reduced crashes, and improved deployment cycles in production."
+        "Refactored a legacy codebase to React Native + TypeScript, boosting performance by 35% across Android & iOS.",
+        "Integrated OneSignal, Google Maps, Crashlytics & Firebase to enable geo-fencing and real-time push notifications, lifting redemption rates by 15%.",
+        "Upgraded React Native from 0.64 to 0.75 and introduced CI/CD pipelines, reducing release cycle times and enhancing app stability.",
+        "Collaborated with cross-functional teams to drive crash-free sessions and improve user experience."
       ]
     },
     {
@@ -201,8 +200,8 @@ const workExperiences = {
       date: "May 2018 – May 2020",
       desc: "As a freelancer , I provided software development services to clients from around the world. I worked on a variety of projects, including web development and mobile app development",
       descBullets: [
-        "Built mobile apps for iOS and Android using frameworks such as React Native",
-        "Worked independently and managed time effectively to ensure that project deliverables were completed on time and to a high standard"
+        "Delivered bespoke mobile and web applications for global clients, earning 5-star feedback on 95% of projects.",
+        "Managed full project lifecycles—from requirements gathering to deployment—while consistently meeting tight deadlines and budgets."
       ]
     }
   ]
@@ -220,13 +219,13 @@ const openSource = {
 
 const bigProjects = {
   title: "Big Projects",
-  subtitle: "SOME Products AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
+  subtitle: "Products and companies where I engineered high-impact, scalable tech solutions",
   projects: [
     {
       image: require("./assets/images/dubizzlecars.png"),
       projectName: "Dubizzle (CRM, Auction, Inspection)",
       projectDesc:
-        "Scaled Dubizzle’s online marketplace to support 100K+ monthly ads. Built a full-featured vehicle auction platform that boosted engagement by 30% and tripled listings. Launched a car inspection service, completing 500+ inspections/month and reducing post-sale disputes by 40%.",
+        "Engineered a scalable vehicle marketplace supporting 100K+ monthly listings. Delivered an end-to-end auction platform that lifted engagement by 30% and tripled listings. Rolled out a car inspection service producing 500+ reports per month and cutting post-sale disputes by 40%.",
       footerLink: [
         {
           name: "Visit Website",
@@ -238,19 +237,19 @@ const bigProjects = {
       image: require("./assets/images/img.png"),
       projectName: "Jarvis (Real Estate CRM)",
       projectDesc:
-        "Led CRM integration for Jarvis, improving task management efficiency by 40% and boosting sales team productivity. Supported 100K+ active users across Pakistan, UAE, Saudi Arabia, and Egypt for platforms like zameen.com, bayut.com, and olx.com."
+        "Integrated and optimized a multi-tenant CRM used by 100K+ agents across Zameen, Bayut & OLX—automating workflows and boosting task completion efficiency by 40%."
     },
     {
       image: require("./assets/images/olx.png"), // Replace with actual OLX logo if available
       projectName: "OLX (E-commerce App)",
       projectDesc:
-        "Integrated payment gateways and logistics via REST APIs, resulting in a 30% increase in customer satisfaction. Enhanced mobile app performance and UX by integrating React Native, streamlining transactions across iOS and Android."
+        "Modernized OLX’s mobile shopping experience with React Native, integrating payment & logistics APIs to increase customer satisfaction by 30% and shorten checkout time by 25%."
     },
     {
       image: require("./assets/images/connect_Icon.png"),
       projectName: "Connect (Loyalty App)",
       projectDesc:
-        "Built a location-aware loyalty app offering personalized deals from 100+ partnered retailers. Increased user engagement by 35% through location-based promos and boosted repeat transactions by 25% with a points-based reward system."
+        "Built a GPS-enabled loyalty platform delivering personalized offers from 100+ retailers. Achieved a 35% rise in daily active users and a 25% uplift in repeat purchases."
     }
   ],
   display: true // Set false to hide this section, defaults to true
