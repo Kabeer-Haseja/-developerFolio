@@ -247,7 +247,7 @@ const bigProjects = {
         "Integrated payment gateways and logistics via REST APIs, resulting in a 30% increase in customer satisfaction. Enhanced mobile app performance and UX by integrating React Native, streamlining transactions across iOS and Android."
     },
     {
-      image: require("./assets/images/appIcon.png"),
+      image: require("./assets/images/connect_Icon.png"),
       projectName: "Connect (Loyalty App)",
       projectDesc:
         "Built a location-aware loyalty app offering personalized deals from 100+ partnered retailers. Increased user engagement by 35% through location-based promos and boosted repeat transactions by 25% with a points-based reward system."
