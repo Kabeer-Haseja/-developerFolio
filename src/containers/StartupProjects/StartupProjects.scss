@@ -4,7 +4,17 @@
   max-width: 100%;
   height: auto;
   width: 250px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.card-image:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
 .card-title {
   color: $titleColor;
   font-size: 22px;
@@ -56,6 +66,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 12px;
+  background-color: #f8f9fa;
 }
 
 .projects-container {
