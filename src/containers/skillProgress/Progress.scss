@@ -1,70 +1,194 @@
 @import "../../_globalColor.scss";
 
-.meter {
-  height: 20px;
-  position: relative;
-  background: $progressBarBackground;
-  -moz-border-radius: 25px;
-  -webkit-border-radius: 25px;
-  border-radius: 25px;
+.skills-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  min-height: 500px;
 }
+
+.skills-container > * {
+  flex: 1;
+}
+
+.skills-bar {
+  flex: 1;
+  max-width: 600px;
+}
+
+.skills-heading {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 3rem;
+  color: #000400;
+  letter-spacing: -0.02em;
+  
+  .dark-mode & {
+    color: #ffffff;
+  }
+}
+
+.skill {
+  margin-bottom: 2rem;
+  
+  p {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #000400;
+    margin-bottom: 0.75rem;
+    
+    .dark-mode & {
+      color: #ffffff;
+    }
+  }
+}
+
+.meter {
+  height: 12px;
+  position: relative;
+  background: rgba(0, 52, 89, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  
+  .dark-mode & {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
 .meter > span {
   display: block;
   height: 100%;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  background-color: $progressBarSpanBG;
+  border-radius: 6px;
+  background: linear-gradient(90deg, $deepBlue 0%, #004d7a 100%);
   position: relative;
   overflow: hidden;
-}
-.skill {
-  line-height: 3.5vw;
-}
-.skill-bars {
-  font-size: 28px;
-  width: 40%;
-}
-.skills-container {
-  display: flex;
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
-}
-.skills-container > * {
-  flex: 1;
-  margin-bottom: 30px;
-}
-.skills-image > img {
-  margin-left: 80px;
-  max-width: 90%;
-  height: auto;
-}
-
-/* Media Query */
-
-@media (max-width: 1456px) {
-  .skills-bar {
-    line-height: 4rem;
+  transition: width 1s ease-in-out;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+    animation: shimmer 2s infinite;
   }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.skills-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  
+  > img {
+    max-width: 100%;
+    height: auto;
+    min-width: 300px;
+    min-height: 200px;
+    filter: drop-shadow(0 25px 70px rgba(0, 52, 89, 0.25));
+    border-radius: 12px;
+    transition: all 0.5s ease;
+    
+    &:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 30px 90px rgba(0, 52, 89, 0.35));
+    }
+    
+    .dark-mode & {
+      filter: drop-shadow(0 25px 70px rgba(85, 85, 85, 0.35));
+      
+      &:hover {
+        filter: drop-shadow(0 30px 90px rgba(170, 170, 170, 0.45));
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .skills-container {
+    gap: 50px;
+    padding: 0 2.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .skills-container {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 2rem;
+    text-align: center;
+  }
+  
+  .skills-bar {
+    order: 1;
+    max-width: 100%;
+  }
+  
   .skills-image {
-    display: none;
     order: 2;
   }
 }
 
 @media (max-width: 768px) {
   .skills-container {
-    flex-direction: column;
+    gap: 30px;
+    padding: 0 1.5rem;
   }
-  .skills-bar {
-    line-height: 3rem;
-    margin: 20px;
+  
+  .skills-heading {
+    font-size: clamp(2rem, 6vw, 2.5rem);
+    margin-bottom: 2rem;
   }
-  .skills-image {
-    display: none;
-    order: 2;
+  
+  .skill {
+    margin-bottom: 1.5rem;
+    
+    p {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  .meter {
+    height: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-container {
+    padding: 0 1rem;
+    gap: 25px;
+  }
+  
+  .skills-heading {
+    font-size: clamp(1.75rem, 8vw, 2.25rem);
+  }
+  
+  .skill {
+    margin-bottom: 1.25rem;
+    
+    p {
+      font-size: 0.9375rem;
+    }
+  }
+  
+  .meter {
+    height: 8px;
   }
 }

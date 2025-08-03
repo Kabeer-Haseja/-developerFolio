@@ -3,17 +3,15 @@ import Header from "../components/header/Header";
 import Greeting from "./greeting/Greeting";
 import Skills from "./skills/Skills";
 import StackProgress from "./skillProgress/skillProgress";
+import SoftwareSkill from "../components/softwareSkills/SoftwareSkill";
 import WorkExperience from "./workExperience/WorkExperience";
 import Projects from "./projects/Projects";
 import StartupProject from "./StartupProjects/StartupProject";
 import Achievement from "./achievement/Achievement";
 import Blogs from "./blogs/Blogs";
 import Footer from "../components/footer/Footer";
-import Talks from "./talks/Talks";
-import Podcast from "./podcast/Podcast";
 import Education from "./education/Education";
 import ScrollToTopButton from "./topbutton/Top";
-import Twitter from "./twitter-embed/twitter";
 import Profile from "./profile/Profile";
 import SplashScreen from "./splashScreen/SplashScreen";
 import {splashScreen} from "../portfolio";
@@ -81,10 +79,20 @@ const Main = () => {
               </div>
             </section>
             
-            {/* Skills Progress Section */}
+            {/* Software Skills Section */}
             <section style={{ 
               padding: '6rem 0',
               background: isDark ? '#2a2a2a' : '#f8f9fa'
+            }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                <SoftwareSkill />
+              </div>
+            </section>
+            
+            {/* Skills Progress Section */}
+            <section style={{ 
+              padding: '6rem 0',
+              background: isDark ? '#1a1a1a' : '#ffffff'
             }}>
               <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
                 <StackProgress />
@@ -94,7 +102,7 @@ const Main = () => {
             {/* Education Section */}
             <section style={{ 
               padding: '6rem 0',
-              background: isDark ? '#1a1a1a' : '#ffffff'
+              background: isDark ? '#2a2a2a' : '#f8f9fa'
             }}>
               <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
                 <Education />
@@ -104,7 +112,7 @@ const Main = () => {
             {/* Experience Section */}
             <section style={{ 
               padding: '6rem 0',
-              background: isDark ? '#2a2a2a' : '#f8f9fa'
+              background: isDark ? '#1a1a1a' : '#ffffff'
             }}>
               <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
                 <WorkExperience />
@@ -114,7 +122,7 @@ const Main = () => {
             {/* Projects Section */}
             <section style={{ 
               padding: '6rem 0',
-              background: isDark ? '#1a1a1a' : '#ffffff'
+              background: isDark ? '#2a2a2a' : '#f8f9fa'
             }}>
               <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
                 <Projects />
@@ -124,7 +132,7 @@ const Main = () => {
             {/* Startup Projects Section */}
             <section style={{ 
               padding: '6rem 0',
-              background: isDark ? '#2a2a2a' : '#f8f9fa'
+              background: isDark ? '#1a1a1a' : '#ffffff'
             }}>
               <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
                 <StartupProject />
@@ -134,7 +142,7 @@ const Main = () => {
             {/* Achievements Section */}
             <section style={{ 
               padding: '6rem 0',
-              background: isDark ? '#1a1a1a' : '#ffffff'
+              background: isDark ? '#2a2a2a' : '#f8f9fa'
             }}>
               <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
                 <Achievement />
@@ -144,40 +152,10 @@ const Main = () => {
             {/* Blogs Section */}
             <section style={{ 
               padding: '6rem 0',
-              background: isDark ? '#2a2a2a' : '#f8f9fa'
+              background: isDark ? '#1a1a1a' : '#ffffff'
             }}>
               <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
                 <Blogs />
-              </div>
-            </section>
-            
-            {/* Talks Section */}
-            <section style={{ 
-              padding: '6rem 0',
-              background: isDark ? '#1a1a1a' : '#ffffff'
-            }}>
-              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-                <Talks />
-              </div>
-            </section>
-            
-            {/* Twitter Section */}
-            <section style={{ 
-              padding: '6rem 0',
-              background: isDark ? '#2a2a2a' : '#f8f9fa'
-            }}>
-              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-                <Twitter />
-              </div>
-            </section>
-            
-            {/* Podcast Section */}
-            <section style={{ 
-              padding: '6rem 0',
-              background: isDark ? '#1a1a1a' : '#ffffff'
-            }}>
-              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-                <Podcast />
               </div>
             </section>
             
