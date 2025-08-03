@@ -74,7 +74,7 @@ https://fontawesome.com/icons?d=gallery */
       fontAwesomeClassname: "fab fa-react"
     },
     {
-      skillName: "TypeScript",
+      skillName: "JavaScript",
       fontAwesomeClassname: "fab fa-js"
     },
     {
@@ -92,6 +92,10 @@ https://fontawesome.com/icons?d=gallery */
     {
       skillName: "RTK Query",
       fontAwesomeClassname: "fas fa-bolt" // Fallback icon
+    },
+    {
+      skillName: "CSS3",
+      fontAwesomeClassname: "fab fa-css3-alt"
     },
     {
       skillName: "Firebase",
@@ -125,13 +129,12 @@ const educationInfo = {
     {
       schoolName: "Higher Secondary School",
       // logo: require("./assets/images/stanfordLogo.png"),
-      subHeader: "Intermediate in Computer Science",
+      subHeader: "Intermediate",
       duration: "September 2013 - April 2016",
-      desc: "Developed strong foundational knowledge in computer science principles and software development methodologies",
+      desc: "Through hands-on assignments and projects, I developed a solid understanding of fundamental concepts in computer science and gained experience in applying them to real-world problems.",
       descBullets: [
-        "Gained hands-on experience with programming fundamentals and software development best practices",
-        "Learned essential concepts in web security, network protocols, and software system architecture",
-        "Collaborated on group projects that enhanced problem-solving, teamwork, and communication skills"
+        "Developed an appreciation for the importance of security in software systems and learned about techniques for securing web applications and networks",
+        "Collaborated with peers on group projects, honing my teamwork and communication skills while working on software solutions to real-world problems"
       ]
     }
   ]
@@ -167,7 +170,7 @@ const workExperiences = {
       role: "Senior Software Engineer",
       company: "Barmajja",
       companylogo: require("./assets/images/connect_Icon.png"), // Make sure you add this logo to your assets
-      date: "Dec 2024 – Present",
+      date: "Jan 2025 – Present",
       location: "United Arab Emirates — Remote",
       desc: "Leading the development of innovative location-aware mobile applications that drive user engagement and business growth through cutting-edge mobile technologies and strategic feature implementations.",
       descBullets: [
@@ -179,7 +182,7 @@ const workExperiences = {
     },
     {
       role: "Senior Software Engineer",
-      company: "Dubizzle (EMPG LABS)",
+      company: "Dubizzle",
       companylogo: require("./assets/images/dubizzle.png"),
       date: "Jan 2022 – Present",
       location: "Lahore, Punjab — Remote",
@@ -194,9 +197,9 @@ const workExperiences = {
     },
     {
       role: "Freelance Mobile Developer",
-      company: "Fiverr",
+      company: "Remote",
       companylogo: require("./assets/images/upworkk.png"),
-      date: "May 2018 – May 2020",
+      date: "Feb 2020 – Aug 2021",
       desc: "Delivered high-quality mobile development solutions to international clients, specializing in React Native applications and cross-platform development with a focus on performance and user experience.",
       descBullets: [
         "Developed and deployed mobile applications for iOS and Android platforms using React Native, consistently achieving 4.9+ star ratings from satisfied clients",
@@ -223,24 +226,24 @@ const bigProjects = {
   projects: [
     {
       image: require("./assets/images/dubizzlecars.png"),
-      projectName: "Dubizzle CRM Platform",
+      projectName: "Dubizzle CRM",
       projectDesc:
         "Architected and developed a comprehensive CRM system for Dubizzle's vehicle marketplace, enabling sales agents to efficiently manage thousands of vehicle listings. The platform streamlined internal workflows, automated data tracking, and enhanced team coordination across inspection, auction, and seller operations, resulting in a 40% improvement in team efficiency and significant reduction in operational overhead.",
       footerLink: [
         {
-          name: "Visit Platform",
+          name: "Visit Website",
           url: "https://dubai.dubizzle.com/motors/"
         }
       ]
     },
     {
       image: require("./assets/images/dubizzlecars.png"),
-      projectName: "Dubizzle Live Auction System",
+      projectName: "Dubizzle Auction",
       projectDesc:
         "Engineered a sophisticated real-time vehicle auction platform within the Dubizzle ecosystem using React Native and WebSocket technology. Implemented secure bidding mechanisms, automated listing approvals, and live status tracking features that transformed the user experience. The platform achieved a 30% increase in user engagement and tripled monthly car listings, establishing a new revenue stream for the business.",
       footerLink: [
         {
-          name: "Explore Auctions",
+          name: "Visit Website",
           url: "https://dubai.dubizzle.com/motors/"
         }
       ]
@@ -252,7 +255,7 @@ const bigProjects = {
         "Designed and developed a comprehensive mobile inspection solution that revolutionized Dubizzle's vehicle evaluation process. The app enabled inspectors to complete 500+ detailed monthly reports with 200+ checkpoint validations per vehicle, significantly reducing post-sale disputes by 40% and improving buyer confidence through transparent, standardized car evaluations.",
       footerLink: [
         {
-          name: "Learn More",
+          name: "Visit Website",
           url: "https://dubai.dubizzle.com/motors/"
         }
       ]
@@ -271,7 +274,7 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/olx.png"), // Replace with actual OLX logo if available
-      projectName: "OLX E-commerce Mobile Platform",
+      projectName: "OLX-Pakistan (E-commerce App)",
       projectDesc:
         "Architected and implemented seamless payment gateway integrations and logistics management via REST APIs, resulting in a 30% increase in customer satisfaction scores. Enhanced mobile app performance and user experience through React Native optimization, streamlining transactions across iOS and Android platforms while maintaining security and reliability standards."
     },
@@ -283,7 +286,7 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/olxSellerCenter.png"),
-      projectName: "OLX Seller Center Platform",
+      projectName: "Seller Center OLX",
       projectDesc:
         "Engineered a comprehensive merchant platform for OLX that empowered businesses to efficiently list products, manage orders, and track shipments in real-time. Integrated advanced analytics and reporting tools to provide actionable insights on sales performance and market trends, enabling sellers to make data-driven decisions and scale their operations effectively."
     },
@@ -344,7 +347,7 @@ const achievementSection = {
       footerLink: [
         {name: "View Certification", url: ""},
         {
-          name: "Final Project Demo",
+          name: "Final Project",
           url: "https://pakistan-olx-1.firebaseapp.com/"
         }
       ]
