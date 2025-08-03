@@ -120,7 +120,10 @@ export const MobileDeveloperSVG = () => (
       width: '100%', 
       height: 'auto',
       maxWidth: '500px',
-      margin: '0 auto'
+      margin: '0 auto',
+      border: '2px solid #e0e0e0',
+      borderRadius: '8px',
+      backgroundColor: '#f8f9fa'
     }}
   >
     {/* Background */}
