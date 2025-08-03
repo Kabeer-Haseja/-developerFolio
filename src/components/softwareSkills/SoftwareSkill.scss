@@ -1,5 +1,35 @@
 @import "../../_globalColor.scss";
 
+.software-skills-main-div {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.skills-heading {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: #000400;
+  letter-spacing: -0.02em;
+  
+  .dark-mode & {
+    color: #ffffff;
+  }
+}
+
+.skills-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.6;
+  color: $subTitle;
+  margin-bottom: 3rem;
+  font-weight: 400;
+  
+  .dark-mode & {
+    color: $textColorDarkSecondary;
+  }
+}
+
 .dev-icons {
   padding: 0;
   list-style: none;
