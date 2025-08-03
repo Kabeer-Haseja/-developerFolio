@@ -1,6 +1,7 @@
 {
-  "short_name": "DeveloperFolio",
-  "name": "DeveloperFolio",
+  "short_name": "Kabeer Portfolio",
+  "name": "Kabeer Haseja - Senior React Native Developer Portfolio",
+  "description": "Professional portfolio showcasing 5+ years of React Native mobile development expertise",
   "icons": [
     {
       "src": "/favicon.ico",
@@ -10,16 +11,22 @@
     {
       "src": "/android-chrome-192x192.png?v8=qAJ44G5Bm7",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any maskable"
     },
     {
       "src": "/android-chrome-384x384.png?v8=qAJ44G5Bm7",
       "type": "image/png",
-      "sizes": "384x384"
+      "sizes": "384x384",
+      "purpose": "any maskable"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#6c63ff",
-  "background_color": "#ffffff"
+  "orientation": "portrait-primary",
+  "theme_color": "#003459",
+  "background_color": "#ffffff",
+  "categories": ["business", "developer-tools", "portfolio"],
+  "lang": "en",
+  "scope": "/"
 }
