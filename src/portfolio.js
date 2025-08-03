@@ -196,13 +196,14 @@ const workExperiences = {
     },
     {
       role: "Freelancer",
-      company: "Fiver",
+      company: "Fiverr",
       companylogo: require("./assets/images/upworkk.png"),
       date: "May 2018 – May 2020",
-      desc: "As a freelancer , I provided software development services to clients from around the world. I worked on a variety of projects, including web development and mobile app development",
+      desc:
+        "Provided end-to-end software development services to clients worldwide, delivering high-quality web and mobile solutions on time and within scope.",
       descBullets: [
-        "Built mobile apps for iOS and Android using frameworks such as React Native",
-        "Worked independently and managed time effectively to ensure that project deliverables were completed on time and to a high standard"
+        "Developed cross-platform mobile applications with React Native, integrating RESTful APIs, Firebase, and intuitive UI/UX designs.",
+        "Collaborated directly with clients to refine requirements, set milestones, and guarantee successful, timely delivery."
       ]
     }
   ]
@@ -226,7 +227,7 @@ const bigProjects = {
       image: require("./assets/images/dubizzlecars.png"),
       projectName: "Dubizzle CRM",
       projectDesc:
-        "Built a custom CRM for Dubizzle to help sales agents manage thousands of vehicle listings. Streamlined internal workflows and data tracking, boosting team efficiency by 40% and enabling seamless coordination across inspection, auction, and seller operations.",
+        "Designed and engineered a custom CRM for Dubizzle’s automotive vertical, empowering sales agents to manage thousands of listings end-to-end. Automated lead assignment, data ingestion, and status tracking—cutting manual work by 70% and increasing team throughput by 40%.",
       footerLink: [
         {
           name: "Visit Website",
@@ -238,7 +239,7 @@ const bigProjects = {
       image: require("./assets/images/dubizzlecars.png"),
       projectName: "Dubizzle Auction App",
       projectDesc:
-        "Developed a real-time vehicle auction platform within the Dubizzle ecosystem using React Native. Enabled secure bidding, listing approvals, and live status tracking, leading to a 30% increase in user engagement and tripling of monthly car listings.",
+        "Architected and delivered a real-time vehicle auction module in the Dubizzle app using React Native, WebSockets, and Firebase. Enabled secure bidding with live countdowns and push notifications—boosting engagement by 30% and tripling monthly auction listings.",
       footerLink: [
         {
           name: "Visit Website",
@@ -250,7 +251,7 @@ const bigProjects = {
       image: require("./assets/images/dubizzlecars.png"),
       projectName: "Dubizzle Inspection App",
       projectDesc:
-        "Implemented a mobile inspection solution for Dubizzle that allowed inspectors to complete 500+ monthly reports with 200+ checkpoint validations per vehicle. Reduced post-sale disputes by 40% and improved buyer confidence through transparent car evaluations.",
+        "Built an offline-first inspection toolkit for Dubizzle with 200+ checkpoint validations and on-device image compression. Processed 500+ audits monthly, reduced report turnaround from hours to minutes, and lowered post-sale disputes by 40%.",
       footerLink: [
         {
           name: "Visit Website",
@@ -262,31 +263,43 @@ const bigProjects = {
       image: require("./assets/images/dubizzle_seller_center_icon.png"),
       projectName: "Dubizzle Seller Center",
       projectDesc:
-        "Built a full-stack product and order management system for Dubizzle sellers. Allowed merchants to add listings, fulfill orders, monitor performance KPIs, and optimize sales strategy with custom dashboards and push notifications."
+        "Developed a full-stack seller center featuring role-based dashboards, order-fulfillment workflows, and real-time performance analytics. Empowered merchants to optimize inventory, accelerate order processing, and grow revenue across the Dubizzle marketplace."
     },
     {
       image: require("./assets/images/jarvis_main_logo.png"),
       projectName: "Jarvis (Real Estate CRM)",
       projectDesc:
-        "Led CRM integration for Jarvis, improving task management efficiency by 40% and boosting sales team productivity. Supported 100K+ active users across Pakistan, UAE, Saudi Arabia, and Egypt for platforms like zameen.com, bayut.com, and olx.com."
+        "Integrated a scalable React Native CRM supporting 100K+ property agents across Pakistan, UAE, KSA, and Egypt. Enhanced lead management, task automation, and analytics—boosting sales-team productivity by 40%."
     },
     {
       image: require("./assets/images/olx.png"), // Replace with actual OLX logo if available
       projectName: "OLX (E-commerce App)",
       projectDesc:
-        "Integrated payment gateways and logistics via REST APIs, resulting in a 30% increase in customer satisfaction. Enhanced mobile app performance and UX by integrating React Native, streamlining transactions across iOS and Android."
+        "Refactored the OLX e-commerce app to integrate PayFort and JazzCash payments along with logistics-tracking APIs. Improved checkout conversion by 30% and elevated overall customer satisfaction.",
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://www.olx.com/"
+        }
+      ]
     },
     {
       image: require("./assets/images/connect_Icon.png"),
       projectName: "Connect (Loyalty App)",
       projectDesc:
-        "Built a location-aware loyalty app offering personalized deals from 100+ partnered retailers. Increased user engagement by 35% through location-based promos and boosted repeat transactions by 25% with a points-based reward system."
+        "Created a geo-aware loyalty platform surfacing personalized offers from 100+ retailers. Implemented QR redemption and a points engine—raising repeat purchases by 25% and user engagement by 35%.",
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://www.connect.com/"
+        }
+      ]
     },
     {
       image: require("./assets/images/olxSellerCenter.png"),
       projectName: "Seller Center OLX",
       projectDesc:
-        "Developed a merchant platform for OLX enabling businesses to list products, manage orders, and track shipments. Integrated analytics to provide real-time sales and performance insights, empowering sellers to grow their operations efficiently."
+        "Engineered a merchant portal for OLX with inventory management, shipment tracking, and real-time analytics. Streamlined order processing and reduced seller response time by 20%."
     },
    
   ],
