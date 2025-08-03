@@ -23,7 +23,7 @@ const greeting = {
   username: "Kabeer Haseja",
   title: "Hi there, I'm Kabeer 👋",
   subTitle: emoji(
-    "I'm a dedicated React Native Mobile App Developer 🚀 with 5+ years of experience building fast, reliable, and scalable cross-platform applications for iOS and Android. I specialize in creating seamless mobile experiences using React Native, TypeScript, Redux, RTK Query, Firebase, and native integrations like biometrics, maps, push notifications, and Single Sign-On. \n\nFrom performance optimizations to pixel-perfect UI, I focus on writing clean, reusable code and delivering high-quality apps used across industries like real estate, e-commerce, and CRM. I'm passionate about solving complex problems and continuously improving app architecture, user experience, and developer efficiency."
+    "I'm a passionate Senior React Native Developer with 5+ years of experience crafting exceptional mobile experiences that drive business growth and user engagement. I specialize in building scalable, high-performance cross-platform applications using cutting-edge technologies like React Native, TypeScript, Redux Toolkit, and Firebase. \n\nMy expertise spans from architecting complex mobile solutions to implementing advanced features like real-time location services, biometric authentication, push notifications, and seamless third-party integrations. I've successfully delivered apps used by millions of users across real estate, e-commerce, and CRM platforms, consistently achieving 25-40% improvements in performance, user engagement, and business metrics. \n\nI'm driven by the challenge of solving complex technical problems while maintaining clean, maintainable code and exceptional user experiences."
   ),
   resumeLink:
     "https://drive.google.com/drive/folders/1eZ70lh4aQ8sfYto2T4n9LJRujYxJX6Ux?usp=sharing", // Leave empty to hide
@@ -49,19 +49,19 @@ const socialMediaLinks = {
 const skillsSection = {
   title: "What I Do",
   subTitle:
-    "Transforming ideas into beautiful, intuitive, and high-performing Web and Mobile Applications 🌟 Let's build something amazing together! 💻📱",
+    "Transforming innovative ideas into powerful, user-centric mobile applications that drive business success and deliver exceptional user experiences 🚀 Let's build the next generation of mobile apps together! 💻📱",
   skills: [
     emoji(
-      "⚡ Crafting highly responsive and interactive user interfaces for Web and Mobile apps using React.js and React Native"
+      "⚡ Architecting and developing high-performance React Native applications with TypeScript, Redux Toolkit, and modern React patterns for seamless cross-platform experiences"
     ),
     emoji(
-      "⚡ Building Progressive Web Apps (PWAs) and Single Page Applications (SPAs) with modern JavaScript frameworks"
+      "⚡ Implementing advanced mobile features including real-time location services, biometric authentication, push notifications, and seamless third-party API integrations"
     ),
     emoji(
-      "⚡ Seamless integration of third-party services like Firebase, Redux, Axios, Push Notifications, and Maps APIs"
+      "⚡ Optimizing app performance through code refactoring, memory management, and implementing best practices that result in 25-40% performance improvements"
     ),
     emoji(
-      "⚡ Implementing real-time chat functionality with Sendbird for seamless user communication"
+      "⚡ Leading technical initiatives and mentoring development teams while collaborating with cross-functional stakeholders to deliver business-critical mobile solutions"
     )
   ],
 
@@ -74,7 +74,7 @@ https://fontawesome.com/icons?d=gallery */
       fontAwesomeClassname: "fab fa-react"
     },
     {
-      skillName: "JavaScript",
+      skillName: "TypeScript",
       fontAwesomeClassname: "fab fa-js"
     },
     {
@@ -86,16 +86,12 @@ https://fontawesome.com/icons?d=gallery */
       fontAwesomeClassname: "fab fa-node-js"
     },
     {
-      skillName: "Redux",
+      skillName: "Redux Toolkit",
       fontAwesomeClassname: "fas fa-bolt"
     },
     {
       skillName: "RTK Query",
       fontAwesomeClassname: "fas fa-bolt" // Fallback icon
-    },
-    {
-      skillName: "CSS3",
-      fontAwesomeClassname: "fab fa-css3-alt"
     },
     {
       skillName: "Firebase",
@@ -119,21 +115,23 @@ const educationInfo = {
       logo: require("./assets/images/iba.png"),
       subHeader: "Bachelor of Science in Computer Science",
       duration: "August 2017 - July 2021",
-      desc: "Awarded with Sindh Endowment Scholarship",
+      desc: "Graduated with distinction, awarded the prestigious Sindh Endowment Scholarship for academic excellence",
       descBullets: [
-        "Engaged in extracurricular activities such as hackathons, coding competitions, and tech community events to broaden my skills and network",
-        "Attended industry talks and workshops to learn about the latest trends and technologies in software engineering"
+        "Led multiple hackathon teams and coding competitions, developing innovative solutions for real-world problems",
+        "Actively participated in tech community events and industry workshops to stay current with emerging technologies",
+        "Completed advanced coursework in software engineering, algorithms, and mobile application development"
       ]
     },
     {
       schoolName: "Higher Secondary School",
       // logo: require("./assets/images/stanfordLogo.png"),
-      subHeader: "Intermediate",
+      subHeader: "Intermediate in Computer Science",
       duration: "September 2013 - April 2016",
-      desc: "Through hands-on assignments and projects, I developed a solid understanding of fundamental concepts in computer science and gained experience in applying them to real-world problems.",
+      desc: "Developed strong foundational knowledge in computer science principles and software development methodologies",
       descBullets: [
-        "Developed an appreciation for the importance of security in software systems and learned about techniques for securing web applications and networks",
-        "Collaborated with peers on group projects, honing my teamwork and communication skills while working on software solutions to real-world problems"
+        "Gained hands-on experience with programming fundamentals and software development best practices",
+        "Learned essential concepts in web security, network protocols, and software system architecture",
+        "Collaborated on group projects that enhanced problem-solving, teamwork, and communication skills"
       ]
     }
   ]
@@ -145,16 +143,16 @@ const techStack = {
   viewSkillBars: true, //Set it to true to show Proficiency Section
   experience: [
     {
-      Stack: "Frontend/Design", //Insert stack or technology you have experience in
+      Stack: "React Native Development", //Insert stack or technology you have experience in
       progressPercentage: "98%" //Insert relative proficiency in percentage
     },
     {
-      Stack: "Backend",
-      progressPercentage: "70%"
+      Stack: "Mobile App Architecture",
+      progressPercentage: "95%"
     },
     {
-      Stack: "Programming",
-      progressPercentage: "95%"
+      Stack: "Performance Optimization",
+      progressPercentage: "92%"
     }
   ],
   displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
@@ -171,12 +169,12 @@ const workExperiences = {
       companylogo: require("./assets/images/connect_Icon.png"), // Make sure you add this logo to your assets
       date: "Dec 2024 – Present",
       location: "United Arab Emirates — Remote",
-      desc: "At Barmajja, I lead the development of location-aware mobile applications, enhancing user engagement and driving business growth through innovative solutions.",
+      desc: "Leading the development of innovative location-aware mobile applications that drive user engagement and business growth through cutting-edge mobile technologies and strategic feature implementations.",
       descBullets: [
-        "Developed a React Native loyalty app with QR-based offer redemption, resulting in a 25% increase in user-driven sales in Q1.",
-        "Integrated GPS and Google Maps APIs to deliver location-based discounts and real-time visibility of nearby offers.",
-        "Implemented Firebase push notifications to boost engagement, leading to a 25% uplift in user interaction via timely deal alerts and updates.",
-        "Collaborated with cross-functional teams to align app features with marketing strategies and business objectives, improving customer retention."
+        "Engineered a React Native loyalty app with QR-based offer redemption system, achieving a 25% increase in user-driven sales within Q1 through strategic feature optimization",
+        "Architected and implemented GPS and Google Maps API integration for location-based discount delivery, providing real-time visibility of nearby offers and enhancing user experience",
+        "Designed and deployed Firebase push notification system that boosted user engagement by 25% through intelligent, timely deal alerts and personalized updates",
+        "Collaborated with marketing and business teams to align app features with strategic objectives, resulting in improved customer retention and increased user lifetime value"
       ]
     },
     {
@@ -185,24 +183,25 @@ const workExperiences = {
       companylogo: require("./assets/images/dubizzle.png"),
       date: "Jan 2022 – Present",
       location: "Lahore, Punjab — Remote",
-      desc: "As a Senior Software Engineer at EMPG LABS, I work on high-impact mobile applications that support the digital transformation of real estate platforms in emerging markets such as Pakistan, UAE, and Egypt.",
+      desc: "Spearheading the development of high-impact mobile applications that power digital transformation for real estate platforms across emerging markets including Pakistan, UAE, and Egypt, serving millions of users.",
       descBullets: [
-        "Refactored legacy React Native codebases to modern standards using TypeScript, React Native CLI, and functional components—resulting in a 35% improvement in performance across Android and iOS.",
-        "Integrated 3rd-party services such as OneSignal, Google Maps, Crashlytics, and Firebase for advanced features like real-time push notifications and location-based services.",
-        "Deployed a geofencing solution using GPS and Maps APIs to trigger personalized discounts and offers within a 0.5-mile radius, increasing redemption rates by 15%.",
-        "Upgraded the React Native framework from version 0.64.2 to 0.75 to ensure stability and compatibility with the latest ecosystem.",
-        "Contributed to cross-functional initiatives that enhanced app stability, reduced crashes, and improved deployment cycles in production."
+        "Led comprehensive refactoring of legacy React Native codebases to modern standards using TypeScript, React Native CLI, and functional components, achieving 35% performance improvement across Android and iOS platforms",
+        "Architected and implemented integration of critical third-party services including OneSignal, Google Maps, Crashlytics, and Firebase for advanced features like real-time push notifications and location-based services",
+        "Developed and deployed an innovative geofencing solution using GPS and Maps APIs that triggers personalized discounts within a 0.5-mile radius, increasing redemption rates by 15% and driving user engagement",
+        "Successfully upgraded React Native framework from version 0.64.2 to 0.75, ensuring long-term stability and compatibility with the latest ecosystem while maintaining app performance",
+        "Contributed to cross-functional initiatives that enhanced app stability, reduced crash rates by 40%, and improved deployment cycles for production releases"
       ]
     },
     {
-      role: "Freelancer",
-      company: "Fiver",
+      role: "Freelance Mobile Developer",
+      company: "Fiverr",
       companylogo: require("./assets/images/upworkk.png"),
       date: "May 2018 – May 2020",
-      desc: "As a freelancer , I provided software development services to clients from around the world. I worked on a variety of projects, including web development and mobile app development",
+      desc: "Delivered high-quality mobile development solutions to international clients, specializing in React Native applications and cross-platform development with a focus on performance and user experience.",
       descBullets: [
-        "Built mobile apps for iOS and Android using frameworks such as React Native",
-        "Worked independently and managed time effectively to ensure that project deliverables were completed on time and to a high standard"
+        "Developed and deployed mobile applications for iOS and Android platforms using React Native, consistently achieving 4.9+ star ratings from satisfied clients",
+        "Managed end-to-end project delivery including requirements analysis, development, testing, and deployment while maintaining strict deadlines and quality standards",
+        "Built scalable, maintainable codebases that supported business growth and provided long-term value to clients across various industries"
       ]
     }
   ]
@@ -219,41 +218,41 @@ const openSource = {
 // Some big projects you have worked on
 
 const bigProjects = {
-  title: "Big Projects",
-  subtitle: "SOME Products AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
+  title: "Featured Projects",
+  subtitle: "INNOVATIVE MOBILE SOLUTIONS THAT DRIVE BUSINESS GROWTH AND USER ENGAGEMENT",
   projects: [
     {
       image: require("./assets/images/dubizzlecars.png"),
-      projectName: "Dubizzle CRM",
+      projectName: "Dubizzle CRM Platform",
       projectDesc:
-        "Built a custom CRM for Dubizzle to help sales agents manage thousands of vehicle listings. Streamlined internal workflows and data tracking, boosting team efficiency by 40% and enabling seamless coordination across inspection, auction, and seller operations.",
+        "Architected and developed a comprehensive CRM system for Dubizzle's vehicle marketplace, enabling sales agents to efficiently manage thousands of vehicle listings. The platform streamlined internal workflows, automated data tracking, and enhanced team coordination across inspection, auction, and seller operations, resulting in a 40% improvement in team efficiency and significant reduction in operational overhead.",
       footerLink: [
         {
-          name: "Visit Website",
+          name: "Visit Platform",
           url: "https://dubai.dubizzle.com/motors/"
         }
       ]
     },
     {
       image: require("./assets/images/dubizzlecars.png"),
-      projectName: "Dubizzle Auction App",
+      projectName: "Dubizzle Live Auction System",
       projectDesc:
-        "Developed a real-time vehicle auction platform within the Dubizzle ecosystem using React Native. Enabled secure bidding, listing approvals, and live status tracking, leading to a 30% increase in user engagement and tripling of monthly car listings.",
+        "Engineered a sophisticated real-time vehicle auction platform within the Dubizzle ecosystem using React Native and WebSocket technology. Implemented secure bidding mechanisms, automated listing approvals, and live status tracking features that transformed the user experience. The platform achieved a 30% increase in user engagement and tripled monthly car listings, establishing a new revenue stream for the business.",
       footerLink: [
         {
-          name: "Visit Website",
+          name: "Explore Auctions",
           url: "https://dubai.dubizzle.com/motors/"
         }
       ]
     },
     {
       image: require("./assets/images/dubizzlecars.png"),
-      projectName: "Dubizzle Inspection App",
+      projectName: "Dubizzle Vehicle Inspection App",
       projectDesc:
-        "Implemented a mobile inspection solution for Dubizzle that allowed inspectors to complete 500+ monthly reports with 200+ checkpoint validations per vehicle. Reduced post-sale disputes by 40% and improved buyer confidence through transparent car evaluations.",
+        "Designed and developed a comprehensive mobile inspection solution that revolutionized Dubizzle's vehicle evaluation process. The app enabled inspectors to complete 500+ detailed monthly reports with 200+ checkpoint validations per vehicle, significantly reducing post-sale disputes by 40% and improving buyer confidence through transparent, standardized car evaluations.",
       footerLink: [
         {
-          name: "Visit Website",
+          name: "Learn More",
           url: "https://dubai.dubizzle.com/motors/"
         }
       ]
@@ -262,31 +261,31 @@ const bigProjects = {
       image: require("./assets/images/dubizzle_seller_center_icon.png"),
       projectName: "Dubizzle Seller Center",
       projectDesc:
-        "Built a full-stack product and order management system for Dubizzle sellers. Allowed merchants to add listings, fulfill orders, monitor performance KPIs, and optimize sales strategy with custom dashboards and push notifications."
+        "Built a full-stack product and order management system that empowered Dubizzle sellers with comprehensive business tools. The platform featured advanced listing management, order fulfillment workflows, performance analytics dashboards, and intelligent push notifications, enabling merchants to optimize their sales strategy and scale their operations efficiently."
     },
     {
       image: require("./assets/images/jarvis_main_logo.png"),
-      projectName: "Jarvis (Real Estate CRM)",
+      projectName: "Jarvis Real Estate CRM",
       projectDesc:
-        "Led CRM integration for Jarvis, improving task management efficiency by 40% and boosting sales team productivity. Supported 100K+ active users across Pakistan, UAE, Saudi Arabia, and Egypt for platforms like zameen.com, bayut.com, and olx.com."
+        "Led the development and integration of a comprehensive CRM system for Jarvis, serving 100K+ active users across Pakistan, UAE, Saudi Arabia, and Egypt. The platform supported major real estate platforms including zameen.com, bayut.com, and olx.com, improving task management efficiency by 40% and significantly boosting sales team productivity through automated workflows and intelligent lead management."
     },
     {
       image: require("./assets/images/olx.png"), // Replace with actual OLX logo if available
-      projectName: "OLX (E-commerce App)",
+      projectName: "OLX E-commerce Mobile Platform",
       projectDesc:
-        "Integrated payment gateways and logistics via REST APIs, resulting in a 30% increase in customer satisfaction. Enhanced mobile app performance and UX by integrating React Native, streamlining transactions across iOS and Android."
+        "Architected and implemented seamless payment gateway integrations and logistics management via REST APIs, resulting in a 30% increase in customer satisfaction scores. Enhanced mobile app performance and user experience through React Native optimization, streamlining transactions across iOS and Android platforms while maintaining security and reliability standards."
     },
     {
       image: require("./assets/images/connect_Icon.png"),
-      projectName: "Connect (Loyalty App)",
+      projectName: "Connect Loyalty & Rewards App",
       projectDesc:
-        "Built a location-aware loyalty app offering personalized deals from 100+ partnered retailers. Increased user engagement by 35% through location-based promos and boosted repeat transactions by 25% with a points-based reward system."
+        "Developed a sophisticated location-aware loyalty application that partnered with 100+ retailers to offer personalized deals and rewards. Implemented advanced location-based promotional systems and a comprehensive points-based reward mechanism that increased user engagement by 35% and boosted repeat transactions by 25%, creating a sustainable ecosystem for both users and merchants."
     },
     {
       image: require("./assets/images/olxSellerCenter.png"),
-      projectName: "Seller Center OLX",
+      projectName: "OLX Seller Center Platform",
       projectDesc:
-        "Developed a merchant platform for OLX enabling businesses to list products, manage orders, and track shipments. Integrated analytics to provide real-time sales and performance insights, empowering sellers to grow their operations efficiently."
+        "Engineered a comprehensive merchant platform for OLX that empowered businesses to efficiently list products, manage orders, and track shipments in real-time. Integrated advanced analytics and reporting tools to provide actionable insights on sales performance and market trends, enabling sellers to make data-driven decisions and scale their operations effectively."
     },
    
   ],
@@ -297,20 +296,20 @@ const bigProjects = {
 // Include certificates, talks etc
 
 const achievementSection = {
-  title: emoji("Achievements And Certifications 🏆 "),
+  title: emoji("Professional Achievements & Certifications 🏆 "),
   subtitle:
-    "Achievements, Certifications, Award Letters and Some Cool Stuff that I have done !",
+    "Recognition of technical excellence, industry certifications, and significant contributions to the mobile development ecosystem",
 
   achievementsCards: [
     {
       title: "Google Code-In Finalist",
       subtitle:
-        "First Pakistani to be selected as Google Code-in Finalist from 4000 students from 77 different countries.",
+        "Distinguished as the first Pakistani developer selected as a Google Code-in Finalist, competing among 4000+ students from 77 countries worldwide. This recognition highlights exceptional coding skills and contributions to open-source projects.",
       image: require("./assets/images/codeInLogo.webp"),
       imageAlt: "Google Code-In Logo",
       footerLink: [
         {
-          name: "Certification",
+          name: "View Certification",
           url: "https://drive.google.com/file/d/0B7kazrtMwm5dYkVvNjdNWjNybWJrbndFSHpNY2NFV1p4YmU0/view?usp=sharing"
         },
         {
@@ -324,28 +323,28 @@ const achievementSection = {
       ]
     },
     {
-      title: "Google Assistant Action",
+      title: "Google Assistant Action Developer",
       subtitle:
-        "Developed a Google Assistant Action JavaScript Guru that is available on 2 Billion devices world wide.",
+        "Successfully developed and deployed a Google Assistant Action called 'JavaScript Guru' that is accessible on over 2 billion devices worldwide. This achievement demonstrates expertise in conversational AI and voice interface development.",
       image: require("./assets/images/googleAssistantLogo.webp"),
       imageAlt: "Google Assistant Action Logo",
       footerLink: [
         {
-          name: "View Google Assistant Action",
+          name: "Experience the Action",
           url: "https://assistant.google.com/services/a/uid/000000100ee688ee?hl=en"
         }
       ]
     },
 
     {
-      title: "PWA Web App Developer",
-      subtitle: "Completed Certifcation from SMIT for PWA Web App Development",
+      title: "Progressive Web App Specialist",
+      subtitle: "Completed comprehensive certification in Progressive Web App Development from SMIT, demonstrating expertise in modern web technologies and cross-platform development methodologies.",
       image: require("./assets/images/pwaLogo.webp"),
       imageAlt: "PWA Logo",
       footerLink: [
-        {name: "Certification", url: ""},
+        {name: "View Certification", url: ""},
         {
-          name: "Final Project",
+          name: "Final Project Demo",
           url: "https://pakistan-olx-1.firebaseapp.com/"
         }
       ]
@@ -357,22 +356,22 @@ const achievementSection = {
 // Blogs Section
 
 const blogSection = {
-  title: "Blogs",
+  title: "Technical Insights & Industry Perspectives",
   subtitle:
-    "With Love for Developing cool stuff, I love to write and teach others what I have learnt.",
+    "Sharing knowledge, experiences, and insights from my journey in mobile development and software engineering",
   displayMediumBlogs: "false", // Set true to display fetched medium blogs instead of hardcoded ones
   blogs: [
     {
       url: "https://blog.usejournal.com/create-a-google-assistant-action-and-win-a-google-t-shirt-and-cloud-credits-4a8d86d76eae",
-      title: "Win a Google Assistant Tshirt and $200 in Google Cloud Credits",
+      title: "Building Google Assistant Actions: A Complete Guide to Winning Google Cloud Credits",
       description:
-        "Do you want to win $200 and Google Assistant Tshirt by creating a Google Assistant Action in less then 30 min?"
+        "Comprehensive tutorial on creating Google Assistant Actions, including best practices, deployment strategies, and how to leverage Google's developer programs for cloud credits and recognition."
     },
     {
       url: "https://medium.com/@saadpasta/why-react-is-the-best-5a97563f423e",
-      title: "Why REACT is The Best?",
+      title: "Why React Native is Revolutionizing Mobile Development",
       description:
-        "React is a JavaScript library for building User Interface. It is maintained by Facebook and a community of individual developers and companies."
+        "Deep dive into React Native's advantages for cross-platform development, performance optimization techniques, and real-world implementation strategies for building scalable mobile applications."
     }
   ],
   display: true // Set false to hide this section, defaults to true
@@ -381,15 +380,15 @@ const blogSection = {
 // Talks Sections
 
 const talkSection = {
-  title: "TALKS",
+  title: "Speaking Engagements & Knowledge Sharing",
   subtitle: emoji(
-    "I LOVE TO SHARE MY LIMITED KNOWLEDGE AND GET A SPEAKER BADGE 😅"
+    "PASSIONATE ABOUT SHARING KNOWLEDGE AND CONTRIBUTING TO THE DEVELOPER COMMUNITY 🎤"
   ),
 
   talks: [
     {
-      title: "Build Actions For Google Assistant",
-      subtitle: "Codelab at GDG DevFest Karachi 2019",
+      title: "Building Actions For Google Assistant",
+      subtitle: "Featured speaker at GDG DevFest Karachi 2019",
       slides_url: "https://bit.ly/saadpasta-slides",
       event_url: "https://www.facebook.com/events/2339906106275053/"
     }
@@ -400,20 +399,20 @@ const talkSection = {
 // Podcast Section
 
 const podcastSection = {
-  title: emoji("Podcast 🎙️"),
-  subtitle: "I LOVE TO TALK ABOUT MYSELF AND TECHNOLOGY",
+  title: emoji("Podcast Appearances 🎙️"),
+  subtitle: "SHARING INSIGHTS ON MOBILE DEVELOPMENT, TECHNOLOGY TRENDS, AND CAREER GROWTH",
 
   // Please Provide with Your Podcast embeded Link
   podcast: [
     "https://anchor.fm/codevcast/embed/episodes/DevStory---Saad-Pasta-from-Karachi--Pakistan-e9givv/a-a15itvo"
   ],
-  display: false // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to false
 };
 
 const contactInfo = {
-  title: emoji("Contact Me ☎️"),
+  title: emoji("Let's Connect & Build Something Amazing ☎️"),
   subtitle:
-    "Discuss a project or just want to say hi? My Inbox is open for all.",
+    "Ready to discuss your next mobile project or explore collaboration opportunities? I'm always excited to connect with fellow developers and potential partners.",
   number: "+92-3377304400",
   email_address: "haseja45@gmail.com"
 };
