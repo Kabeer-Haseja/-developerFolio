@@ -168,7 +168,7 @@ const workExperiences = {
     {
       role: "Senior Software Engineer",
       company: "Barmajja",
-      companylogo: require("./assets/images/appIcon.png"), // Make sure you add this logo to your assets
+      companylogo: require("./assets/images/connect_Icon.png"), // Make sure you add this logo to your assets
       date: "Dec 2024 – Present",
       location: "United Arab Emirates — Remote",
       desc: "At Barmajja, I lead the development of location-aware mobile applications, enhancing user engagement and driving business growth through innovative solutions.",
@@ -224,9 +224,9 @@ const bigProjects = {
   projects: [
     {
       image: require("./assets/images/dubizzlecars.png"),
-      projectName: "Dubizzle (CRM, Auction, Inspection)",
+      projectName: "Dubizzle CRM",
       projectDesc:
-        "Scaled Dubizzle’s online marketplace to support 100K+ monthly ads. Built a full-featured vehicle auction platform that boosted engagement by 30% and tripled listings. Launched a car inspection service, completing 500+ inspections/month and reducing post-sale disputes by 40%.",
+        "Built a custom CRM for Dubizzle to help sales agents manage thousands of vehicle listings. Streamlined internal workflows and data tracking, boosting team efficiency by 40% and enabling seamless coordination across inspection, auction, and seller operations.",
       footerLink: [
         {
           name: "Visit Website",
@@ -235,7 +235,37 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/img.png"),
+      image: require("./assets/images/dubizzlecars.png"),
+      projectName: "Dubizzle Auction App",
+      projectDesc:
+        "Developed a real-time vehicle auction platform within the Dubizzle ecosystem using React Native. Enabled secure bidding, listing approvals, and live status tracking, leading to a 30% increase in user engagement and tripling of monthly car listings.",
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://dubai.dubizzle.com/motors/"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/dubizzlecars.png"),
+      projectName: "Dubizzle Inspection App",
+      projectDesc:
+        "Implemented a mobile inspection solution for Dubizzle that allowed inspectors to complete 500+ monthly reports with 200+ checkpoint validations per vehicle. Reduced post-sale disputes by 40% and improved buyer confidence through transparent car evaluations.",
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://dubai.dubizzle.com/motors/"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/dubizzle_seller_center_icon.png"),
+      projectName: "Dubizzle Seller Center",
+      projectDesc:
+        "Built a full-stack product and order management system for Dubizzle sellers. Allowed merchants to add listings, fulfill orders, monitor performance KPIs, and optimize sales strategy with custom dashboards and push notifications."
+    },
+    {
+      image: require("./assets/images/jarvis_main_logo.png"),
       projectName: "Jarvis (Real Estate CRM)",
       projectDesc:
         "Led CRM integration for Jarvis, improving task management efficiency by 40% and boosting sales team productivity. Supported 100K+ active users across Pakistan, UAE, Saudi Arabia, and Egypt for platforms like zameen.com, bayut.com, and olx.com."
@@ -251,7 +281,14 @@ const bigProjects = {
       projectName: "Connect (Loyalty App)",
       projectDesc:
         "Built a location-aware loyalty app offering personalized deals from 100+ partnered retailers. Increased user engagement by 35% through location-based promos and boosted repeat transactions by 25% with a points-based reward system."
-    }
+    },
+    {
+      image: require("./assets/images/olxSellerCenter.png"),
+      projectName: "Seller Center OLX",
+      projectDesc:
+        "Developed a merchant platform for OLX enabling businesses to list products, manage orders, and track shipments. Integrated analytics to provide real-time sales and performance insights, empowering sellers to grow their operations efficiently."
+    },
+   
   ],
   display: true // Set false to hide this section, defaults to true
 };
