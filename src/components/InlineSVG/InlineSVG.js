@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import StyleContext from "../../contexts/StyleContext";
 
 export const OfficeWorkerSVG = () => (
   <svg 
@@ -99,202 +100,202 @@ export const DeveloperWorkingSVG = () => (
     <circle cx="100" cy="100" r="8" fill="#003459" opacity="0.3"/>
     <circle cx="400" cy="80" r="6" fill="#003459" opacity="0.25"/>
     <circle cx="80" cy="320" r="10" fill="#003459" opacity="0.2"/>
-    <circle cx="420" cy="350" r="7" fill="#003459" opacity="0.3"/>
-    
-    {/* Code symbols */}
-    <text x="50" y="50" font-family="monospace" font-size="12" fill="#003459" opacity="0.6">&lt;/&gt;</text>
-    <text x="400" y="40" font-family="monospace" font-size="14" fill="#003459" opacity="0.6">{ }</text>
-    <text x="60" y="350" font-family="monospace" font-size="10" fill="#003459" opacity="0.5">const</text>
-    <text x="380" y="340" font-family="monospace" font-size="10" fill="#003459" opacity="0.5">function</text>
+    <circle cx="420" cy="350" r="7" fill="#003459" opacity="0.15"/>
   </svg>
 );
 
-export const MobileDeveloperSVG = () => (
-  <div style={{
-    width: '100%',
-    height: '400px',
-    backgroundColor: '#f8f9fa',
-    border: '3px solid #e0e0e0',
-    borderRadius: '12px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'relative',
-    overflow: 'hidden',
-    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)'
-  }}>
-    {/* Background pattern */}
+export const MobileDeveloperSVG = () => {
+  const { isDark } = useContext(StyleContext);
+  
+  return (
     <div style={{
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      background: 'linear-gradient(45deg, #f8f9fa 25%, transparent 25%), linear-gradient(-45deg, #f8f9fa 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #f8f9fa 75%), linear-gradient(-45deg, transparent 75%, #f8f9fa 75%)',
-      backgroundSize: '20px 20px',
-      backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px',
-      opacity: 0.3
-    }} />
-    
-    {/* Main content */}
-    <div style={{
+      width: '100%',
+      height: '400px',
+      backgroundColor: isDark ? '#2a2a2a' : '#f8f9fa',
+      border: `3px solid ${isDark ? '#444' : '#e0e0e0'}`,
+      borderRadius: '12px',
       display: 'flex',
-      flexDirection: 'column',
       alignItems: 'center',
-      gap: '20px',
-      zIndex: 1
+      justifyContent: 'center',
+      position: 'relative',
+      overflow: 'hidden',
+      boxShadow: isDark ? '0 10px 30px rgba(0, 0, 0, 0.3)' : '0 10px 30px rgba(0, 0, 0, 0.1)'
     }}>
-      {/* Developer icon */}
+      {/* Background pattern */}
       <div style={{
-        width: '80px',
-        height: '80px',
-        borderRadius: '50%',
-        backgroundColor: '#3498db',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: isDark 
+          ? 'linear-gradient(45deg, #2a2a2a 25%, transparent 25%), linear-gradient(-45deg, #2a2a2a 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #2a2a2a 75%), linear-gradient(-45deg, transparent 75%, #2a2a2a 75%)'
+          : 'linear-gradient(45deg, #f8f9fa 25%, transparent 25%), linear-gradient(-45deg, #f8f9fa 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #f8f9fa 75%), linear-gradient(-45deg, transparent 75%, #f8f9fa 75%)',
+        backgroundSize: '20px 20px',
+        backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px',
+        opacity: 0.3
+      }} />
+      
+      {/* Main content */}
+      <div style={{
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center',
-        fontSize: '40px',
-        color: 'white',
-        boxShadow: '0 4px 20px rgba(52, 152, 219, 0.3)'
-      }}>
-        👨‍💻
-      </div>
-      
-      {/* Mobile devices */}
-      <div style={{
-        display: 'flex',
         gap: '20px',
-        alignItems: 'center'
+        zIndex: 1
       }}>
+        {/* Developer icon */}
         <div style={{
-          width: '60px',
-          height: '100px',
-          backgroundColor: '#2c3e50',
-          borderRadius: '8px',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '5px',
-          boxShadow: '0 4px 15px rgba(44, 62, 80, 0.3)'
-        }}>
-          <div style={{ width: '30px', height: '4px', backgroundColor: '#27ae60', borderRadius: '2px' }} />
-          <div style={{ width: '25px', height: '4px', backgroundColor: '#e74c3c', borderRadius: '2px' }} />
-          <div style={{ width: '35px', height: '4px', backgroundColor: '#f39c12', borderRadius: '2px' }} />
-          <div style={{ width: '20px', height: '4px', backgroundColor: '#9b59b6', borderRadius: '2px' }} />
-        </div>
-        
-        <div style={{
-          width: '60px',
-          height: '100px',
+          width: '80px',
+          height: '80px',
+          borderRadius: '50%',
           backgroundColor: '#3498db',
-          borderRadius: '8px',
           display: 'flex',
-          flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: '5px',
-          boxShadow: '0 4px 15px rgba(52, 152, 219, 0.3)'
+          fontSize: '40px',
+          color: 'white',
+          boxShadow: '0 4px 20px rgba(52, 152, 219, 0.3)'
         }}>
-          <div style={{ width: '30px', height: '4px', backgroundColor: '#27ae60', borderRadius: '2px' }} />
-          <div style={{ width: '25px', height: '4px', backgroundColor: '#e74c3c', borderRadius: '2px' }} />
-          <div style={{ width: '35px', height: '4px', backgroundColor: '#f39c12', borderRadius: '2px' }} />
-          <div style={{ width: '20px', height: '4px', backgroundColor: '#9b59b6', borderRadius: '2px' }} />
+          👨‍💻
         </div>
         
+        {/* Mobile devices */}
         <div style={{
-          width: '60px',
-          height: '100px',
-          backgroundColor: '#e74c3c',
-          borderRadius: '8px',
           display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '5px',
-          boxShadow: '0 4px 15px rgba(231, 76, 60, 0.3)'
+          gap: '20px',
+          alignItems: 'center'
         }}>
-          <div style={{ width: '30px', height: '4px', backgroundColor: '#27ae60', borderRadius: '2px' }} />
-          <div style={{ width: '25px', height: '4px', backgroundColor: '#e74c3c', borderRadius: '2px' }} />
-          <div style={{ width: '35px', height: '4px', backgroundColor: '#f39c12', borderRadius: '2px' }} />
-          <div style={{ width: '20px', height: '4px', backgroundColor: '#9b59b6', borderRadius: '2px' }} />
+          <div style={{
+            width: '60px',
+            height: '100px',
+            backgroundColor: '#2c3e50',
+            borderRadius: '8px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '5px',
+            boxShadow: '0 4px 15px rgba(44, 62, 80, 0.3)'
+          }}>
+            <div style={{ width: '30px', height: '4px', backgroundColor: '#27ae60', borderRadius: '2px' }} />
+            <div style={{ width: '25px', height: '4px', backgroundColor: '#e74c3c', borderRadius: '2px' }} />
+            <div style={{ width: '35px', height: '4px', backgroundColor: '#f39c12', borderRadius: '2px' }} />
+            <div style={{ width: '20px', height: '4px', backgroundColor: '#9b59b6', borderRadius: '2px' }} />
+          </div>
+          
+          <div style={{
+            width: '60px',
+            height: '100px',
+            backgroundColor: '#3498db',
+            borderRadius: '8px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '5px',
+            boxShadow: '0 4px 15px rgba(52, 152, 219, 0.3)'
+          }}>
+            <div style={{ width: '30px', height: '4px', backgroundColor: '#27ae60', borderRadius: '2px' }} />
+            <div style={{ width: '25px', height: '4px', backgroundColor: '#e74c3c', borderRadius: '2px' }} />
+            <div style={{ width: '35px', height: '4px', backgroundColor: '#f39c12', borderRadius: '2px' }} />
+            <div style={{ width: '20px', height: '4px', backgroundColor: '#9b59b6', borderRadius: '2px' }} />
+          </div>
+          
+          <div style={{
+            width: '60px',
+            height: '100px',
+            backgroundColor: '#e74c3c',
+            borderRadius: '8px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '5px',
+            boxShadow: '0 4px 15px rgba(231, 76, 60, 0.3)'
+          }}>
+            <div style={{ width: '30px', height: '4px', backgroundColor: '#27ae60', borderRadius: '2px' }} />
+            <div style={{ width: '25px', height: '4px', backgroundColor: '#e74c3c', borderRadius: '2px' }} />
+            <div style={{ width: '35px', height: '4px', backgroundColor: '#f39c12', borderRadius: '2px' }} />
+            <div style={{ width: '20px', height: '4px', backgroundColor: '#9b59b6', borderRadius: '2px' }} />
+          </div>
+        </div>
+        
+        {/* Tech stack icons */}
+        <div style={{
+          display: 'flex',
+          gap: '15px',
+          marginTop: '10px'
+        }}>
+          <div style={{
+            width: '40px',
+            height: '40px',
+            backgroundColor: '#61dafb',
+            borderRadius: '8px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '20px',
+            color: 'white',
+            boxShadow: '0 2px 10px rgba(97, 218, 251, 0.3)'
+          }}>
+            ⚛️
+          </div>
+          <div style={{
+            width: '40px',
+            height: '40px',
+            backgroundColor: '#42b883',
+            borderRadius: '8px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '20px',
+            color: 'white',
+            boxShadow: '0 2px 10px rgba(66, 184, 131, 0.3)'
+          }}>
+            📱
+          </div>
+          <div style={{
+            width: '40px',
+            height: '40px',
+            backgroundColor: '#f7df1e',
+            borderRadius: '8px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '20px',
+            color: 'white',
+            boxShadow: '0 2px 10px rgba(247, 223, 30, 0.3)'
+          }}>
+            🚀
+          </div>
         </div>
       </div>
       
-      {/* Tech stack icons */}
+      {/* Floating elements */}
       <div style={{
-        display: 'flex',
-        gap: '15px',
-        marginTop: '10px'
-      }}>
-        <div style={{
-          width: '40px',
-          height: '40px',
-          backgroundColor: '#61dafb',
-          borderRadius: '8px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: '20px',
-          color: 'white',
-          boxShadow: '0 2px 10px rgba(97, 218, 251, 0.3)'
-        }}>
-          ⚛️
-        </div>
-        <div style={{
-          width: '40px',
-          height: '40px',
-          backgroundColor: '#42b883',
-          borderRadius: '8px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: '20px',
-          color: 'white',
-          boxShadow: '0 2px 10px rgba(66, 184, 131, 0.3)'
-        }}>
-          📱
-        </div>
-        <div style={{
-          width: '40px',
-          height: '40px',
-          backgroundColor: '#f7df1e',
-          borderRadius: '8px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: '20px',
-          color: 'white',
-          boxShadow: '0 2px 10px rgba(247, 223, 30, 0.3)'
-        }}>
-          🚀
-        </div>
-      </div>
+        position: 'absolute',
+        top: '20px',
+        right: '20px',
+        width: '30px',
+        height: '30px',
+        backgroundColor: '#003459',
+        borderRadius: '50%',
+        opacity: 0.1
+      }} />
+      <div style={{
+        position: 'absolute',
+        bottom: '30px',
+        left: '30px',
+        width: '25px',
+        height: '25px',
+        backgroundColor: '#003459',
+        borderRadius: '50%',
+        opacity: 0.15
+      }} />
     </div>
-    
-    {/* Floating elements */}
-    <div style={{
-      position: 'absolute',
-      top: '20px',
-      right: '20px',
-      width: '30px',
-      height: '30px',
-      backgroundColor: '#003459',
-      borderRadius: '50%',
-      opacity: 0.1
-    }} />
-    <div style={{
-      position: 'absolute',
-      bottom: '30px',
-      left: '30px',
-      width: '25px',
-      height: '25px',
-      backgroundColor: '#003459',
-      borderRadius: '50%',
-      opacity: 0.15
-    }} />
-  </div>
-);
+  );
+};
 
 // Simple test SVG for debugging
 export const TestSVG = () => (
