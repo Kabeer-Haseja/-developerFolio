@@ -22,6 +22,16 @@ function Header() {
   const viewBlog = blogSection.display;
   const viewTalks = talkSection.display;
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <Headroom>
       <header className={isDark ? "dark-menu header" : "header"}>
@@ -41,36 +51,92 @@ function Header() {
         <ul className={isDark ? "dark-menu menu" : "menu"}>
           {viewSkills && (
             <li>
-              <a href="#skills">Skills</a>
+              <a 
+                href="#skills" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('skills');
+                }}
+              >
+                Skills
+              </a>
             </li>
           )}
           {viewExperience && (
             <li>
-              <a href="#experience">Work Experiences</a>
+              <a 
+                href="#experience" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('experience');
+                }}
+              >
+                Work Experiences
+              </a>
             </li>
           )}
           {viewOpenSource && (
             <li>
-              <a href="#opensource">Open Source</a>
+              <a 
+                href="#opensource" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('opensource');
+                }}
+              >
+                Open Source
+              </a>
             </li>
           )}
           {viewAchievement && (
             <li>
-              <a href="#achievements">Achievements</a>
+              <a 
+                href="#achievements" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('achievements');
+                }}
+              >
+                Achievements
+              </a>
             </li>
           )}
           {viewBlog && (
             <li>
-              <a href="#blogs">Blogs</a>
+              <a 
+                href="#blogs" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('blogs');
+                }}
+              >
+                Blogs
+              </a>
             </li>
           )}
           {viewTalks && (
             <li>
-              <a href="#talks">Talks</a>
+              <a 
+                href="#talks" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('talks');
+                }}
+              >
+                Talks
+              </a>
             </li>
           )}
           <li>
-            <a href="#contact">Contact Me</a>
+            <a 
+              href="#contact" 
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('contact');
+              }}
+            >
+              Contact Me
+            </a>
           </li>
           <li>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
