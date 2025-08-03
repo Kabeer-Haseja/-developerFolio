@@ -12,7 +12,6 @@ import Blogs from "./blogs/Blogs";
 import Footer from "../components/footer/Footer";
 import Education from "./education/Education";
 import ScrollToTopButton from "./topbutton/Top";
-import Twitter from "./twitter-embed/twitter";
 import Profile from "./profile/Profile";
 import SplashScreen from "./splashScreen/SplashScreen";
 import {splashScreen} from "../portfolio";
@@ -160,20 +159,10 @@ const Main = () => {
               </div>
             </section>
             
-            {/* Twitter Section */}
-            <section style={{ 
-              padding: '6rem 0',
-              background: isDark ? '#2a2a2a' : '#f8f9fa'
-            }}>
-              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-                <Twitter />
-              </div>
-            </section>
-            
             {/* Profile Section */}
             <section style={{ 
               padding: '6rem 0',
-              background: isDark ? '#1a1a1a' : '#ffffff'
+              background: isDark ? '#2a2a2a' : '#f8f9fa'
             }}>
               <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
                 <Profile />
