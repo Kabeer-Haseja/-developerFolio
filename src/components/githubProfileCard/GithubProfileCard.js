@@ -20,7 +20,7 @@ export default function GithubProfileCard({prof}) {
             <div className="blog-header">
               <p className="subTitle blog-subtitle">{contactInfo.subtitle}</p>
             </div>
-            <h2 className="bio-text">"{emoji(String(prof.bio))}"</h2>
+            <h2 className="bio-text">{emoji(String('Hi, I’m Kabeer Haseja, a seasoned React Native Developer with over 5 years of hands-on experience building robust, high-performance mobile applications for iOS and Android.'))}</h2>
             {prof.location !== null && (
               <div className="location-div">
                 <span className="desc-prof">

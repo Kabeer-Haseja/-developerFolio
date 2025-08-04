@@ -225,52 +225,16 @@ const bigProjects = {
   subtitle: "INNOVATIVE MOBILE SOLUTIONS THAT DRIVE BUSINESS GROWTH AND USER ENGAGEMENT",
   projects: [
     {
-      image: require("./assets/images/dubizzlecars.png"),
+      image: require("./assets/images/Dubizzle-CRM.png"),
       projectName: "Dubizzle CRM",
       projectDesc:
         "Architected and developed a comprehensive CRM system for Dubizzle's vehicle marketplace, enabling sales agents to efficiently manage thousands of vehicle listings. The platform streamlined internal workflows, automated data tracking, and enhanced team coordination across inspection, auction, and seller operations, resulting in a 40% improvement in team efficiency and significant reduction in operational overhead.",
-      footerLink: [
-        {
-          name: "Visit Website",
-          url: "https://dubai.dubizzle.com/motors/"
-        }
-      ]
-    },
-    {
-      image: require("./assets/images/dubizzlecars.png"),
-      projectName: "Dubizzle Auction",
-      projectDesc:
-        "Engineered a sophisticated real-time vehicle auction platform within the Dubizzle ecosystem using React Native and WebSocket technology. Implemented secure bidding mechanisms, automated listing approvals, and live status tracking features that transformed the user experience. The platform achieved a 30% increase in user engagement and tripled monthly car listings, establishing a new revenue stream for the business.",
-      footerLink: [
-        {
-          name: "Visit Website",
-          url: "https://dubai.dubizzle.com/motors/"
-        }
-      ]
-    },
-    {
-      image: require("./assets/images/dubizzlecars.png"),
-      projectName: "Dubizzle Vehicle Inspection App",
-      projectDesc:
-        "Designed and developed a comprehensive mobile inspection solution that revolutionized Dubizzle's vehicle evaluation process. The app enabled inspectors to complete 500+ detailed monthly reports with 200+ checkpoint validations per vehicle, significantly reducing post-sale disputes by 40% and improving buyer confidence through transparent, standardized car evaluations.",
-      footerLink: [
-        {
-          name: "Visit Website",
-          url: "https://dubai.dubizzle.com/motors/"
-        }
-      ]
-    },
-    {
-      image: require("./assets/images/dubizzle_seller_center_icon.png"),
-      projectName: "Dubizzle Seller Center",
-      projectDesc:
-        "Built a full-stack product and order management system that empowered Dubizzle sellers with comprehensive business tools. The platform featured advanced listing management, order fulfillment workflows, performance analytics dashboards, and intelligent push notifications, enabling merchants to optimize their sales strategy and scale their operations efficiently."
-    },
-    {
-      image: require("./assets/images/jarvis_main_logo.png"),
-      projectName: "Jarvis Real Estate CRM",
-      projectDesc:
-        "Led the development and integration of a comprehensive CRM system for Jarvis, serving 100K+ active users across Pakistan, UAE, Saudi Arabia, and Egypt. The platform supported major real estate platforms including zameen.com, bayut.com, and olx.com, improving task management efficiency by 40% and significantly boosting sales team productivity through automated workflows and intelligent lead management."
+      // footerLink: [
+      //   {
+      //     name: "Visit Website",
+      //     url: "https://dubai.dubizzle.com/motors/"
+      //   }
+      // ]
     },
     {
       image: require("./assets/images/olx.png"), // Replace with actual OLX logo if available
@@ -279,16 +243,55 @@ const bigProjects = {
         "Architected and implemented seamless payment gateway integrations and logistics management via REST APIs, resulting in a 30% increase in customer satisfaction scores. Enhanced mobile app performance and user experience through React Native optimization, streamlining transactions across iOS and Android platforms while maintaining security and reliability standards."
     },
     {
+      image: require("./assets/images/dubizzle_seller_center_icon.png"),
+      projectName: "Dubizzle Seller Center",
+      projectDesc:
+        "Built a full-stack product and order management system that empowered Dubizzle sellers with comprehensive business tools. The platform featured advanced listing management, order fulfillment workflows, performance analytics dashboards, and intelligent push notifications, enabling merchants to optimize their sales strategy and scale their operations efficiently."
+    },
+    
+    {
+      image: require("./assets/images/Dubizzle-Auction.png"),
+      projectName: "Dubizzle Auction",
+      projectDesc:
+        "Engineered a sophisticated real-time vehicle auction platform within the Dubizzle ecosystem using React Native and WebSocket technology. Implemented secure bidding mechanisms, automated listing approvals, and live status tracking features that transformed the user experience. The platform achieved a 30% increase in user engagement and tripled monthly car listings, establishing a new revenue stream for the business.",
+      // footerLink: [
+      //   {
+      //     name: "Visit Website",
+      //     url: "https://dubai.dubizzle.com/motors/"
+      //   }
+      // ]
+    },
+    {
       image: require("./assets/images/connect_Icon.png"),
       projectName: "Connect Loyalty & Rewards App",
       projectDesc:
         "Developed a sophisticated location-aware loyalty application that partnered with 100+ retailers to offer personalized deals and rewards. Implemented advanced location-based promotional systems and a comprehensive points-based reward mechanism that increased user engagement by 35% and boosted repeat transactions by 25%, creating a sustainable ecosystem for both users and merchants."
     },
+   
+    {
+      image: require("./assets/images/jarvis_main_logo.png"),
+      projectName: "Jarvis Real Estate CRM",
+      projectDesc:
+        "Led the development and integration of a comprehensive CRM system for Jarvis, serving 100K+ active users across Pakistan, UAE, Saudi Arabia, and Egypt. The platform supported major real estate platforms including zameen.com, bayut.com, and olx.com, improving task management efficiency by 40% and significantly boosting sales team productivity through automated workflows and intelligent lead management."
+    },
+    
     {
       image: require("./assets/images/olxSellerCenter.png"),
       projectName: "Seller Center OLX",
       projectDesc:
         "Engineered a comprehensive merchant platform for OLX that empowered businesses to efficiently list products, manage orders, and track shipments in real-time. Integrated advanced analytics and reporting tools to provide actionable insights on sales performance and market trends, enabling sellers to make data-driven decisions and scale their operations effectively."
+    },
+    {
+      image: require("./assets/images/Dubizzle-Inspection.png"),
+      projectName: "Dubizzle Vehicle Inspection App",
+      projectDesc:
+        "Designed and developed a comprehensive mobile inspection solution that revolutionized Dubizzle's vehicle evaluation process. The app enabled inspectors to complete 500+ detailed monthly reports with 200+ checkpoint validations per vehicle, significantly reducing post-sale disputes by 40% and improving buyer confidence through transparent, standardized car evaluations.",
+      // footerLink: [
+      //   {
+      //     name: "Visit Website",
+      //     url: "https://dubai.dubizzle.com/motors/"
+      //   }
+      // ]
     },
    
   ],
@@ -362,19 +365,13 @@ const blogSection = {
   title: "Technical Insights & Industry Perspectives",
   subtitle:
     "Sharing knowledge, experiences, and insights from my journey in mobile development and software engineering",
-  displayMediumBlogs: "false", // Set true to display fetched medium blogs instead of hardcoded ones
+  displayMediumBlogs: "true", // Set true to display fetched medium blogs instead of hardcoded ones
   blogs: [
     {
-      url: "https://blog.usejournal.com/create-a-google-assistant-action-and-win-a-google-t-shirt-and-cloud-credits-4a8d86d76eae",
-      title: "Building Google Assistant Actions: A Complete Guide to Winning Google Cloud Credits",
+      url: "https://medium.com/@haseja45/react-native-2025-whats-new-and-why-it-matters-af354d7495ad",
+      title: "Why React Native 2025: What’s New and Why It Matters",
       description:
-        "Comprehensive tutorial on creating Google Assistant Actions, including best practices, deployment strategies, and how to leverage Google's developer programs for cloud credits and recognition."
-    },
-    {
-      url: "https://medium.com/@saadpasta/why-react-is-the-best-5a97563f423e",
-      title: "Why React Native is Revolutionizing Mobile Development",
-      description:
-        "Deep dive into React Native's advantages for cross-platform development, performance optimization techniques, and real-world implementation strategies for building scalable mobile applications."
+        "React Native continues to evolve at a rapid pace in 2025, pushing the boundaries of cross-platform mobile development. Whether you’re maintaining a legacy app or building something fresh"
     }
   ],
   display: true // Set false to hide this section, defaults to true
@@ -427,7 +424,7 @@ const twitterDetails = {
   display: false // Set true to display this section, defaults to false
 };
 
-const isHireable = false; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
+const isHireable = true; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
 
 export {
   illustration,

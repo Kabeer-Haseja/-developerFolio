@@ -28,7 +28,7 @@ function Skills() {
           <div className="skills-category">
             <h3>Mobile Development</h3>
             <ul>
-              <li>⚡ React Native, Flutter</li>
+              <li>⚡ React Native</li>
               <li>⚡ iOS & Android Development</li>
               <li>⚡ Mobile UI/UX Design</li>
               <li>⚡ App Store & Play Store</li>
@@ -38,7 +38,7 @@ function Skills() {
           <div className="skills-category">
             <h3>Backend Development</h3>
             <ul>
-              <li>⚡ Node.js, Express.js, Django</li>
+              <li>⚡ Node.js, Express.js</li>
               <li>⚡ Python, Java, C#</li>
               <li>⚡ RESTful APIs, GraphQL</li>
               <li>⚡ Microservices Architecture</li>
@@ -49,8 +49,6 @@ function Skills() {
             <h3>Database & Cloud</h3>
             <ul>
               <li>⚡ MongoDB, PostgreSQL, MySQL</li>
-              <li>⚡ AWS, Azure, Google Cloud</li>
-              <li>⚡ Docker, Kubernetes</li>
               <li>⚡ CI/CD, DevOps</li>
             </ul>
           </div>
