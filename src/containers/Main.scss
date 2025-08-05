@@ -1,15 +1,83 @@
 @import "../_globalColor.scss";
 
-.portfolio-main {
+.app-container {
+  width: 100%;
+  min-height: 100vh;
   background: $lightBackground1;
   color: $textColor;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   line-height: 1.6;
-  transition: all $transitionNormal $easeInOut;
-
+  overflow-x: hidden;
+  
   &.dark-mode {
     background: $darkBackground;
     color: $textColorDark;
+  }
+}
+
+.main-content {
+  width: 100%;
+  position: relative;
+}
+
+// Section Styles
+.section {
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+  
+  @media (max-width: 768px) {
+    padding: 4rem 0;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 3rem 0;
+  }
+}
+
+// Section Backgrounds
+.section-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  
+  &:not(.alt) {
+    background: $lightBackground2;
+    
+    .dark-mode & {
+      background: $darkBackgroundSecondary;
+    }
+  }
+  
+  &.alt {
+    background: $lightBackground1;
+    
+    .dark-mode & {
+      background: $darkBackground;
+    }
+  }
+}
+
+.section-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(0, 112, 243, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
+  background-size: 200px 200px;
+  animation: patternMove 20s linear infinite;
+  opacity: 0.5;
+  
+  .dark-mode & {
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(0, 112, 243, 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(124, 58, 237, 0.2) 0%, transparent 50%);
   }
 }
 
@@ -18,365 +86,348 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, rgba(0, 52, 89, 0.02) 0%, rgba(248, 249, 250, 0.8) 100%);
   position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23003459' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    opacity: 0.5;
-  }
-
+  padding: 0;
+  background: $heroGradient;
+  
   .dark-mode & {
-    background: linear-gradient(135deg, rgba(0, 4, 0, 0.1) 0%, rgba(26, 26, 26, 0.9) 100%);
+    background: $darkGradient;
   }
 }
 
-.hero-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 3rem;
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 112, 243, 0.1) 0%,
+    rgba(124, 58, 237, 0.05) 50%,
+    rgba(6, 182, 212, 0.1) 100%
+  );
+  animation: gradientShift 10s ease-in-out infinite;
+  
+  .dark-mode & {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 112, 243, 0.2) 0%,
+      rgba(124, 58, 237, 0.1) 50%,
+      rgba(6, 182, 212, 0.2) 100%
+    );
+  }
+}
+
+.floating-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  
+  .particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: $primaryBlue;
+    border-radius: 50%;
+    animation: particleFloat 8s linear infinite;
+    opacity: 0.6;
+    
+    .dark-mode & {
+      background: $primaryLight;
+    }
+    
+    @for $i from 1 through 20 {
+      &.particle-#{$i} {
+        left: random(100) * 1%;
+        top: random(100) * 1%;
+        animation-delay: random(8) * 1s;
+        animation-duration: (6 + random(4)) * 1s;
+      }
+    }
+  }
+}
+
+// Section Headers
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
   position: relative;
   z-index: 2;
-}
-
-// Section Containers
-.section-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 3rem;
-}
-
-// About Section
-.about-section {
-  padding: 5rem 0;
-  background: $white;
   
-  .dark-mode & {
-    background: $darkBackgroundSecondary;
+  @media (max-width: 768px) {
+    margin-bottom: 3rem;
   }
 }
 
-// Skills Progress Section
-.skills-progress-section {
-  padding: 5rem 0;
-  background: $lightBackground2;
-  
-  .dark-mode & {
-    background: $darkBackgroundCard;
-  }
-}
-
-// Education Section
-.education-section {
-  padding: 5rem 0;
-  background: $white;
-  
-  .dark-mode & {
-    background: $darkBackgroundSecondary;
-  }
-}
-
-// Experience Section
-.experience-section {
-  padding: 5rem 0;
-  background: $lightBackground2;
-  
-  .dark-mode & {
-    background: $darkBackgroundCard;
-  }
-}
-
-// Projects Section
-.projects-section {
-  padding: 5rem 0;
-  background: $white;
-  
-  .dark-mode & {
-    background: $darkBackgroundSecondary;
-  }
-}
-
-// Startup Projects Section
-.startup-projects-section {
-  padding: 5rem 0;
-  background: $lightBackground2;
-  
-  .dark-mode & {
-    background: $darkBackgroundCard;
-  }
-}
-
-// Achievement Section
-.achievement-section {
-  padding: 5rem 0;
-  background: $white;
-  
-  .dark-mode & {
-    background: $darkBackgroundSecondary;
-  }
-}
-
-// Blogs Section
-.blogs-section {
-  padding: 5rem 0;
-  background: $lightBackground2;
-  
-  .dark-mode & {
-    background: $darkBackgroundCard;
-  }
-}
-
-// Talks Section
-.talks-section {
-  padding: 5rem 0;
-  background: $white;
-  
-  .dark-mode & {
-    background: $darkBackgroundSecondary;
-  }
-}
-
-// Twitter Section
-.twitter-section {
-  padding: 5rem 0;
-  background: $lightBackground2;
-  
-  .dark-mode & {
-    background: $darkBackgroundCard;
-  }
-}
-
-// Podcast Section
-.podcast-section {
-  padding: 5rem 0;
-  background: $white;
-  
-  .dark-mode & {
-    background: $darkBackgroundSecondary;
-  }
-}
-
-// Profile Section
-.profile-section {
-  padding: 5rem 0;
-  background: $lightBackground2;
-  
-  .dark-mode & {
-    background: $darkBackgroundCard;
-  }
-}
-
-// Contact Section
-.contact-section {
-  padding: 5rem 0;
-  background: $white;
-  
-  .dark-mode & {
-    background: $darkBackgroundSecondary;
-  }
-}
-
-// Responsive Design
-@media (max-width: 1400px) {
-  .hero-container,
-  .section-container {
-    max-width: 1200px;
-    padding: 0 2.5rem;
-  }
-}
-
-@media (max-width: 1200px) {
-  .hero-container,
-  .section-container {
-    max-width: 1000px;
-    padding: 0 2rem;
-  }
-}
-
-@media (max-width: 992px) {
-  .hero-container,
-  .section-container {
-    max-width: 900px;
-    padding: 0 1.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-container,
-  .section-container {
-    max-width: 100%;
-    padding: 0 1rem;
-  }
-  
-  .hero-section {
-    min-height: 80vh;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-container,
-  .section-container {
-    padding: 0 0.75rem;
-  }
-}
-
-// Animation for sections
-.hero-section,
-.about-section,
-.skills-progress-section,
-.education-section,
-.experience-section,
-.projects-section,
-.startup-projects-section,
-.achievement-section,
-.blogs-section,
-.talks-section,
-.twitter-section,
-.podcast-section,
-.profile-section,
-.contact-section {
-  animation: fadeIn 0.8s ease-out forwards;
-  opacity: 0;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-// Enhanced typography
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-  
-  .dark-mode & {
-    color: $white;
-  }
-}
-
-h1 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
-}
-
-h2 {
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
-}
-
-h3 {
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  font-weight: 600;
-}
-
-p {
-  font-size: 1.125rem;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  color: $titleColor;
+  position: relative;
   
   .dark-mode & {
-    color: $textColorDark;
+    color: $titleColorDark;
+  }
+  
+  &.text-gradient {
+    background: $techGradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: $primaryGradient;
+    border-radius: 2px;
   }
 }
 
-// Enhanced spacing
-.section-padding {
-  padding: 6rem 0;
-}
-
-.section-padding-sm {
-  padding: 4rem 0;
-}
-
-.section-padding-lg {
-  padding: 8rem 0;
-}
-
-// Enhanced container widths
-.container-wide {
-  max-width: 1400px;
+.section-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.6;
+  color: $subTitle;
+  max-width: 600px;
   margin: 0 auto;
-  padding: 0 3rem;
-}
-
-.container-medium {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2.5rem;
-}
-
-.container-narrow {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-// Smooth scrolling
-html {
-  scroll-behavior: smooth;
-}
-
-// Section transitions
-.portfolio-main section {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.6s $easeOut;
   
-  &.visible {
+  .dark-mode & {
+    color: $textColorDarkSecondary;
+  }
+}
+
+// Individual Section Styles
+.skills-section {
+  .container > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.tech-skills-section {
+  background: $lightBackground1;
+  
+  .dark-mode & {
+    background: $darkBackground;
+  }
+  
+  .container > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.progress-section {
+  .container > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.education-section {
+  background: $lightBackground1;
+  
+  .dark-mode & {
+    background: $darkBackground;
+  }
+  
+  .container > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.experience-section {
+  .container > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.projects-section {
+  background: $lightBackground1;
+  
+  .dark-mode & {
+    background: $darkBackground;
+  }
+  
+  .container > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.startup-section {
+  .container > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.achievements-section {
+  background: $lightBackground1;
+  
+  .dark-mode & {
+    background: $darkBackground;
+  }
+  
+  .container > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.blog-section {
+  .container > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.contact-section {
+  background: $lightBackground1;
+  
+  .dark-mode & {
+    background: $darkBackground;
+  }
+  
+  .container > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+// Animations
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes patternMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(200px, 200px);
+  }
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+// Scroll Animations
+.section {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: sectionAppear 0.8s $easeOut forwards;
+  
+  &:nth-child(1) { animation-delay: 0.1s; }
+  &:nth-child(2) { animation-delay: 0.2s; }
+  &:nth-child(3) { animation-delay: 0.3s; }
+  &:nth-child(4) { animation-delay: 0.4s; }
+  &:nth-child(5) { animation-delay: 0.5s; }
+  &:nth-child(6) { animation-delay: 0.6s; }
+  &:nth-child(7) { animation-delay: 0.7s; }
+  &:nth-child(8) { animation-delay: 0.8s; }
+  &:nth-child(9) { animation-delay: 0.9s; }
+  &:nth-child(10) { animation-delay: 1.0s; }
+}
+
+@keyframes sectionAppear {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-// Custom scrollbar
-.portfolio-main {
-  &::-webkit-scrollbar {
-    width: 8px;
+// Intersection Observer Animations
+.section.animate-in {
+  animation: sectionSlideIn 0.8s $easeOut forwards;
+}
+
+@keyframes sectionSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
   }
-  
-  &::-webkit-scrollbar-track {
-    background: $lightBackground2;
-    
-    .dark-mode & {
-      background: $darkBackgroundCard;
-    }
-  }
-  
-  &::-webkit-scrollbar-thumb {
-    background: $deepBlue;
-    border-radius: 4px;
-    
-    &:hover {
-      background: #004d7a;
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-// Focus styles for accessibility
-.portfolio-main {
-  *:focus {
-    outline: 2px solid $deepBlue;
-    outline-offset: 2px;
+// Performance optimizations
+.section-background,
+.hero-background {
+  will-change: transform;
+}
+
+.floating-particles {
+  will-change: transform, opacity;
+}
+
+// Accessibility
+@media (prefers-reduced-motion: reduce) {
+  .section,
+  .floating-particles,
+  .hero-gradient,
+  .section-pattern {
+    animation: none;
+  }
+  
+  .section {
+    opacity: 1;
+    transform: none;
   }
 }
 
-// Print styles
-@media print {
-  .portfolio-main {
-    background: white !important;
-    color: black !important;
-    
-    section {
-      break-inside: avoid;
-      page-break-inside: avoid;
-    }
+// High contrast mode
+@media (prefers-contrast: high) {
+  .section-background {
+    background: transparent !important;
+  }
+  
+  .section-pattern {
+    display: none;
+  }
+  
+  .hero-gradient {
+    background: transparent !important;
   }
 }

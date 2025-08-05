@@ -1,156 +1,196 @@
-/* Blue & Gray Neutrals Color Scheme */
+/* Modern Tech-Focused Color Scheme */
 
-// Primary Color Palette
-$deepBlue: #003459;
-$mediumGray: #555555;
-$lightGray: #AAAAAA;
-$white: #FFFFFF;
-$veryDarkGray: #000400;
+// Modern Primary Colors
+$primaryBlue: #0070f3;
+$primaryPurple: #7c3aed;
+$primaryCyan: #06b6d4;
+$darkBlue: #1e293b;
+$darkGray: #0f172a;
+
+// Accent Colors
+$accentGreen: #10b981;
+$accentOrange: #f59e0b;
+$accentPink: #ec4899;
+$accentRed: #ef4444;
+
+// Neutral Colors
+$white: #ffffff;
+$gray50: #f8fafc;
+$gray100: #f1f5f9;
+$gray200: #e2e8f0;
+$gray300: #cbd5e1;
+$gray400: #94a3b8;
+$gray500: #64748b;
+$gray600: #475569;
+$gray700: #334155;
+$gray800: #1e293b;
+$gray900: #0f172a;
 
 // Main color variables
-$primary: $deepBlue;
-$primaryLight: #004d7a;
-$primaryDark: $veryDarkGray;
-$secondary: $mediumGray;
-$secondaryLight: $lightGray;
-$secondaryDark: #333333;
+$primary: $primaryBlue;
+$primaryLight: #3b82f6;
+$primaryDark: $darkBlue;
+$secondary: $primaryPurple;
+$secondaryLight: #8b5cf6;
+$secondaryDark: #5b21b6;
 
 // Accent colors
-$accent: $deepBlue;
-$accentLight: #005a8f;
-$warning: #FFB700;
-$success: #28a745;
-$info: $deepBlue;
+$accent: $primaryCyan;
+$accentLight: #22d3ee;
+$warning: $accentOrange;
+$success: $accentGreen;
+$info: $primaryBlue;
+$danger: $accentRed;
 
 // Button colors
-$buttonColor: $deepBlue;
-$buttonHover: #004d7a;
-$buttonShadow: rgba(0, 52, 89, 0.3);
-$topButtonHover: $veryDarkGray;
+$buttonColor: $primaryBlue;
+$buttonHover: $primaryLight;
+$buttonShadow: rgba(0, 112, 243, 0.25);
+$topButtonHover: $primaryPurple;
 
 // Text colors light theme
-$titleColor: $veryDarkGray;
-$textColor: #1a1a1a;
-$subTitle: $mediumGray;
-$cardSubtitle: $veryDarkGray;
-$talkCardSubTitle: $mediumGray;
-$blogCardTitleColor: $veryDarkGray;
-$linkColor: $deepBlue;
-$linkHover: #004d7a;
+$titleColor: $gray900;
+$textColor: $gray700;
+$subTitle: $gray500;
+$cardSubtitle: $gray600;
+$talkCardSubTitle: $gray500;
+$blogCardTitleColor: $gray900;
+$linkColor: $primaryBlue;
+$linkHover: $primaryLight;
 
 // Text color dark theme
 $textColorDark: $white;
-$textColorDarkSecondary: $lightGray;
-$titleColorDark: #f8f9fa;
+$textColorDarkSecondary: $gray300;
+$titleColorDark: $gray50;
 
 // Toggle switch colors
-$toggleCheck: $deepBlue;
-$toggleSwitchSliderBG: #e2e8f0;
+$toggleCheck: $primaryBlue;
+$toggleSwitchSliderBG: $gray200;
 
 // GitHub repository specific colors
-$githubRepoCardLanguageColorBG: $deepBlue;
-$githubRepoCardColor: $mediumGray;
-$githubRepoCardRepoCardStatsColor: $lightGray;
-$githubRepoCardRepoNameColor: $veryDarkGray;
-$githubProfileCardLocationTS: $lightGray;
-$githubProfileCardBorder: $deepBlue;
+$githubRepoCardLanguageColorBG: $primaryBlue;
+$githubRepoCardColor: $gray500;
+$githubRepoCardRepoCardStatsColor: $gray400;
+$githubRepoCardRepoNameColor: $gray900;
+$githubProfileCardLocationTS: $gray400;
+$githubProfileCardBorder: $primaryBlue;
 
 // Background colors
 $lightBackground1: $white;
-$lightBackground2: #f8f9fa;
-$lightBackground3: #f1f3f4;
+$lightBackground2: $gray50;
+$lightBackground3: $gray100;
 $lightBackgroundCard: $white;
-$blogCardContainerColor: $mediumGray;
+$blogCardContainerColor: $gray500;
 
 // Dark background colors
-$darkBackground: $veryDarkGray;
-$darkBackgroundSecondary: #1a1a1a;
-$darkBackgroundCard: #2d2d2d;
-$darkBackgroundAccent: #404040;
+$darkBackground: $gray900;
+$darkBackgroundSecondary: $gray800;
+$darkBackgroundCard: $gray700;
+$darkBackgroundAccent: $gray600;
 
 // Box shadows
-$lightBoxShadowDark: rgba(0, 4, 0, 0.15);
-$lightBoxShadow: rgba(0, 4, 0, 0.08);
-$lightBoxShadowLarge: rgba(0, 4, 0, 0.12);
-$lightBoxShadowHover: rgba(0, 52, 89, 0.15);
+$lightBoxShadowDark: rgba(15, 23, 42, 0.15);
+$lightBoxShadow: rgba(15, 23, 42, 0.08);
+$lightBoxShadowLarge: rgba(15, 23, 42, 0.12);
+$lightBoxShadowHover: rgba(0, 112, 243, 0.15);
 
 // Dark theme box shadows
-$darkBoxShadow: rgba(170, 170, 170, 0.1);
-$darkBoxShadow2: rgba(170, 170, 170, 0.05);
-$darkBoxShadowHover: rgba(0, 52, 89, 0.2);
+$darkBoxShadow: rgba(255, 255, 255, 0.1);
+$darkBoxShadow2: rgba(255, 255, 255, 0.05);
+$darkBoxShadowHover: rgba(0, 112, 243, 0.2);
 
-// Gradients
-$primaryGradient: linear-gradient(135deg, $deepBlue 0%, #004d7a 100%);
-$secondaryGradient: linear-gradient(135deg, $lightGray 0%, #f8f9fa 100%);
-$heroGradient: linear-gradient(135deg, rgba(0, 52, 89, 0.05) 0%, rgba(85, 85, 85, 0.05) 100%);
-$cardGradient: linear-gradient(145deg, rgba(248, 249, 250, 0.1) 0%, rgba(241, 243, 244, 0.05) 100%);
-$darkGradient: linear-gradient(135deg, $veryDarkGray 0%, $darkBackgroundSecondary 100%);
+// Modern Gradients
+$primaryGradient: linear-gradient(135deg, $primaryBlue 0%, $primaryPurple 100%);
+$secondaryGradient: linear-gradient(135deg, $primaryCyan 0%, $accentGreen 100%);
+$heroGradient: linear-gradient(135deg, rgba(0, 112, 243, 0.1) 0%, rgba(124, 58, 237, 0.05) 100%);
+$cardGradient: linear-gradient(145deg, rgba(248, 250, 252, 0.8) 0%, rgba(241, 245, 249, 0.6) 100%);
+$darkGradient: linear-gradient(135deg, $gray900 0%, $gray800 100%);
+$glassGradient: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+$techGradient: linear-gradient(135deg, $primaryBlue 0%, $primaryCyan 50%, $accentGreen 100%);
 
 // Experience card gradients
 $experienceCardBlurredDivLG: linear-gradient(
   135deg,
-  rgba(0, 52, 89, 0.4),
-  rgba(85, 85, 85, 0.2)
+  rgba(0, 112, 243, 0.4),
+  rgba(124, 58, 237, 0.2)
 );
 $experienceCardBannerLG: linear-gradient(
   135deg,
-  rgba(0, 4, 0, 0.8),
-  rgba(0, 52, 89, 0.6)
+  rgba(15, 23, 42, 0.8),
+  rgba(0, 112, 243, 0.6)
 );
 
 // Borders
-$progressBarBackground: #e2e8f0;
-$lightBorder1: rgba(0, 52, 89, 0.15);
-$lightBorder2: rgba(85, 85, 85, 0.1);
-$educationCardBorder: $deepBlue;
-$cardBorder: rgba(0, 4, 0, 0.08);
-$cardBorderDark: rgba(170, 170, 170, 0.15);
+$progressBarBackground: $gray200;
+$lightBorder1: rgba(0, 112, 243, 0.15);
+$lightBorder2: rgba(203, 213, 225, 0.3);
+$educationCardBorder: $primaryBlue;
+$cardBorder: rgba(15, 23, 42, 0.08);
+$cardBorderDark: rgba(255, 255, 255, 0.15);
 
 // Hover effects
-$achievementCertificateCardHoverDark: rgba(170, 170, 170, 0.1);
+$achievementCertificateCardHoverDark: rgba(255, 255, 255, 0.1);
 $blogCardHoverSmallColor: rgba(255, 255, 255, 0.9);
-$headerHoverBG: #f8f9fa;
-$headerHoverBGDark: rgba(170, 170, 170, 0.05);
-$contactDetailHoverTS: $deepBlue;
-$cardHover: rgba(0, 52, 89, 0.05);
-$cardHoverDark: rgba(0, 52, 89, 0.1);
+$headerHoverBG: $gray50;
+$headerHoverBGDark: rgba(255, 255, 255, 0.05);
+$contactDetailHoverTS: $primaryBlue;
+$cardHover: rgba(0, 112, 243, 0.05);
+$cardHoverDark: rgba(0, 112, 243, 0.1);
 
 // Misc backgrounds
-$progressBarSpanBG: linear-gradient(90deg, $deepBlue 0%, #004d7a 100%);
-$iconBackground: $veryDarkGray;
-$appHeaderBG: $veryDarkGray;
+$progressBarSpanBG: $primaryGradient;
+$iconBackground: $gray900;
+$appHeaderBG: $gray900;
 
 // Misc colors
-$skillsColor: $deepBlue;
-$appLink: $deepBlue;
+$skillsColor: $primaryBlue;
+$appLink: $primaryBlue;
 
-// Social media icons
-$faceBook: $deepBlue;
-$linkedin: $deepBlue;
-$github: $veryDarkGray;
-$gitlab: $deepBlue;
-$google: $deepBlue;
-$twitter: $deepBlue;
-$medium: $veryDarkGray;
-$stackoverflow: $deepBlue;
-$instagram: $deepBlue;
-$kaggle: $lightGray;
+// Social media icons (modern tech colors)
+$faceBook: #1877f2;
+$linkedin: #0a66c2;
+$github: $gray900;
+$gitlab: #fc6d26;
+$google: #4285f4;
+$twitter: #1da1f2;
+$medium: $gray900;
+$stackoverflow: #f58025;
+$instagram: #e4405f;
+$kaggle: #20beff;
 
-// Animation timing functions
+// Animation timing functions (modern easing)
 $easeInOut: cubic-bezier(0.4, 0, 0.2, 1);
 $easeOut: cubic-bezier(0.0, 0, 0.2, 1);
 $easeIn: cubic-bezier(0.4, 0, 1, 1);
 $bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+$smoothBounce: cubic-bezier(0.34, 1.56, 0.64, 1);
 
 // Transition durations
 $transitionFast: 0.15s;
 $transitionNormal: 0.3s;
 $transitionSlow: 0.5s;
+$transitionExtraSlow: 0.8s;
 
 // Tech specific colors
-$techAccent: $deepBlue;
-$dataVisualization: $lightGray;
-$codeHighlight: #f8f9fa;
-$successIndicator: $lightGray;
-$errorIndicator: #FF6B6B;
-$warningIndicator: #FFB700;
+$techAccent: $primaryBlue;
+$dataVisualization: $primaryCyan;
+$codeHighlight: $gray100;
+$successIndicator: $accentGreen;
+$errorIndicator: $accentRed;
+$warningIndicator: $accentOrange;
+
+// Glassmorphism effects
+$glassBackground: rgba(255, 255, 255, 0.1);
+$glassBackgroundDark: rgba(0, 0, 0, 0.2);
+$glassBorder: rgba(255, 255, 255, 0.2);
+$glassBorderDark: rgba(255, 255, 255, 0.1);
+$glassBlur: blur(10px);
+$glassBlurStrong: blur(20px);
+
+// Modern shadows
+$modernShadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$modernShadowMd: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$modernShadowLg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+$modernShadowXl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+$coloredShadow: 0 20px 40px rgba(0, 112, 243, 0.15);
+$coloredShadowHover: 0 25px 50px rgba(0, 112, 243, 0.25);

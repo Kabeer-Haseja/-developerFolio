@@ -19,10 +19,9 @@ import {StyleProvider} from "../contexts/StyleContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
 
 const Main = () => {
-  const darkPref = window.matchMedia("(prefers-color-scheme: light)");
-  const [isDark, setIsDark] = useLocalStorage("isLight", darkPref.matches);
-  const [isShowingSplashAnimation, setIsShowingSplashAnimation] =
-    useState(true);
+  const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
+  const [isDark, setIsDark] = useLocalStorage("isDark", darkPref.matches);
+  const [isShowingSplashAnimation, setIsShowingSplashAnimation] = useState(true);
 
   useEffect(() => {
     if (splashScreen.enabled) {
@@ -38,139 +37,191 @@ const Main = () => {
     }
   }, []);
 
+  useEffect(() => {
+    // Add dark mode class to body
+    if (isDark) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }, [isDark]);
+
   const changeTheme = () => {
     setIsDark(!isDark);
   };
 
   return (
-    <div style={{
-      background: isDark ? '#1a1a1a' : '#ffffff',
-      color: isDark ? '#ffffff' : '#000000',
-      minHeight: '100vh',
-      fontFamily: 'Inter, sans-serif'
-    }}>
+    <div className={`app-container ${isDark ? 'dark-mode' : ''}`}>
       <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
         {isShowingSplashAnimation && splashScreen.enabled ? (
           <SplashScreen />
         ) : (
-          <div style={{ padding: '0' }}>
+          <div className="main-content">
             <Header />
             
-            {/* Hero Section */}
-            <section style={{
-              minHeight: '100vh',
-              display: 'flex',
-              alignItems: 'center',
-              background: 'linear-gradient(135deg, rgba(0, 52, 89, 0.02) 0%, rgba(248, 249, 250, 0.8) 100%)',
-              padding: '0'
-            }}>
-              <div style={{ width: '100%' }}>
-                <Greeting />
+            {/* Hero Section with Animated Background */}
+            <section className="hero-section section" id="home">
+              <div className="hero-background">
+                <div className="hero-gradient"></div>
+                <div className="floating-particles">
+                  {[...Array(20)].map((_, i) => (
+                    <div key={i} className={`particle particle-${i + 1}`}></div>
+                  ))}
+                </div>
               </div>
+              <Greeting />
             </section>
             
             {/* About & Skills Section */}
-            <section style={{
-              padding: '6rem 0',
-              background: isDark ? '#1a1a1a' : '#ffffff'
-            }}>
-              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+            <section className="skills-section section" id="skills">
+              <div className="section-background">
+                <div className="section-pattern"></div>
+              </div>
+              <div className="container">
                 <Skills />
               </div>
             </section>
             
-            {/* Software Skills Section */}
-            <section style={{
-              padding: '6rem 0',
-              background: isDark ? '#2a2a2a' : '#f8f9fa'
-            }}>
-              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+            {/* Technical Skills Section */}
+            <section className="tech-skills-section section">
+              <div className="container">
+                <div className="section-header">
+                  <h2 className="section-title text-gradient">Technical Expertise</h2>
+                  <p className="section-subtitle">
+                    Technologies and tools I work with to build exceptional applications
+                  </p>
+                </div>
                 <SoftwareSkill />
               </div>
             </section>
             
             {/* Skills Progress Section */}
-            <section style={{
-              padding: '6rem 0',
-              background: isDark ? '#1a1a1a' : '#ffffff'
-            }}>
-              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+            <section className="progress-section section">
+              <div className="section-background alt">
+                <div className="section-pattern"></div>
+              </div>
+              <div className="container">
+                <div className="section-header">
+                  <h2 className="section-title">Proficiency Levels</h2>
+                  <p className="section-subtitle">
+                    My expertise across different technologies and frameworks
+                  </p>
+                </div>
                 <StackProgress />
               </div>
             </section>
             
             {/* Education Section */}
-            <section style={{
-              padding: '6rem 0',
-              background: isDark ? '#2a2a2a' : '#f8f9fa'
-            }}>
-              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+            <section className="education-section section" id="education">
+              <div className="container">
+                <div className="section-header">
+                  <h2 className="section-title text-gradient">Education</h2>
+                  <p className="section-subtitle">
+                    Academic background and continuous learning journey
+                  </p>
+                </div>
                 <Education />
               </div>
             </section>
             
             {/* Experience Section */}
-            <section style={{
-              padding: '6rem 0',
-              background: isDark ? '#1a1a1a' : '#ffffff'
-            }}>
-              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+            <section className="experience-section section" id="experience">
+              <div className="section-background">
+                <div className="section-pattern"></div>
+              </div>
+              <div className="container">
+                <div className="section-header">
+                  <h2 className="section-title">Professional Experience</h2>
+                  <p className="section-subtitle">
+                    Building innovative solutions and leading development teams
+                  </p>
+                </div>
                 <WorkExperience />
               </div>
             </section>
             
             {/* Projects Section */}
-            <section style={{
-              padding: '6rem 0',
-              background: isDark ? '#2a2a2a' : '#f8f9fa'
-            }}>
-              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+            <section className="projects-section section" id="projects">
+              <div className="container">
+                <div className="section-header">
+                  <h2 className="section-title text-gradient">Featured Projects</h2>
+                  <p className="section-subtitle">
+                    Showcasing applications that demonstrate technical expertise and innovation
+                  </p>
+                </div>
                 <Projects />
               </div>
             </section>
             
             {/* Startup Projects Section */}
-            <section style={{
-              padding: '6rem 0',
-              background: isDark ? '#1a1a1a' : '#ffffff'
-            }}>
-              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+            <section className="startup-section section">
+              <div className="section-background alt">
+                <div className="section-pattern"></div>
+              </div>
+              <div className="container">
+                <div className="section-header">
+                  <h2 className="section-title">Startup Ventures</h2>
+                  <p className="section-subtitle">
+                    Entrepreneurial projects and innovative business solutions
+                  </p>
+                </div>
                 <StartupProject />
               </div>
             </section>
             
             {/* Achievements Section */}
-            <section style={{
-              padding: '6rem 0',
-              background: isDark ? '#2a2a2a' : '#f8f9fa'
-            }}>
-              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+            <section className="achievements-section section" id="achievements">
+              <div className="container">
+                <div className="section-header">
+                  <h2 className="section-title text-gradient">Achievements & Recognition</h2>
+                  <p className="section-subtitle">
+                    Awards, certifications, and professional milestones
+                  </p>
+                </div>
                 <Achievement />
               </div>
             </section>
             
-            {/* Blogs Section */}
-            <section style={{
-              padding: '6rem 0',
-              background: isDark ? '#1a1a1a' : '#ffffff'
-            }}>
-              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+            {/* Blog Section */}
+            <section className="blog-section section" id="blogs">
+              <div className="section-background">
+                <div className="section-pattern"></div>
+              </div>
+              <div className="container">
+                <div className="section-header">
+                  <h2 className="section-title">Latest Articles</h2>
+                  <p className="section-subtitle">
+                    Sharing insights on technology, development, and industry trends
+                  </p>
+                </div>
                 <Blogs />
               </div>
             </section>
             
-            {/* Profile Section */}
-            <section style={{
-              padding: '6rem 0',
-              background: isDark ? '#2a2a2a' : '#f8f9fa'
-            }}>
-              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+            {/* Contact/Profile Section */}
+            <section className="contact-section section" id="contact">
+              <div className="container">
+                <div className="section-header">
+                  <h2 className="section-title text-gradient">Let's Connect</h2>
+                  <p className="section-subtitle">
+                    Ready to collaborate on your next project or discuss opportunities
+                  </p>
+                </div>
                 <Profile />
               </div>
             </section>
             
             <Footer />
             <ScrollToTopButton />
+            
+            {/* Floating Action Button for Quick Contact */}
+            <button 
+              className="fab"
+              onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+              aria-label="Contact"
+            >
+              💬
+            </button>
           </div>
         )}
       </StyleProvider>

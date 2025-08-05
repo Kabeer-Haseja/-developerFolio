@@ -53,12 +53,12 @@
   margin-bottom: 1rem;
   font-size: clamp(1.125rem, 2.5vw, 1.5rem);
   font-weight: 600;
-  color: $deepBlue;
+  color: $primaryBlue;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all $transitionNormal $easeInOut;
   
   .dark-mode & {
-    color: $lightGray;
+    color: $gray400;
   }
   
   &:hover {

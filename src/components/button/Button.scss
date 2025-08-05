@@ -1,141 +1,424 @@
 @import "../../_globalColor.scss";
 
 .main-button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
-  border-radius: 6px;
-  transition: all 0.3s ease;
+  border-radius: 12px;
+  transition: all $transitionNormal $easeInOut;
   cursor: pointer;
-  border: 2px solid transparent;
+  border: none;
   text-align: center;
-  min-width: 120px;
+  min-width: 140px;
+  position: relative;
+  overflow: hidden;
+  background: $primaryGradient;
+  color: white;
+  box-shadow: $coloredShadow;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left $transitionSlow $easeInOut;
+  }
   
   &:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(0, 52, 89, 0.25);
+    transform: translateY(-2px);
+    box-shadow: $coloredShadowHover;
+    
+    &::before {
+      left: 100%;
+    }
   }
   
   &:focus {
-    outline: 2px solid $deepBlue;
+    outline: 2px solid $primaryBlue;
     outline-offset: 2px;
+  }
+  
+  &:active {
+    transform: translateY(0);
   }
 }
 
 .button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
-  border-radius: 6px;
-  transition: all 0.3s ease;
+  border-radius: 12px;
+  transition: all $transitionNormal $easeInOut;
   cursor: pointer;
-  border: 2px solid transparent;
+  border: none;
   text-align: center;
-  min-width: 120px;
+  min-width: 140px;
+  position: relative;
+  overflow: hidden;
   
-  &.primary {
-    background: $deepBlue;
-    color: $white;
-    border-color: $deepBlue;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left $transitionSlow $easeInOut;
+  }
+  
+  &:hover::before {
+    left: 100%;
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  &.primary, &.btn-primary {
+    background: $primaryGradient;
+    color: white;
+    box-shadow: $coloredShadow;
     
     &:hover {
-      background: #004d7a;
-      border-color: #004d7a;
-      transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(0, 52, 89, 0.25);
+      transform: translateY(-2px);
+      box-shadow: $coloredShadowHover;
     }
     
     &:focus {
-      outline: 2px solid $deepBlue;
+      outline: 2px solid $primaryBlue;
       outline-offset: 2px;
     }
   }
   
-  &.secondary {
-    background: transparent;
-    color: $deepBlue;
-    border-color: $deepBlue;
+  &.secondary, &.btn-secondary {
+    background: $glassBackground;
+    color: $primaryBlue;
+    border: 1px solid $glassBorder;
+    backdrop-filter: $glassBlur;
+    box-shadow: $modernShadow;
+    
+    .dark-mode & {
+      background: $glassBackgroundDark;
+      color: $white;
+      border-color: $glassBorderDark;
+    }
     
     &:hover {
-      background: $deepBlue;
-      color: $white;
-      transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(0, 52, 89, 0.25);
+      background: rgba(0, 112, 243, 0.1);
+      transform: translateY(-2px);
+      box-shadow: $modernShadowMd;
+      border-color: $primaryBlue;
+      
+      .dark-mode & {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: $white;
+      }
     }
     
     &:focus {
-      outline: 2px solid $deepBlue;
+      outline: 2px solid $primaryBlue;
       outline-offset: 2px;
-    }
-    
-    .dark-mode & {
-      color: $white;
-      border-color: $white;
       
-      &:hover {
-        background: $white;
-        color: $veryDarkGray;
-      }
-      
-      &:focus {
+      .dark-mode & {
         outline-color: $white;
       }
     }
   }
   
-  &.outline {
+  &.outline, &.btn-outline {
     background: transparent;
-    color: $deepBlue;
-    border-color: $deepBlue;
-    
-    &:hover {
-      background: rgba(0, 52, 89, 0.1);
-      transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(0, 52, 89, 0.2);
-    }
+    color: $primaryBlue;
+    border: 2px solid $primaryBlue;
     
     .dark-mode & {
       color: $white;
       border-color: $white;
+    }
+    
+    &:hover {
+      background: $primaryBlue;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: $coloredShadow;
       
-      &:hover {
+      .dark-mode & {
+        background: $white;
+        color: $darkBackground;
+      }
+    }
+    
+    &:focus {
+      outline: 2px solid $primaryBlue;
+      outline-offset: 2px;
+      
+      .dark-mode & {
+        outline-color: $white;
+      }
+    }
+  }
+  
+  &.ghost, &.btn-ghost {
+    background: transparent;
+    color: $primaryBlue;
+    border: none;
+    box-shadow: none;
+    
+    .dark-mode & {
+      color: $white;
+    }
+    
+    &:hover {
+      background: rgba(0, 112, 243, 0.1);
+      transform: translateY(-1px);
+      
+      .dark-mode & {
         background: rgba(255, 255, 255, 0.1);
+      }
+    }
+    
+    &:focus {
+      outline: 2px solid $primaryBlue;
+      outline-offset: 2px;
+      
+      .dark-mode & {
+        outline-color: $white;
+      }
+    }
+  }
+  
+  &.gradient, &.btn-gradient {
+    background: $techGradient;
+    color: white;
+    box-shadow: $coloredShadow;
+    
+    &:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: $coloredShadowHover;
+    }
+    
+    &:focus {
+      outline: 2px solid $primaryCyan;
+      outline-offset: 2px;
+    }
+  }
+  
+  // Size variations
+  &.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    min-width: 100px;
+    border-radius: 8px;
+  }
+  
+  &.btn-lg {
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+    min-width: 160px;
+    border-radius: 16px;
+  }
+  
+  // Icon buttons
+  &.btn-icon {
+    padding: 0.75rem;
+    min-width: auto;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    
+    &.btn-icon-sm {
+      width: 36px;
+      height: 36px;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+    
+    &.btn-icon-lg {
+      width: 56px;
+      height: 56px;
+      padding: 1rem;
+      border-radius: 16px;
+    }
+  }
+  
+  // Loading state
+  &.loading {
+    pointer-events: none;
+    opacity: 0.7;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 16px;
+      height: 16px;
+      margin: -8px 0 0 -8px;
+      border: 2px solid transparent;
+      border-top-color: currentColor;
+      border-radius: 50%;
+      animation: buttonSpin 1s linear infinite;
+    }
+  }
+  
+  // Disabled state
+  &:disabled, &.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+    
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+}
+
+// Floating Action Button
+.fab {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: $primaryGradient;
+  color: white;
+  border: none;
+  box-shadow: $modernShadowLg;
+  cursor: pointer;
+  transition: all $transitionNormal $easeInOut;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: $modernShadowXl;
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+  
+  .dark-mode & {
+    box-shadow: $darkBoxShadow;
+    
+    &:hover {
+      box-shadow: $darkBoxShadowHover;
+    }
+  }
+}
+
+// Button groups
+.btn-group {
+  display: inline-flex;
+  gap: 0.5rem;
+  
+  .button {
+    &:first-child {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    
+    &:last-child {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
+  }
+  
+  &.btn-group-vertical {
+    flex-direction: column;
+    
+    .button {
+      &:first-child {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 12px;
+      }
+      
+      &:last-child {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 12px;
       }
     }
   }
 }
 
-// Responsive design
+// Animations
+@keyframes buttonSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Responsive adjustments
 @media (max-width: 768px) {
-  .button,
-  .main-button {
-    padding: 0.625rem 1.25rem;
-    font-size: 0.8rem;
-    min-width: 100px;
+  .button, .main-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9375rem;
+    min-width: 120px;
+    
+    &.btn-lg {
+      padding: 0.875rem 2rem;
+      font-size: 1rem;
+      min-width: 140px;
+    }
+    
+    &.btn-sm {
+      padding: 0.5rem 1rem;
+      font-size: 0.8125rem;
+      min-width: 100px;
+    }
+  }
+  
+  .fab {
+    bottom: 1rem;
+    right: 1rem;
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
   }
 }
 
 @media (max-width: 480px) {
-  .button,
-  .main-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.75rem;
-    min-width: 90px;
-  }
-}
-
-// Accessibility
-@media (prefers-reduced-motion: reduce) {
-  .button,
-  .main-button {
-    transition: none;
+  .btn-group {
+    flex-direction: column;
+    width: 100%;
     
-    &:hover {
-      transform: none;
+    .button {
+      width: 100%;
+      border-radius: 12px !important;
+      margin-bottom: 0.5rem;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }

@@ -15,20 +15,22 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all $transitionNormal $easeInOut;
   border: 2px solid transparent;
   position: relative;
   overflow: hidden;
   
-  // Default styling
-  background: rgba(0, 52, 89, 0.1);
-  color: $deepBlue;
-  border-color: rgba(0, 52, 89, 0.2);
+  // Default styling with glassmorphism
+  background: $glassBackground;
+  backdrop-filter: $glassBlur;
+  color: $primaryBlue;
+  border-color: $glassBorder;
+  box-shadow: $modernShadow;
   
   .dark-mode & {
-    background: rgba(255, 255, 255, 0.1);
+    background: $glassBackgroundDark;
     color: $white;
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: $glassBorderDark;
   }
   
   i {
@@ -39,15 +41,15 @@
   
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 52, 89, 0.3);
+    box-shadow: $modernShadowMd;
     
     .dark-mode & {
-      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+      box-shadow: $darkBoxShadowHover;
     }
   }
   
   &:focus {
-    outline: 2px solid $deepBlue;
+    outline: 2px solid $primaryBlue;
     outline-offset: 2px;
     
     .dark-mode & {
@@ -55,84 +57,84 @@
     }
   }
   
-  // Platform-specific colors
+  // Platform-specific colors using the new color system
   &.github {
     &:hover {
-      background: $deepBlue;
+      background: $github;
       color: $white;
-      border-color: $deepBlue;
+      border-color: $github;
     }
   }
   
   &.linkedin {
     &:hover {
-      background: #0077b5;
+      background: $linkedin;
       color: $white;
-      border-color: #0077b5;
+      border-color: $linkedin;
     }
   }
   
   &.google {
     &:hover {
-      background: #ea4335;
+      background: $google;
       color: $white;
-      border-color: #ea4335;
+      border-color: $google;
     }
   }
   
   &.gitlab {
     &:hover {
-      background: #fc6d26;
+      background: $gitlab;
       color: $white;
-      border-color: #fc6d26;
+      border-color: $gitlab;
     }
   }
   
   &.facebook {
     &:hover {
-      background: #1877f2;
+      background: $faceBook;
       color: $white;
-      border-color: #1877f2;
+      border-color: $faceBook;
     }
   }
   
   &.instagram {
     &:hover {
-      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      background: $instagram;
       color: $white;
-      border-color: #dc2743;
+      border-color: $instagram;
     }
   }
   
   &.twitter {
     &:hover {
-      background: #1da1f2;
+      background: $twitter;
       color: $white;
-      border-color: #1da1f2;
+      border-color: $twitter;
     }
   }
   
   &.medium {
     &:hover {
-      background: #00ab6c;
+      background: $medium;
       color: $white;
-      border-color: #00ab6c;
+      border-color: $medium;
     }
   }
   
   &.stack-overflow {
     &:hover {
-      background: #f48024;
+      background: $stackoverflow;
       color: $white;
-      border-color: #f48024;
+      border-color: $stackoverflow;
     }
   }
   
   &.kaggle {
     &:hover {
-      background: #20beff;
+      background: $kaggle;
       color: $white;
-      border-color: #20beff;
+      border-color: $kaggle;
     }
   }
 }

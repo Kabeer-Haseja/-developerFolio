@@ -64,7 +64,7 @@
   display: block;
   height: 100%;
   border-radius: 6px;
-  background: linear-gradient(90deg, $deepBlue 0%, #004d7a 100%);
+      background: $primaryGradient;
   position: relative;
   overflow: hidden;
   transition: width 1s ease-in-out;
