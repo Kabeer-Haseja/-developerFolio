@@ -16,11 +16,8 @@ import Profile from "./profile/Profile";
 import SplashScreen from "./splashScreen/SplashScreen";
 import {splashScreen} from "../portfolio";
 import {StyleProvider} from "../contexts/StyleContext";
-import {useLocalStorage} from "../hooks/useLocalStorage";
 
 const Main = () => {
-  const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
-  const [isDark, setIsDark] = useLocalStorage("isDark", darkPref.matches);
   const [isShowingSplashAnimation, setIsShowingSplashAnimation] = useState(true);
 
   useEffect(() => {
@@ -37,22 +34,15 @@ const Main = () => {
     }
   }, []);
 
-  useEffect(() => {
-    // Add dark mode class to body
-    if (isDark) {
-      document.body.classList.add('dark-mode');
-    } else {
-      document.body.classList.remove('dark-mode');
-    }
-  }, [isDark]);
-
-  const changeTheme = () => {
-    setIsDark(!isDark);
+  // Light theme only - no theme switching
+  const styleContext = {
+    isDark: false,
+    changeTheme: () => {} // No-op function
   };
 
   return (
-    <div className={`app-container ${isDark ? 'dark-mode' : ''}`}>
-      <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
+    <div className="app-container">
+      <StyleProvider value={styleContext}>
         {isShowingSplashAnimation && splashScreen.enabled ? (
           <SplashScreen />
         ) : (

@@ -23,11 +23,6 @@ body {
   overflow-x: hidden;
 }
 
-.dark-mode body {
-  color: $textColorDark;
-  background-color: $darkBackground;
-}
-
 .App {
   text-align: center;
   width: 100%;
@@ -57,7 +52,7 @@ body {
   align-items: center;
   justify-content: center;
   font-size: calc(0.625rem + 2vmin);
-  color: $textColorDark;
+  color: $white;
   position: relative;
   overflow: hidden;
   
@@ -88,10 +83,6 @@ body {
 .subTitle {
   color: $subTitle;
   font-weight: 400;
-  
-  .dark-mode & {
-    color: $textColorDarkSecondary;
-  }
 }
 
 // Modern Typography System
@@ -101,10 +92,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   margin-bottom: 1rem;
   color: $titleColor;
-  
-  .dark-mode & {
-    color: $titleColorDark;
-  }
 }
 
 h1 {
@@ -134,10 +121,6 @@ p {
   line-height: 1.7;
   margin-bottom: 1rem;
   color: $textColor;
-  
-  .dark-mode & {
-    color: $textColorDark;
-  }
 }
 
 code, pre {
@@ -197,12 +180,6 @@ code, pre {
     border: 1px solid $glassBorder;
     backdrop-filter: $glassBlur;
     
-    .dark-mode & {
-      background: $glassBackgroundDark;
-      color: $white;
-      border-color: $glassBorderDark;
-    }
-    
     &:hover {
       background: rgba(0, 112, 243, 0.1);
       transform: translateY(-2px);
@@ -221,30 +198,15 @@ code, pre {
   position: relative;
   overflow: hidden;
   
-  .dark-mode & {
-    background: $darkBackgroundCard;
-    border-color: $cardBorderDark;
-    box-shadow: $darkBoxShadow;
-  }
-  
   &:hover {
     transform: translateY(-4px);
     box-shadow: $modernShadowLg;
-    
-    .dark-mode & {
-      box-shadow: $darkBoxShadowHover;
-    }
   }
   
   &.glass {
     background: $glassBackground;
     backdrop-filter: $glassBlur;
     border: 1px solid $glassBorder;
-    
-    .dark-mode & {
-      background: $glassBackgroundDark;
-      border-color: $glassBorderDark;
-    }
   }
 }
 
@@ -340,10 +302,6 @@ code, pre {
 
 ::-webkit-scrollbar-track {
   background: $lightBackground2;
-  
-  .dark-mode & {
-    background: $darkBackgroundSecondary;
-  }
 }
 
 ::-webkit-scrollbar-thumb {
