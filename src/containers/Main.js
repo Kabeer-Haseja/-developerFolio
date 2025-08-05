@@ -19,7 +19,7 @@ import {StyleProvider} from "../contexts/StyleContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
 
 const Main = () => {
-  const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
+  const darkPref = window.matchMedia("(prefers-color-scheme: light)");
   const [isDark, setIsDark] = useLocalStorage("isLight", darkPref.matches);
   const [isShowingSplashAnimation, setIsShowingSplashAnimation] =
     useState(true);
