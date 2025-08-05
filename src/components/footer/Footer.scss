@@ -1,13 +1,13 @@
 @import "../../_globalColor.scss";
 
 .footer {
-  background: $veryDarkGray;
+  background: $gray900;
   color: $white;
   padding: 4rem 0 2rem;
   margin-top: 4rem;
   
   .dark-mode & {
-    background: #1a1a1a;
+    background: $darkBackground;
   }
 }
 
@@ -47,12 +47,12 @@
   }
   
   .grey-color {
-    color: $lightGray;
+    color: $gray400;
   }
 }
 
 .footer-description {
-  color: $lightGray;
+  color: $gray400;
   line-height: 1.7;
   font-size: 0.95rem;
   margin-bottom: 1.5rem;
@@ -67,9 +67,9 @@
     margin-bottom: 0.75rem;
     
     a {
-      color: $lightGray;
+      color: $gray400;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: all $transitionNormal $easeInOut;
       font-size: 0.9rem;
       
       &:hover {
@@ -97,17 +97,23 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
+      background: $glassBackground;
+      backdrop-filter: $glassBlur;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all $transitionNormal $easeInOut;
+      border: 1px solid $glassBorder;
+      
+      .dark-mode & {
+        background: $glassBackgroundDark;
+        border-color: $glassBorderDark;
+      }
       
       &:hover {
-        background: $deepBlue;
+        background: $primaryBlue;
         transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(0, 52, 89, 0.3);
+        box-shadow: $coloredShadow;
       }
       
       i {
@@ -125,14 +131,14 @@
   
   .footer-copyright,
   .footer-made-with {
-    color: $lightGray;
+    color: $gray400;
     font-size: 0.875rem;
     margin: 0.5rem 0;
   }
   
   .footer-made-with {
     a {
-      color: $deepBlue;
+      color: $primaryBlue;
       text-decoration: none;
       
       &:hover {
@@ -179,6 +185,6 @@
 
 // Focus styles for accessibility
 .footer a:focus {
-  outline: 2px solid $deepBlue;
+  outline: 2px solid $primaryBlue;
   outline-offset: 2px;
 }

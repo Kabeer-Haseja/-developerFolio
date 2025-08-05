@@ -1,194 +1,606 @@
 @import "../../_globalColor.scss";
 
-.skills-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 60px;
+.proficiency-main-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 3rem;
-  min-height: 500px;
+  padding: 0 2rem;
+  position: relative;
 }
 
-.skills-container > * {
-  flex: 1;
+// Section Header
+.proficiency-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
 }
 
-.skills-bar {
-  flex: 1;
-  max-width: 600px;
-}
-
-.skills-heading {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 3rem;
-  color: #000400;
-  letter-spacing: -0.02em;
+.proficiency-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, rgba(0, 112, 243, 0.1), rgba(16, 185, 129, 0.1));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 112, 243, 0.2);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 112, 243, 0.1);
   
-  .dark-mode & {
-    color: #ffffff;
+  .badge-icon {
+    font-size: 1.5rem;
+    animation: chartPulse 2s ease-in-out infinite;
+  }
+  
+  .badge-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $primaryBlue;
+    letter-spacing: 0.5px;
   }
 }
 
-.skill {
-  margin-bottom: 2rem;
+.proficiency-main-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: $titleColor;
+  letter-spacing: -0.02em;
   
-  p {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: #000400;
-    margin-bottom: 0.75rem;
+  .title-highlight {
+    background: linear-gradient(135deg, $primaryBlue, $accentGreen, $primaryCyan);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
     
-    .dark-mode & {
-      color: #ffffff;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -0.25rem;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(135deg, $primaryBlue, $accentGreen, $primaryCyan);
+      border-radius: 2px;
+      animation: progressShimmer 3s ease-in-out infinite;
     }
   }
 }
 
-.meter {
-  height: 12px;
-  position: relative;
-  background: rgba(0, 52, 89, 0.1);
-  border-radius: 6px;
-  overflow: hidden;
+.proficiency-main-subtitle {
+  font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+  line-height: 1.7;
+  color: $gray600;
+  max-width: 700px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+// Interactive Skills Content
+.proficiency-content {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  align-items: start;
   
-  .dark-mode & {
-    background: rgba(255, 255, 255, 0.1);
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
 
-.meter > span {
-  display: block;
-  height: 100%;
-  border-radius: 6px;
-  background: linear-gradient(90deg, $deepBlue 0%, #004d7a 100%);
+// Skills Navigation
+.skills-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  
+  @media (max-width: 1200px) {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.skill-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 112, 243, 0.1);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
   position: relative;
   overflow: hidden;
-  transition: width 1s ease-in-out;
+  min-width: 350px;
   
-  &::after {
+  @media (max-width: 1200px) {
+    min-width: 300px;
+  }
+  
+  &::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
-    animation: shimmer 2s infinite;
+    width: 4px;
+    height: 100%;
+    background: var(--skill-color);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
   }
-}
-
-@keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-.skills-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
   
-  > img {
-    max-width: 100%;
-    height: auto;
-    min-width: 300px;
-    min-height: 200px;
-    filter: drop-shadow(0 25px 70px rgba(0, 52, 89, 0.25));
-    border-radius: 12px;
-    transition: all 0.5s ease;
+  &:hover {
+    transform: translateX(8px);
+    box-shadow: 0 12px 40px rgba(0, 112, 243, 0.15);
+    border-color: var(--skill-color);
     
-    &:hover {
-      transform: scale(1.05);
-      filter: drop-shadow(0 30px 90px rgba(0, 52, 89, 0.35));
+    &::before {
+      transform: scaleY(1);
+    }
+  }
+  
+  &.active {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.9));
+    border-color: var(--skill-color);
+    box-shadow: 0 16px 50px rgba(0, 112, 243, 0.2);
+    transform: translateX(12px);
+    
+    &::before {
+      transform: scaleY(1);
     }
     
-    .dark-mode & {
-      filter: drop-shadow(0 25px 70px rgba(85, 85, 85, 0.35));
-      
-      &:hover {
-        filter: drop-shadow(0 30px 90px rgba(170, 170, 170, 0.45));
-      }
+    .nav-title {
+      color: var(--skill-color);
     }
+  }
+  
+  .nav-icon {
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--skill-color), rgba(var(--skill-color), 0.8));
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(0, 112, 243, 0.2);
+    flex-shrink: 0;
+  }
+  
+  .nav-content {
+    flex: 1;
+    
+    .nav-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: $titleColor;
+      margin: 0 0 0.25rem 0;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-level {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: $gray500;
+    }
+  }
+  
+  .nav-percentage {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--skill-color);
   }
 }
 
-@media (max-width: 1200px) {
-  .skills-container {
-    gap: 50px;
-    padding: 0 2.5rem;
+// Skill Details Panel
+.skill-details-panel {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.8));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 112, 243, 0.1);
+  border-radius: 24px;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 112, 243, 0.1);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 112, 243, 0.05), transparent);
+    border-radius: 50%;
   }
 }
 
-@media (max-width: 992px) {
-  .skills-container {
+.skill-showcase {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+  
+  @media (max-width: 768px) {
     flex-direction: column;
-    gap: 40px;
-    padding: 0 2rem;
     text-align: center;
   }
+}
+
+.skill-icon-large {
+  width: 100px;
+  height: 100px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+  box-shadow: 0 16px 50px rgba(0, 112, 243, 0.3);
+  animation: skillIconFloat 3s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.skill-info {
+  flex: 1;
   
-  .skills-bar {
-    order: 1;
-    max-width: 100%;
+  .skill-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $titleColor;
+    margin: 0 0 1rem 0;
   }
   
-  .skills-image {
-    order: 2;
+  .skill-description {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: $gray600;
+    margin-bottom: 2rem;
   }
 }
 
-@media (max-width: 768px) {
-  .skills-container {
-    gap: 30px;
-    padding: 0 1.5rem;
+.skill-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+}
+
+.metric-item {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 112, 243, 0.05);
+  
+  .metric-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: $gray500;
+    margin-bottom: 0.5rem;
   }
   
-  .skills-heading {
-    font-size: clamp(2rem, 6vw, 2.5rem);
+  .metric-value {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: $titleColor;
+  }
+}
+
+// Progress Visualization
+.progress-visualization {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.circular-progress {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+  
+  .progress-ring-background {
+    fill: none;
+    stroke: rgba(0, 112, 243, 0.1);
+    stroke-width: 8;
+  }
+  
+  .progress-ring-progress {
+    fill: none;
+    stroke: var(--color);
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 565.48; // 2 * π * 90
+    stroke-dashoffset: calc(565.48 - (565.48 * var(--progress)) / 100);
+    transition: stroke-dashoffset 1s ease-in-out;
+    filter: drop-shadow(0 0 10px rgba(0, 112, 243, 0.3));
+  }
+}
+
+.progress-center {
+  position: absolute;
+  text-align: center;
+  
+  .progress-percentage {
+    font-size: 2rem;
+    font-weight: 800;
+    color: $titleColor;
+    line-height: 1;
+  }
+  
+  .progress-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $gray500;
+    margin-top: 0.25rem;
+  }
+}
+
+// Skills Comparison
+.skills-comparison {
+  margin-bottom: 4rem;
+  
+  .comparison-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $titleColor;
+    text-align: center;
     margin-bottom: 2rem;
   }
+}
+
+.comparison-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.comparison-bar {
+  opacity: 0;
+  transform: translateY(20px);
   
-  .skill {
-    margin-bottom: 1.5rem;
+  &.animated {
+    animation: barSlideIn 0.6s ease forwards;
+  }
+  
+  .bar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
     
-    p {
+    .bar-info {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      
+      .bar-icon {
+        font-size: 1.5rem;
+      }
+      
+      .bar-name {
+        font-size: 1rem;
+        font-weight: 600;
+        color: $titleColor;
+      }
+    }
+    
+    .bar-percentage {
       font-size: 1rem;
-      margin-bottom: 0.5rem;
+      font-weight: 700;
+      color: var(--color);
     }
   }
   
-  .meter {
-    height: 10px;
+  .bar-track {
+    width: 100%;
+    height: 12px;
+    background: rgba(0, 112, 243, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color), rgba(var(--color), 0.8));
+    border-radius: 6px;
+    width: var(--width);
+    transition: width 1.5s ease-out;
+    position: relative;
+    
+    .bar-shimmer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      animation: barShimmer 2s infinite;
+    }
+  }
+}
+
+// Achievement Stats
+.achievement-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.8));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 112, 243, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 112, 243, 0.15);
+  }
+  
+  .stat-icon {
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, $primaryBlue, $primaryPurple);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(0, 112, 243, 0.2);
+  }
+  
+  .stat-content {
+    .stat-number {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: $titleColor;
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+    
+    .stat-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: $gray600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+// Animations
+@keyframes chartPulse {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.1) rotate(10deg); }
+}
+
+@keyframes progressShimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes skillIconFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+@keyframes barSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes barShimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .proficiency-main-container {
+    padding: 0 1rem;
+  }
+  
+  .proficiency-content {
+    gap: 1.5rem;
+  }
+  
+  .skill-nav-item {
+    min-width: 280px;
+    padding: 1.25rem;
+    
+    .nav-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+    }
+  }
+  
+  .skill-details-panel {
+    padding: 2rem;
+  }
+  
+  .skill-showcase {
+    gap: 1.5rem;
+  }
+  
+  .skill-icon-large {
+    width: 80px;
+    height: 80px;
+    font-size: 2.5rem;
+  }
+  
+  .skill-info .skill-title {
+    font-size: 1.5rem;
+  }
+  
+  .skill-metrics {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .achievement-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-card {
+    padding: 1.25rem;
   }
 }
 
 @media (max-width: 480px) {
-  .skills-container {
-    padding: 0 1rem;
-    gap: 25px;
-  }
-  
-  .skills-heading {
-    font-size: clamp(1.75rem, 8vw, 2.25rem);
-  }
-  
-  .skill {
-    margin-bottom: 1.25rem;
+  .proficiency-badge {
+    padding: 0.75rem 1.5rem;
+    gap: 0.5rem;
     
-    p {
-      font-size: 0.9375rem;
+    .badge-icon {
+      font-size: 1.25rem;
+    }
+    
+    .badge-text {
+      font-size: 0.9rem;
     }
   }
   
-  .meter {
-    height: 8px;
+  .skill-nav-item {
+    min-width: 250px;
+    padding: 1rem;
+    
+    .nav-content .nav-title {
+      font-size: 1rem;
+    }
+    
+    .nav-percentage {
+      font-size: 1.125rem;
+    }
+  }
+  
+  .skill-metrics {
+    grid-template-columns: 1fr;
   }
 }
