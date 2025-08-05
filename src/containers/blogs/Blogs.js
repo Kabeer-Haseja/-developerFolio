@@ -63,22 +63,19 @@ export default function Blogs() {
   if (isLoading) {
     return (
       <Fade bottom duration={1000} distance="20px">
-        <div className="main" id="blogs">
-          <div className="blog-header">
-            <h1 className="blog-header-text">{blogSection.title}</h1>
-            <p
-              className={
-                isDark ? "dark-mode blog-subtitle" : "subTitle blog-subtitle"
-              }
-            >
-              {blogSection.subtitle}
+        <div className="main blogs-section" id="blogs">
+          <div className="blogs-header">
+            <h1 className="blogs-title">
+              <span className="title-highlight">Latest</span> Articles
+            </h1>
+            <p className="blogs-subtitle">
+              Insights, tutorials, and thoughts on software development
             </p>
           </div>
           <div className="blog-main-div">
-            <div className="blog-text-div" style={{ textAlign: 'center', padding: '2rem' }}>
-              <div style={{ fontSize: '1.2rem', color: isDark ? '#ffffff' : '#000000' }}>
-                Loading blogs...
-              </div>
+            <div className="loading-container">
+              <div className="loading-spinner"></div>
+              <p className="loading-text">Loading latest articles...</p>
             </div>
           </div>
         </div>
@@ -88,19 +85,17 @@ export default function Blogs() {
 
   return (
     <Fade bottom duration={1000} distance="20px">
-      <div className="main" id="blogs">
-        <div className="blog-header">
-          <h1 className="blog-header-text">{blogSection.title}</h1>
-          <p
-            className={
-              isDark ? "dark-mode blog-subtitle" : "subTitle blog-subtitle"
-            }
-          >
-            {blogSection.subtitle}
+      <div className="main blogs-section" id="blogs">
+        <div className="blogs-header">
+          <h1 className="blogs-title">
+            <span className="title-highlight">Latest</span> Articles
+          </h1>
+          <p className="blogs-subtitle">
+            Insights, tutorials, and thoughts on software development
           </p>
         </div>
         <div className="blog-main-div">
-          <div className="blog-text-div">
+          <div className="blog-grid">
             {blogSection.displayMediumBlogs !== "true" ||
             mediumBlogs === "Error" ||
             hasError
@@ -132,6 +127,28 @@ export default function Blogs() {
                   );
                 })}
           </div>
+          {(blogSection.blogs.length > 3 || mediumBlogs.length > 3) && (
+            <div className="blogs-footer">
+              <a 
+                href={blogSection.link || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-button secondary"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14,2 14,8 20,8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                  <polyline points="10,9 9,9 8,9"/>
+                </svg>
+                Read All Articles
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </Fade>

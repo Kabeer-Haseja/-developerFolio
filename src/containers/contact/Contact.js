@@ -10,209 +10,166 @@ import StyleContext from "../../contexts/StyleContext";
 export default function Contact() {
   const {isDark} = useContext(StyleContext);
   
-  const ContactIllustration = () => (
-    <div style={{
-      width: '100%',
-      height: '400px',
-      backgroundColor: isDark ? '#2a2a2a' : '#f8f9fa',
-      border: `3px solid ${isDark ? '#444' : '#e0e0e0'}`,
-      borderRadius: '12px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      position: 'relative',
-      overflow: 'hidden',
-      boxShadow: isDark ? '0 10px 30px rgba(0, 0, 0, 0.3)' : '0 10px 30px rgba(0, 0, 0, 0.1)'
-    }}>
-      {/* Background pattern */}
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        background: isDark 
-          ? 'linear-gradient(45deg, #2a2a2a 25%, transparent 25%), linear-gradient(-45deg, #2a2a2a 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #2a2a2a 75%), linear-gradient(-45deg, transparent 75%, #2a2a2a 75%)'
-          : 'linear-gradient(45deg, #f8f9fa 25%, transparent 25%), linear-gradient(-45deg, #f8f9fa 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #f8f9fa 75%), linear-gradient(-45deg, transparent 75%, #f8f9fa 75%)',
-        backgroundSize: '20px 20px',
-        backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px',
-        opacity: 0.3
-      }} />
-      
-      {/* Main content */}
-      <div style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: '20px',
-        zIndex: 1
-      }}>
-        {/* Email icon */}
-        <div style={{
-          width: '80px',
-          height: '80px',
-          borderRadius: '50%',
-          backgroundColor: '#3498db',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: '40px',
-          color: 'white',
-          boxShadow: '0 4px 20px rgba(52, 152, 219, 0.3)'
-        }}>
-          📧
+  const ModernContactIllustration = () => (
+    <div className="modern-contact-illustration">
+      {/* Animated background elements */}
+      <div className="floating-elements">
+        <div className="floating-element element-1">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
         </div>
-        
-        {/* Envelope */}
-        <div style={{
-          width: '200px',
-          height: '120px',
-          backgroundColor: '#6c63ff',
-          borderRadius: '8px',
-          position: 'relative',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          boxShadow: '0 4px 15px rgba(108, 99, 255, 0.3)'
-        }}>
-          <div style={{
-            width: '180px',
-            height: '100px',
-            backgroundColor: isDark ? '#444' : '#ffffff',
-            borderRadius: '4px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '24px',
-            color: '#6c63ff'
-          }}>
-            ✉️
-          </div>
+        <div className="floating-element element-2">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="22,12 18,12 15,21 9,3 6,12 2,12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
         </div>
-        
-        {/* Contact icons */}
-        <div style={{
-          display: 'flex',
-          gap: '15px',
-          marginTop: '10px'
-        }}>
-          <div style={{
-            width: '40px',
-            height: '40px',
-            backgroundColor: '#27ae60',
-            borderRadius: '8px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '20px',
-            color: 'white',
-            boxShadow: '0 2px 10px rgba(39, 174, 96, 0.3)'
-          }}>
-            📞
-          </div>
-          <div style={{
-            width: '40px',
-            height: '40px',
-            backgroundColor: '#e74c3c',
-            borderRadius: '8px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '20px',
-            color: 'white',
-            boxShadow: '0 2px 10px rgba(231, 76, 60, 0.3)'
-          }}>
-            📱
-          </div>
-          <div style={{
-            width: '40px',
-            height: '40px',
-            backgroundColor: '#f39c12',
-            borderRadius: '8px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '20px',
-            color: 'white',
-            boxShadow: '0 2px 10px rgba(243, 156, 18, 0.3)'
-          }}>
-            💬
-          </div>
+        <div className="floating-element element-3">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" strokeWidth="2"/>
+          </svg>
         </div>
       </div>
       
-      {/* Floating elements */}
-      <div style={{
-        position: 'absolute',
-        top: '20px',
-        right: '20px',
-        width: '30px',
-        height: '30px',
-        backgroundColor: '#6c63ff',
-        borderRadius: '50%',
-        opacity: 0.1
-      }} />
-      <div style={{
-        position: 'absolute',
-        bottom: '30px',
-        left: '30px',
-        width: '25px',
-        height: '25px',
-        backgroundColor: '#6c63ff',
-        borderRadius: '50%',
-        opacity: 0.15
-      }} />
+      {/* Main contact visual */}
+      <div className="contact-visual-container">
+        <div className="contact-main-icon">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="2"/>
+            <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2"/>
+          </svg>
+        </div>
+        
+        <div className="contact-network">
+          <div className="network-node node-1">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="12" cy="12" r="2"/>
+            </svg>
+          </div>
+          <div className="network-node node-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="12" cy="12" r="2"/>
+            </svg>
+          </div>
+          <div className="network-node node-3">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="12" cy="12" r="2"/>
+            </svg>
+          </div>
+          <div className="network-node node-4">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="12" cy="12" r="2"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div className="pulse-rings">
+          <div className="pulse-ring ring-1"></div>
+          <div className="pulse-ring ring-2"></div>
+          <div className="pulse-ring ring-3"></div>
+        </div>
+      </div>
     </div>
   );
 
   return (
     <Fade bottom duration={1000} distance="20px">
-      <div className="main contact-margin-top" id="contact">
-        <div className="contact-div-main">
-          <div className="contact-header">
-            <h1 className="heading contact-title">{contactInfo.title}</h1>
-            <p
-              className={
-                isDark
-                  ? "dark-mode contact-subtitle"
-                  : "subTitle contact-subtitle"
-              }
-            >
-              {contactInfo.subtitle}
-            </p>
-            <div
-              className={
-                isDark ? "dark-mode contact-text-div" : "contact-text-div"
-              }
-            >
+      <div className="main contact-section" id="contact">
+        <div className="contact-container">
+          <div className="contact-content">
+            <div className="contact-header">
+              <h1 className="contact-title">
+                <span className="title-highlight">Let's</span> Connect
+              </h1>
+              <p className="contact-subtitle">
+                Ready to collaborate on your next project? Let's discuss how we can build something amazing together.
+              </p>
+            </div>
+            
+            <div className="contact-info-grid">
               {contactInfo.number && (
-                <>
-                  <a
-                    className="contact-detail"
-                    href={"tel:" + contactInfo.number}
-                  >
-                    {contactInfo.number}
-                  </a>
-                  <br />
-                  <br />
-                </>
+                <a
+                  className="contact-info-card phone"
+                  href={"tel:" + contactInfo.number}
+                >
+                  <div className="contact-info-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                  </div>
+                  <div className="contact-info-content">
+                    <span className="contact-info-label">Call Me</span>
+                    <span className="contact-info-value">{contactInfo.number}</span>
+                  </div>
+                </a>
               )}
+              
               <a
-                className="contact-detail-email"
+                className="contact-info-card email"
                 href={"mailto:" + contactInfo.email_address}
               >
-                {contactInfo.email_address}
+                <div className="contact-info-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </div>
+                <div className="contact-info-content">
+                  <span className="contact-info-label">Email Me</span>
+                  <span className="contact-info-value">{contactInfo.email_address}</span>
+                </div>
               </a>
-              <br />
-              <br />
-              <SocialMedia />
+              
+              <div className="contact-info-card social">
+                <div className="contact-info-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect x="2" y="9" width="4" height="12"/>
+                    <circle cx="4" cy="4" r="2"/>
+                  </svg>
+                </div>
+                <div className="contact-info-content">
+                  <span className="contact-info-label">Follow Me</span>
+                  <div className="social-media-wrapper">
+                    <SocialMedia />
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="contact-cta">
+              <a
+                href={"mailto:" + contactInfo.email_address}
+                className="cta-button primary"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                Start a Conversation
+              </a>
+              {contactInfo.number && (
+                <a
+                  href={"tel:" + contactInfo.number}
+                  className="cta-button secondary"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                  Schedule a Call
+                </a>
+              )}
             </div>
           </div>
-          <div className="contact-image-div">
+          
+          <div className="contact-visual">
             {illustration.animated ? (
               <DisplayLottie animationData={email} />
             ) : (
-              <ContactIllustration />
+              <ModernContactIllustration />
             )}
           </div>
         </div>
