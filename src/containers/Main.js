@@ -20,7 +20,7 @@ import {useLocalStorage} from "../hooks/useLocalStorage";
 
 const Main = () => {
   const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
-  const [isDark, setIsDark] = useLocalStorage("isDark", darkPref.matches);
+  const [isDark, setIsDark] = useLocalStorage("isLight", darkPref.matches);
   const [isShowingSplashAnimation, setIsShowingSplashAnimation] =
     useState(true);
 
@@ -43,7 +43,7 @@ const Main = () => {
   };
 
   return (
-    <div style={{ 
+    <div style={{
       background: isDark ? '#1a1a1a' : '#ffffff',
       color: isDark ? '#ffffff' : '#000000',
       minHeight: '100vh',
@@ -57,7 +57,7 @@ const Main = () => {
             <Header />
             
             {/* Hero Section */}
-            <section style={{ 
+            <section style={{
               minHeight: '100vh',
               display: 'flex',
               alignItems: 'center',
@@ -70,7 +70,7 @@ const Main = () => {
             </section>
             
             {/* About & Skills Section */}
-            <section style={{ 
+            <section style={{
               padding: '6rem 0',
               background: isDark ? '#1a1a1a' : '#ffffff'
             }}>
@@ -80,7 +80,7 @@ const Main = () => {
             </section>
             
             {/* Software Skills Section */}
-            <section style={{ 
+            <section style={{
               padding: '6rem 0',
               background: isDark ? '#2a2a2a' : '#f8f9fa'
             }}>
@@ -90,7 +90,7 @@ const Main = () => {
             </section>
             
             {/* Skills Progress Section */}
-            <section style={{ 
+            <section style={{
               padding: '6rem 0',
               background: isDark ? '#1a1a1a' : '#ffffff'
             }}>
@@ -100,7 +100,7 @@ const Main = () => {
             </section>
             
             {/* Education Section */}
-            <section style={{ 
+            <section style={{
               padding: '6rem 0',
               background: isDark ? '#2a2a2a' : '#f8f9fa'
             }}>
@@ -110,7 +110,7 @@ const Main = () => {
             </section>
             
             {/* Experience Section */}
-            <section style={{ 
+            <section style={{
               padding: '6rem 0',
               background: isDark ? '#1a1a1a' : '#ffffff'
             }}>
@@ -120,7 +120,7 @@ const Main = () => {
             </section>
             
             {/* Projects Section */}
-            <section style={{ 
+            <section style={{
               padding: '6rem 0',
               background: isDark ? '#2a2a2a' : '#f8f9fa'
             }}>
@@ -130,7 +130,7 @@ const Main = () => {
             </section>
             
             {/* Startup Projects Section */}
-            <section style={{ 
+            <section style={{
               padding: '6rem 0',
               background: isDark ? '#1a1a1a' : '#ffffff'
             }}>
@@ -140,7 +140,7 @@ const Main = () => {
             </section>
             
             {/* Achievements Section */}
-            <section style={{ 
+            <section style={{
               padding: '6rem 0',
               background: isDark ? '#2a2a2a' : '#f8f9fa'
             }}>
@@ -150,7 +150,7 @@ const Main = () => {
             </section>
             
             {/* Blogs Section */}
-            <section style={{ 
+            <section style={{
               padding: '6rem 0',
               background: isDark ? '#1a1a1a' : '#ffffff'
             }}>
@@ -160,7 +160,7 @@ const Main = () => {
             </section>
             
             {/* Profile Section */}
-            <section style={{ 
+            <section style={{
               padding: '6rem 0',
               background: isDark ? '#2a2a2a' : '#f8f9fa'
             }}>

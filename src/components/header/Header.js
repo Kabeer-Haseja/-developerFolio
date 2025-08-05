@@ -49,8 +49,8 @@ function Header() {
         <ul className={isDark ? "dark-menu menu" : "menu"}>
           {viewSkills && (
             <li>
-              <a 
-                href="#skills" 
+              <a
+                href="#skills"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection('skills');
@@ -62,8 +62,8 @@ function Header() {
           )}
           {viewExperience && (
             <li>
-              <a 
-                href="#experience" 
+              <a
+                href="#experience"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection('experience');
@@ -75,8 +75,8 @@ function Header() {
           )}
           {viewOpenSource && (
             <li>
-              <a 
-                href="#opensource" 
+              <a
+                href="#opensource"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection('opensource');
@@ -88,8 +88,8 @@ function Header() {
           )}
           {viewAchievement && (
             <li>
-              <a 
-                href="#achievements" 
+              <a
+                href="#achievements"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection('achievements');
@@ -101,8 +101,8 @@ function Header() {
           )}
           {viewBlog && (
             <li>
-              <a 
-                href="#blogs" 
+              <a
+                href="#blogs"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection('blogs');
@@ -113,8 +113,8 @@ function Header() {
             </li>
           )}
           <li>
-            <a 
-              href="#contact" 
+            <a
+              href="#contact"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection('contact');
@@ -125,9 +125,9 @@ function Header() {
           </li>
           <li>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a>
-              <ToggleSwitch />
-            </a>
+            {/*<a>*/}
+            {/*  <ToggleSwitch />*/}
+            {/*</a>*/}
           </li>
         </ul>
       </header>
