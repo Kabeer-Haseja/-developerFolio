@@ -133,11 +133,23 @@ const Main = () => {
             {/* Projects Section */}
             <section className="projects-section section" id="projects">
               <div className="container">
-                <div className="section-header">
-                  <h2 className="section-title text-gradient">Featured Projects</h2>
-                  <p className="section-subtitle">
+                <div className="section-header modern-header">
+                  <div className="section-badge">
+                    <span className="badge-icon">🚀</span>
+                    <span className="badge-text">Portfolio</span>
+                  </div>
+                  <h2 className="section-title text-gradient modern-title">
+                    Featured Projects
+                    <span className="title-accent"></span>
+                  </h2>
+                  <p className="section-subtitle modern-subtitle">
                     Showcasing applications that demonstrate technical expertise and innovation
                   </p>
+                  <div className="section-decoration">
+                    <div className="decoration-line"></div>
+                    <div className="decoration-dot"></div>
+                    <div className="decoration-line"></div>
+                  </div>
                 </div>
                 <Projects />
               </div>
@@ -149,11 +161,23 @@ const Main = () => {
                 <div className="section-pattern"></div>
               </div>
               <div className="container">
-                <div className="section-header">
-                  <h2 className="section-title">Startup Ventures</h2>
-                  <p className="section-subtitle">
-                    Entrepreneurial projects and innovative business solutions
+                <div className="section-header modern-header">
+                  <div className="section-badge">
+                    <span className="badge-icon">💼</span>
+                    <span className="badge-text">Ventures</span>
+                  </div>
+                  <h2 className="section-title text-gradient modern-title">
+                    Startup Ventures
+                    <span className="title-accent"></span>
+                  </h2>
+                  <p className="section-subtitle modern-subtitle">
+                    Entrepreneurial projects and innovative business solutions that drive digital transformation
                   </p>
+                  <div className="section-decoration">
+                    <div className="decoration-line"></div>
+                    <div className="decoration-dot"></div>
+                    <div className="decoration-line"></div>
+                  </div>
                 </div>
                 <StartupProject />
               </div>
@@ -178,11 +202,23 @@ const Main = () => {
                 <div className="section-pattern"></div>
               </div>
               <div className="container">
-                <div className="section-header">
-                  <h2 className="section-title">Latest Articles</h2>
-                  <p className="section-subtitle">
+                <div className="section-header modern-header">
+                  <div className="section-badge">
+                    <span className="badge-icon">📝</span>
+                    <span className="badge-text">Insights</span>
+                  </div>
+                  <h2 className="section-title text-gradient modern-title">
+                    Latest Articles
+                    <span className="title-accent"></span>
+                  </h2>
+                  <p className="section-subtitle modern-subtitle">
                     Sharing insights on technology, development, and industry trends
                   </p>
+                  <div className="section-decoration">
+                    <div className="decoration-line"></div>
+                    <div className="decoration-dot"></div>
+                    <div className="decoration-line"></div>
+                  </div>
                 </div>
                 <Blogs />
               </div>
@@ -191,11 +227,23 @@ const Main = () => {
             {/* Contact/Profile Section */}
             <section className="contact-section section" id="contact">
               <div className="container">
-                <div className="section-header">
-                  <h2 className="section-title text-gradient">Let's Connect</h2>
-                  <p className="section-subtitle">
+                <div className="section-header modern-header">
+                  <div className="section-badge">
+                    <span className="badge-icon">💬</span>
+                    <span className="badge-text">Connect</span>
+                  </div>
+                  <h2 className="section-title text-gradient modern-title">
+                    Let's Connect
+                    <span className="title-accent"></span>
+                  </h2>
+                  <p className="section-subtitle modern-subtitle">
                     Ready to collaborate on your next project or discuss opportunities
                   </p>
+                  <div className="section-decoration">
+                    <div className="decoration-line"></div>
+                    <div className="decoration-dot"></div>
+                    <div className="decoration-line"></div>
+                  </div>
                 </div>
                 <Profile />
               </div>

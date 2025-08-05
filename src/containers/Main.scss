@@ -168,6 +168,14 @@
   @media (max-width: 768px) {
     margin-bottom: 3rem;
   }
+  
+  &.modern-header {
+    margin-bottom: 5rem;
+    
+    @media (max-width: 768px) {
+      margin-bottom: 4rem;
+    }
+  }
 }
 
 .section-title {
@@ -200,6 +208,26 @@
     background: $primaryGradient;
     border-radius: 2px;
   }
+  
+  &.modern-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    position: relative;
+    margin-bottom: 0.5rem;
+    
+    .title-accent {
+      position: absolute;
+      bottom: -0.25rem;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: linear-gradient(90deg, $primaryBlue, $primaryPurple, $primaryCyan);
+      opacity: 0.3;
+      border-radius: 4px;
+      z-index: -1;
+    }
+  }
 }
 
 .section-subtitle {
@@ -211,6 +239,18 @@
   
   .dark-mode & {
     color: $textColorDarkSecondary;
+  }
+  
+  &.modern-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    font-weight: 400;
+    color: $gray500;
+    max-width: 700px;
+    margin: 1.5rem auto 0;
+    
+    .dark-mode & {
+      color: $gray300;
+    }
   }
 }
 
@@ -429,5 +469,91 @@
   
   .hero-gradient {
     background: transparent !important;
+  }
+}
+
+// Modern Section Badge Styles
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, $primaryBlue, $primaryPurple);
+  color: $white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 112, 243, 0.3);
+  transition: all 0.3s $easeInOut;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 112, 243, 0.4);
+  }
+  
+  .badge-icon {
+    font-size: 1rem;
+  }
+  
+  .badge-text {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .dark-mode & {
+    background: linear-gradient(135deg, $primaryBlue, $primaryPurple);
+    box-shadow: 0 4px 12px rgba(0, 112, 243, 0.4);
+    
+    &:hover {
+      box-shadow: 0 8px 20px rgba(0, 112, 243, 0.5);
+    }
+  }
+}
+
+// Section Decoration
+.section-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  
+  .decoration-line {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, $primaryBlue, transparent);
+    border-radius: 1px;
+  }
+  
+  .decoration-dot {
+    width: 8px;
+    height: 8px;
+    background: $primaryBlue;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(0, 112, 243, 0.6);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  .dark-mode & {
+    .decoration-line {
+      background: linear-gradient(90deg, transparent, $primaryBlue, transparent);
+    }
+    
+    .decoration-dot {
+      background: $primaryBlue;
+      box-shadow: 0 0 12px rgba(0, 112, 243, 0.8);
+    }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
   }
 }
