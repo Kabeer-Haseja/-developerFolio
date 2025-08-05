@@ -63,23 +63,13 @@ export default function Blogs() {
   if (isLoading) {
     return (
       <Fade bottom duration={1000} distance="20px">
-        <div className="main" id="blogs">
-          <div className="blog-header">
-            <h1 className="blog-header-text">{blogSection.title}</h1>
-            <p
-              className={
-                isDark ? "dark-mode blog-subtitle" : "subTitle blog-subtitle"
-              }
-            >
-              {blogSection.subtitle}
-            </p>
-          </div>
-          <div className="blog-main-div">
-            <div className="blog-text-div" style={{ textAlign: 'center', padding: '2rem' }}>
-              <div style={{ fontSize: '1.2rem', color: isDark ? '#ffffff' : '#000000' }}>
-                Loading blogs...
-              </div>
+        <div className="modern-blogs-container">
+          <div className="loading-state">
+            <div className="loading-spinner">
+              <div className="spinner-ring"></div>
             </div>
+            <h3 className="loading-text">Loading Articles...</h3>
+            <p className="loading-subtext">Fetching the latest insights and updates</p>
           </div>
         </div>
       </Fade>
@@ -88,26 +78,15 @@ export default function Blogs() {
 
   return (
     <Fade bottom duration={1000} distance="20px">
-      <div className="main" id="blogs">
-        <div className="blog-header">
-          <h1 className="blog-header-text">{blogSection.title}</h1>
-          <p
-            className={
-              isDark ? "dark-mode blog-subtitle" : "subTitle blog-subtitle"
-            }
-          >
-            {blogSection.subtitle}
-          </p>
-        </div>
-        <div className="blog-main-div">
-          <div className="blog-text-div">
-            {blogSection.displayMediumBlogs !== "true" ||
-            mediumBlogs === "Error" ||
-            hasError
-              ? blogSection.blogs.map((blog, i) => {
-                  return (
+      <div className="modern-blogs-container">
+        <div className="blogs-grid">
+          {blogSection.displayMediumBlogs !== "true" ||
+          mediumBlogs === "Error" ||
+          hasError
+            ? blogSection.blogs.map((blog, i) => {
+                return (
+                  <div key={i} className="blog-card-wrapper">
                     <BlogCard
-                      key={i}
                       isDark={isDark}
                       blog={{
                         url: blog.url,
@@ -116,12 +95,13 @@ export default function Blogs() {
                         description: blog.description
                       }}
                     />
-                  );
-                })
-              : mediumBlogs.map((blog, i) => {
-                  return (
+                  </div>
+                );
+              })
+            : mediumBlogs.map((blog, i) => {
+                return (
+                  <div key={i} className="blog-card-wrapper">
                     <BlogCard
-                      key={i}
                       isDark={isDark}
                       blog={{
                         url: blog.link,
@@ -129,10 +109,22 @@ export default function Blogs() {
                         description: extractTextContent(blog.content)
                       }}
                     />
-                  );
-                })}
-          </div>
+                  </div>
+                );
+              })}
         </div>
+        
+        {blogSection.blogs.length > 0 && (
+          <div className="blogs-footer">
+            <div className="view-all-container">
+              <button className="view-all-button">
+                <span className="button-icon">📚</span>
+                <span className="button-text">View All Articles</span>
+                <span className="button-arrow">→</span>
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </Fade>
   );

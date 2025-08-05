@@ -161,11 +161,23 @@ const Main = () => {
                 <div className="section-pattern"></div>
               </div>
               <div className="container">
-                <div className="section-header">
-                  <h2 className="section-title">Startup Ventures</h2>
-                  <p className="section-subtitle">
-                    Entrepreneurial projects and innovative business solutions
+                <div className="section-header modern-header">
+                  <div className="section-badge">
+                    <span className="badge-icon">💼</span>
+                    <span className="badge-text">Ventures</span>
+                  </div>
+                  <h2 className="section-title text-gradient modern-title">
+                    Startup Ventures
+                    <span className="title-accent"></span>
+                  </h2>
+                  <p className="section-subtitle modern-subtitle">
+                    Entrepreneurial projects and innovative business solutions that drive digital transformation
                   </p>
+                  <div className="section-decoration">
+                    <div className="decoration-line"></div>
+                    <div className="decoration-dot"></div>
+                    <div className="decoration-line"></div>
+                  </div>
                 </div>
                 <StartupProject />
               </div>

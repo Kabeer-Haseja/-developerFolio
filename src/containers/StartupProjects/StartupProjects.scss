@@ -1,90 +1,327 @@
 @import "../../_globalColor.scss";
 
-.card-image {
-  max-width: 100%;
-  height: 250px;
-  width: 250px;
-}
-.card-title {
-  color: $titleColor;
-  font-size: 22px;
-  line-height: 24px;
-  font-weight: 700;
-  margin: 15px 0 0 0;
-}
-.card-subtitle {
-  color: $cardSubtitle;
-  font-size: 17px;
-  line-height: 1.5rem;
-}
-.project-card {
-  display: flex;
-  flex-direction: column;
-  background-color: $lightBackground2;
-  padding: 1.5rem;
-  border-radius: 10px;
-  border: 1px solid $lightBorder1;
-  justify-content: center;
-}
-.project-card-light {
-  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.project-card-dark {
-  box-shadow: 0px 10px 30px -15px $darkBoxShadow;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.25s ease;
-}
-
-.project-detail {
-  text-align: center;
-}
-.project-card-light:hover {
-  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
-}
-.project-card-dark:hover {
-  box-shadow: 0px 20px 30px -10px $darkBoxShadow;
-}
-.project-image {
+.startup-projects-container {
+  width: 100%;
   position: relative;
-  height: 250px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  z-index: 2;
 }
 
-.projects-container {
+.projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 
-.project-card-footer span.project-tag {
-  background: $buttonColor;
-  color: $lightBackground3;
-  vertical-align: middle;
-  align-items: center;
-  border-radius: 4px;
-  display: inline-flex;
-  font-size: 0.75rem;
-  height: 2em;
-  justify-content: center;
-  white-space: nowrap;
-  line-height: 1.5;
-  margin: 0 0.5rem 0.5rem 0;
-  padding: 0 0.75em;
-  cursor: pointer;
-  transition: 0.2s ease-in;
+.modern-project-card {
+  background: $white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s $easeInOut;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: rgba(0, 112, 243, 0.2);
+  }
+  
+  &.project-card-dark {
+    background: $darkBackgroundCard;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    
+    &:hover {
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      border-color: rgba(0, 112, 243, 0.3);
+    }
+  }
 }
 
+.project-card-header {
+  position: relative;
+  overflow: hidden;
+  
+  .project-image-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    
+    .project-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s $easeInOut;
+    }
+    
+    .project-image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(0, 112, 243, 0.9), rgba(124, 58, 237, 0.9));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s $easeInOut;
+      
+      .overlay-content {
+        text-align: center;
+        color: $white;
+        
+        .view-project {
+          font-size: 1.1rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+        }
+      }
+    }
+    
+    &:hover {
+      .project-image {
+        transform: scale(1.05);
+      }
+      
+      .project-image-overlay {
+        opacity: 1;
+      }
+    }
+  }
+  
+  .project-placeholder {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, $gray100, $gray200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .placeholder-icon {
+      font-size: 3rem;
+      opacity: 0.5;
+    }
+    
+    .project-card-dark & {
+      background: linear-gradient(135deg, $gray700, $gray600);
+    }
+  }
+  
+  .project-status {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    
+    .status-badge {
+      background: linear-gradient(135deg, $primaryBlue, $primaryPurple);
+      color: $white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      box-shadow: 0 2px 8px rgba(0, 112, 243, 0.3);
+    }
+  }
+}
+
+.project-card-content {
+  padding: 1.5rem;
+  
+  .project-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $titleColor;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+    
+    .project-card-dark & {
+      color: $titleColorDark;
+    }
+  }
+  
+  .project-description {
+    color: $textColor;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    
+    .project-card-dark & {
+      color: $textColorDarkSecondary;
+    }
+  }
+  
+  .project-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    
+    .project-link-button {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, $primaryBlue, $primaryPurple);
+      color: $white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s $easeInOut;
+      text-decoration: none;
+      
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 112, 243, 0.4);
+      }
+      
+      .link-icon {
+        font-size: 0.75rem;
+      }
+      
+      .link-text {
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+.project-card-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.02);
+  
+  .project-card-dark & {
+    border-top-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+  }
+  
+  .project-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .project-type,
+    .project-year {
+      font-size: 0.8rem;
+      color: $gray500;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      
+      .project-card-dark & {
+        color: $gray400;
+      }
+    }
+    
+    .project-type {
+      background: rgba(0, 112, 243, 0.1);
+      color: $primaryBlue;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      
+      .project-card-dark & {
+        background: rgba(0, 112, 243, 0.2);
+      }
+    }
+  }
+}
+
+// Responsive design
 @media (max-width: 768px) {
-  .project-subtitle {
-    font-size: 16px;
-    text-align: center;
+  .projects-grid {
+    gap: 1.5rem;
+  }
+  
+  .modern-project-card {
+    &:hover {
+      transform: translateY(-4px);
+    }
+  }
+  
+  .project-card-content {
+    padding: 1.25rem;
+    
+    .project-title {
+      font-size: 1.125rem;
+    }
+    
+    .project-description {
+      font-size: 0.9rem;
+    }
+  }
+  
+  .project-card-footer {
+    padding: 0.75rem 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-grid {
+    gap: 1rem;
+  }
+  
+  .project-card-content {
+    padding: 1rem;
+    
+    .project-title {
+      font-size: 1rem;
+    }
+    
+    .project-description {
+      font-size: 0.85rem;
+    }
+    
+    .project-links {
+      gap: 0.5rem;
+      
+      .project-link-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+      }
+    }
+  }
+  
+  .project-card-footer {
+    padding: 0.5rem 1rem;
+  }
+}
+
+// Focus styles for accessibility
+.project-link-button:focus {
+  outline: 2px solid $primaryBlue;
+  outline-offset: 2px;
+}
+
+// Animation for card entrance
+.modern-project-card {
+  animation: cardEntrance 0.6s $easeInOut forwards;
+  opacity: 0;
+  transform: translateY(20px);
+  
+  &:nth-child(1) { animation-delay: 0.1s; }
+  &:nth-child(2) { animation-delay: 0.2s; }
+  &:nth-child(3) { animation-delay: 0.3s; }
+  &:nth-child(4) { animation-delay: 0.4s; }
+  &:nth-child(5) { animation-delay: 0.5s; }
+  &:nth-child(6) { animation-delay: 0.6s; }
+}
+
+@keyframes cardEntrance {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
