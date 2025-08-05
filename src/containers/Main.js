@@ -132,56 +132,24 @@ const Main = () => {
             
             {/* Projects Section */}
             <section className="projects-section section" id="projects">
-              <div className="container">
+              <div className="container modern-digital">
                 <div className="section-header">
                   <h2 className="section-title text-gradient">Featured Projects</h2>
-                  <p className="section-subtitle">
-                    Showcasing applications that demonstrate technical expertise and innovation
+                  <p className="section-subtitle modern-description">
+                    Explore a curated selection of innovative, impactful, and visually stunning projects that blend technology and creativity. Each project leverages modern frameworks, digital-first design, and elegant user experiences.
                   </p>
                 </div>
                 <Projects />
               </div>
             </section>
             
-            {/* Startup Projects Section */}
-            <section className="startup-section section">
-              <div className="section-background alt">
-                <div className="section-pattern"></div>
-              </div>
-              <div className="container">
-                <div className="section-header">
-                  <h2 className="section-title">Startup Ventures</h2>
-                  <p className="section-subtitle">
-                    Entrepreneurial projects and innovative business solutions
-                  </p>
-                </div>
-                <StartupProject />
-              </div>
-            </section>
-            
-            {/* Achievements Section */}
-            <section className="achievements-section section" id="achievements">
-              <div className="container">
-                <div className="section-header">
-                  <h2 className="section-title text-gradient">Achievements & Recognition</h2>
-                  <p className="section-subtitle">
-                    Awards, certifications, and professional milestones
-                  </p>
-                </div>
-                <Achievement />
-              </div>
-            </section>
-            
             {/* Blog Section */}
             <section className="blog-section section" id="blogs">
-              <div className="section-background">
-                <div className="section-pattern"></div>
-              </div>
-              <div className="container">
+              <div className="container modern-digital">
                 <div className="section-header">
-                  <h2 className="section-title">Latest Articles</h2>
-                  <p className="section-subtitle">
-                    Sharing insights on technology, development, and industry trends
+                  <h2 className="section-title text-gradient">Latest Articles</h2>
+                  <p className="section-subtitle modern-description">
+                    Stay ahead with insights on emerging tech, digital transformation, and elegant solutions for the modern world. Thoughtfully crafted articles for developers, designers, and digital enthusiasts.
                   </p>
                 </div>
                 <Blogs />
@@ -190,11 +158,11 @@ const Main = () => {
             
             {/* Contact/Profile Section */}
             <section className="contact-section section" id="contact">
-              <div className="container">
+              <div className="container modern-digital">
                 <div className="section-header">
                   <h2 className="section-title text-gradient">Let's Connect</h2>
-                  <p className="section-subtitle">
-                    Ready to collaborate on your next project or discuss opportunities
+                  <p className="section-subtitle modern-description">
+                    Interested in collaborating, discussing digital innovation, or building something extraordinary? Reach out and let's create the future together.
                   </p>
                 </div>
                 <Profile />
