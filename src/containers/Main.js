@@ -139,38 +139,38 @@ const Main = () => {
                     Showcasing applications that demonstrate technical expertise and innovation
                   </p>
                 </div>
-                <Projects />
-              </div>
-            </section>
-            
-            {/* Startup Projects Section */}
-            <section className="startup-section section">
-              <div className="section-background alt">
-                <div className="section-pattern"></div>
-              </div>
-              <div className="container">
-                <div className="section-header">
-                  <h2 className="section-title">Startup Ventures</h2>
-                  <p className="section-subtitle">
-                    Entrepreneurial projects and innovative business solutions
-                  </p>
-                </div>
                 <StartupProject />
               </div>
             </section>
             
+            {/* Startup Projects Section */}
+            {/*<section className="startup-section section">*/}
+            {/*  <div className="section-background alt">*/}
+            {/*    <div className="section-pattern"></div>*/}
+            {/*  </div>*/}
+            {/*  <div className="container">*/}
+            {/*    <div className="section-header">*/}
+            {/*      <h2 className="section-title">Startup Ventures</h2>*/}
+            {/*      <p className="section-subtitle">*/}
+            {/*        Entrepreneurial projects and innovative business solutions*/}
+            {/*      </p>*/}
+            {/*    </div>*/}
+            {/*    <StartupProject />*/}
+            {/*  </div>*/}
+            {/*</section>*/}
+            
             {/* Achievements Section */}
-            <section className="achievements-section section" id="achievements">
-              <div className="container">
-                <div className="section-header">
-                  <h2 className="section-title text-gradient">Achievements & Recognition</h2>
-                  <p className="section-subtitle">
-                    Awards, certifications, and professional milestones
-                  </p>
-                </div>
-                <Achievement />
-              </div>
-            </section>
+            {/*<section className="achievements-section section" id="achievements">*/}
+            {/*  <div className="container">*/}
+            {/*    <div className="section-header">*/}
+            {/*      <h2 className="section-title text-gradient">Achievements & Recognition</h2>*/}
+            {/*      <p className="section-subtitle">*/}
+            {/*        Awards, certifications, and professional milestones*/}
+            {/*      </p>*/}
+            {/*    </div>*/}
+            {/*    <Achievement />*/}
+            {/*  </div>*/}
+            {/*</section>*/}
             
             {/* Blog Section */}
             <section className="blog-section section" id="blogs">
@@ -205,7 +205,7 @@ const Main = () => {
             <ScrollToTopButton />
             
             {/* Floating Action Button for Quick Contact */}
-            <button 
+            <button
               className="fab"
               onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
               aria-label="Contact"
