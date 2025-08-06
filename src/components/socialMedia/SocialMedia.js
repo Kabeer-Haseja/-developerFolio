@@ -3,11 +3,10 @@ import "./SocialMedia.scss";
 import {socialMediaLinks} from "../../portfolio";
 
 export default function SocialMedia() {
-  if (!socialMediaLinks.display) {
-    return null;
-  }
-  
   useEffect(() => {
+    // Only run if social media should be displayed
+    if (!socialMediaLinks.display) return;
+    
     // Check if FontAwesome is loaded and add class to buttons
     const checkFontAwesome = () => {
       const testElement = document.createElement('i');
@@ -31,6 +30,10 @@ export default function SocialMedia() {
     // Check after a short delay to ensure FontAwesome has time to load
     setTimeout(checkFontAwesome, 100);
   }, []);
+
+  if (!socialMediaLinks.display) {
+    return null;
+  }
   
   // SVG Icons as fallbacks
   const GitHubIcon = () => (
