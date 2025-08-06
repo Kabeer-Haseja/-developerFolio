@@ -33,10 +33,62 @@
     border-color: $glassBorderDark;
   }
   
+  // Icon container for perfect centering
+  .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  // FontAwesome icon styling
   i {
     font-size: 1.2rem;
+    color: inherit;
+    line-height: 1;
+    display: block;
+    position: absolute;
     z-index: 2;
-    position: relative;
+    
+    // Ensure FontAwesome icons are visible
+    &.fab, &.fas {
+      visibility: visible;
+      opacity: 1;
+      font-family: "Font Awesome 5 Brands", "Font Awesome 5 Free";
+      font-style: normal;
+      font-weight: 400;
+    }
+    
+    &.fas {
+      font-weight: 900;
+    }
+  }
+  
+  // SVG fallback styling
+  .svg-fallback {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    color: inherit;
+    fill: currentColor;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  
+  // Show SVG fallback only when FontAwesome fails
+  &:not(.fontawesome-loaded) {
+    .svg-fallback {
+      opacity: 1;
+      z-index: 2;
+    }
+    
+    i {
+      opacity: 0;
+      z-index: 1;
+    }
   }
   
   &:hover {
@@ -139,6 +191,13 @@
   }
 }
 
+// JavaScript-based FontAwesome detection
+.fontawesome-loaded {
+  .svg-fallback {
+    display: none;
+  }
+}
+
 // Responsive design
 @media (max-width: 768px) {
   .social-media-div {
@@ -152,6 +211,11 @@
     i {
       font-size: 1.1rem;
     }
+    
+    .svg-fallback {
+      width: 18px;
+      height: 18px;
+    }
   }
 }
 
@@ -163,6 +227,11 @@
     i {
       font-size: 1rem;
     }
+    
+    .svg-fallback {
+      width: 16px;
+      height: 16px;
+    }
   }
 }
 
@@ -173,6 +242,20 @@
     
     &:hover {
       transform: none;
+    }
+  }
+}
+
+// Additional CSS-only fallback detection
+@supports not (font-family: "Font Awesome 5 Brands") {
+  .icon-button {
+    i {
+      opacity: 0;
+    }
+    
+    .svg-fallback {
+      opacity: 1;
+      z-index: 2;
     }
   }
 }
