@@ -33,19 +33,36 @@
     border-color: $glassBorderDark;
   }
   
-  // Icon styling - both FontAwesome and SVG
+  // Icon container for perfect centering
+  .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  // FontAwesome icon styling
   i {
     font-size: 1.2rem;
-    z-index: 2;
-    position: relative;
     color: inherit;
     line-height: 1;
+    display: block;
+    position: absolute;
+    z-index: 2;
     
     // Ensure FontAwesome icons are visible
     &.fab, &.fas {
-      display: block !important;
-      visibility: visible !important;
-      opacity: 1 !important;
+      visibility: visible;
+      opacity: 1;
+      font-family: "Font Awesome 5 Brands", "Font Awesome 5 Free";
+      font-style: normal;
+      font-weight: 400;
+    }
+    
+    &.fas {
+      font-weight: 900;
     }
   }
   
@@ -54,15 +71,24 @@
     position: absolute;
     width: 20px;
     height: 20px;
-    z-index: 1;
     color: inherit;
     fill: currentColor;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.2s ease;
   }
   
-  // Show SVG fallback if FontAwesome fails to load
-  i:empty + .svg-fallback,
-  i[style*="display: none"] + .svg-fallback {
-    z-index: 2;
+  // Show SVG fallback only when FontAwesome fails
+  &:not(.fontawesome-loaded) {
+    .svg-fallback {
+      opacity: 1;
+      z-index: 2;
+    }
+    
+    i {
+      opacity: 0;
+      z-index: 1;
+    }
   }
   
   &:hover {
@@ -165,6 +191,13 @@
   }
 }
 
+// JavaScript-based FontAwesome detection
+.fontawesome-loaded {
+  .svg-fallback {
+    display: none;
+  }
+}
+
 // Responsive design
 @media (max-width: 768px) {
   .social-media-div {
@@ -213,27 +246,16 @@
   }
 }
 
-// Force visibility for specific icons that commonly have issues
-.icon-button.github i,
-.icon-button.linkedin i {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  font-family: "Font Awesome 5 Brands" !important;
-  font-weight: 400 !important;
-  font-style: normal !important;
-}
-
-// Additional fallback for when FontAwesome completely fails
+// Additional CSS-only fallback detection
 @supports not (font-family: "Font Awesome 5 Brands") {
   .icon-button {
     i {
-      display: none !important;
+      opacity: 0;
     }
     
     .svg-fallback {
-      z-index: 2 !important;
-      position: relative !important;
+      opacity: 1;
+      z-index: 2;
     }
   }
 }
