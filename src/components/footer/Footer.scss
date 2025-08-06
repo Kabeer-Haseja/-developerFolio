@@ -65,32 +65,26 @@
 
 .footer-main {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
   margin-bottom: 3rem;
   
-  @media (max-width: 1200px) {
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 2.5rem;
-  }
-  
   @media (max-width: 992px) {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
   }
   
   @media (max-width: 768px) {
-    grid-template-columns: 1fr;
     gap: 2.5rem;
-    text-align: center;
   }
 }
 
 // Footer Brand Section
 .footer-brand {
-  max-width: 400px;
+  max-width: 500px;
   
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     max-width: 100%;
   }
 }
@@ -189,274 +183,112 @@
   }
 }
 
-// Footer Links Section
-.footer-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
 
-.footer-link {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: $gray400;
-  text-decoration: none;
-  font-size: 0.9375rem;
-  padding: 0.5rem 0;
-  transition: all $transitionNormal $easeInOut;
-  border-radius: 8px;
-  position: relative;
-  
-  .link-icon {
-    font-size: 1rem;
-    width: 20px;
-    text-align: center;
-  }
-  
-  .link-text {
-    flex: 1;
-  }
-  
-  .link-arrow {
-    opacity: 0;
-    transform: translateX(-10px);
-    transition: all $transitionNormal $easeInOut;
-  }
-  
-  &:hover {
-    color: $white;
-    padding-left: 0.75rem;
-    background: rgba(0, 112, 243, 0.1);
-    
-    .link-arrow {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
-  @media (max-width: 768px) {
-    justify-content: center;
-    
-    &:hover {
-      padding-left: 0.5rem;
-    }
-  }
-}
-
-// Tech Stack Section
-.tech-stack-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1rem;
-  
-  @media (max-width: 1200px) {
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 0.875rem;
-  }
-  
-  @media (max-width: 992px) {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 0.75rem;
-  }
-  
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-    gap: 0.75rem;
-  }
-  
-  @media (max-width: 480px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-  }
-}
-
-.tech-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  padding: 1.25rem 1rem;
-  background: rgba(0, 112, 243, 0.05);
-  border-radius: 16px;
-  border: 1px solid rgba(0, 112, 243, 0.1);
-  transition: all $transitionNormal $easeInOut;
-  cursor: pointer;
-  min-height: 100px;
-  position: relative;
-  overflow: hidden;
-  
-  .dark-mode & {
-    background: rgba(0, 112, 243, 0.08);
-    border-color: rgba(0, 112, 243, 0.15);
-  }
-  
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transition: left 0.5s ease;
-  }
-  
-  &:hover {
-    background: rgba(0, 112, 243, 0.15);
-    border-color: rgba(0, 112, 243, 0.3);
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(0, 112, 243, 0.2);
-    
-    &::before {
-      left: 100%;
-    }
-    
-    .tech-icon {
-      transform: scale(1.15);
-    }
-    
-    .tech-name {
-      color: $white;
-    }
-  }
-  
-  @media (max-width: 992px) {
-    padding: 1rem 0.75rem;
-    min-height: 90px;
-    gap: 0.625rem;
-  }
-  
-  @media (max-width: 768px) {
-    padding: 0.875rem 0.5rem;
-    min-height: 80px;
-    gap: 0.5rem;
-  }
-  
-  @media (max-width: 480px) {
-    padding: 0.75rem 0.5rem;
-    min-height: 70px;
-    gap: 0.5rem;
-  }
-}
-
-.tech-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  transition: transform $transitionNormal $easeInOut;
-  flex-shrink: 0;
-  
-  svg {
-    width: 24px;
-    height: 24px;
-    display: block;
-  }
-  
-  @media (max-width: 992px) {
-    width: 28px;
-    height: 28px;
-    
-    svg {
-      width: 20px;
-      height: 20px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    width: 24px;
-    height: 24px;
-    
-    svg {
-      width: 18px;
-      height: 18px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    width: 20px;
-    height: 20px;
-    
-    svg {
-      width: 16px;
-      height: 16px;
-    }
-  }
-}
-
-.tech-name {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: $gray300;
-  text-align: center;
-  line-height: 1.2;
-  transition: color $transitionNormal $easeInOut;
-  
-  .dark-mode & {
-    color: $gray400;
-  }
-  
-  @media (max-width: 992px) {
-    font-size: 0.8125rem;
-  }
-  
-  @media (max-width: 768px) {
-    font-size: 0.75rem;
-  }
-  
-  @media (max-width: 480px) {
-    font-size: 0.6875rem;
-    font-weight: 500;
-  }
-}
 
 // Footer Connect Section
+.footer-connect-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
+  @media (max-width: 992px) {
+    align-items: center;
+  }
+}
+
 .footer-social {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   
   .social-media-div {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+    gap: 1.25rem;
     
     @media (max-width: 768px) {
       justify-content: center;
     }
+  }
+  
+  .icon-button {
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 12px !important;
+    background: rgba(0, 112, 243, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(0, 112, 243, 0.2) !important;
     
-    .social-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: rgba(0, 112, 243, 0.1);
-      backdrop-filter: blur(10px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all $transitionNormal $easeInOut;
-      border: 1px solid rgba(0, 112, 243, 0.2);
+    .dark-mode & {
+      background: rgba(0, 112, 243, 0.15) !important;
+      border-color: rgba(0, 112, 243, 0.25) !important;
+      color: $white !important;
+    }
+    
+    i {
+      color: $primaryBlue !important;
+      font-size: 1.25rem !important;
+      line-height: 1 !important;
       
       .dark-mode & {
-        background: rgba(0, 112, 243, 0.15);
-        border-color: rgba(0, 112, 243, 0.25);
+        color: $white !important;
       }
-      
-      &:hover {
-        background: $primaryBlue;
-        transform: translateY(-3px) scale(1.05);
-        box-shadow: 0 10px 25px rgba(0, 112, 243, 0.3);
-        border-color: $primaryBlue;
-      }
+    }
+    
+    &:hover {
+      transform: translateY(-3px) scale(1.05) !important;
+      box-shadow: 0 10px 25px rgba(0, 112, 243, 0.3) !important;
       
       i {
-        color: $white;
-        font-size: 1.125rem;
+        color: $white !important;
       }
+    }
+    
+    // Platform-specific hover colors
+    &.github:hover {
+      background: $github !important;
+      border-color: $github !important;
+    }
+    
+    &.linkedin:hover {
+      background: $linkedin !important;
+      border-color: $linkedin !important;
+    }
+    
+    &.google:hover {
+      background: $google !important;
+      border-color: $google !important;
+    }
+    
+    &.twitter:hover {
+      background: $twitter !important;
+      border-color: $twitter !important;
+    }
+    
+    &.instagram:hover {
+      background: $instagram !important;
+      border-color: $instagram !important;
+    }
+    
+    &.facebook:hover {
+      background: $faceBook !important;
+      border-color: $faceBook !important;
+    }
+    
+    &.medium:hover {
+      background: $medium !important;
+      border-color: $medium !important;
+    }
+    
+    &.stack-overflow:hover {
+      background: $stackoverflow !important;
+      border-color: $stackoverflow !important;
+    }
+    
+    &.gitlab:hover {
+      background: $gitlab !important;
+      border-color: $gitlab !important;
+    }
+    
+    &.kaggle:hover {
+      background: $kaggle !important;
+      border-color: $kaggle !important;
     }
   }
 }
