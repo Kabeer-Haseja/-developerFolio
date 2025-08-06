@@ -207,88 +207,25 @@
     }
   }
   
+  // Override default social media styles for footer
   .icon-button {
-    width: 48px !important;
-    height: 48px !important;
-    border-radius: 12px !important;
-    background: rgba(0, 112, 243, 0.1) !important;
-    backdrop-filter: blur(10px) !important;
-    border: 1px solid rgba(0, 112, 243, 0.2) !important;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
     
-    .dark-mode & {
-      background: rgba(0, 112, 243, 0.15) !important;
-      border-color: rgba(0, 112, 243, 0.25) !important;
-      color: $white !important;
-    }
-    
-    i {
-      color: $primaryBlue !important;
-      font-size: 1.25rem !important;
-      line-height: 1 !important;
+    // Ensure icons are always visible in footer
+    i, .svg-fallback {
+      color: $primaryBlue;
       
       .dark-mode & {
-        color: $white !important;
+        color: $white;
       }
     }
     
     &:hover {
-      transform: translateY(-3px) scale(1.05) !important;
-      box-shadow: 0 10px 25px rgba(0, 112, 243, 0.3) !important;
-      
-      i {
-        color: $white !important;
+      i, .svg-fallback {
+        color: $white;
       }
-    }
-    
-    // Platform-specific hover colors
-    &.github:hover {
-      background: $github !important;
-      border-color: $github !important;
-    }
-    
-    &.linkedin:hover {
-      background: $linkedin !important;
-      border-color: $linkedin !important;
-    }
-    
-    &.google:hover {
-      background: $google !important;
-      border-color: $google !important;
-    }
-    
-    &.twitter:hover {
-      background: $twitter !important;
-      border-color: $twitter !important;
-    }
-    
-    &.instagram:hover {
-      background: $instagram !important;
-      border-color: $instagram !important;
-    }
-    
-    &.facebook:hover {
-      background: $faceBook !important;
-      border-color: $faceBook !important;
-    }
-    
-    &.medium:hover {
-      background: $medium !important;
-      border-color: $medium !important;
-    }
-    
-    &.stack-overflow:hover {
-      background: $stackoverflow !important;
-      border-color: $stackoverflow !important;
-    }
-    
-    &.gitlab:hover {
-      background: $gitlab !important;
-      border-color: $gitlab !important;
-    }
-    
-    &.kaggle:hover {
-      background: $kaggle !important;
-      border-color: $kaggle !important;
     }
   }
 }

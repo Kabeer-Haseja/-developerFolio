@@ -33,10 +33,36 @@
     border-color: $glassBorderDark;
   }
   
+  // Icon styling - both FontAwesome and SVG
   i {
     font-size: 1.2rem;
     z-index: 2;
     position: relative;
+    color: inherit;
+    line-height: 1;
+    
+    // Ensure FontAwesome icons are visible
+    &.fab, &.fas {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+  }
+  
+  // SVG fallback styling
+  .svg-fallback {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+    color: inherit;
+    fill: currentColor;
+  }
+  
+  // Show SVG fallback if FontAwesome fails to load
+  i:empty + .svg-fallback,
+  i[style*="display: none"] + .svg-fallback {
+    z-index: 2;
   }
   
   &:hover {
@@ -152,6 +178,11 @@
     i {
       font-size: 1.1rem;
     }
+    
+    .svg-fallback {
+      width: 18px;
+      height: 18px;
+    }
   }
 }
 
@@ -163,6 +194,11 @@
     i {
       font-size: 1rem;
     }
+    
+    .svg-fallback {
+      width: 16px;
+      height: 16px;
+    }
   }
 }
 
@@ -173,6 +209,31 @@
     
     &:hover {
       transform: none;
+    }
+  }
+}
+
+// Force visibility for specific icons that commonly have issues
+.icon-button.github i,
+.icon-button.linkedin i {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font-family: "Font Awesome 5 Brands" !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+}
+
+// Additional fallback for when FontAwesome completely fails
+@supports not (font-family: "Font Awesome 5 Brands") {
+  .icon-button {
+    i {
+      display: none !important;
+    }
+    
+    .svg-fallback {
+      z-index: 2 !important;
+      position: relative !important;
     }
   }
 }
